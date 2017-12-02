@@ -1,6 +1,6 @@
 {
 
-	"players": [
+	"player": [
 
 		{
 			"name": "spedecWoman",
@@ -16,7 +16,7 @@
 		}
 	],
 
-	"orderlys": [
+	"orderly": [
 
 		{
 			"name": "monster",
