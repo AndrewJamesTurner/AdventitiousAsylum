@@ -4,7 +4,7 @@ from RenderQueue import RenderQueue
 from enemy import Enemy
 from items import physical_type, mental_type, chemical_type
 from items import ItemGenerator
-from items import ItemEffectiveness
+from items import ItemEffectiveness, ItemDescriptor
 from random import randint
 
 player_move_select_state = "player_move_select_state"
@@ -67,6 +67,17 @@ class BattleScene(GameScene):
 
         self.application.change_scene(self.previous_scene)
 
+    def get_select_box(self, type):
+
+        if type == physical_type:
+            return self.red_move
+
+        if type == mental_type:
+            return self.blue_move
+
+        if type == chemical_type:
+            return self.green_move
+
     def on_enter(self, previous_scene):
 
         super(BattleScene, self).on_enter(previous_scene)
@@ -88,6 +99,8 @@ class BattleScene(GameScene):
         self.enemy_image = pygame.image.load("assets/astronaut_small.png")
 
         self.blue_move = pygame.image.load("assets/battle-background-images/blue-rect.png")
+        self.red_move = pygame.image.load("assets/battle-background-images/red-rect.png")
+        self.green_move = pygame.image.load("assets/battle-background-images/green-rect.png")
         self.black_move = pygame.image.load("assets/battle-background-images/black-rect.png")
         self.message_box = pygame.image.load("assets/battle-background-images/message-box.png")
         self.boarder = pygame.image.load("assets/battle-background-images/border.png")
@@ -120,7 +133,7 @@ class BattleScene(GameScene):
         self.render_queue.add((0, 0), self.boarder, z_index=0)
 
         enemy_pos_x = 765
-        enemy_pos_y = 50
+        enemy_pos_y = 65
         self.render_queue.add((enemy_pos_x, enemy_pos_y), self.enemy.image, z_index=1)
 
         player_pos_x = 95
@@ -129,7 +142,7 @@ class BattleScene(GameScene):
 
         if self.state == player_move_select_state:
 
-            move_x_left = 80
+            move_x_left = 90
             move_x_right = 510
 
             move_y_top = 410
@@ -155,9 +168,11 @@ class BattleScene(GameScene):
 
             if len(self.items) > 1:
 
+                move_type = self.items[1].type
+
                 name_text = self.move_font.render(str(self.items[1].name), True, font_colour)
                 damage_text = self.move_font.render(str(self.items[1].damage), True, font_colour)
-                type_text = self.move_font.render(str(self.items[1].type), True, font_colour)
+                type_text = self.move_font.render(str(move_type), True, font_colour)
 
                 self.render_queue.add((move_x_right, move_y_top), self.black_move)
                 self.render_queue.add((move_x_right + move_name_x_offset, move_y_top + text_y_offset), name_text, z_index=2)
@@ -168,7 +183,7 @@ class BattleScene(GameScene):
 
                 name_text = self.move_font.render(str(self.items[2].name), True, font_colour)
                 damage_text = self.move_font.render(str(self.items[2].damage), True, font_colour)
-                type_text = self.move_font.render(str(self.items[2].type), True, font_colour)
+                type_text = self.move_font.render(str(move_type), True, font_colour)
 
                 self.render_queue.add((move_x_left, move_y_bottom), self.black_move)
                 self.render_queue.add((move_x_left + move_name_x_offset, move_y_bottom + text_y_offset), name_text, z_index=2)
@@ -178,14 +193,16 @@ class BattleScene(GameScene):
             if len(self.items) > 3:
                 self.render_queue.add((move_x_right, move_y_bottom), self.black_move)
 
+            move_type = self.items[self.currently_selected_item].type
+
             if self.currently_selected_item == 0:
-                self.render_queue.add((move_x_left, move_y_top), self.blue_move)
+                self.render_queue.add((move_x_left, move_y_top), self.get_select_box(move_type))
             if self.currently_selected_item == 1:
-                self.render_queue.add((move_x_right, move_y_top), self.blue_move)
+                self.render_queue.add((move_x_right, move_y_top), self.get_select_box(move_type))
             if self.currently_selected_item == 2:
-                self.render_queue.add((move_x_left, move_y_bottom), self.blue_move)
+                self.render_queue.add((move_x_left, move_y_bottom), self.get_select_box(move_type))
             if self.currently_selected_item == 3:
-                self.render_queue.add((move_x_right, move_y_bottom), self.blue_move)
+                self.render_queue.add((move_x_right, move_y_bottom), self.get_select_box(move_type))
 
         elif self.state == player_attack_animation_state:
 
@@ -211,7 +228,9 @@ class BattleScene(GameScene):
             if get_multiplier(attack_type, defence_type) == 1:
                 effectiveness = ItemEffectiveness().get_rand_low_effective()
 
-            self.message = "Player attacked {0} with {1}. It was {2}!".format(self.enemy.name, item_name, effectiveness)
+            item_descripter = ItemDescriptor().getDescriptor()
+
+            self.message = "Player attacked {0} with {3} {1} and it was {2}!".format(self.enemy.name, item_name, effectiveness, item_descripter)
 
         elif self.state == player_message_state:
 
@@ -249,7 +268,9 @@ class BattleScene(GameScene):
             if get_multiplier(attack_type, defence_type) == 1:
                 effectiveness = ItemEffectiveness().get_rand_low_effective()
 
-            self.message = "{0} attacked Player with {1}. It was {2}!".format(self.enemy.name, item_name, effectiveness)
+            item_descripter = ItemDescriptor().getDescriptor()
+
+            self.message = "{0} attacked Player with {3} {1} and it was {2}!".format(self.enemy.name, item_name, effectiveness, item_descripter)
 
         elif self.state == enemy_message_state:
 
