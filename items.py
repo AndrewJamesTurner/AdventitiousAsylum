@@ -14,7 +14,7 @@ class Item:
     def __init__(self, name, image, damage, sanity, _type):
 
         self.name = name
-        self.image = image
+        self.image = pygame.image.load(image)
         self.damage = damage
         self.sanity = sanity
         self.type = _type
@@ -30,9 +30,13 @@ class ItemGenerator:
                       Item('tugboat', imagePath + '/tugboat.png', 100, 2, mental_type),
                       Item('elephant', imagePath + '/elephant.png', 150, 2, physical_type),
                       Item('bat', imagePath + '/bat.png', 50, 2, chemical_type),
-                      Item('filing cabinet', imagePath + '/filing-cabinet.png', 150, 2, physical_type),
-                      Item('unicorn', imagePath + '/unicorn.png', 150, 2, mental_type),
-                      Item('bat', imagePath + '/astronaut_small.png', 150, 2, physical_type)]
+                      Item('filing cabinet', imagePath + '/filing-cabinet.png', 70, 2, physical_type),
+                      Item('unicorn', imagePath + '/unicorn.png', 250, 2, mental_type),
+                      Item('brick', imagePath + '/brick.png', 40, 2, physical_type),
+                      Item('syringe', imagePath + '/syringe.png', 90, 2, chemical_type),
+                      Item('goldfish', imagePath + '/goldfish.png', 105, 2, mental_type),
+                      Item('small moon', imagePath + '/small-moon.png', 55, 2, physical_type),
+                      Item('bunch of sage', imagePath + '/bunch-of-sage.png', 5, 2, chemical_type)]
 
     def getItem(self):
 
@@ -63,8 +67,17 @@ class ItemDescriptor:
                         'runny', 'wearisome', 'hopeful', 'sharp', 'whimsical', 'sassy', 'floral']
 
     def getDescriptor(self):
+
         descriptor = self.descriptors[random.randint(0, len(self.descriptors)-1)]
-        return descriptor
+
+        if descriptor[0].lower() in ['a', 'e', 'i', 'o', 'u']:
+            thing = 'an'
+        else:
+            thing = 'a'
+
+        full_descriptor = thing + ' ' + descriptor
+
+        return full_descriptor
 
 
 class ItemEffectiveness():
