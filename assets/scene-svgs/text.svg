@@ -26,15 +26,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.49497475"
-     inkscape:cx="396.46691"
+     inkscape:cx="54.0252"
      inkscape:cy="459.05403"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1054"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-height="1056"
+     inkscape:window-x="1920"
+     inkscape:window-y="24"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata7">
@@ -44,7 +44,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -63,7 +63,7 @@
            x="214.28572"
            y="209.50507"
            style="-inkscape-font-specification:'Home Sweet Home';font-family:'Home Sweet Home';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;" /></flowRegion><flowPara
-         id="flowPara4142"></flowPara></flowRoot>    <flowRoot
+         id="flowPara4142" /></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot4144"
        style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:'Home Sweet Home';font-style:normal;font-weight:normal;font-size:40px;line-height:125%;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:'Home Sweet Home';font-stretch:normal;font-variant:normal;"><flowRegion
@@ -74,7 +74,7 @@
            x="-1825.7142"
            y="-353.35208"
            style="-inkscape-font-specification:'Home Sweet Home';font-family:'Home Sweet Home';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;" /></flowRegion><flowPara
-         id="flowPara4150"></flowPara></flowRoot>    <flowRoot
+         id="flowPara4150" /></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot4152"
        style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:'Home Sweet Home';font-style:normal;font-weight:normal;font-size:40px;line-height:125%;letter-spacing:0px;word-spacing:0px;-inkscape-font-specification:'Home Sweet Home';font-stretch:normal;font-variant:normal;"><flowRegion
@@ -85,7 +85,7 @@
            x="128.57143"
            y="240.93364"
            style="-inkscape-font-specification:'Home Sweet Home';font-family:'Home Sweet Home';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;" /></flowRegion><flowPara
-         id="flowPara4158"></flowPara></flowRoot>    <flowRoot
+         id="flowPara4158" /></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot4160"
        style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
@@ -95,31 +95,31 @@
            height="494.28571"
            x="297.14285"
            y="335.21936" /></flowRegion><flowPara
-         id="flowPara4166"></flowPara></flowRoot>    <text
+         id="flowPara4166" /></flowRoot>    <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="223.51405"
-       y="366.60587"
+       x="546.76288"
+       y="71.641327"
        id="text4203"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan4205"
-         x="223.51405"
-         y="366.60587"
+         x="546.76288"
+         y="71.641327"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Home Sweet Home';-inkscape-font-specification:'Home Sweet Home'" /><tspan
          sodipodi:role="line"
-         x="223.51405"
-         y="416.60587"
+         x="546.76288"
+         y="121.64133"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Home Sweet Home';-inkscape-font-specification:'Home Sweet Home';text-align:center;text-anchor:middle"
          id="tspan4207">May These</tspan><tspan
          sodipodi:role="line"
-         x="223.51405"
-         y="466.60587"
+         x="546.76288"
+         y="171.64133"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Home Sweet Home';-inkscape-font-specification:'Home Sweet Home';text-align:center;text-anchor:middle"
          id="tspan4209">be our</tspan><tspan
          sodipodi:role="line"
-         x="223.51405"
-         y="516.6059"
+         x="546.76288"
+         y="221.64133"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Home Sweet Home';-inkscape-font-specification:'Home Sweet Home';text-align:center;text-anchor:middle"
          id="tspan4215">worse days</tspan></text>
     <flowRoot
@@ -132,7 +132,7 @@
            height="129.29953"
            x="278.80209"
            y="153.32645" /></flowRegion><flowPara
-         id="flowPara4237"></flowPara></flowRoot>    <flowRoot
+         id="flowPara4237" /></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot4239"
        style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
@@ -142,7 +142,7 @@
            height="96.974648"
            x="169.70563"
            y="80.595459" /></flowRegion><flowPara
-         id="flowPara4245"></flowPara></flowRoot>    <flowRoot
+         id="flowPara4245" /></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot4247"
        style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
@@ -152,11 +152,11 @@
            height="66.670067"
            x="90.913727"
            y="187.67163" /></flowRegion><flowPara
-         id="flowPara4253"></flowPara></flowRoot>    <flowRoot
+         id="flowPara4253" /></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot4255"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       transform="translate(-90.913731,-121.21831)"><flowRegion
+       transform="translate(-68.690375,-341.43156)"><flowRegion
          id="flowRegion4257"><rect
            id="rect4259"
            width="474.7717"
@@ -191,7 +191,7 @@
        xml:space="preserve"
        id="flowRoot4277"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       transform="translate(-127.27922,-34.345187)"><flowRegion
+       transform="translate(-165.66502,-62.629458)"><flowRegion
          id="flowRegion4279"><rect
            id="rect4281"
            width="329.30972"
@@ -199,10 +199,11 @@
            x="185.86807"
            y="125.04217" /></flowRegion><flowPara
          id="flowPara4283"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Home Sweet Home';-inkscape-font-specification:'Home Sweet Home';text-align:center;text-anchor:middle">becuase it's no good keeping it bottled up</flowPara></flowRoot>    <flowRoot
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Home Sweet Home';-inkscape-font-specification:'Home Sweet Home';text-align:center;text-anchor:middle">becaUse it's no good keeping it bottled up</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot4289"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"><flowRegion
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="translate(2.0203051,-262.63966)"><flowRegion
          id="flowRegion4291"><rect
            id="rect4293"
            width="317.18787"
@@ -210,5 +211,5 @@
            x="183.84776"
            y="874.57538" /></flowRegion><flowPara
          id="flowPara4295"
-         style="-inkscape-font-specification:'Home Sweet Home';font-family:'Home Sweet Home';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;text-anchor:middle;text-align:center">happyness, it's an inside job</flowPara></flowRoot>  </g>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Home Sweet Home';-inkscape-font-specification:'Home Sweet Home';text-align:center;text-anchor:middle">happIness, it's an inside job</flowPara></flowRoot>  </g>
 </svg>
