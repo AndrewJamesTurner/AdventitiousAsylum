@@ -69,5 +69,45 @@
         "###"
       ]
     }
+  },
+
+  "door":{
+    "image":"structures/door.png",
+    "width": 2,
+    "height": 4,
+    "surfdata":{}
+  },
+
+  "barrel":{
+    "image":"structures/barrel.png",
+    "width": 1,
+    "height": 2,
+    "surfdata":{
+      "stand" :[
+        "#",
+        "."
+      ]
+    }
+  },
+
+  "noticeboard":{
+    "image":"structures/noticeboard.png",
+    "width": 2,
+    "height": 1,
+    "surfdata":{
+
+    }
+  },
+
+  "filingcabinet":{
+    "image":"structures/filing-cabinet.png",
+    "width": 1,
+    "height": 2,
+    "surfdata":{
+      "stand" :[
+        "#",
+        "."
+      ]
+    }
   }
 }
