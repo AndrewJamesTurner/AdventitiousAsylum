@@ -61,13 +61,16 @@ class LevelObject:
         self.block_position = (x, y)
         self.draw_position = (x * BLOCK_SIZE, y * BLOCK_SIZE)
 
-        self.debug_draw = True
+        self.debug_draw = False
 
         if surfdata is not None:
             surfdata.applySurf(self.pattern.definition, x, y)
 
     def set_debug_draw(self, draw):
         self.debug_draw = draw
+
+    def toggle_debug_draw(self):
+        self.debug_draw = not self.debug_draw
 
     def set_draw_position(self, x, y):
         # Snap to block sizes
