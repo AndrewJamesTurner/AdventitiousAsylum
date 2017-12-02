@@ -2,6 +2,12 @@
   "'naut":{
     "image":"astronaut_small2.png",
     "width": 3,
-    "height": 6
+    "height": 6,
+    "surfdata":{
+      "block" :["..#"],
+      "stand" :["##."],
+      "climb" :["#..","#.."],
+      "damage":["...","..X"]
+    }
   }
 }

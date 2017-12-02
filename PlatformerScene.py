@@ -4,6 +4,7 @@ from game import *
 from GameScene import GameScene
 from RenderQueue import RenderQueue
 from LevelObject import *
+from Level import Level
 
 class PlatformerScene(GameScene):
     def __init__(self):
@@ -14,13 +15,23 @@ class PlatformerScene(GameScene):
             'x': 7,
             'y': 3
         }
-        self.levelObjects = [LevelObject(testLO)]
+        testL = {
+            'width': 40,
+            'height': 30,
+            'gravity': 1.0,
+            'jumpheight': 3.5,
+            'playerspeed': 1.5,
+            'objects': [testLO]
+        }
+
+        self.level = Level(testL)
+        self.level.surfdata.print()
 
     def on_enter(self, previous_scene):
         super(PlatformerScene, self).on_enter(previous_scene)
 
     def draw(self, screen):
-        for lo in self.levelObjects:
+        for lo in self.level.levelObjects:
             lo.draw(self.rq)
         self.rq.flush(screen)
 

@@ -14,9 +14,11 @@ class LevelObjectPattern:
     pattern = {}
 
     def __init__(self, patternDefinition):
-        asset = patternDefinition['image']
-        width = patternDefinition['width']
-        height = patternDefinition['height']
+        p = patternDefinition
+        self.definition = p
+        asset = p['image']
+        width = p['width']
+        height = p['height']
 
         if asset is not None:
             rawimage = pygame.image.load(os.path.join(ASSETS_PATH, asset)).convert_alpha()
@@ -52,8 +54,7 @@ class LevelObject:
         self.draw_position = (x * BLOCK_SIZE, y * BLOCK_SIZE)
 
         if surfdata is not None:
-            # TODO: Update the surfdata for the level
-            pass
+            surfdata.applySurf(self.pattern.definition, x, y)
 
     def draw(self, rq):
         if self.pattern.image is not None:
