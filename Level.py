@@ -133,6 +133,17 @@ class Level:
     def dropEntity(self, lEntity):
         self.levelEntities.remove(lEntity)
 
+    def collides(self, e1, e2):
+        if e1 is e2:
+            return False
+        xcollide = not ( e1.left > e2.right  or e2.left > e1.right  )
+        ycollide = not ( e1.top  > e2.bottom or e2.top  > e1.bottom )
+        print("%d %d" % (xcollide, ycollide))
+        return (xcollide and ycollide)
+
+    def collidingEntities(self, entity):
+        return [ e for e in self.levelEntities if self.collides(entity, e) ]
+
     # Update all of the entities
     def update(self, dt):
         for le in self.levelEntities:
