@@ -28,7 +28,7 @@ class Item:
 
 class ItemGenerator:
 
-    def __init__(self, image, damage, _type):
+    def __init__(self, _type):
 
         self.items = [Item('pillow', 'assets/astronaut_small.png', 7, 10, 'physical'),
                       Item('spaceship', 'assets/astronaut_small.png', 300, 0, 'mental'),
@@ -38,6 +38,21 @@ class ItemGenerator:
 
         item = random.randint(0, len(self.items))
         return item
+
+    def getItemByName(self, name):
+
+        itemFound = False
+
+        for item in self.items:
+
+            if item.name == name:
+                itemFound = True
+                return item
+
+        if not itemFound:
+            return None
+
+
 
 class ItemDescriptor:
 
