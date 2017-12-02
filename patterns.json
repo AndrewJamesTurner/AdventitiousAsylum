@@ -169,6 +169,18 @@
     }
   },
 
+  "grass":{
+    "image":"structures/grass.png",
+    "width": 4,
+    "height": 2,
+    "surfdata":{
+      "block" :[
+        "....",
+        "####"
+      ]
+    }
+  },
+
   "crate":{
     "image":"structures/crate.png",
     "width": 1,
