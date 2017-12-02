@@ -160,11 +160,11 @@
 
   "floor":{
     "image":"structures/floor.png",
-    "width": 1,
+    "width": 4,
     "height": 1,
     "surfdata":{
       "block" :[
-        "#"
+        "####"
       ]
     }
   },
