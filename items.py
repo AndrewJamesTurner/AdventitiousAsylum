@@ -61,3 +61,23 @@ class ItemDescriptor:
     def getDescriptor(self):
         descriptor = random.randint(0, len(self.descriptors)-1)
         return descriptor
+
+
+class ItemEffectiveness():
+
+    def __init__(self):
+        self.high = ['effective', 'very effective', 'painful', 'super effective', 'exquisite', 'phenomenal', 'spectacular', 'a spectacle', 'fabulous', 'overwhelming', 'horrific']
+        self.neutral = ['neutral', 'confusing', 'disturbing', 'unsettling', 'quite', 'whelming', 'hilarious', 'rather']
+        self.low = ['not very', 'erotic', 'pitiful', 'pathetic', 'underwhelming', 'horrific']
+
+    def get_rand_high_effective(self):
+        effectiveness = random.randint(0, len(self.high)-1)
+        return effectiveness
+
+    def get_rand_neutral_effective(self):
+        effectiveness = random.randint(0, len(self.neutral)-1)
+        return effectiveness
+
+    def get_rand_low_effective(self):
+        effectiveness = random.randint(0, len(self.low)-1)
+        return effectiveness
