@@ -1,6 +1,7 @@
 
 import thorpy
 import json
+import itertools
 from game import *
 from GameScene import GameScene
 from RenderQueue import RenderQueue
@@ -86,7 +87,18 @@ class LevelEditor(GameScene):
             pattern_objects.append(pattern_object)
         # TODO: Add horizontal scroller to patterns section
 
-        self.patterns_area = thorpy.Box.make([patterns_title, *pattern_objects],
+        NUM_PATTERN_ROWS = 3
+        patterns_columns = []
+        for patterns_column_elements in grouper(NUM_PATTERN_ROWS, pattern_objects):
+            patterns_column = thorpy.Box.make(list(patterns_column_elements))
+            thorpy.store(patterns_column, mode='v', gap=5, x=0, align='left')
+            patterns_column.set_main_color((255, 220, 255, 0))
+            patterns_columns.append(patterns_column)
+
+        patterns_container = thorpy.Ghost.make(patterns_columns)
+        thorpy.store(patterns_container, mode='h', gap=5, x=0)
+
+        self.patterns_area = thorpy.Box.make([patterns_title, patterns_container],
                                              size=(SCREEN_WIDTH - DETAILS_AREA_WIDTH, PATTERNS_AREA_HEIGHT))
         self.patterns_area.set_main_color((220, 220, 255, 180))
         PATTERNS_AREA_TOP = SCREEN_HEIGHT - PATTERNS_AREA_HEIGHT
@@ -206,6 +218,15 @@ def str_to_int(integer):
         return 0
     else:
         return int(integer)
+
+
+def grouper(n, iterable):
+    it = iter(iterable)
+    while True:
+       chunk = tuple(itertools.islice(it, n))
+       if not chunk:
+           return
+       yield chunk
 
 
 if __name__ == '__main__':
