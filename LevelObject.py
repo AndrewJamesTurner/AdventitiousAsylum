@@ -85,8 +85,10 @@ class LevelEntity:
         self.vcontact = 0
 
         # Input actions
-        self.dropoff = 0
-        self.jump  = 0
+        self.up   = 0
+        self.down = 0
+        self.jump    = 0
+        self.grab    = 0
 
         if asset is not None:
             rawimage = pygame.image.load(os.path.join(ASSETS_PATH, asset)).convert_alpha()
@@ -120,6 +122,8 @@ class SpecEcController:
 
     def setInputs(self, keys):
         l = self.le
-        l.jump    = keys[pygame.K_SPACE]
-        l.dropoff = keys[pygame.K_DOWN]
+        l.jump  = keys[pygame.K_SPACE]
+        l.up    = keys[pygame.K_UP]
+        l.down  = keys[pygame.K_DOWN]
+        l.grab  = keys[pygame.K_LSHIFT]
         l.vel_x = 5.0 * ((1 if keys[pygame.K_RIGHT] else 0) - (1 if keys[pygame.K_LEFT] else 0))
