@@ -73,8 +73,8 @@ class LevelEditor(GameScene):
             position = self.backwardMouseTransform((SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2))
             level_object = LevelObject(objectDefinition={
                 'type': pattern_id,
-                'x': position[0] / BLOCK_SIZE,
-                'y': position[1] / BLOCK_SIZE,
+                'x': math.floor(position[0] / BLOCK_SIZE),
+                'y': math.floor(position[1] / BLOCK_SIZE),
                 'z': 0,
             })  # TODO: Do we need to pass in surf data here?
             self.level_objects.append(level_object)
