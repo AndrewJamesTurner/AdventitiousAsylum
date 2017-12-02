@@ -89,6 +89,8 @@ class BattleScene(GameScene):
 
         self.blue_move = pygame.image.load("assets/battle-background-images/blue-rect.png")
         self.black_move = pygame.image.load("assets/battle-background-images/black-rect.png")
+        self.message_box = pygame.image.load("assets/battle-background-images/message-box.png")
+        self.boarder = pygame.image.load("assets/battle-background-images/border.png")
 
         self.render_queue = RenderQueue()
 
@@ -107,8 +109,9 @@ class BattleScene(GameScene):
             self.leave_scene()
 
         draw_health_bar(self.render_queue, 218, 342, self.health / self.max_health)
-
         draw_health_bar(self.render_queue, 605, 82, self.enemy.health / self.enemy.max_health)
+
+        self.render_queue.add((0, 0), self.boarder, z_index=1)
 
         enemy_pos_x = 765
         enemy_pos_y = 50
@@ -120,7 +123,7 @@ class BattleScene(GameScene):
 
         if self.state == player_move_select_state:
 
-            move_x_left = 90
+            move_x_left = 80
             move_x_right = 510
 
             move_y_top = 410
@@ -209,7 +212,14 @@ class BattleScene(GameScene):
             font_colour = (0, 0, 0)
             text = self.move_font.render(self.message, True, font_colour)
 
-            self.render_queue.add((100, 100), text, z_index=1)
+            message_box_x = 54
+            message_box_y = 398
+
+            text_offset_x = 10
+            text_offset_y = 10
+
+            self.render_queue.add((message_box_x, message_box_y), self.message_box, z_index=0)
+            self.render_queue.add((message_box_x + text_offset_x, message_box_y + text_offset_y), text, z_index=1)
 
         elif self.state == enemy_move_select_state:
 
