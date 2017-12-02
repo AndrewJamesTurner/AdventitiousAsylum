@@ -9,5 +9,11 @@
 		"image": "characters/man-spedec.png",
 		"width": 0.566,
 		"height": 1.8,
+	},
+
+	"monster": {
+		"image": "characters/monster.png",
+		"width": 2.239,
+		"height": 2,
 	}
 }
