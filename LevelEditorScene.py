@@ -82,9 +82,8 @@ class LevelEditor(GameScene):
         for pattern_id, pattern_definition in patterns_descriptions.items():
             pattern = LevelObjectPattern(pattern_definition)
             patterns.append(pattern)
-            # pattern_image = thorpy.Image.make(os.path.join('assets', pattern_definition['image']))
-            # pattern_image.scale_to_title()
-            pattern_object = thorpy.make_button(pattern_id, func=click_pattern, params={'pattern_id': pattern_id, 'surfdata': pattern_definition['surfdata']})  # , [pattern.image]) #[pattern_image])
+            # TODO: Add a small version of the image to this object
+            pattern_object = thorpy.make_button(pattern_id, func=click_pattern, params={'pattern_id': pattern_id, 'surfdata': pattern_definition['surfdata']})
             pattern_objects.append(pattern_object)
 
         self.patterns_area = thorpy.Box.make([patterns_title, add_pattern_button, *pattern_objects],
@@ -93,19 +92,6 @@ class LevelEditor(GameScene):
         PATTERNS_AREA_TOP = SCREEN_HEIGHT - PATTERNS_AREA_HEIGHT
         self.patterns_area.set_topleft((0, PATTERNS_AREA_TOP))
         thorpy.store(self.patterns_area, mode='h', gap=15, x=0, align='top')
-
-        # Click actions
-        def click(event):
-            # TODO: Switch out the details areas, to only show one at once
-            if event.pos[0] > DETAILS_AREA_LEFT:
-                print('details area')
-                # self.pattern_details_area.set_visible(False)
-            elif event.pos[1] > PATTERNS_AREA_TOP:
-                print('patterns area')
-            else:
-                print('level area')
-        reac_click = thorpy.Reaction(pygame.MOUSEBUTTONDOWN, click, {"button": thorpy.parameters.LEFT_CLICK_BUTTON})
-        self.patterns_area.add_reaction(reac_click)
 
         self.menu = thorpy.Menu([self.game_area, self.patterns_area, self.details_area])
 
@@ -178,7 +164,7 @@ class LevelEditor(GameScene):
         else:
             self.top_box.set_value(str(level_object.draw_position[1]))
             self.left_box.set_value(str(level_object.draw_position[0]))
-            self.z_box.set_value('0')  # todo
+            self.z_box.set_value('0')  # TODO
 
             self.pattern_id_box.set_value(level_object.type)
             self.image_file_box.set_value(level_object.pattern.definition['image'])
