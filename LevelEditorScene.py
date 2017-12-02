@@ -229,7 +229,6 @@ class LevelEditor(GameScene):
         z1 = self.zoom
         self.zoom *= factor
         z2 = self.zoom
-        print("Zoom: %f", self.zoom)
         self.camera_x = nastyZoomTransform(z1, z2, cx, self.camera_x)
         self.camera_y = nastyZoomTransform(z1, z2, cy, self.camera_y)
 

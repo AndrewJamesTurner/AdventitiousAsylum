@@ -241,7 +241,7 @@
   },
 
   "quote5":{
-    "image":"structures/bearOnChair.png",
+    "image":"structures/quote5.png",
     "width": 3,
     "height": 3,
     "surfdata":{
@@ -249,9 +249,9 @@
   },
 
   "quote6":{
-    "image":"structures/bearOnChair.png",
-    "width": 3,
-    "height": 3,
+    "image":"structures/quote6.png",
+    "width": 2,
+    "height": 1,
     "surfdata":{
     }
   },
@@ -273,6 +273,21 @@
         ".....",
         ".....",
         "#####"
+      ]
+    }
+  },
+
+
+  "window":{
+    "image":"structures/window.png",
+    "width": 3,
+    "height": 4,
+    "surfdata":{
+      "stand" :[
+        "...",
+        "...",
+        "...",
+        "###"
       ]
     }
   }

@@ -1,0 +1,28 @@
+{
+
+	"player": [
+
+		{
+			"name": "spedecWoman",
+			"image": "characters/spedec.png",
+			"width": 0.823,
+			"height": 1.8
+		},
+		{
+			"name": "spedecMan",
+			"image": "characters/man-spedec.png",
+			"width": 0.566,
+			"height": 1.8
+		}
+	],
+
+	"orderly": [
+
+		{
+			"name": "monster",
+			"image": "characters/monster.png",
+			"width": 2.239,
+			"height": 2
+		}
+	]
+}
