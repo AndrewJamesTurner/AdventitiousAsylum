@@ -17,7 +17,43 @@
    inkscape:version="0.91 r13725"
    sodipodi:docname="battle-screen.svg">
   <defs
-     id="defs4" />
+     id="defs4">
+    <clipPath
+       id="id12">
+      <path
+         inkscape:connector-curvature="0"
+         d="M 6656,1882 7139,1882 7179,1843 7179,899 7139,859 6656,859 6616,899 6616,1843 6656,1882 Z"
+         id="path45" />
+    </clipPath>
+    <clipPath
+       id="id13">
+      <path
+         inkscape:connector-curvature="0"
+         d="M 6616,1701 7179,1701 7179,1797 6616,1797 6616,1701 Z"
+         id="path48" />
+    </clipPath>
+    <clipPath
+       id="id14">
+      <path
+         inkscape:connector-curvature="0"
+         d="M 6656,1882 7139,1882 7179,1843 7179,899 7139,859 6656,859 6616,899 6616,1843 6656,1882 Z"
+         id="path51" />
+    </clipPath>
+    <clipPath
+       id="id15">
+      <path
+         inkscape:connector-curvature="0"
+         d="M 7026,1007 7026,1068 7005,1088 6793,1088 6773,1068 6773,1007 6793,986 7005,986 7026,1007 Z"
+         id="path54" />
+    </clipPath>
+    <clipPath
+       id="id16">
+      <path
+         inkscape:connector-curvature="0"
+         d="M 6656,1882 7139,1882 7179,1843 7179,899 7139,859 6656,859 6616,899 6616,1843 6656,1882 Z"
+         id="path57" />
+    </clipPath>
+  </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -26,8 +62,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.87327348"
-     inkscape:cx="622.92884"
-     inkscape:cy="751.09052"
+     inkscape:cx="361.62065"
+     inkscape:cy="-885.01073"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"

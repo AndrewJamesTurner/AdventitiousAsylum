@@ -24,16 +24,16 @@ class SurfData:
     def __init__(self, width, height):
         self.ary = numpy.zeros((width, height), SurfData.TYPE)
 
-        self.damage_image = Surface(BLOCK_SIZE, BLOCK_SIZE, SRCALPHA)
+        self.damage_image = Surface((BLOCK_SIZE, BLOCK_SIZE), SRCALPHA)
         self.damage_image.fill((255, 0, 0), Rect(0, 0, 0.3*BLOCK_SIZE, BLOCK_SIZE))
 
-        self.block_image = Surface(BLOCK_SIZE, BLOCK_SIZE, SRCALPHA)
+        self.block_image = Surface((BLOCK_SIZE, BLOCK_SIZE), SRCALPHA)
         self.block_image.fill((0, 255, 0))
 
-        self.stand_image = Surface(BLOCK_SIZE, BLOCK_SIZE, SRCALPHA)
+        self.stand_image = Surface((BLOCK_SIZE, BLOCK_SIZE), SRCALPHA)
         self.stand_image.fill((0, 0, 255), Rect(0, 0, BLOCK_SIZE, 0.3 * BLOCK_SIZE))
 
-        self.climb_image = Surface(BLOCK_SIZE, BLOCK_SIZE, SRCALPHA)
+        self.climb_image = Surface((BLOCK_SIZE, BLOCK_SIZE), SRCALPHA)
         self.climb_image.fill((255, 0, 255), Rect(0.7*BLOCK_SIZE, 0, 0.3*BLOCK_SIZE, BLOCK_SIZE))
 
     """
@@ -64,8 +64,8 @@ class SurfData:
             print( ''.join(list) )
 
     def debug_draw(self, render_queue):
-        for x in range(self.ary.size(1)):
-            for y in range(self.ary.size(0)):
+        for x in range(self.ary.shape[0]):
+            for y in range(self.ary.shape[1]):
                 data = self.ary[x, y]
                 screen_x = x * BLOCK_SIZE
                 screen_y = y * BLOCK_SIZE
@@ -82,6 +82,7 @@ class SurfData:
                     render_queue.add((screen_x, screen_y), self.stand_image, z_index=30)
 
     def check(self, mask, x0, y0, x1, y1):
+        print("Check for %x in %d,%d : %d,%d" % (mask, x0, y0, x1, y1))
         width, height = self.ary.shape
         for y in range(max(0, int(y0)), min(height, int(y1) + 1)):
             for x in range(max(0, int(x0)), min(width, int(x1) + 1)):
@@ -133,14 +134,22 @@ class Level:
 
     # Update all of the entities
     def update(self, dt):
+        CLIMBABLE = SurfData.MASK['climb']
+
         for le in self.levelEntities:
             # Apply inputs
-            print("J%d vC%d" % (le.jump, le.vcontact))
             if le.jump and le.vcontact == Level.CONTACT_FLOOR:
                 le.vel_y = self.jump_v
 
             # Gravity
-            le.vel_y += (self.gravity * dt)
+            if le.grab and self.surfdata.check(CLIMBABLE,
+                                    math.floor(le.left),
+                                    math.floor(le.top),
+                                    math.ceil(le.right) - 1,
+                                    math.ceil(le.bottom) - 1):
+                le.vel_y = 5.0 * ((1 if le.down else 0) - (1 if le.up else 0))
+            else:
+                le.vel_y += (self.gravity * dt)
 
             # Calculate delta movement
             dx = le.vel_x * dt
@@ -158,17 +167,26 @@ class Level:
 
             # Do V movement
             if dy != 0:
-                yp = dy + (le.bottom if (dy > 0) else le.top)
-                surfmask = 0x1
-                if dy > 0 and not le.dropoff:
-                    surfmask = 0x3
-
-                if self.surfdata.check(surfmask, math.floor(le.left), yp, math.ceil(le.right) - 1, yp):
-                    le.vel_y = 0.0
-                    le.vcontact = Level.CONTACT_FLOOR if (dy > 0) else Level.CONTACT_CEILING
+                if(dy > 0):
+                    yc = le.bottom
+                    yp = yc + dy
+                    transition = ( 1 if math.ceil(yc) == math.floor(yp) else 0 )
                 else:
+                    yc = le.bottom
+                    yp = yc + dy
+                    transition = ( 1 if math.floor(yc) == math.ceil(yp) else 0 )
+
+                move = 1
+                if transition:
+                    surfmask = ( 0x3 if (dy > 0) and not le.down else 0x1 )
+                    if self.surfdata.check(surfmask, math.floor(le.left), yp, math.ceil(le.right) - 1, yp):
+                        move = 0
+                if move:
                     le.move(0, dy)
                     le.vcontact = 0
+                else:
+                    le.vel_y = 0.0
+                    le.vcontact = Level.CONTACT_FLOOR if (dy > 0) else Level.CONTACT_CEILING
 
     def draw(self, rq):
         for lo in self.levelObjects:
