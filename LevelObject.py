@@ -3,6 +3,7 @@ import math
 import json
 
 from game import *
+from constants import *
 
 class LevelObjectPattern:
     """
@@ -31,7 +32,7 @@ class LevelObjectPattern:
     @classmethod
     def get(cls, patternName):
         if patternName not in cls.pattern:
-            pattern[patternName] = LevelObjectPattern(cls.patternDefs[patternName])
+            cls.pattern[patternName] = LevelObjectPattern(cls.patternDefs[patternName])
         return cls.pattern[patternName]
 
 class LevelObject:
@@ -43,18 +44,17 @@ class LevelObject:
     z_index  = 0
     def __init__(self, objectDefinition, surfdata=None):
         o = objectDefinition
-        self.pattern  = LevelObjectPattern.get( o['pattern'] )
-        self.position = ( o['x'], o['y'] )
+        self.pattern  = LevelObjectPattern.get( o['type'] )
+        x = o['x']
+        y = o['y']
+
+        self.block_position = (x, y)
+        self.draw_position = (x * BLOCK_SIZE, y * BLOCK_SIZE)
+
         if surfdata is not None:
             # TODO: Update the surfdata for the level
             pass
 
-    @position.setter
-    def setPosition(self, block_position):
-        x, y = (block_position)
-        self.block_position = (x, y)
-        self.draw_position = (x * BLOCK_SIZE, y * BLOCK_SIZE)
-
     def draw(self, rq):
         if self.pattern.image is not None:
-            rq.add(self.draw_position, self.pattern.image, self.z_index)
+            rq.add(self.draw_position, self.pattern.image, z_index = self.z_index)
