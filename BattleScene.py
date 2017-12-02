@@ -229,7 +229,7 @@ class BattleScene(GameScene):
             attack_type = self.items[self.currently_selected_item].type
 
             if self.movement_path is None:
-                self.movement_path = MovementPath(player_pos_x, player_pos_y, 2000, [(0, 0), (SCREEN_WIDTH*0.4, -SCREEN_HEIGHT * 0.5), (SCREEN_WIDTH*0.9, SCREEN_HEIGHT * 0.4)])
+                self.movement_path = MovementPath(player_pos_x, player_pos_y, 1000, [(0, 0), (SCREEN_WIDTH*0.35, -SCREEN_HEIGHT * 0.4), (SCREEN_WIDTH*0.65, -SCREEN_HEIGHT * 0.1)])
             else:
                 if self.movement_path.is_done():
                     self.state = player_message_state

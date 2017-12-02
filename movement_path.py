@@ -37,14 +37,14 @@ class MovementPath:
         x = 0
         y = 0
         n = len(self.points)
-        for i in range(n):
+        for i in range(1, n+1):
             bino = binomial(n, i)
             coeff = bino * (one_minus_t ** (n-i)) * (t**i)
 
             print("Progress: {0}     T: {1}     n: {3}     i: {2}     bin: {4}".format(self.progress, t, i, n, bino))
 
-            x += coeff * self.points[i][0]
-            y += coeff * self.points[i][1]
+            x += coeff * self.points[i-1][0]
+            y += coeff * self.points[i-1][1]
 
         self.x = self.start_x + x
         self.y = self.start_y + y

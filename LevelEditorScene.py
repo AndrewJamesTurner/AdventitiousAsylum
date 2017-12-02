@@ -45,10 +45,10 @@ class LevelEditor(GameScene):
 
         # Object details area
         object_details_title = thorpy.make_text('Object Details', 18, (0, 0, 0))
-        top_box = thorpy.Inserter.make(name='Top: ', value='')
-        left_box = thorpy.Inserter.make(name='Left: ', value='')
-        z_box = thorpy.Inserter.make(name='Z index: ', value='')
-        self.object_details_area = thorpy.Box.make([object_details_title, top_box, left_box, z_box])
+        self.top_box = thorpy.Inserter.make(name='Top: ', value='')
+        self.left_box = thorpy.Inserter.make(name='Left: ', value='')
+        self.z_box = thorpy.Inserter.make(name='Z index: ', value='')
+        self.object_details_area = thorpy.Box.make([object_details_title, self.top_box, self.left_box, self.z_box])
 
         self.details_area = thorpy.Box.make([self.level_details_area, self.pattern_details_area, self.object_details_area],
                                             size=(DETAILS_AREA_WIDTH, SCREEN_HEIGHT))
@@ -123,27 +123,35 @@ class LevelEditor(GameScene):
         self.menu.react(event)
         if event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 1:
-                # TODO: see if we are clicking on a game element
+                # See if we are clicking on a game element
                 for level_object in self.level_objects:
                     mouse_x, mouse_y = event.pos
-                    if mouse_x > level_object.draw_position[0] and mouse_x < level_object.draw_position[0] + level_object.pattern.image.get_width() \
-                        and mouse_y > level_object.draw_position[1] and mouse_y < level_object.draw_position[1] + level_object.pattern.image.get_height():
+                    if level_object.draw_position[0] < mouse_x < level_object.draw_position[0] + level_object.pattern.image.get_width() \
+                            and level_object.draw_position[1] < mouse_y < level_object.draw_position[1] + level_object.pattern.image.get_height():
                         self.dragging_object = level_object
                         self.drag_offset = (level_object.draw_position[0] - mouse_x, level_object.draw_position[1] - mouse_y)
-                # if rectangle.collidepoint(event.pos):
-                #     rectangle_draging = True
-                #     mouse_x, mouse_y = event.pos
-                #     offset_x = rectangle.x - mouse_x
-                #     offset_y = rectangle.y - mouse_y
+                        self.update_object_details_area(level_object)
 
         elif event.type == pygame.MOUSEBUTTONUP:
             if event.button == 1:
+                self.update_object_details_area(self.dragging_object)
                 self.dragging_object = None
 
         elif event.type == pygame.MOUSEMOTION:
             if self.dragging_object is not None:
                 mouse_x, mouse_y = event.pos
                 self.dragging_object.set_draw_position(mouse_x + self.drag_offset[0], mouse_y + self.drag_offset[1])
+                self.update_object_details_area(self.dragging_object)
+
+    def update_object_details_area(self, level_object):
+        if level_object is None:
+            self.top_box.set_text('')
+            self.left_box.set_text('')
+            self.z_box.set_text('')
+        else:
+            self.top_box.set_text(str(level_object.draw_position[1]))
+            self.left_box.set_text(str(level_object.draw_position[0]))
+            self.z_box.set_text('0')  # todo
 
 
 if __name__ == '__main__':
