@@ -194,5 +194,74 @@
     "height": 2,
     "surfdata":{
     }
+  },
+
+  "quote1":{
+    "image":"structures/quote1.png",
+    "width": 2,
+    "height": 2,
+    "surfdata":{
+    }
+  },
+
+  "quote2":{
+    "image":"structures/quote2.png",
+    "width": 2,
+    "height": 2,
+    "surfdata":{
+    }
+  },
+
+  "quote3":{
+    "image":"structures/quote3.png",
+    "width": 2,
+    "height": 2,
+    "surfdata":{
+    }
+  },
+
+  "quote4":{
+    "image":"structures/quote4.png",
+    "width": 2,
+    "height": 2,
+    "surfdata":{
+    }
+  },
+
+  "quote5":{
+    "image":"structures/bearOnChair.png",
+    "width": 2,
+    "height": 2,
+    "surfdata":{
+    }
+  },
+
+  "quote6":{
+    "image":"structures/bearOnChair.png",
+    "width": 2,
+    "height": 2,
+    "surfdata":{
+    }
+  },
+
+  "bearOnChair":{
+    "image":"structures/bearOnChair.png",
+    "width": 2,
+    "height": 2,
+    "surfdata":{
+    }
+  },
+
+  "bench":{
+    "image":"structures/bench.png",
+    "width": 5,
+    "height": 3,
+    "surfdata":{
+      "stand" :[
+        ".....",
+        ".....",
+        "#####"
+      ]
+    }
   }
 }
