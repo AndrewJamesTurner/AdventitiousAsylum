@@ -28,10 +28,10 @@ class LevelObjectPattern:
         else:
             self.image = None
 
-        self.surfData = SurfData(p['width'], p['height']);
+        self.surfData = SurfData(p['width'], p['height'])
         self.surfData.applySurf(p, 0, 0)
 
-        self.surface = self.surfData.debug_draw_to_surface()
+        self.surface = self.surfData.debug_draw_to_surface().convert_alpha()
 
     @classmethod
     def init(cls):
