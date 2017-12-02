@@ -82,7 +82,7 @@ class SurfData:
                     render_queue.add((screen_x, screen_y), self.stand_image, z_index=30)
 
     def check(self, mask, x0, y0, x1, y1):
-        print("Check for %x in %d,%d : %d,%d" % (mask, x0, y0, x1, y1))
+        #print("Check for %x in %d,%d : %d,%d" % (mask, x0, y0, x1, y1))
         width, height = self.ary.shape
         for y in range(max(0, int(y0)), min(height, int(y1) + 1)):
             for x in range(max(0, int(x0)), min(width, int(x1) + 1)):
@@ -104,6 +104,7 @@ class Level:
         self.width   = l['width']
         self.height  = l['height']
         self.gravity = l['gravity'] * GRAVITY
+        self.playerspeed = l['playerspeed']
 
         # Calculate the player's jump impulse velocity
         # v**2 = u**2 + 2*a*s
@@ -138,8 +139,23 @@ class Level:
 
         for le in self.levelEntities:
             # Apply inputs
-            if le.jump and le.vcontact == Level.CONTACT_FLOOR:
-                le.vel_y = self.jump_v
+            if le.vcontact == Level.CONTACT_FLOOR:
+                if le.jump:
+                    le.vel_y = self.jump_v
+                speedtarget = 0.0
+                if le.go_r:
+                    speedtarget += self.playerspeed
+                if le.go_l:
+                    speedtarget -= self.playerspeed
+                speeddiff = speedtarget - le.vel_x
+                if abs(speeddiff) < PLAYER_ACCEL:
+                    le.vel_x = speedtarget
+                else:
+                    le.vel_x += numpy.sign(speeddiff) * PLAYER_ACCEL
+            else:
+                if le.jump and le.hcontact != 0:
+                    le.vel_y = 0.5 * self.jump_v
+                    le.vel_x = self.jump_v * le.hcontact
 
             # Gravity
             if le.grab and self.surfdata.check(CLIMBABLE,
@@ -147,7 +163,7 @@ class Level:
                                     math.floor(le.top),
                                     math.ceil(le.right) - 1,
                                     math.ceil(le.bottom) - 1):
-                le.vel_y = 5.0 * ((1 if le.down else 0) - (1 if le.up else 0))
+                le.vel_y = 5.0 * ((1 if le.go_d else 0) - (1 if le.go_u else 0))
             else:
                 le.vel_y += (self.gravity * dt)
 
@@ -178,7 +194,7 @@ class Level:
 
                 move = 1
                 if transition:
-                    surfmask = ( 0x3 if (dy > 0) and not le.down else 0x1 )
+                    surfmask = ( 0x3 if (dy > 0) and not le.go_d else 0x1 )
                     if self.surfdata.check(surfmask, math.floor(le.left), yp, math.ceil(le.right) - 1, yp):
                         move = 0
                 if move:
