@@ -9,7 +9,18 @@ class RenderQueue:
     def add(self, location, image, scale=(1, 1), z_index=1):
         self.queue.append({'loc': location, 'im': image, 'scale': scale, 'z': z_index})
 
-    def flush(self, screen, background=(255, 255, 255)):
+    def flush(self, screen, camera_position = (0, 0), background=(255, 255, 255)):
+
+        screen_box = screen.get_rect()
+
+        # Adjust item locations
+        for item in self.queue:
+            loc = (item['loc'][0] - camera_position[0], item['loc'][1] - camera_position[1])
+            item['item_rect'] = pygame.Rect(loc, item['im'].get_size())
+
+        # Filter offscreen items
+        self.queue = [x for x in self.queue if screen_box.colliderect(x['item_rect'])]
+
         # Sort by z depth
         self.queue.sort(key=lambda x: x['z'])
 
