@@ -6,6 +6,7 @@ import numpy
 from game import *
 from constants import *
 from LevelObject import *
+from pygame import Rect, Surface, SRCALPHA
 
 class SurfData:
     """
@@ -22,6 +23,18 @@ class SurfData:
 
     def __init__(self, width, height):
         self.ary = numpy.zeros((width, height), SurfData.TYPE)
+
+        self.damage_image = Surface(BLOCK_SIZE, BLOCK_SIZE, SRCALPHA)
+        self.damage_image.fill((255, 0, 0), Rect(0, 0, 0.3*BLOCK_SIZE, BLOCK_SIZE))
+
+        self.block_image = Surface(BLOCK_SIZE, BLOCK_SIZE, SRCALPHA)
+        self.block_image.fill((0, 255, 0))
+
+        self.stand_image = Surface(BLOCK_SIZE, BLOCK_SIZE, SRCALPHA)
+        self.stand_image.fill((0, 0, 255), Rect(0, 0, BLOCK_SIZE, 0.3 * BLOCK_SIZE))
+
+        self.climb_image = Surface(BLOCK_SIZE, BLOCK_SIZE, SRCALPHA)
+        self.climb_image.fill((255, 0, 255), Rect(0.7*BLOCK_SIZE, 0, 0.3*BLOCK_SIZE, BLOCK_SIZE))
 
     """
     Apply (merge - OR) surface data from a pattern
@@ -49,6 +62,25 @@ class SurfData:
             line = [ self.ary[x, y] for x in range(0,width) ]
             list = [ chars[ int(i) ] for i in line ]
             print( ''.join(list) )
+
+    def debug_draw(self, render_queue):
+        for x in range(self.ary.size(1)):
+            for y in range(self.ary.size(0)):
+                data = self.ary[x, y]
+                screen_x = x * BLOCK_SIZE
+                screen_y = y * BLOCK_SIZE
+                if data & self.MASK['damage']:
+                    render_queue.add((screen_x, screen_y), self.damage_image, z_index=20)
+
+                if data & self.MASK['climb']:
+                    render_queue.add((screen_x, screen_y), self.climb_image, z_index=20)
+
+                if data & self.MASK['block']:
+                    render_queue.add((screen_x, screen_y), self.block_image, z_index=10)
+
+                if data & self.MASK['stand']:
+                    render_queue.add((screen_x, screen_y), self.stand_image, z_index=30)
+
 
 class Level:
     """
