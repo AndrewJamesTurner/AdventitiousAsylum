@@ -24,5 +24,14 @@
 			"width": 2.239,
 			"height": 2
 		}
+	],
+
+	"weapon": [
+		{
+			"name": "brick",
+			"image": "items/weapons/brick.png",
+			"width": 0.5,
+			"height": 0.423
+		}
 	]
 }
