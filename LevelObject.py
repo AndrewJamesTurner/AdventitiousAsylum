@@ -50,7 +50,7 @@ class LevelObject:
         self.pattern  = LevelObjectPattern.get( self.type )
         x = o['x']
         y = o['y']
-        z_index = o['z']
+        self.z_index = o['z']
 
         self.block_position = (x, y)
         self.draw_position = (x * BLOCK_SIZE, y * BLOCK_SIZE)

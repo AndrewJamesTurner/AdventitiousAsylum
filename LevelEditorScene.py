@@ -68,6 +68,7 @@ class LevelEditor(GameScene):
                 'type': pattern_id,
                 'x': 0,
                 'y': 0,
+                'z': 0,
             })  # TODO: Do we need to pass in surf data here?
             self.level_objects.append(level_object)
 
@@ -108,7 +109,6 @@ class LevelEditor(GameScene):
         self.level_objects = []
         for level_object_info in level_info['objects']:
             self.level_objects.append(LevelObject(objectDefinition=level_object_info))
-        print(self.level_objects)
 
     def save_level(self):
         # Collect level details
@@ -126,7 +126,7 @@ class LevelEditor(GameScene):
                 'type': level_object.type,
                 'x': level_object.block_position[0],
                 'y': level_object.block_position[1],
-                'z': 0  # TODO
+                'z': level_object.z_index
             })
         # Write file
         file_name = self.level_name_box.get_value()
@@ -179,7 +179,7 @@ class LevelEditor(GameScene):
         else:
             self.top_box.set_value(str(level_object.draw_position[1]))
             self.left_box.set_value(str(level_object.draw_position[0]))
-            self.z_box.set_value('0')  # TODO
+            self.z_box.set_value(str(level_object.z_index))
 
             self.pattern_id_box.set_value(level_object.type)
             self.image_file_box.set_value(level_object.pattern.definition['image'])
