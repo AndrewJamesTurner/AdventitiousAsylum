@@ -15,8 +15,8 @@ class RenderQueue:
 
         # Adjust item locations
         for item in self.queue:
-            loc = (item['loc'][0] - camera_position[0], item['loc'][1] - camera_position[1])
-            item['item_rect'] = pygame.Rect(loc, item['im'].get_size())
+            item['loc'] = (item['loc'][0] - camera_position[0], item['loc'][1] - camera_position[1])
+            item['item_rect'] = pygame.Rect(item['loc'], item['im'].get_size())
 
         # Filter offscreen items
         self.queue = [x for x in self.queue if screen_box.colliderect(x['item_rect'])]
