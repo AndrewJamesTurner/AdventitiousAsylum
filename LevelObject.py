@@ -61,16 +61,8 @@ class LevelObject:
         self.block_position = (x, y)
         self.draw_position = (x * BLOCK_SIZE, y * BLOCK_SIZE)
 
-        self.debug_draw = False
-
         if surfdata is not None:
             surfdata.applySurf(self.pattern.definition, x, y)
-
-    def set_debug_draw(self, draw):
-        self.debug_draw = draw
-
-    def toggle_debug_draw(self):
-        self.debug_draw = not self.debug_draw
 
     def set_draw_position(self, x, y):
         # Snap to block sizes
@@ -78,10 +70,10 @@ class LevelObject:
         self.block_position = (x, y)
         self.draw_position = (x * BLOCK_SIZE, y * BLOCK_SIZE)
 
-    def draw(self, rq):
+    def draw(self, rq, debug_draw = False):
         if self.pattern.image is not None:
             rq.add(self.draw_position, self.pattern.image, z_index=self.z_index)
-        if self.debug_draw and self.pattern.surface:
+        if debug_draw and self.pattern.surface:
             rq.add(self.draw_position, self.pattern.surface, z_index=self.z_index+1)
 
 class LevelEntity:
