@@ -8,6 +8,10 @@ from RenderQueue import RenderQueue
 from LevelObject import *
 
 
+DETAILS_AREA_WIDTH = 250
+PATTERNS_AREA_WIDTH = 250
+
+
 class LevelEditor(GameScene):
 
     def __init__(self):
@@ -19,11 +23,8 @@ class LevelEditor(GameScene):
         self.camera_x = 0
         self.camera_y = 0
 
-        DETAILS_AREA_WIDTH = SCREEN_WIDTH / 5
-        PATTERNS_AREA_HEIGHT = SCREEN_HEIGHT / 5
-
         # Game area
-        self.game_area = thorpy.Box.make([], size=(SCREEN_WIDTH - DETAILS_AREA_WIDTH, SCREEN_HEIGHT - PATTERNS_AREA_HEIGHT))
+        self.game_area = thorpy.Box.make([], size=(SCREEN_WIDTH, SCREEN_HEIGHT))
         self.game_area.set_main_color((220, 255, 220, 0))
         # TODO: Add horizontal and vertical scroller to game area
 
@@ -61,8 +62,7 @@ class LevelEditor(GameScene):
         self.details_area = thorpy.Box.make([self.level_details_area, self.pattern_details_area, self.object_details_area],
                                             size=(DETAILS_AREA_WIDTH, SCREEN_HEIGHT))
         self.details_area.set_main_color((255, 220, 255, 180))
-        DETAILS_AREA_LEFT = SCREEN_WIDTH - DETAILS_AREA_WIDTH
-        self.details_area.set_topleft((DETAILS_AREA_LEFT, 0))
+        self.details_area.set_topleft((SCREEN_WIDTH, 0))
 
         self.debug_draw = False
 
@@ -70,10 +70,11 @@ class LevelEditor(GameScene):
         patterns_title = thorpy.make_text('Patterns', 18, (0, 0, 0))
 
         def click_pattern(pattern_id, surfdata):
+            position = self.backwardMouseTransform((SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2))
             level_object = LevelObject(objectDefinition={
                 'type': pattern_id,
-                'x': 0,
-                'y': 0,
+                'x': position[0] / BLOCK_SIZE,
+                'y': position[1] / BLOCK_SIZE,
                 'z': 0,
             })  # TODO: Do we need to pass in surf data here?
             self.level_objects.append(level_object)
@@ -90,25 +91,13 @@ class LevelEditor(GameScene):
             # TODO: Add a small version of the image to this object
             pattern_object = thorpy.make_button(pattern_id, func=click_pattern, params={'pattern_id': pattern_id, 'surfdata': pattern_definition['surfdata']})
             pattern_objects.append(pattern_object)
-        # TODO: Add horizontal scroller to patterns section
 
-        NUM_PATTERN_ROWS = 3
-        patterns_columns = []
-        for patterns_column_elements in grouper(NUM_PATTERN_ROWS, pattern_objects):
-            patterns_column = thorpy.Box.make(list(patterns_column_elements))
-            thorpy.store(patterns_column, mode='v', gap=5, x=0, align='left')
-            patterns_column.set_main_color((255, 220, 255, 0))
-            patterns_columns.append(patterns_column)
-
-        patterns_container = thorpy.Ghost.make(patterns_columns)
-        thorpy.store(patterns_container, mode='h', gap=5, x=0)
-
-        self.patterns_area = thorpy.Box.make([patterns_title, patterns_container],
-                                             size=(SCREEN_WIDTH - DETAILS_AREA_WIDTH, PATTERNS_AREA_HEIGHT))
+        self.patterns_area = thorpy.Box.make([patterns_title, *pattern_objects],
+                                             size=(PATTERNS_AREA_WIDTH, SCREEN_HEIGHT))
         self.patterns_area.set_main_color((220, 220, 255, 180))
-        PATTERNS_AREA_TOP = SCREEN_HEIGHT - PATTERNS_AREA_HEIGHT
-        self.patterns_area.set_topleft((0, PATTERNS_AREA_TOP))
-        thorpy.store(self.patterns_area, mode='h', gap=15, x=0, align='top')
+        self.patterns_area.set_topleft((SCREEN_WIDTH + DETAILS_AREA_WIDTH, 0))
+        thorpy.store(self.patterns_area)
+        self.patterns_area.add_lift()
 
         self.menu = thorpy.Menu([self.game_area, self.patterns_area, self.details_area])
 
@@ -272,5 +261,5 @@ def grouper(n, iterable):
 
 
 if __name__ == '__main__':
-    app = ezpygame.Application(title='Level Editor', resolution=(SCREEN_WIDTH, SCREEN_HEIGHT), update_rate=FPS)
+    app = ezpygame.Application(title='Level Editor', resolution=(SCREEN_WIDTH + DETAILS_AREA_WIDTH + PATTERNS_AREA_WIDTH, SCREEN_HEIGHT), update_rate=FPS)
     app.run(LevelEditor())
