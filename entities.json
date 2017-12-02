@@ -33,5 +33,14 @@
 			"width": 0.5,
 			"height": 0.423
 		}
+	],
+
+	"health": [
+		{
+			"name": "medicine",
+			"image": "items/health/medicine.png",
+			"width": 0.5,
+			"height": 0.720
+		}
 	]
 }
