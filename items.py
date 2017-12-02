@@ -1,13 +1,15 @@
 import pygame
 import random
+from random import shuffle
 
-#health max 1000
-#sanity max 10, min 0
+# health max 1000
+# sanity max 10, min 0
 
 physical_type = "physical"
 mental_type = "mental"
 chemical_type = "chemical"
 none_type = "none"
+
 
 class Item:
 
@@ -18,6 +20,7 @@ class Item:
         self.damage = damage
         self.sanity = sanity
         self.type = _type
+
 
 class ItemGenerator:
 
@@ -43,6 +46,12 @@ class ItemGenerator:
         item = self.items[random.randint(0, len(self.items)-1)]
         return item
 
+    def getItems(self, num=4):
+
+        shuffle(self.items)
+
+        return self.items[0:num]
+
     def getItemByName(self, name):
 
         itemFound = False
@@ -55,7 +64,6 @@ class ItemGenerator:
 
         if not itemFound:
             return None
-
 
 
 class ItemDescriptor:

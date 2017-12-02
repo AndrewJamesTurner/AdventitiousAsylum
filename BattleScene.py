@@ -115,6 +115,9 @@ class BattleScene(GameScene):
             ItemGenerator().getItem(),
             ItemGenerator().getItem(),
         ]
+
+        enemy_items = ItemGenerator().getItems(4)
+
         self.enemy = Enemy("Bob", 1000, physical_type, enemy_items)
 
         self.move_font = pygame.font.Font("assets/Courgette-Regular.ttf", 24)
