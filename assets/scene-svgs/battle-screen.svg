@@ -27,7 +27,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="0.87327348"
      inkscape:cx="477.24289"
-     inkscape:cy="384.65319"
+     inkscape:cy="705.28585"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -764,5 +764,19 @@
        inkscape:export-filename="/home/becky/Documents/GameJams/AdventitiousAsylum/assets/battle-background-images/red-rect.png"
        inkscape:export-xdpi="93.449402"
        inkscape:export-ydpi="93.449402" />
+    <rect
+       style="opacity:1;fill:#00ba00;fill-opacity:1;stroke:#000000;stroke-width:0.885171;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect6131-9"
+       width="150.51549"
+       height="21.502213"
+       x="751.51648"
+       y="1366.8242" />
+    <rect
+       style="opacity:1;fill:#800000;fill-opacity:1;stroke:#000000;stroke-width:0.58542389;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect6131-9-1"
+       width="64.931488"
+       height="21.80196"
+       x="838.39551"
+       y="1366.6743" />
   </g>
 </svg>
