@@ -32,7 +32,7 @@ class ItemGenerator:
 
     def getItem(self):
 
-        item = random.randint(0, len(self.items)-1)
+        item = self.items[random.randint(0, len(self.items)-1)]
         return item
 
     def getItemByName(self, name):
@@ -59,7 +59,7 @@ class ItemDescriptor:
                         'runny', 'wearisome', 'hopeful', 'sharp', 'whimsical']
 
     def getDescriptor(self):
-        descriptor = random.randint(0, len(self.descriptors)-1)
+        descriptor = self.descriptors[random.randint(0, len(self.descriptors)-1)]
         return descriptor
 
 
@@ -71,13 +71,13 @@ class ItemEffectiveness():
         self.low = ['not very', 'erotic', 'pitiful', 'pathetic', 'underwhelming', 'horrific']
 
     def get_rand_high_effective(self):
-        effectiveness = random.randint(0, len(self.high)-1)
+        effectiveness = self.high[random.randint(0, len(self.high)-1)]
         return effectiveness
 
     def get_rand_neutral_effective(self):
-        effectiveness = random.randint(0, len(self.neutral)-1)
+        effectiveness = self.neutral[random.randint(0, len(self.neutral)-1)]
         return effectiveness
 
     def get_rand_low_effective(self):
-        effectiveness = random.randint(0, len(self.low)-1)
+        effectiveness = self.low[random.randint(0, len(self.low)-1)]
         return effectiveness
