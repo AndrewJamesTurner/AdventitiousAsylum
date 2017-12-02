@@ -8,9 +8,9 @@ class PlatformerScene(GameScene):
 
     def on_enter(self, previous_scene):
         super(PlatformerScene, self).on_enter(previous_scene)
-        
+
     def draw(self, screen):
-        screen.fill((50, 100, 255))
+        screen.fill((50, 100, 255))z
 
 
 if __name__ == '__main__':

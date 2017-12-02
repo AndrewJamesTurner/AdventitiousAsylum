@@ -5,6 +5,7 @@ import ezpygame
 import pygame
 
 from constants import *
+from items import Item
 
 os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (50, 50)
 
@@ -85,21 +86,22 @@ def get_win_scene():
 # Values shared by every scene
 shared_values = None
 
+
 class SharedValues:
 
     import constants
 
-    health = constants.MAX_HEALTH
-    fuel = constants.MAX_FUEL
-    oxygen = constants.MAX_OXYGEN
+    items = [Item.create_pillow()]
+    health = 100
 
     def reset(self):
+
         import constants
-        self.health = constants.MAX_HEALTH
-        self.fuel = constants.MAX_FUEL
-        self.oxygen = constants.MAX_OXYGEN
+        self.items = [create_pillow()]
+        self.health = 100
 
 def get_shared_values():
+
     global shared_values
     if shared_values is None:
         shared_values = SharedValues()
