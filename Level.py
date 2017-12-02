@@ -46,7 +46,6 @@ class SurfData:
     def applySurf(self, pattern, off_x, off_y):
         for surftype, strings in pattern['surfdata'].items():
             mask = SurfData.MASK[surftype]
-            print("Applying surfdata: %s" % surftype)
             for j, s in enumerate(strings):
                 for i, c in enumerate(s):
                     x = off_x + i
@@ -138,7 +137,6 @@ class Level:
             return False
         xcollide = not ( e1.left > e2.right  or e2.left > e1.right  )
         ycollide = not ( e1.top  > e2.bottom or e2.top  > e1.bottom )
-        print("%d %d" % (xcollide, ycollide))
         return (xcollide and ycollide)
 
     def collidingEntities(self, entity):
