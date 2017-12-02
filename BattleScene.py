@@ -1,6 +1,7 @@
 from game import pygame, SCREEN_WIDTH, SCREEN_HEIGHT, ezpygame, FPS, get_shared_values
 from GameScene import GameScene
 from RenderQueue import RenderQueue
+from movement_path import MovementPath
 from enemy import Enemy
 from items import physical_type, mental_type, chemical_type
 from items import ItemGenerator
@@ -103,7 +104,7 @@ class BattleScene(GameScene):
         self.green_move = pygame.image.load("assets/battle-background-images/green-rect.png")
         self.black_move = pygame.image.load("assets/battle-background-images/black-rect.png")
         self.message_box = pygame.image.load("assets/battle-background-images/message-box.png")
-        self.boarder = pygame.image.load("assets/battle-background-images/border.png")
+        self.border = pygame.image.load("assets/battle-background-images/border.png")
 
         self.render_queue = RenderQueue()
 
@@ -111,6 +112,8 @@ class BattleScene(GameScene):
         self.enemy = Enemy("Bob", 1000, physical_type, [ItemGenerator().getItemByName("pillow"), ItemGenerator().getItemByName("spaceship"), ItemGenerator().getItemByName("tugboat")])
 
         self.move_font = pygame.font.Font("assets/Courgette-Regular.ttf", 24)
+
+        self.movement_path = None
 
     def draw(self, screen):
 
@@ -130,7 +133,7 @@ class BattleScene(GameScene):
         draw_health_bar(self.render_queue, 218, 342, self.health / self.max_health)
         draw_health_bar(self.render_queue, 605, 82, self.enemy.health / self.enemy.max_health)
 
-        self.render_queue.add((0, 0), self.boarder, z_index=0)
+        self.render_queue.add((0, 0), self.border, z_index=0)
 
         enemy_pos_x = 765
         enemy_pos_y = 65
@@ -207,14 +210,26 @@ class BattleScene(GameScene):
         elif self.state == player_attack_animation_state:
 
             attack_type = self.items[self.currently_selected_item].type
+
+            if self.movement_path is None:
+                self.movement_path = MovementPath(player_pos_x, player_pos_y, 2000, [(0, 0), (SCREEN_WIDTH*0.4, -SCREEN_HEIGHT * 0.5), (SCREEN_WIDTH*0.9, SCREEN_HEIGHT * 0.4)])
+            else:
+                if self.movement_path.is_done():
+                    self.state = player_message_state
+                    self.movement_path = None
+                    exit()
+                else:
+                    self.movement_path.step(dt)
+
+                    item_image = self.items[self.currently_selected_item].image
+                    self.render_queue.add(self.movement_path.get_position(), item_image, z_index=100)
+
             defence_type = self.enemy.type
             damage = self.items[self.currently_selected_item].damage
 
             damage = damage * get_multiplier(attack_type, defence_type)
 
             self.enemy.health -= damage
-
-            self.state = player_message_state
 
             item_name = self.items[self.currently_selected_item].name
 
