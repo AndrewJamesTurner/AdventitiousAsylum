@@ -2,6 +2,7 @@ from game import pygame, SCREEN_WIDTH, SCREEN_HEIGHT, ezpygame, FPS, get_shared_
 from GameScene import GameScene
 from RenderQueue import RenderQueue
 from enemy import Enemy
+from items import physical_type, mental_type, chemical_type
 
 player_move_select_state = "player_move_select_state"
 player_attack_animation_state = "player_attack_animation_state"
@@ -52,7 +53,7 @@ class BattleScene(GameScene):
         self.render_queue = RenderQueue()
 
         # remove this
-        self.enemy = Enemy(1000, [])
+        self.enemy = Enemy(1000, physical_type, [])
 
         self.move_font = pygame.font.Font("assets/Courgette-Regular.ttf", 24)
 
@@ -122,7 +123,40 @@ class BattleScene(GameScene):
 
         elif self.state == player_attack_animation_state:
 
-            self.enemy.health -= self.items[self.currently_selected_item].damage
+            def get_multiplier(attack_type, defence_type):
+
+                multiplier = 1
+
+                beat_multiplier = 2
+                lose_multiplier = 0.5
+
+                if attack_type == chemical_type and defence_type == mental_type:
+                    multiplier = beat_multiplier
+
+                if attack_type == mental_type and defence_type == physical_type:
+                    multiplier = beat_multiplier
+
+                if attack_type == physical_type and defence_type == chemical_type:
+                    multiplier = beat_multiplier
+
+                if attack_type == mental_type and defence_type == chemical_type:
+                    multiplier = lose_multiplier
+
+                if attack_type == physical_type and defence_type == mental_type:
+                    multiplier = lose_multiplier
+
+                if attack_type == chemical_type and defence_type == physical_type:
+                    multiplier = lose_multiplier
+
+                return multiplier
+
+            attack_type = self.items[self.currently_selected_item].type
+            defence_type = self.enemy.type
+            damage = self.items[self.currently_selected_item].damage
+
+            damage = damage * get_multiplier(attack_type, defence_type)
+
+            self.enemy.health -= damage
 
             self.state = player_message_state
 
