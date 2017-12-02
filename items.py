@@ -43,6 +43,9 @@ class ItemGenerator:
                       Item('javelin', imagePath + '/javelin.png', 76, 5, physical_type),
                       Item('discus', imagePath + '/discus.png', 50, 3, chemical_type),
                       Item('paperclip', imagePath + '/paperclip.png', 50, 10, mental_type),
+                      Item('trout', imagePath + '/trout.png', 80, 5, mental_type),
+                      Item('cat poop', imagePath + '/trout.png', 80, 6, chemical_type),
+                      Item('snow globe', imagePath + '/snow-globe.png', 80, 6, physical_type),
                       Item('bunch of sage', imagePath + '/bunch-of-sage.png', 5, 6, chemical_type)]
 
     def getItem(self):
