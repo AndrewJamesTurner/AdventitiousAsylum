@@ -1,6 +1,7 @@
 
 import thorpy
 import json
+import itertools
 from game import *
 from GameScene import GameScene
 from RenderQueue import RenderQueue
@@ -86,7 +87,18 @@ class LevelEditor(GameScene):
             pattern_objects.append(pattern_object)
         # TODO: Add horizontal scroller to patterns section
 
-        self.patterns_area = thorpy.Box.make([patterns_title, *pattern_objects],
+        NUM_PATTERN_ROWS = 3
+        patterns_columns = []
+        for patterns_column_elements in grouper(NUM_PATTERN_ROWS, pattern_objects):
+            patterns_column = thorpy.Box.make(list(patterns_column_elements))
+            thorpy.store(patterns_column, mode='v', gap=5, x=0, align='left')
+            patterns_column.set_main_color((255, 220, 255, 0))
+            patterns_columns.append(patterns_column)
+
+        patterns_container = thorpy.Ghost.make(patterns_columns)
+        thorpy.store(patterns_container, mode='h', gap=5, x=0)
+
+        self.patterns_area = thorpy.Box.make([patterns_title, patterns_container],
                                              size=(SCREEN_WIDTH - DETAILS_AREA_WIDTH, PATTERNS_AREA_HEIGHT))
         self.patterns_area.set_main_color((220, 220, 255, 180))
         PATTERNS_AREA_TOP = SCREEN_HEIGHT - PATTERNS_AREA_HEIGHT
@@ -150,15 +162,19 @@ class LevelEditor(GameScene):
     def handle_event(self, event):
         self.menu.react(event)
         if event.type == pygame.MOUSEBUTTONDOWN:
-            if event.button == 1:
-                # See if we are clicking on a game element
-                for level_object in self.level_objects:
-                    mouse_x, mouse_y = event.pos
-                    if level_object.draw_position[0] < mouse_x < level_object.draw_position[0] + level_object.pattern.image.get_width() \
-                            and level_object.draw_position[1] < mouse_y < level_object.draw_position[1] + level_object.pattern.image.get_height():
+            # See if we are clicking on a game element
+            for level_object in self.level_objects:
+                mouse_x, mouse_y = event.pos
+                if level_object.draw_position[0] < mouse_x < level_object.draw_position[0] + level_object.pattern.image.get_width() \
+                        and level_object.draw_position[1] < mouse_y < level_object.draw_position[1] + level_object.pattern.image.get_height():
+                    if event.button == 1:
+                        # Drag element
                         self.dragging_object = level_object
                         self.drag_offset = (level_object.draw_position[0] - mouse_x, level_object.draw_position[1] - mouse_y)
                         self.update_object_details_area(level_object)
+                    elif event.button == 3:
+                        # Delete element
+                        self.level_objects.remove(level_object)
 
         elif event.type == pygame.MOUSEBUTTONUP:
             if event.button == 1:
@@ -202,6 +218,15 @@ def str_to_int(integer):
         return 0
     else:
         return int(integer)
+
+
+def grouper(n, iterable):
+    it = iter(iterable)
+    while True:
+       chunk = tuple(itertools.islice(it, n))
+       if not chunk:
+           return
+       yield chunk
 
 
 if __name__ == '__main__':

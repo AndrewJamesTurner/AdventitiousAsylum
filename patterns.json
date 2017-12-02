@@ -160,12 +160,39 @@
 
   "floor":{
     "image":"structures/floor.png",
+    "width": 4,
+    "height": 1,
+    "surfdata":{
+      "block" :[
+        "####"
+      ]
+    }
+  },
+
+  "crate":{
+    "image":"structures/crate.png",
     "width": 1,
     "height": 1,
     "surfdata":{
       "block" :[
         "#"
       ]
+    }
+  },
+
+  "sign":{
+    "image":"structures/sign.png",
+    "width": 1,
+    "height": 1,
+    "surfdata":{
+    }
+  },
+
+  "TV":{
+    "image":"structures/TV.png",
+    "width": 2,
+    "height": 2,
+    "surfdata":{
     }
   }
 }
