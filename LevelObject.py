@@ -5,7 +5,7 @@ from pygame import Surface, Rect, SRCALPHA
 
 from game import *
 from constants import *
-from Level import SurfData
+from SurfData import *
 
 class LevelObjectPattern:
     """
@@ -32,6 +32,20 @@ class LevelObjectPattern:
         self.surfData.applySurf(p, 0, 0)
 
         self.surface = self.surfData.debug_draw_to_surface().convert_alpha()
+
+    @classmethod
+    def load_debug_surfaces(cls):
+        cls.damage_image = Surface((BLOCK_SIZE, BLOCK_SIZE), SRCALPHA)
+        cls.damage_image.fill((255, 0, 0), Rect(0, 0, 0.3 * BLOCK_SIZE, BLOCK_SIZE))
+
+        cls.block_image = Surface((BLOCK_SIZE, BLOCK_SIZE), SRCALPHA)
+        cls.block_image.fill((0, 255, 0))
+
+        cls.stand_image = Surface((BLOCK_SIZE, BLOCK_SIZE), SRCALPHA)
+        cls.stand_image.fill((0, 0, 255), Rect(0, 0, BLOCK_SIZE, 0.3 * BLOCK_SIZE))
+
+        cls.climb_image = Surface((BLOCK_SIZE, BLOCK_SIZE), SRCALPHA)
+        cls.climb_image.fill((255, 0, 255), Rect(0.7 * BLOCK_SIZE, 0, 0.3 * BLOCK_SIZE, BLOCK_SIZE))
 
     @classmethod
     def init(cls):
