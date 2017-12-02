@@ -117,10 +117,16 @@ class LevelEditor(GameScene):
             self.level_objects.append(LevelObject(objectDefinition=level_object_info))
 
     def save_level(self):
+        # Move objects to positive positions
+        min_x = min(level_object.block_position[0] for level_object in self.level_objects)
+        max_x = max(level_object.block_position[0] for level_object in self.level_objects)
+        min_y = min(level_object.block_position[1] for level_object in self.level_objects)
+        max_y = max(level_object.block_position[1] for level_object in self.level_objects)
+
         # Collect level details
         level = {
-            'width': str_to_int(self.level_width_box.get_value()),
-            'height': str_to_int(self.level_height_box.get_value()),
+            'width': max_x - min_x,
+            'height': max_y - min_y,
             'gravity': str_to_float(self.gravity_box.get_value()),
             'jumpheight': str_to_float(self.jump_height_box.get_value()),
             'playerspeed': str_to_float(self.player_speed_box.get_value()),
@@ -130,8 +136,8 @@ class LevelEditor(GameScene):
         for level_object in self.level_objects:
             level['objects'].append({
                 'type': level_object.type,
-                'x': level_object.block_position[0],
-                'y': level_object.block_position[1],
+                'x': level_object.block_position[0] - min_x,
+                'y': level_object.block_position[1] - min_y,
                 'z': level_object.z_index
             })
         # Write file

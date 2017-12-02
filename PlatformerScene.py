@@ -46,7 +46,7 @@ class PlatformerScene(GameScene):
 
         self.level.surfdata.debug_draw(self.rq)
         self.level.draw(self.rq)
-        self.rq.flush(screen, self.cameraPosition())
+        self.rq.flush(screen, camera_position = self.cameraPosition())
 
 if __name__ == '__main__':
     app = ezpygame.Application(title='The Game', resolution=(SCREEN_WIDTH, SCREEN_HEIGHT), update_rate=FPS)
