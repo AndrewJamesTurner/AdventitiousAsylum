@@ -21,17 +21,19 @@ class LevelEditor(GameScene):
         # Game area
         self.game_area = thorpy.Box.make([], size=(SCREEN_WIDTH - DETAILS_AREA_WIDTH, SCREEN_HEIGHT - PATTERNS_AREA_HEIGHT))
         self.game_area.set_main_color((220, 255, 220, 0))
+        # TODO: Add horizontal and vertical scroller to game area
 
         # Level details area
         self.level_details_title = thorpy.make_text('Level Details', 18, (0, 0, 0))
         self.level_name_box = thorpy.Inserter.make(name='Name: ', value='new_level')
+        load_level_button = thorpy.make_button('Load level', self.load_level)
         self.level_width_box = thorpy.Inserter.make(name='Width: ', value='')
         self.level_height_box = thorpy.Inserter.make(name='Height: ', value='')
         self.gravity_box = thorpy.Inserter.make(name='Gravity: ', value='')
         self.jump_height_box = thorpy.Inserter.make(name='Jump height: ', value='')
         self.player_speed_box = thorpy.Inserter.make(name='Player speed: ', value='')
         save_level_button = thorpy.make_button('Save level', self.save_level)
-        self.level_details_area = thorpy.Box.make([self.level_details_title, self.level_name_box, self.level_width_box, self.level_height_box, self.gravity_box, self.jump_height_box, self.player_speed_box, save_level_button])
+        self.level_details_area = thorpy.Box.make([self.level_details_title, self.level_name_box, load_level_button, self.level_width_box, self.level_height_box, self.gravity_box, self.jump_height_box, self.player_speed_box, save_level_button])
 
         # Pattern details area
         pattern_details_title = thorpy.make_text('Pattern Details', 18, (0, 0, 0))
@@ -61,15 +63,12 @@ class LevelEditor(GameScene):
         # Patterns area
         patterns_title = thorpy.make_text('Patterns', 18, (0, 0, 0))
 
-        # TODO: Make "Add new pattern" button work
-        add_pattern_button = thorpy.make_button('Add pattern')
-        # TODO: Put add button under title (new ghost to contain them), with "save patterns file" button
-
         def click_pattern(pattern_id, surfdata):
             level_object = LevelObject(objectDefinition={
                 'type': pattern_id,
                 'x': 0,
                 'y': 0,
+                'z': 0,
             })  # TODO: Do we need to pass in surf data here?
             self.level_objects.append(level_object)
 
@@ -85,8 +84,9 @@ class LevelEditor(GameScene):
             # TODO: Add a small version of the image to this object
             pattern_object = thorpy.make_button(pattern_id, func=click_pattern, params={'pattern_id': pattern_id, 'surfdata': pattern_definition['surfdata']})
             pattern_objects.append(pattern_object)
+        # TODO: Add horizontal scroller to patterns section
 
-        self.patterns_area = thorpy.Box.make([patterns_title, add_pattern_button, *pattern_objects],
+        self.patterns_area = thorpy.Box.make([patterns_title, *pattern_objects],
                                              size=(SCREEN_WIDTH - DETAILS_AREA_WIDTH, PATTERNS_AREA_HEIGHT))
         self.patterns_area.set_main_color((220, 220, 255, 180))
         PATTERNS_AREA_TOP = SCREEN_HEIGHT - PATTERNS_AREA_HEIGHT
@@ -94,6 +94,21 @@ class LevelEditor(GameScene):
         thorpy.store(self.patterns_area, mode='h', gap=15, x=0, align='top')
 
         self.menu = thorpy.Menu([self.game_area, self.patterns_area, self.details_area])
+
+    def load_level(self):
+        file_name = self.level_name_box.get_value()
+        if not file_name.endswith('.json'):
+            file_name += '.json'
+        with open(os.path.join('levels', file_name), 'r') as level_file:
+            level_info = json.load(level_file)
+        self.level_width_box.set_value(level_info['width'])
+        self.level_height_box.set_value(level_info['height'])
+        self.gravity_box.set_value(level_info['gravity'])
+        self.jump_height_box.set_value(level_info['jumpheight'])
+        self.player_speed_box.set_value(level_info['playerspeed'])
+        self.level_objects = []
+        for level_object_info in level_info['objects']:
+            self.level_objects.append(LevelObject(objectDefinition=level_object_info))
 
     def save_level(self):
         # Collect level details
@@ -109,9 +124,9 @@ class LevelEditor(GameScene):
         for level_object in self.level_objects:
             level['objects'].append({
                 'type': level_object.type,
-                'x': level_object.draw_position[0],
-                'y': level_object.draw_position[1],
-                'z': 0  # TODO
+                'x': level_object.block_position[0],
+                'y': level_object.block_position[1],
+                'z': level_object.z_index
             })
         # Write file
         file_name = self.level_name_box.get_value()
@@ -164,7 +179,7 @@ class LevelEditor(GameScene):
         else:
             self.top_box.set_value(str(level_object.draw_position[1]))
             self.left_box.set_value(str(level_object.draw_position[0]))
-            self.z_box.set_value('0')  # TODO
+            self.z_box.set_value(str(level_object.z_index))
 
             self.pattern_id_box.set_value(level_object.type)
             self.image_file_box.set_value(level_object.pattern.definition['image'])
