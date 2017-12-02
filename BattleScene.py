@@ -14,10 +14,10 @@ enemy_message_state = "enemy_message_state"
 def draw_health_bar(render_queue, x, y, health_percentage):
 
     back = pygame.Surface((200, 20))
-    back.fill((255,0,0))
+    back.fill((255, 0, 0))
 
     front = pygame.Surface((200, 20))
-    front.fill((0,255,0))
+    front.fill((0, 255, 0))
 
     render_queue.add((x, y), back, z_index=20)
     render_queue.add((x, y), front, scale=(health_percentage, 1), z_index=21)
@@ -54,6 +54,7 @@ class BattleScene(GameScene):
         # remove this
         self.enemy = Enemy(1000, [])
 
+        self.move_font = pygame.font.Font("assets/Courgette-Regular.ttf", 24)
 
     def draw(self, screen):
 
@@ -64,15 +65,51 @@ class BattleScene(GameScene):
         if self.health <= 0 or self.enemy.health <= 0:
             self.leave_scene()
 
-
         draw_health_bar(self.render_queue, 50, 50, self.enemy.health / self.enemy.max_health)
 
         if self.state == player_move_select_state:
 
-            self.render_queue.add((88, 200), self.black_move)
-            self.render_queue.add((509, 200), self.black_move)
-            self.render_queue.add((88, 400), self.black_move)
-            self.render_queue.add((509, 400), self.black_move)
+            move_x_left = 88
+            move_x_right = 509
+
+            move_y_top = 200
+            move_y_bottom = 400
+
+            text_y_offset = 10
+            move_name_x_offset = 20
+            move_power_x_offset = 150
+
+            font_colour = (0, 0, 0)
+
+            if len(self.items) > 0:
+
+                name_text = self.move_font.render(str(self.items[0].name), True, font_colour)
+                damage_text = self.move_font.render(str(self.items[0].damage), True, font_colour)
+
+                self.render_queue.add((move_x_left, move_y_top), self.black_move, z_index=1)
+                self.render_queue.add((move_x_left + move_name_x_offset, move_y_top + text_y_offset), name_text, z_index=2)
+                self.render_queue.add((move_x_left + move_power_x_offset, move_y_top + text_y_offset), damage_text, z_index=2)
+
+            if len(self.items) > 1:
+
+                name_text = self.move_font.render(str(self.items[1].name), True, font_colour)
+                damage_text = self.move_font.render(str(self.items[1].damage), True, font_colour)
+
+                self.render_queue.add((move_x_right, move_y_top), self.black_move)
+                self.render_queue.add((move_x_right + move_name_x_offset, move_y_top + text_y_offset), name_text, z_index=2)
+                self.render_queue.add((move_x_right + move_power_x_offset, move_y_top + text_y_offset), damage_text, z_index=2)
+
+            if len(self.items) > 2:
+
+                name_text = self.move_font.render(str(self.items[2].name), True, font_colour)
+                damage_text = self.move_font.render(str(self.items[2].damage), True, font_colour)
+
+                self.render_queue.add((move_x_left, move_y_bottom), self.black_move)
+                self.render_queue.add((move_x_left + move_name_x_offset, move_y_bottom + text_y_offset), name_text, z_index=2)
+                self.render_queue.add((move_x_left + move_power_x_offset, move_y_bottom + text_y_offset), damage_text, z_index=2)
+
+            if len(self.items) > 3:
+                self.render_queue.add((move_x_right, move_y_bottom), self.black_move)
 
             if self.currently_selected_item == 0:
                 self.render_queue.add((88, 200), self.blue_move)
@@ -85,7 +122,7 @@ class BattleScene(GameScene):
 
         elif self.state == player_attack_animation_state:
 
-            self.enemy.health -= 100
+            self.enemy.health -= self.items[self.currently_selected_item].damage
 
             self.state = player_message_state
 
@@ -119,7 +156,7 @@ class BattleScene(GameScene):
                 if event.key == pygame.K_UP or event.key == pygame.K_w:
                     self.currently_selected_item -= 2
 
-                self.currently_selected_item = self.currently_selected_item % 4  # len(self.items)
+                self.currently_selected_item = self.currently_selected_item % len(self.items)
 
                 if event.key == pygame.K_RETURN:
                     self.state = player_attack_animation_state

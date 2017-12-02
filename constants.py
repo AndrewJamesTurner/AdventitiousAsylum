@@ -2,6 +2,9 @@
 SCREEN_WIDTH = 1000
 SCREEN_HEIGHT = 600
 
+# Width, in pixels, of a block in the level
+BLOCK_SIZE = 32
+
 # Pixels per meter, converting between box2d world and pygame screen
 PPM = 20.0
 
