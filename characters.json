@@ -3,5 +3,11 @@
 		"image": "characters/spedec.png",
 		"width": 0.823,
 		"height": 1.8,
+	},
+
+	"spedecMan": {
+		"image": "characters/man-spedec.png",
+		"width": 0.566,
+		"height": 1.8,
 	}
 }
