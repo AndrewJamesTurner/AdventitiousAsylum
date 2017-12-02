@@ -21,20 +21,27 @@ class SurfData:
     }
     SPACECHARS = [' ', '.']
 
+    images_initialised = False
+
+    @classmethod
+    def load_debug_surfaces(cls):
+        cls.damage_image = Surface((BLOCK_SIZE, BLOCK_SIZE), SRCALPHA)
+        cls.damage_image.fill((255, 0, 0), Rect(0, 0, 0.3 * BLOCK_SIZE, BLOCK_SIZE))
+
+        cls.block_image = Surface((BLOCK_SIZE, BLOCK_SIZE), SRCALPHA)
+        cls.block_image.fill((0, 255, 0))
+
+        cls.stand_image = Surface((BLOCK_SIZE, BLOCK_SIZE), SRCALPHA)
+        cls.stand_image.fill((0, 0, 255), Rect(0, 0, BLOCK_SIZE, 0.3 * BLOCK_SIZE))
+
+        cls.climb_image = Surface((BLOCK_SIZE, BLOCK_SIZE), SRCALPHA)
+        cls.climb_image.fill((255, 0, 255), Rect(0.7 * BLOCK_SIZE, 0, 0.3 * BLOCK_SIZE, BLOCK_SIZE))
+
     def __init__(self, width, height):
         self.ary = numpy.zeros((width, height), SurfData.TYPE)
 
-        self.damage_image = Surface((BLOCK_SIZE, BLOCK_SIZE), SRCALPHA)
-        self.damage_image.fill((255, 0, 0), Rect(0, 0, 0.3*BLOCK_SIZE, BLOCK_SIZE))
-
-        self.block_image = Surface((BLOCK_SIZE, BLOCK_SIZE), SRCALPHA)
-        self.block_image.fill((0, 255, 0))
-
-        self.stand_image = Surface((BLOCK_SIZE, BLOCK_SIZE), SRCALPHA)
-        self.stand_image.fill((0, 0, 255), Rect(0, 0, BLOCK_SIZE, 0.3 * BLOCK_SIZE))
-
-        self.climb_image = Surface((BLOCK_SIZE, BLOCK_SIZE), SRCALPHA)
-        self.climb_image.fill((255, 0, 255), Rect(0.7*BLOCK_SIZE, 0, 0.3*BLOCK_SIZE, BLOCK_SIZE))
+        if not SurfData.images_initialised:
+            SurfData.load_debug_surfaces()
 
     """
     Apply (merge - OR) surface data from a pattern
@@ -79,6 +86,27 @@ class SurfData:
 
                 if data & self.MASK['stand']:
                     render_queue.add((screen_x, screen_y), self.stand_image, z_index=30)
+
+    def debug_draw_to_surface(self):
+        surface = Surface((self.ary.shape[0]*BLOCK_SIZE, self.ary.shape[1]*BLOCK_SIZE), SRCALPHA)
+        for x in range(self.ary.shape[0]):
+            for y in range(self.ary.shape[1]):
+                data = self.ary[x, y]
+                screen_x = x * BLOCK_SIZE
+                screen_y = y * BLOCK_SIZE
+
+                if data & self.MASK['block']:
+                    surface.blit(SurfData.block_image, (screen_x, screen_y))
+
+                if data & self.MASK['damage']:
+                    surface.blit(SurfData.damage_image, (screen_x, screen_y))
+
+                if data & self.MASK['climb']:
+                    surface.blit(SurfData.climb_image, (screen_x, screen_y))
+
+                if data & self.MASK['stand']:
+                    surface.blit(SurfData.stand_image, (screen_x, screen_y))
+        return surface
 
     def check(self, mask, x0, y0, x1, y1):
         #print("Check for %x in %d,%d : %d,%d" % (mask, x0, y0, x1, y1))

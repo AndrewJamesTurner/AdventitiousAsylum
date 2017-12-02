@@ -1,10 +1,11 @@
 
 import math
 import json
-import pygame
+from pygame import Surface, Rect, SRCALPHA
 
 from game import *
 from constants import *
+from Level import SurfData
 
 class LevelObjectPattern:
     """
@@ -26,6 +27,11 @@ class LevelObjectPattern:
             self.image = pygame.transform.smoothscale(rawimage, (width * BLOCK_SIZE, height * BLOCK_SIZE))
         else:
             self.image = None
+
+        self.surfData = SurfData(p['width'], p['height']);
+        self.surfData.applySurf(p, 0, 0)
+
+        self.surface = self.surfData.debug_draw_to_surface()
 
     @classmethod
     def init(cls):
@@ -55,8 +61,16 @@ class LevelObject:
         self.block_position = (x, y)
         self.draw_position = (x * BLOCK_SIZE, y * BLOCK_SIZE)
 
+        self.debug_draw = False
+
         if surfdata is not None:
             surfdata.applySurf(self.pattern.definition, x, y)
+
+    def set_debug_draw(self, draw):
+        self.debug_draw = draw
+
+    def toggle_debug_draw(self):
+        self.debug_draw = not self.debug_draw
 
     def set_draw_position(self, x, y):
         # Snap to block sizes
@@ -66,7 +80,9 @@ class LevelObject:
 
     def draw(self, rq):
         if self.pattern.image is not None:
-            rq.add(self.draw_position, self.pattern.image, z_index = self.z_index)
+            rq.add(self.draw_position, self.pattern.image, z_index=self.z_index)
+        if self.debug_draw and self.pattern.surface:
+            rq.add(self.draw_position, self.pattern.surface, z_index=self.z_index+1)
 
 class LevelEntity:
     """
