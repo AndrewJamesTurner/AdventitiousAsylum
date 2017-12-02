@@ -18,8 +18,7 @@ class PlatformerScene(GameScene):
         super(PlatformerScene, self).on_enter(previous_scene)
 
     def draw(self, screen):
-        for lo in self.level.levelObjects:
-            lo.draw(self.rq)
+        self.level.draw(self.rq)
         self.rq.flush(screen)
 
 

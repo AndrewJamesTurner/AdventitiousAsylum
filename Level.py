@@ -81,4 +81,5 @@ class Level:
         self.levelObjects.append(o)
 
     def draw(self, rq):
-        pass
+        for lo in self.levelObjects:
+            lo.draw(rq)
