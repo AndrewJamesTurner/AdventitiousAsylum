@@ -26,8 +26,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.87327348"
-     inkscape:cx="477.24289"
-     inkscape:cy="705.28585"
+     inkscape:cx="622.92884"
+     inkscape:cy="751.09052"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -71,7 +71,10 @@
     <g
        style="fill:#0000ff"
        transform="matrix(1.0567334,0,0,-1.0567334,283.63185,668.10885)"
-       id="g6090">
+       id="g6090"
+       inkscape:export-filename="/home/becky/Documents/GameJams/AdventitiousAsylum/assets/characters/mental-orderly.png"
+       inkscape:export-xdpi="93.449402"
+       inkscape:export-ydpi="93.449402">
       <path
          style="fill:#0000ff"
          transform="matrix(0.8,0,0,-0.8,-409.74,205.43)"
@@ -82,7 +85,10 @@
     <g
        id="g6094"
        transform="matrix(1.0567334,0,0,-1.0567334,447.19524,668.10885)"
-       style="fill:#00ba00;fill-opacity:1">
+       style="fill:#00ba00;fill-opacity:1"
+       inkscape:export-filename="/home/becky/Documents/GameJams/AdventitiousAsylum/assets/characters/chemical-orderly.png"
+       inkscape:export-xdpi="93.449402"
+       inkscape:export-ydpi="93.449402">
       <path
          inkscape:connector-curvature="0"
          id="path6096"
@@ -93,7 +99,10 @@
     <g
        style="fill:#e80000;fill-opacity:1"
        transform="matrix(1.0567334,0,0,-1.0567334,120.06846,674.58665)"
-       id="g6127">
+       id="g6127"
+       inkscape:export-filename="/home/becky/Documents/GameJams/AdventitiousAsylum/assets/characters/physical-orderly.png"
+       inkscape:export-xdpi="93.449402"
+       inkscape:export-ydpi="93.449402">
       <path
          style="fill:#e80000;fill-opacity:1"
          transform="matrix(0.8,0,0,-0.8,-409.74,205.43)"
@@ -440,7 +449,10 @@
        style="opacity:1;fill:#e6e6e6;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     <g
        id="g6016-5"
-       transform="matrix(0.88517098,0,0,0.88517098,-225.13854,371.94791)">
+       transform="matrix(0.88517098,0,0,0.88517098,-225.13854,371.94791)"
+       inkscape:export-filename="/home/becky/Documents/GameJams/AdventitiousAsylum/assets/characters/spedec.png"
+       inkscape:export-xdpi="93.449402"
+       inkscape:export-ydpi="93.449402">
       <g
          transform="matrix(0.43400771,0,0,0.43400771,25.983089,355.65941)"
          style="fill:#ffb686;fill-opacity:1;stroke-linejoin:miter"
@@ -713,7 +725,10 @@
        width="406.60709"
        height="58.427593"
        x="808.97961"
-       y="815.88226" />
+       y="815.88226"
+       inkscape:export-filename="/home/becky/Documents/GameJams/AdventitiousAsylum/assets/battle-background-images/black-rect.png"
+       inkscape:export-xdpi="93.449402"
+       inkscape:export-ydpi="93.449402" />
     <rect
        y="825.66278"
        x="821.18927"
@@ -765,18 +780,35 @@
        inkscape:export-xdpi="93.449402"
        inkscape:export-ydpi="93.449402" />
     <rect
-       style="opacity:1;fill:#00ba00;fill-opacity:1;stroke:#000000;stroke-width:0.885171;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect6131-9"
-       width="150.51549"
-       height="21.502213"
-       x="751.51648"
-       y="1366.8242" />
+       style="opacity:1;fill:#baffff;fill-opacity:1;stroke:#000000;stroke-width:3;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4738"
+       width="894.33612"
+       height="148.86516"
+       x="53.820484"
+       y="401.93594"
+       ry="22.902332"
+       inkscape:export-filename="/home/becky/Documents/GameJams/AdventitiousAsylum/assets/battle-background-images/message-box.png"
+       inkscape:export-xdpi="93.449402"
+       inkscape:export-ydpi="93.449402" />
     <rect
-       style="opacity:1;fill:#800000;fill-opacity:1;stroke:#000000;stroke-width:0.58542389;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect6131-9-1"
-       width="64.931488"
-       height="21.80196"
-       x="838.39551"
-       y="1366.6743" />
+       style="opacity:1;fill:#008080;fill-opacity:1;stroke:#000000;stroke-width:1.97731686;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4136-2"
+       width="998.02264"
+       height="598.02271"
+       x="160.57587"
+       y="1149.5612"
+       inkscape:export-filename="/home/becky/Documents/GameJams/AdventitiousAsylum/assets/battle-background-images/border.png"
+       inkscape:export-xdpi="93.449402"
+       inkscape:export-ydpi="93.449402" />
+    <rect
+       y="1180.246"
+       x="194.62674"
+       height="536.65314"
+       width="929.9209"
+       id="rect6143-7"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.80807781;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/home/becky/Documents/GameJams/AdventitiousAsylum/assets/battle-background-images/border.png"
+       inkscape:export-xdpi="93.449402"
+       inkscape:export-ydpi="93.449402" />
   </g>
 </svg>

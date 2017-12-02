@@ -1,10 +1,11 @@
 from game import pygame, SCREEN_WIDTH, SCREEN_HEIGHT, ezpygame, FPS, get_shared_values
 from GameScene import GameScene
 from RenderQueue import RenderQueue
+from movement_path import MovementPath
 from enemy import Enemy
 from items import physical_type, mental_type, chemical_type
 from items import ItemGenerator
-from items import ItemEffectiveness
+from items import ItemEffectiveness, ItemDescriptor
 from random import randint
 
 player_move_select_state = "player_move_select_state"
@@ -67,6 +68,17 @@ class BattleScene(GameScene):
 
         self.application.change_scene(self.previous_scene)
 
+    def get_select_box(self, type):
+
+        if type == physical_type:
+            return self.red_move
+
+        if type == mental_type:
+            return self.blue_move
+
+        if type == chemical_type:
+            return self.green_move
+
     def on_enter(self, previous_scene):
 
         super(BattleScene, self).on_enter(previous_scene)
@@ -88,16 +100,29 @@ class BattleScene(GameScene):
         self.enemy_image = pygame.image.load("assets/astronaut_small.png")
 
         self.blue_move = pygame.image.load("assets/battle-background-images/blue-rect.png")
+        self.red_move = pygame.image.load("assets/battle-background-images/red-rect.png")
+        self.green_move = pygame.image.load("assets/battle-background-images/green-rect.png")
         self.black_move = pygame.image.load("assets/battle-background-images/black-rect.png")
         self.message_box = pygame.image.load("assets/battle-background-images/message-box.png")
-        self.boarder = pygame.image.load("assets/battle-background-images/border.png")
+        self.border = pygame.image.load("assets/battle-background-images/border.png")
 
         self.render_queue = RenderQueue()
 
         # remove this
-        self.enemy = Enemy("Bob", 1000, physical_type, [ItemGenerator().getItemByName("pillow"), ItemGenerator().getItemByName("spaceship"), ItemGenerator().getItemByName("tugboat")])
+        enemy_items = [
+            ItemGenerator().getItem(),
+            ItemGenerator().getItem(),
+            ItemGenerator().getItem(),
+            ItemGenerator().getItem(),
+        ]
+
+        enemy_items = ItemGenerator().getItems(4)
+
+        self.enemy = Enemy("Bob", 1000, physical_type, enemy_items)
 
         self.move_font = pygame.font.Font("assets/Courgette-Regular.ttf", 24)
+
+        self.movement_path = None
 
     def draw(self, screen):
 
@@ -105,16 +130,22 @@ class BattleScene(GameScene):
 
     def update(self, dt):
 
+        message_box_x = 54
+        message_box_y = 398
+
+        message_text_offset_x = 10
+        message_text_offset_y = 10
+
         if self.health <= 0 or self.enemy.health <= 0:
             self.leave_scene()
 
         draw_health_bar(self.render_queue, 218, 342, self.health / self.max_health)
         draw_health_bar(self.render_queue, 605, 82, self.enemy.health / self.enemy.max_health)
 
-        self.render_queue.add((0, 0), self.boarder, z_index=1)
+        self.render_queue.add((0, 0), self.border, z_index=0)
 
         enemy_pos_x = 765
-        enemy_pos_y = 50
+        enemy_pos_y = 65
         self.render_queue.add((enemy_pos_x, enemy_pos_y), self.enemy.image, z_index=1)
 
         player_pos_x = 95
@@ -123,7 +154,7 @@ class BattleScene(GameScene):
 
         if self.state == player_move_select_state:
 
-            move_x_left = 80
+            move_x_left = 90
             move_x_right = 510
 
             move_y_top = 410
@@ -131,7 +162,7 @@ class BattleScene(GameScene):
 
             text_y_offset = 10
             move_name_x_offset = 20
-            move_power_x_offset = 150
+            move_power_x_offset = 200
             move_type_x_offset = 250
 
             font_colour = (0, 0, 0)
@@ -149,9 +180,11 @@ class BattleScene(GameScene):
 
             if len(self.items) > 1:
 
+                move_type = self.items[1].type
+
                 name_text = self.move_font.render(str(self.items[1].name), True, font_colour)
                 damage_text = self.move_font.render(str(self.items[1].damage), True, font_colour)
-                type_text = self.move_font.render(str(self.items[1].type), True, font_colour)
+                type_text = self.move_font.render(str(move_type), True, font_colour)
 
                 self.render_queue.add((move_x_right, move_y_top), self.black_move)
                 self.render_queue.add((move_x_right + move_name_x_offset, move_y_top + text_y_offset), name_text, z_index=2)
@@ -162,7 +195,7 @@ class BattleScene(GameScene):
 
                 name_text = self.move_font.render(str(self.items[2].name), True, font_colour)
                 damage_text = self.move_font.render(str(self.items[2].damage), True, font_colour)
-                type_text = self.move_font.render(str(self.items[2].type), True, font_colour)
+                type_text = self.move_font.render(str(move_type), True, font_colour)
 
                 self.render_queue.add((move_x_left, move_y_bottom), self.black_move)
                 self.render_queue.add((move_x_left + move_name_x_offset, move_y_bottom + text_y_offset), name_text, z_index=2)
@@ -170,28 +203,51 @@ class BattleScene(GameScene):
                 self.render_queue.add((move_x_left + move_type_x_offset, move_y_bottom + text_y_offset), type_text, z_index=2)
 
             if len(self.items) > 3:
+
+                name_text = self.move_font.render(str(self.items[3].name), True, font_colour)
+                damage_text = self.move_font.render(str(self.items[3].damage), True, font_colour)
+                type_text = self.move_font.render(str(move_type), True, font_colour)
+
                 self.render_queue.add((move_x_right, move_y_bottom), self.black_move)
+                self.render_queue.add((move_x_right + move_name_x_offset, move_y_bottom + text_y_offset), name_text, z_index=2)
+                self.render_queue.add((move_x_right + move_power_x_offset, move_y_bottom + text_y_offset), damage_text, z_index=2)
+                self.render_queue.add((move_x_right + move_type_x_offset, move_y_bottom + text_y_offset), type_text, z_index=2)
+
+            move_type = self.items[self.currently_selected_item].type
 
             if self.currently_selected_item == 0:
-                self.render_queue.add((move_x_left, move_y_top), self.blue_move)
+                self.render_queue.add((move_x_left, move_y_top), self.get_select_box(move_type))
             if self.currently_selected_item == 1:
-                self.render_queue.add((move_x_right, move_y_top), self.blue_move)
+                self.render_queue.add((move_x_right, move_y_top), self.get_select_box(move_type))
             if self.currently_selected_item == 2:
-                self.render_queue.add((move_x_left, move_y_bottom), self.blue_move)
+                self.render_queue.add((move_x_left, move_y_bottom), self.get_select_box(move_type))
             if self.currently_selected_item == 3:
-                self.render_queue.add((move_x_right, move_y_bottom), self.blue_move)
+                self.render_queue.add((move_x_right, move_y_bottom), self.get_select_box(move_type))
 
         elif self.state == player_attack_animation_state:
 
             attack_type = self.items[self.currently_selected_item].type
-            defence_type = self.enemy.type
-            damage = self.items[self.currently_selected_item].damage
 
-            damage = damage * get_multiplier(attack_type, defence_type)
+            if self.movement_path is None:
+                self.movement_path = MovementPath(player_pos_x, player_pos_y, 1000, [(0, 0), (SCREEN_WIDTH*0.35, -SCREEN_HEIGHT * 0.4), (SCREEN_WIDTH*0.65, -SCREEN_HEIGHT * 0.1)])
+            else:
+                if self.movement_path.is_done():
+                    self.state = player_message_state
+                    self.movement_path = None
 
-            self.enemy.health -= damage
+                    defence_type = self.enemy.type
+                    damage = self.items[self.currently_selected_item].damage
 
-            self.state = player_message_state
+                    damage = damage * get_multiplier(attack_type, defence_type)
+
+                    self.enemy.health -= damage
+
+                    # exit()
+                else:
+                    self.movement_path.step(dt)
+
+                    item_image = self.items[self.currently_selected_item].image
+                    self.render_queue.add(self.movement_path.get_position(), item_image, z_index=100)
 
             item_name = self.items[self.currently_selected_item].name
 
@@ -200,26 +256,22 @@ class BattleScene(GameScene):
 
             if get_multiplier(attack_type, defence_type) > 1:
                 effectiveness = ItemEffectiveness().get_rand_high_effective()
-            if get_multiplier(attack_type, defence_type) < 1:
+            elif get_multiplier(attack_type, defence_type) < 1:
                 effectiveness = ItemEffectiveness().get_rand_neutral_effective()
-            if get_multiplier(attack_type, defence_type) == 1:
+            else: #get_multiplier(attack_type, defence_type) == 1:
                 effectiveness = ItemEffectiveness().get_rand_low_effective()
 
-            self.message = "Player attacked {0} with {1}. It was {2}!".format(self.enemy.name, item_name, effectiveness)
+            item_descripter = ItemDescriptor().getDescriptor()
+
+            self.message = "Player attacked {0} with {3} {1} and it was {2}!".format(self.enemy.name, item_name, effectiveness, item_descripter)
 
         elif self.state == player_message_state:
 
             font_colour = (0, 0, 0)
             text = self.move_font.render(self.message, True, font_colour)
 
-            message_box_x = 54
-            message_box_y = 398
-
-            text_offset_x = 10
-            text_offset_y = 10
-
             self.render_queue.add((message_box_x, message_box_y), self.message_box, z_index=0)
-            self.render_queue.add((message_box_x + text_offset_x, message_box_y + text_offset_y), text, z_index=1)
+            self.render_queue.add((message_box_x + message_text_offset_x, message_box_y + message_text_offset_y), text, z_index=1)
 
         elif self.state == enemy_move_select_state:
 
@@ -249,14 +301,17 @@ class BattleScene(GameScene):
             if get_multiplier(attack_type, defence_type) == 1:
                 effectiveness = ItemEffectiveness().get_rand_low_effective()
 
-            self.message = "{0} attacked Player with {1}. It was {2}!".format(self.enemy.name, item_name, effectiveness)
+            item_descripter = ItemDescriptor().getDescriptor()
+
+            self.message = "{0} attacked Player with {3} {1} and it was {2}!".format(self.enemy.name, item_name, effectiveness, item_descripter)
 
         elif self.state == enemy_message_state:
 
             font_colour = (0, 0, 0)
             text = self.move_font.render(self.message, True, font_colour)
 
-            self.render_queue.add((100, 100), text, z_index=1)
+            self.render_queue.add((message_box_x, message_box_y), self.message_box, z_index=0)
+            self.render_queue.add((message_box_x + message_text_offset_x, message_box_y + message_text_offset_y), text, z_index=1)
 
     def handle_event(self, event):
 

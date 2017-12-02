@@ -57,6 +57,12 @@ class LevelObject:
         if surfdata is not None:
             surfdata.applySurf(self.pattern.definition, x, y)
 
+    def set_draw_position(self, x, y):
+        # Snap to block sizes
+        x, y = math.floor(x / BLOCK_SIZE), math.floor(y / BLOCK_SIZE)
+        self.block_position = (x, y)
+        self.draw_position = (x * BLOCK_SIZE, y * BLOCK_SIZE)
+
     def draw(self, rq):
         if self.pattern.image is not None:
             rq.add(self.draw_position, self.pattern.image, z_index = self.z_index)
