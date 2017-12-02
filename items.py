@@ -63,8 +63,17 @@ class ItemDescriptor:
                         'runny', 'wearisome', 'hopeful', 'sharp', 'whimsical', 'sassy', 'floral']
 
     def getDescriptor(self):
+
         descriptor = self.descriptors[random.randint(0, len(self.descriptors)-1)]
-        return descriptor
+
+        if descriptor[0].lower() in ['a', 'e', 'i', 'o', 'u']:
+            thing = 'an'
+        else:
+            thing = 'a'
+
+        full_descriptor = thing + ' ' + descriptor
+
+        return full_descriptor
 
 
 class ItemEffectiveness():
