@@ -7,6 +7,7 @@ import random
 physical_type = "physical"
 mental_type = "mental"
 chemical_type = "chemical"
+none_type = "none"
 
 class Item:
 
