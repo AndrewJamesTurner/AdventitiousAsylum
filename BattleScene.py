@@ -231,19 +231,20 @@ class BattleScene(GameScene):
                 if self.movement_path.is_done():
                     self.state = player_message_state
                     self.movement_path = None
-                    exit()
+
+                    defence_type = self.enemy.type
+                    damage = self.items[self.currently_selected_item].damage
+
+                    damage = damage * get_multiplier(attack_type, defence_type)
+
+                    self.enemy.health -= damage
+
+                    # exit()
                 else:
                     self.movement_path.step(dt)
 
                     item_image = self.items[self.currently_selected_item].image
                     self.render_queue.add(self.movement_path.get_position(), item_image, z_index=100)
-
-            defence_type = self.enemy.type
-            damage = self.items[self.currently_selected_item].damage
-
-            damage = damage * get_multiplier(attack_type, defence_type)
-
-            self.enemy.health -= damage
 
             item_name = self.items[self.currently_selected_item].name
 
@@ -252,9 +253,9 @@ class BattleScene(GameScene):
 
             if get_multiplier(attack_type, defence_type) > 1:
                 effectiveness = ItemEffectiveness().get_rand_high_effective()
-            if get_multiplier(attack_type, defence_type) < 1:
+            elif get_multiplier(attack_type, defence_type) < 1:
                 effectiveness = ItemEffectiveness().get_rand_neutral_effective()
-            if get_multiplier(attack_type, defence_type) == 1:
+            else: #get_multiplier(attack_type, defence_type) == 1:
                 effectiveness = ItemEffectiveness().get_rand_low_effective()
 
             item_descripter = ItemDescriptor().getDescriptor()
