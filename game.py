@@ -99,6 +99,7 @@ class SharedValues:
     health = 1000
     max_health = health
     enemy = None
+    image = pygame.image.load("assets/characters/spedec.png")
     type = none_type
 
     def reset(self):

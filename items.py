@@ -68,7 +68,7 @@ class ItemEffectiveness():
     def __init__(self):
         self.high = ['effective', 'very effective', 'painful', 'super effective', 'exquisite', 'phenomenal', 'spectacular', 'a spectacle', 'fabulous', 'overwhelming', 'horrific']
         self.neutral = ['neutral', 'confusing', 'disturbing', 'unsettling', 'quite', 'whelming', 'hilarious', 'rather']
-        self.low = ['not very', 'erotic', 'pitiful', 'pathetic', 'underwhelming', 'horrific']
+        self.low = ['not very effective', 'erotic', 'pitiful', 'pathetic', 'underwhelming', 'horrific']
 
     def get_rand_high_effective(self):
         effectiveness = self.high[random.randint(0, len(self.high)-1)]
