@@ -23,9 +23,12 @@ class ItemGenerator:
 
     def __init__(self):
 
-        self.items = [Item('pillow', 'assets/astronaut_small.png', 7, 10, physical_type),
-                      Item('spaceship', 'assets/astronaut_small.png', 300, 0, mental_type),
-                      Item('tug boat', 'assets/astronaut_small.png', 100, 2, mental_type)]
+        imagePath = 'assets/weapon-images'
+
+        self.items = [Item('pillow', imagePath + '/astronaut_small.png', 7, 10, physical_type),
+                      Item('spaceship', imagePath + '/spaceship-side.png', 300, 0, mental_type),
+                      Item('tugboat', imagePath + '/astronaut_small.png', 100, 2, mental_type),
+                      Item('elephant', imagePath + '/astronaut_small.png', 150, 2, 'physical')]
 
     def getItem(self):
 
