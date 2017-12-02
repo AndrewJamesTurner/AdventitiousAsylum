@@ -3697,7 +3697,7 @@
     </g>
     <g
        id="g19880"
-       transform="matrix(0.14466129,0,0,0.14466129,395.9016,453.37474)">
+       transform="matrix(0.14466129,0,0,0.14466129,1097.4164,654.96904)">
       <image
          style="overflow:visible"
          y="-34.869709"
@@ -3939,7 +3939,7 @@
        inkscape:export-filename="/home/becky/Documents/GameJams/AdventitiousAsylum/assets/structures/filing-cabinet.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90"
-       transform="translate(-42.857143,-302.85714)">
+       transform="matrix(1.1473536,0,0,1.1473536,209.73683,198.63792)">
       <path
          style="fill:#b3b3b3;fill-opacity:0.99220001;stroke:#000000;stroke-width:0.20419163;stroke-linecap:round;stroke-linejoin:round"
          inkscape:connector-curvature="0"
@@ -5764,5 +5764,13 @@ KlvBvjREmDL4cSRCMvlxPRGOtdQVLRJeE8HPEUTJca6nL0XupXuJ7zXGRJCCwWAwTDhGRce9fudG
        inkscape:export-filename="/home/becky/Documents/GameJams/AdventitiousAsylum/assets/structures/ambulance.png"
        inkscape:export-xdpi="93.449402"
        inkscape:export-ydpi="93.449402" />
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:0.77999997;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect23303"
+       width="101"
+       height="205"
+       x="300"
+       y="551.36218"
+       ry="7.1339002" />
   </g>
 </svg>
