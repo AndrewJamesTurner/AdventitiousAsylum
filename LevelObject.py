@@ -132,6 +132,14 @@ class LevelEntity:
     def bottom(self):
         return self.top + self.height
 
+    @property
+    def centre(self):
+        return self.left + 0.5 * self.width
+
+    @property
+    def middle(self):
+        return self.top + 0.5 * self.height
+
 class SpecEcController:
     """
     The player object (SPAREDESK)
