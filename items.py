@@ -29,8 +29,8 @@ class ItemGenerator:
                       Item('spaceship', imagePath + '/spaceship-side.png', 300, 0, mental_type),
                       Item('tugboat', imagePath + '/tugboat.png', 100, 2, mental_type),
                       Item('elephant', imagePath + '/elephant.png', 150, 2, physical_type),
-                      Item('bat', imagePath + '/bat.png', 150, 2, chemical_type),
-                      Item('bat', imagePath + '/bat.png', 150, 2, chemical_type),
+                      Item('bat', imagePath + '/bat.png', 50, 2, chemical_type),
+                      Item('bat', imagePath + '/filing-cabinet.png', 150, 2, chemical_type),
                       Item('bat', imagePath + '/astronaut_small.png', 150, 2, physical_type)]
 
     def getItem(self):
