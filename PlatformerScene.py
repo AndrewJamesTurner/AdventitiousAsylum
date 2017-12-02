@@ -10,22 +10,9 @@ class PlatformerScene(GameScene):
     def __init__(self):
         self.rq = RenderQueue()
         LevelObjectPattern.init()
-        testLO = {
-            'type': "'naut",
-            'x': 7,
-            'y': 3
-        }
-        testL = {
-            'width': 40,
-            'height': 30,
-            'gravity': 1.0,
-            'jumpheight': 3.5,
-            'playerspeed': 1.5,
-            'objects': [testLO]
-        }
 
-        self.level = Level(testL)
-        self.level.surfdata.print()
+        self.level = Level.load('test.json')
+        self.level.surfdata.printSurf()
 
     def on_enter(self, previous_scene):
         super(PlatformerScene, self).on_enter(previous_scene)

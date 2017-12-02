@@ -71,6 +71,14 @@ class Level:
         for obj in l['objects']:
             self.addObject(obj)
 
+    @classmethod
+    def load(cls, filename):
+        with open(os.path.join(LEVELS_PATH, filename)) as json_data:
+            return Level(json.load(json_data))
+
     def addObject(self, objectDefinition):
         o = LevelObject(objectDefinition, self.surfdata)
         self.levelObjects.append(o)
+
+    def draw(self, rq):
+        pass

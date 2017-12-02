@@ -1,0 +1,14 @@
+{
+    "width": 40,
+    "height": 30,
+    "gravity": 1.0,
+    "jumpheight": 3.5,
+    "playerspeed": 1.5,
+    "objects": [
+      {
+        "type": "'naut",
+        "x": 7,
+        "y": 3
+      }
+    ]
+}
