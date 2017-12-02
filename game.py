@@ -93,12 +93,14 @@ class SharedValues:
 
     items = [Item.create_pillow()]
     health = 100
+    enemy = None
 
     def reset(self):
 
         import constants
         self.items = [create_pillow()]
         self.health = 100
+        self.enemy = None
 
 def get_shared_values():
 
