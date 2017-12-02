@@ -14,12 +14,15 @@ class PlatformerScene(GameScene):
         self.level = Level.load('test.json')
         self.spedec = SpecEcController(LevelEntity(7, 0, 1, 2, 'arrow.png'))
         self.level.addEntity(self.spedec.le)
+        self.level.addEntity(LevelEntity(9,0,1,2,'health.png'))
 
     def on_enter(self, previous_scene):
         super(PlatformerScene, self).on_enter(previous_scene)
 
     def update(self, dt):
         keys = pygame.key.get_pressed()
+
+        print(self.level.collidingEntities(self.spedec.le))
 
         self.spedec.setInputs(keys)
         self.level.update(dt / 1000.0)
