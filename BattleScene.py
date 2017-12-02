@@ -108,7 +108,13 @@ class BattleScene(GameScene):
         self.render_queue = RenderQueue()
 
         # remove this
-        self.enemy = Enemy("Bob", 1000, physical_type, [ItemGenerator().getItemByName("pillow"), ItemGenerator().getItemByName("spaceship"), ItemGenerator().getItemByName("tugboat")])
+        enemy_items = [
+            ItemGenerator().getItem(),
+            ItemGenerator().getItem(),
+            ItemGenerator().getItem(),
+            ItemGenerator().getItem(),
+        ]
+        self.enemy = Enemy("Bob", 1000, physical_type, enemy_items)
 
         self.move_font = pygame.font.Font("assets/Courgette-Regular.ttf", 24)
 
@@ -150,7 +156,7 @@ class BattleScene(GameScene):
 
             text_y_offset = 10
             move_name_x_offset = 20
-            move_power_x_offset = 150
+            move_power_x_offset = 200
             move_type_x_offset = 250
 
             font_colour = (0, 0, 0)
@@ -191,7 +197,15 @@ class BattleScene(GameScene):
                 self.render_queue.add((move_x_left + move_type_x_offset, move_y_bottom + text_y_offset), type_text, z_index=2)
 
             if len(self.items) > 3:
+
+                name_text = self.move_font.render(str(self.items[3].name), True, font_colour)
+                damage_text = self.move_font.render(str(self.items[3].damage), True, font_colour)
+                type_text = self.move_font.render(str(move_type), True, font_colour)
+
                 self.render_queue.add((move_x_right, move_y_bottom), self.black_move)
+                self.render_queue.add((move_x_right + move_name_x_offset, move_y_bottom + text_y_offset), name_text, z_index=2)
+                self.render_queue.add((move_x_right + move_power_x_offset, move_y_bottom + text_y_offset), damage_text, z_index=2)
+                self.render_queue.add((move_x_right + move_type_x_offset, move_y_bottom + text_y_offset), type_text, z_index=2)
 
             move_type = self.items[self.currently_selected_item].type
 
