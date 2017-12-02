@@ -32,14 +32,18 @@ class ItemGenerator:
                       Item('spaceship', imagePath + '/spaceship-side.png', 300, 0, mental_type),
                       Item('tugboat', imagePath + '/tugboat.png', 100, 2, mental_type),
                       Item('elephant', imagePath + '/elephant.png', 150, 2, physical_type),
-                      Item('bat', imagePath + '/bat.png', 50, 2, chemical_type),
-                      Item('filing cabinet', imagePath + '/filing-cabinet.png', 70, 2, physical_type),
-                      Item('unicorn', imagePath + '/unicorn.png', 250, 2, mental_type),
-                      Item('brick', imagePath + '/brick.png', 40, 2, physical_type),
-                      Item('syringe', imagePath + '/syringe.png', 90, 2, chemical_type),
-                      Item('goldfish', imagePath + '/goldfish.png', 105, 2, mental_type),
-                      Item('small moon', imagePath + '/small-moon.png', 55, 2, physical_type),
-                      Item('bunch of sage', imagePath + '/bunch-of-sage.png', 5, 2, chemical_type)]
+                      Item('bat', imagePath + '/bat.png', 50, 4, chemical_type),
+                      Item('filing cabinet', imagePath + '/filing-cabinet.png', 70, 10, physical_type),
+                      Item('unicorn', imagePath + '/unicorn.png', 250, 0, mental_type),
+                      Item('brick', imagePath + '/brick.png', 40, 8, physical_type),
+                      Item('syringe', imagePath + '/syringe.png', 90, 9, chemical_type),
+                      Item('goldfish', imagePath + '/goldfish.png', 105, 5, mental_type),
+                      Item('small moon', imagePath + '/small-moon.png', 55, 1, physical_type),
+                      Item('sheep with a staple gun', imagePath + '/sheep-with-staple-gun.png', 109, 2, physical_type),
+                      Item('javelin', imagePath + '/javelin.png', 76, 5, physical_type),
+                      Item('discus', imagePath + '/discus.png', 50, 3, chemical_type),
+                      Item('paperclip', imagePath + '/paperclip.png', 50, 10, mental_type),
+                      Item('bunch of sage', imagePath + '/bunch-of-sage.png', 5, 6, chemical_type)]
 
     def getItem(self):
 
