@@ -169,7 +169,6 @@ class LevelEditor(GameScene):
             if self.dragging_object is not None:
                 mouse_x, mouse_y = event.pos
                 self.dragging_object.set_draw_position(mouse_x + self.drag_offset[0], mouse_y + self.drag_offset[1])
-                self.update_object_details_area(self.dragging_object)
 
     def update_object_details_area(self, level_object):
         if level_object is None:
@@ -206,5 +205,5 @@ def str_to_int(integer):
 
 
 if __name__ == '__main__':
-    app = ezpygame.Application(title='Level Editor', resolution=(SCREEN_WIDTH, SCREEN_HEIGHT), update_rate=10)
+    app = ezpygame.Application(title='Level Editor', resolution=(SCREEN_WIDTH, SCREEN_HEIGHT), update_rate=FPS)
     app.run(LevelEditor())
