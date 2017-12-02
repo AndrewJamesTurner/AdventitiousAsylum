@@ -12,16 +12,22 @@ class PlatformerScene(GameScene):
         LevelObjectPattern.init()
 
         self.level = Level.load('test.json')
-        self.level.surfdata.printSurf()
+        self.spedec = SpecEcController(LevelEntity(7, 0, 1, 2, 'arrow.png'))
+        self.level.addEntity(self.spedec.le)
 
     def on_enter(self, previous_scene):
         super(PlatformerScene, self).on_enter(previous_scene)
 
-    def draw(self, screen):
-        for lo in self.level.levelObjects:
-            lo.draw(self.rq)
-        self.rq.flush(screen)
+    def update(self, dt):
+        keys = pygame.key.get_pressed()
 
+        self.spedec.setInputs(keys)
+        self.level.update(dt / 1000.0)
+
+    def draw(self, screen):
+        self.level.surfdata.debug_draw(self.rq)
+        self.level.draw(self.rq)
+        self.rq.flush(screen)
 
 if __name__ == '__main__':
     app = ezpygame.Application(title='The Game', resolution=(SCREEN_WIDTH, SCREEN_HEIGHT), update_rate=FPS)
