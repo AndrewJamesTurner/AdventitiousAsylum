@@ -34,7 +34,7 @@ class ItemGenerator:
 
         self.items = [Item('pillow', imagePath + '/astronaut_small.png', 7, 10, 'physical'),
                       Item('spaceship', imagePath + '/spaceship-side.png', 300, 0, 'mental'),
-                      Item('tug boat', imagePath + '/astronaut_small.png', 100, 2, 'mental'),
+                      Item('tugboat', imagePath + '/astronaut_small.png', 100, 2, 'mental'),
                       Item('elephant', imagePath + '/astronaut_small.png', 150, 2, 'physical')]
 
     def getItem(self):
