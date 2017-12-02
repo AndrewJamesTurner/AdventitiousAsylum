@@ -1,5 +1,3 @@
-from math import sqrt
-
 
 def binomial(n, k):
     """
@@ -41,7 +39,7 @@ class MovementPath:
             bino = binomial(n, i)
             coeff = bino * (one_minus_t ** (n-i)) * (t**i)
 
-            print("Progress: {0}     T: {1}     n: {3}     i: {2}     bin: {4}".format(self.progress, t, i, n, bino))
+            # print("Progress: {0}     T: {1}     n: {3}     i: {2}     bin: {4}".format(self.progress, t, i, n, bino))
 
             x += coeff * self.points[i-1][0]
             y += coeff * self.points[i-1][1]

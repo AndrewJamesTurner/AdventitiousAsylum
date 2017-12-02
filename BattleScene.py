@@ -96,8 +96,8 @@ class BattleScene(GameScene):
 
         self.message = ""
 
-        self.player_image = pygame.image.load("assets/astronaut_small.png")
-        self.enemy_image = pygame.image.load("assets/astronaut_small.png")
+        self.player_image = pygame.image.load("assets/characters/astronaut_small2.png")
+        # self.enemy_image = pygame.image.load("assets/characters/doctor_woman.png")
 
         self.blue_move = pygame.image.load("assets/battle-background-images/blue-rect.png")
         self.red_move = pygame.image.load("assets/battle-background-images/red-rect.png")
@@ -119,6 +119,8 @@ class BattleScene(GameScene):
         enemy_items = ItemGenerator().getItems(4)
 
         self.enemy = Enemy("Bob", 1000, physical_type, enemy_items)
+
+        self.enemy.image = pygame.image.load("assets/characters/doctor_woman.png")
 
         self.move_font = pygame.font.Font("assets/Courgette-Regular.ttf", 24)
 
@@ -229,7 +231,7 @@ class BattleScene(GameScene):
             attack_type = self.items[self.currently_selected_item].type
 
             if self.movement_path is None:
-                self.movement_path = MovementPath(player_pos_x, player_pos_y, 1000, [(0, 0), (SCREEN_WIDTH*0.35, -SCREEN_HEIGHT * 0.4), (SCREEN_WIDTH*0.65, -SCREEN_HEIGHT * 0.1)])
+                self.movement_path = MovementPath(player_pos_x + 10, player_pos_y + 50, 1000, [(0, 0), (SCREEN_WIDTH*0.35, -SCREEN_HEIGHT * 0.4), (SCREEN_WIDTH*0.65, -SCREEN_HEIGHT * 0.1)])
             else:
                 if self.movement_path.is_done():
                     self.state = player_message_state
@@ -258,7 +260,7 @@ class BattleScene(GameScene):
                 effectiveness = ItemEffectiveness().get_rand_high_effective()
             elif get_multiplier(attack_type, defence_type) < 1:
                 effectiveness = ItemEffectiveness().get_rand_neutral_effective()
-            else: #get_multiplier(attack_type, defence_type) == 1:
+            else:  # get_multiplier(attack_type, defence_type) == 1:
                 effectiveness = ItemEffectiveness().get_rand_low_effective()
 
             item_descripter = ItemDescriptor().getDescriptor()
@@ -280,14 +282,26 @@ class BattleScene(GameScene):
 
         elif self.state == enemy_attack_animation_state:
 
-            attack_type = self.enemy.items[self.enemy_selected_item].type
-            defence_type = self.type
-            damage = self.items[self.currently_selected_item].damage
-            damage = damage * get_multiplier(attack_type, defence_type)
+            if self.movement_path is None:
+                self.movement_path = MovementPath(enemy_pos_x, enemy_pos_y + 100, 1000, [(0, 0), (-SCREEN_WIDTH*0.35, -SCREEN_HEIGHT * 0.4), (-SCREEN_WIDTH*0.65, -SCREEN_HEIGHT * 0.1)])
 
-            self.health -= damage
+            else:
+                if self.movement_path.is_done():
 
-            self.state = enemy_message_state
+                    self.state = enemy_message_state
+                    self.movement_path = None
+
+                    attack_type = self.enemy.items[self.enemy_selected_item].type
+                    defence_type = self.type
+                    damage = self.items[self.currently_selected_item].damage
+                    damage = damage * get_multiplier(attack_type, defence_type)
+
+                    self.health -= damage
+                else:
+                    self.movement_path.step(dt)
+
+                    item_image = self.items[self.currently_selected_item].image
+                    self.render_queue.add(self.movement_path.get_position(), item_image, z_index=100)
 
             item_name = self.enemy.items[self.enemy_selected_item].name
 
