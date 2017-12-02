@@ -31,7 +31,7 @@ class ItemGenerator:
 
     def getItem(self):
 
-        item = random.randint(0, len(self.items))
+        item = random.randint(0, len(self.items)-1)
         return item
 
     def getItemByName(self, name):
@@ -58,5 +58,5 @@ class ItemDescriptor:
                         'runny', 'wearisome', 'hopeful', 'sharp', 'whimsical']
 
     def getDescriptor(self):
-        descriptor = random.randint(0, len(self.descriptors))
+        descriptor = random.randint(0, len(self.descriptors)-1)
         return descriptor
