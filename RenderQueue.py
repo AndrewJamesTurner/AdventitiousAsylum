@@ -15,7 +15,7 @@ class RenderQueue:
         self.queue = []
 
     def add(self, location, image, scale=(1, 1), z_index=1):
-        self.queue.append(RenderItem(location, image, scale, z_index))
+        self.queue.append(RenderItem(location, image.convert_alpha(), scale, z_index))
 
     def flush(self, screen, camera_position=(0, 0), background=(255, 255, 255)):
 
