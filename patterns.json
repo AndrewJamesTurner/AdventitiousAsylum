@@ -137,10 +137,35 @@
 
   "computer":{
     "image":"structures/computer.png",
+    "width": 2,
+    "height": 2,
+    "surfdata":{
+
+    }
+  },
+
+  "light":{
+    "image":"structures/light.png",
+    "width": 5,
+    "height": 4,
+    "surfdata":{
+      "stand" :[
+        ".....",
+        ".....",
+        ".....",
+        "#####"
+      ]
+    }
+  },
+
+  "floor":{
+    "image":"structures/floor.png",
     "width": 1,
     "height": 1,
     "surfdata":{
-
+      "block" :[
+        "#"
+      ]
     }
   }
 }
