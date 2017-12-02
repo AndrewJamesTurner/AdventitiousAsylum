@@ -64,6 +64,8 @@ class LevelEditor(GameScene):
         self.details_area.set_main_color((255, 220, 255, 180))
         self.details_area.set_topleft((SCREEN_WIDTH, 0))
 
+        self.debug_draw = False
+
         # Patterns area
         patterns_title = thorpy.make_text('Patterns', 18, (0, 0, 0))
 
@@ -141,7 +143,7 @@ class LevelEditor(GameScene):
 
     def draw(self, screen):
         for level_object in self.level_objects:
-            level_object.draw(self.render_queue)
+            level_object.draw(self.render_queue, self.debug_draw)
         self.render_queue.flush(screen, scale=(self.zoom, self.zoom), camera_position=(self.camera_x, self.camera_y))
 
         for element in [self.game_area, self.patterns_area, self.details_area]:
@@ -201,6 +203,8 @@ class LevelEditor(GameScene):
                 self.camera_y -= nudge_size
             elif event.key == pygame.K_DOWN:
                 self.camera_y += nudge_size
+            if event.key == pygame.K_d:
+                self.debug_draw = not self.debug_draw
 
     def doZoom(self, factor, cx, cy):
         def nastyZoomTransform(z1, z2, m, c1):
