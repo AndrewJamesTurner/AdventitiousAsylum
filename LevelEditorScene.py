@@ -68,10 +68,11 @@ class LevelEditor(GameScene):
         patterns_title = thorpy.make_text('Patterns', 18, (0, 0, 0))
 
         def click_pattern(pattern_id, surfdata):
+            position = self.backwardMouseTransform((SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2))
             level_object = LevelObject(objectDefinition={
                 'type': pattern_id,
-                'x': 0,
-                'y': 0,
+                'x': position[0] / BLOCK_SIZE,
+                'y': position[1] / BLOCK_SIZE,
                 'z': 0,
             })  # TODO: Do we need to pass in surf data here?
             self.level_objects.append(level_object)
