@@ -1,7 +1,7 @@
 from game import pygame, SCREEN_WIDTH, SCREEN_HEIGHT, ezpygame, FPS, get_shared_values
 from GameScene import GameScene
 from RenderQueue import RenderQueue
-# from enemy import Enemy
+from enemy import Enemy
 
 player_move_select_state = "player_move_select_state"
 player_attack_animation_state = "player_attack_animation_state"
@@ -9,6 +9,18 @@ player_message_state = "player_message_state"
 enemy_move_select_state = "enemy_move_select_state"
 enemy_attack_animation_state = "enemy_attack_animation_state"
 enemy_message_state = "enemy_message_state"
+
+
+def draw_health_bar(render_queue, x, y, health_percentage):
+
+    back = pygame.Surface((200, 20))
+    back.fill((255,0,0))
+
+    front = pygame.Surface((200, 20))
+    front.fill((0,255,0))
+
+    render_queue.add((x, y), back, z_index=20)
+    render_queue.add((x, y), front, scale=(health_percentage, 1), z_index=21)
 
 
 class BattleScene(GameScene):
@@ -39,11 +51,21 @@ class BattleScene(GameScene):
 
         self.render_queue = RenderQueue()
 
+        # remove this
+        self.enemy = Enemy(1000, [])
+
+
     def draw(self, screen):
 
         self.render_queue.flush(screen)
 
     def update(self, dt):
+
+        if self.health <= 0 or self.enemy.health <= 0:
+            self.leave_scene()
+
+
+        draw_health_bar(self.render_queue, 50, 50, self.enemy.health / self.enemy.max_health)
 
         if self.state == player_move_select_state:
 
@@ -62,6 +84,9 @@ class BattleScene(GameScene):
                 self.render_queue.add((509, 400), self.blue_move)
 
         elif self.state == player_attack_animation_state:
+
+            self.enemy.health -= 100
+
             self.state = player_message_state
 
         elif self.state == player_message_state:
