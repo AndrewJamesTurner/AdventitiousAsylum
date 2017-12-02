@@ -25,7 +25,7 @@ class PlatformerScene(GameScene):
         }
 
         self.level = Level(testL)
-        self.level.surfdata.print()
+        self.level.surfdata.printSurf()
 
     def on_enter(self, previous_scene):
         super(PlatformerScene, self).on_enter(previous_scene)
