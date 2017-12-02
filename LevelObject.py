@@ -50,7 +50,7 @@ class LevelObject:
         self.pattern  = LevelObjectPattern.get( self.type )
         x = o['x']
         y = o['y']
-        z_index = o['z']
+        self.z_index = o['z']
 
         self.block_position = (x, y)
         self.draw_position = (x * BLOCK_SIZE, y * BLOCK_SIZE)
@@ -90,6 +90,8 @@ class LevelEntity:
         self.go_d = 0
         self.go_l = 0
         self.go_r = 0
+        self.jump = 0
+        self.grab = 0
 
         if asset is not None:
             rawimage = pygame.image.load(os.path.join(ASSETS_PATH, asset)).convert_alpha()

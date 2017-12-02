@@ -9,5 +9,65 @@
       "climb" :["#..","#.."],
       "damage":["...","..X"]
     }
+  },
+
+  "ambulance_background":{
+    "image":"structures/ambulance.png",
+    "width": 7,
+    "height": 4,
+    "surfdata":{
+      "stand" :[
+        ".######",
+        "#......",
+        ".......",
+        "......."
+      ]
+    }
+  },
+
+  "ambulance_foreground":{
+    "image":"structures/ambulance.png",
+    "width": 7,
+    "height": 4,
+    "surfdata":{
+      "block" : [
+        ".######",
+        "#######",
+        "#######",
+        "#######"
+      ]
+    }
+  },
+
+  "table":{
+    "image":"structures/table.png",
+    "width": 5,
+    "height": 2,
+    "surfdata":{
+      "stand" :[
+        "#####",
+        "....."
+      ]
+    }
+  },
+
+  "bookshelf":{
+    "image":"structures/bookshelf.png",
+    "width": 3,
+    "height": 4,
+    "surfdata":{
+      "stand" :[
+        "###",
+        "...",
+        "...",
+        "..."
+      ],
+      "climb" :[
+        "###",
+        "###",
+        "###",
+        "###"
+      ]
+    }
   }
 }
