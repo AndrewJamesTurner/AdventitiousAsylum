@@ -41,7 +41,7 @@ class ItemGenerator:
                       Item('small moon', imagePath + '/small-moon.png', 55, 1, physical_type),
                       Item('sheep with a staple gun', imagePath + '/sheep-with-staple-gun.png', 109, 2, physical_type),
                       Item('javelin', imagePath + '/javelin.png', 76, 5, physical_type),
-                      Item('discus', imagePath + '/discus.png', 50, 3, chemical_type),
+                      #Item('discus', imagePath + '/discus.png', 50, 3, chemical_type),
                       Item('paperclip', imagePath + '/paperclip.png', 50, 10, mental_type),
                       Item('trout', imagePath + '/trout.png', 80, 5, mental_type),
                       Item('cat poop', imagePath + '/trout.png', 80, 6, chemical_type),
