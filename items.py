@@ -30,7 +30,8 @@ class ItemGenerator:
                       Item('tugboat', imagePath + '/tugboat.png', 100, 2, mental_type),
                       Item('elephant', imagePath + '/elephant.png', 150, 2, physical_type),
                       Item('bat', imagePath + '/bat.png', 50, 2, chemical_type),
-                      Item('bat', imagePath + '/filing-cabinet.png', 150, 2, chemical_type),
+                      Item('filing cabinet', imagePath + '/filing-cabinet.png', 150, 2, physical_type),
+                      Item('unicorn', imagePath + '/unicorn.png', 150, 2, mental_type),
                       Item('bat', imagePath + '/astronaut_small.png', 150, 2, physical_type)]
 
     def getItem(self):
@@ -59,7 +60,7 @@ class ItemDescriptor:
 
         self.descriptors = ['sparkly', 'singing', 'wet', 'slimy', 'fluffy', 'peppered', 'noisy', 'foiled', 'upsidedown',
                         'pert', 'loose', 'wobbly', 'troubling', 'wavy', 'erotic', 'alarming', 'dangerous', 'meddling',
-                        'runny', 'wearisome', 'hopeful', 'sharp', 'whimsical']
+                        'runny', 'wearisome', 'hopeful', 'sharp', 'whimsical', 'sassy', 'floral']
 
     def getDescriptor(self):
         descriptor = self.descriptors[random.randint(0, len(self.descriptors)-1)]
