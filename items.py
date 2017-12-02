@@ -25,10 +25,13 @@ class ItemGenerator:
 
         imagePath = 'assets/items/weapons'
 
-        self.items = [Item('pillow', imagePath + '/astronaut_small.png', 7, 10, physical_type),
+        self.items = [Item('pillow', imagePath + '/pillow.png', 7, 10, physical_type),
                       Item('spaceship', imagePath + '/spaceship-side.png', 300, 0, mental_type),
-                      Item('tugboat', imagePath + '/astronaut_small.png', 100, 2, mental_type),
-                      Item('elephant', imagePath + '/astronaut_small.png', 150, 2, physical_type)]
+                      Item('tugboat', imagePath + '/tugboat.png', 100, 2, mental_type),
+                      Item('elephant', imagePath + '/elephant.png', 150, 2, physical_type),
+                      Item('bat', imagePath + '/bat.png', 150, 2, chemical_type),
+                      Item('bat', imagePath + '/bat.png', 150, 2, chemical_type),
+                      Item('bat', imagePath + '/astronaut_small.png', 150, 2, physical_type)]
 
     def getItem(self):
 
@@ -66,8 +69,11 @@ class ItemDescriptor:
 class ItemEffectiveness():
 
     def __init__(self):
-        self.high = ['effective', 'very effective', 'painful', 'super effective', 'exquisite', 'phenomenal', 'spectacular', 'a spectacle', 'fabulous', 'overwhelming', 'horrific']
-        self.neutral = ['neutral', 'confusing', 'disturbing', 'unsettling', 'quite', 'whelming', 'hilarious', 'rather']
+
+        self.high = ['effective', 'very effective', 'painful', 'super effective', 'exquisite', 'phenomenal',
+                     'spectacular', 'a spectacle', 'fabulous', 'overwhelming', 'horrific', 'Brian Blessedesque']
+        self.neutral = ['neutral', 'confusing', 'disturbing', 'unsettling', 'quite', 'whelming', 'hilarious', 'rather',
+                        'amicable']
         self.low = ['not very effective', 'erotic', 'pitiful', 'pathetic', 'underwhelming', 'horrific']
 
     def get_rand_high_effective(self):
