@@ -135,8 +135,6 @@ class Level:
 
     # Update all of the entities
     def update(self, dt):
-        CLIMBABLE = SurfData.MASK['climb']
-
         for le in self.levelEntities:
             # Apply inputs
             if le.vcontact == Level.CONTACT_FLOOR:
@@ -158,7 +156,7 @@ class Level:
                     le.vel_x = self.jump_v * le.hcontact
 
             # Gravity
-            if le.grab and self.surfdata.check(CLIMBABLE,
+            if le.grab and self.surfdata.check(SurfData.MASK['climb'],
                                     math.floor(le.left),
                                     math.floor(le.top),
                                     math.ceil(le.right) - 1,
@@ -173,13 +171,28 @@ class Level:
 
             # Do H movement
             if dx != 0:
-                xp = dx + (le.right if (dx > 0) else le.left)
-                if self.surfdata.check(0x1, xp, math.floor(le.top), xp, math.ceil(le.bottom) - 1):
-                    le.vel_x = 0.0
-                    le.hcontact = Level.CONTACT_RIGHT if (dx > 0) else Level.CONTACT_LEFT
+                if(dx > 0):
+                    xc = le.right
+                    xp = xc + dx
+                    transition = ( 1 if math.ceil(xc) == math.floor(xp) else 0 )
                 else:
+                    xc = le.left
+                    xp = xc + dx
+                    transition = ( 1 if math.floor(xc) == math.ceil(xp) else 0 )
+
+                move = 1
+                if transition:
+                    if self.surfdata.check(SurfData.MASK['block'],
+                                            xp, math.floor(le.top),
+                                            xp, math.ceil(le.bottom) - 1):
+                        move = 0
+
+                if move:
                     le.move(dx, 0)
                     le.hcontact = 0
+                else:
+                    le.vel_x = 0.0
+                    le.hcontact = Level.CONTACT_RIGHT if (dx > 0) else Level.CONTACT_LEFT
 
             # Do V movement
             if dy != 0:
@@ -188,13 +201,16 @@ class Level:
                     yp = yc + dy
                     transition = ( 1 if math.ceil(yc) == math.floor(yp) else 0 )
                 else:
-                    yc = le.bottom
+                    yc = le.top
                     yp = yc + dy
                     transition = ( 1 if math.floor(yc) == math.ceil(yp) else 0 )
 
                 move = 1
                 if transition:
-                    surfmask = ( 0x3 if (dy > 0) and not le.go_d else 0x1 )
+                    surfmask = SurfData.MASK['block']
+                    if (dy > 0) and not le.go_d:
+                        surfmask |= SurfData.MASK['stand']
+                    surfmask |= ( 0x3 if (dy > 0) and not le.go_d else 0x1 )
                     if self.surfdata.check(surfmask, math.floor(le.left), yp, math.ceil(le.right) - 1, yp):
                         move = 0
                 if move:
