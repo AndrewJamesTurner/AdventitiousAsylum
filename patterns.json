@@ -180,8 +180,8 @@
     }
   },
 
-  "sigh":{
-    "image":"structures/sigh.png",
+  "sign":{
+    "image":"structures/sign.png",
     "width": 1,
     "height": 1,
     "surfdata":{
