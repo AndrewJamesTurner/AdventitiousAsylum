@@ -7,3 +7,4 @@ class Enemy:
         self.max_health = health
         self.type = _type
         self.items = items
+        self.name = "enemy"

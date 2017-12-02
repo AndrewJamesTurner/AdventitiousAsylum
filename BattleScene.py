@@ -4,6 +4,7 @@ from RenderQueue import RenderQueue
 from enemy import Enemy
 from items import physical_type, mental_type, chemical_type
 from items import ItemGenerator
+from items import ItemEffectiveness
 from random import randint
 
 player_move_select_state = "player_move_select_state"
@@ -76,6 +77,8 @@ class BattleScene(GameScene):
         self.enemy = get_shared_values().enemy
         self.currently_selected_item = 0
         self.enemy_selected_item = 0
+
+        self.message = ""
 
         self.player_image = pygame.image.load("assets/astronaut_small.png")
         self.enemy_image = pygame.image.load("assets/astronaut_small.png")
@@ -174,27 +177,26 @@ class BattleScene(GameScene):
 
             self.state = player_message_state
 
-        elif self.state == player_message_state:
+            item_name = self.items[self.currently_selected_item].name
 
             attack_type = self.items[self.currently_selected_item].type
             defence_type = self.enemy.type
-            damage = self.items[self.currently_selected_item].damage
 
             if get_multiplier(attack_type, defence_type) > 1:
-                message = "highly effective"
+                effectiveness = ItemEffectiveness().get_rand_high_effective()
             if get_multiplier(attack_type, defence_type) < 1:
-                message = "not very effective"
+                effectiveness = ItemEffectiveness().get_rand_neutral_effective()
             if get_multiplier(attack_type, defence_type) == 1:
-                message = "neutral"
+                effectiveness = ItemEffectiveness().get_rand_low_effective()
+
+            self.message = "Player attacked {0} with {1}. It was {2}".format(self.enemy.name, item_name, effectiveness)
+
+        elif self.state == player_message_state:
 
             font_colour = (0, 0, 0)
-            text = self.move_font.render(message, True, font_colour)
+            text = self.move_font.render(self.message, True, font_colour)
 
             self.render_queue.add((100, 100), text, z_index=1)
-
-            # self.state = enemy_move_select_state
-
-            pass
 
         elif self.state == enemy_move_select_state:
 
@@ -206,15 +208,32 @@ class BattleScene(GameScene):
             attack_type = self.enemy.items[self.enemy_selected_item].type
             defence_type = self.type
             damage = self.items[self.currently_selected_item].damage
-
             damage = damage * get_multiplier(attack_type, defence_type)
 
             self.health -= damage
 
             self.state = enemy_message_state
 
+            item_name = self.enemy.items[self.enemy_selected_item].name
+
+            attack_type = self.enemy.items[self.enemy_selected_item].type
+            defence_type = self.type
+
+            if get_multiplier(attack_type, defence_type) > 1:
+                effectiveness = ItemEffectiveness().get_rand_high_effective()
+            if get_multiplier(attack_type, defence_type) < 1:
+                effectiveness = ItemEffectiveness().get_rand_neutral_effective()
+            if get_multiplier(attack_type, defence_type) == 1:
+                effectiveness = ItemEffectiveness().get_rand_low_effective()
+
+            self.message = "{0} attacked Player with {1}. It was {2}".format(self.enemy.name, item_name, effectiveness)
+
         elif self.state == enemy_message_state:
-            self.state = player_move_select_state
+
+            font_colour = (0, 0, 0)
+            text = self.move_font.render(self.message, True, font_colour)
+
+            self.render_queue.add((100, 100), text, z_index=1)
 
     def handle_event(self, event):
 
