@@ -5,7 +5,7 @@ import ezpygame
 import pygame
 
 from constants import *
-from items import ItemGenerator
+from items import ItemGenerator, none_type
 
 os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (50, 50)
 
@@ -96,8 +96,10 @@ class SharedValues:
         ItemGenerator().getItemByName("spaceship"),
         ItemGenerator().getItemByName("tug boat"),
         ]
-    health = 100
+    health = 1000
+    max_health = health
     enemy = None
+    type = none_type
 
     def reset(self):
 
