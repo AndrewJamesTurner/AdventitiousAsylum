@@ -21,7 +21,8 @@ class RenderQueue:
 
         # Adjust item locations
         for item in self.queue:
-            item.loc = (item.loc[0] - camera_position[0], item.loc[1] - camera_position[1])
+            item.loc = ((item.loc[0] - camera_position[0]) * scale[0],
+                        (item.loc[1] - camera_position[1]) * scale[1])
             item.item_rect = pygame.Rect(item.loc, item.image.get_size())
 
         screen_box = screen.get_rect()
@@ -38,7 +39,7 @@ class RenderQueue:
                 item.image = pygame.transform.scale(item.image, ( int(item.image.get_width() * item.scale[0] * scale[0]), int(item.image.get_height() * item.scale[1] * scale[1])))
 
             # Draw the image
-            screen.blit(item.image, (item.loc[0] * scale[0], item.loc[1] * scale[1]))
+            screen.blit(item.image, item.loc)
 
         # Remove everything from the queue
         self.queue.clear()

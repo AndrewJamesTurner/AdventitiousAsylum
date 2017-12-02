@@ -8,6 +8,10 @@ from RenderQueue import RenderQueue
 from LevelObject import *
 
 
+DETAILS_AREA_WIDTH = 250
+PATTERNS_AREA_WIDTH = 250
+
+
 class LevelEditor(GameScene):
 
     def __init__(self):
@@ -15,12 +19,12 @@ class LevelEditor(GameScene):
         self.render_queue = RenderQueue()
         self.dragging_object = None
         self.drag_offset = None
-
-        DETAILS_AREA_WIDTH = SCREEN_WIDTH / 5
-        PATTERNS_AREA_HEIGHT = SCREEN_HEIGHT / 5
+        self.zoom = 1.0
+        self.camera_x = 0
+        self.camera_y = 0
 
         # Game area
-        self.game_area = thorpy.Box.make([], size=(SCREEN_WIDTH - DETAILS_AREA_WIDTH, SCREEN_HEIGHT - PATTERNS_AREA_HEIGHT))
+        self.game_area = thorpy.Box.make([], size=(SCREEN_WIDTH, SCREEN_HEIGHT))
         self.game_area.set_main_color((220, 255, 220, 0))
         # TODO: Add horizontal and vertical scroller to game area
 
@@ -58,8 +62,7 @@ class LevelEditor(GameScene):
         self.details_area = thorpy.Box.make([self.level_details_area, self.pattern_details_area, self.object_details_area],
                                             size=(DETAILS_AREA_WIDTH, SCREEN_HEIGHT))
         self.details_area.set_main_color((255, 220, 255, 180))
-        DETAILS_AREA_LEFT = SCREEN_WIDTH - DETAILS_AREA_WIDTH
-        self.details_area.set_topleft((DETAILS_AREA_LEFT, 0))
+        self.details_area.set_topleft((SCREEN_WIDTH, 0))
 
         # Patterns area
         patterns_title = thorpy.make_text('Patterns', 18, (0, 0, 0))
@@ -85,25 +88,13 @@ class LevelEditor(GameScene):
             # TODO: Add a small version of the image to this object
             pattern_object = thorpy.make_button(pattern_id, func=click_pattern, params={'pattern_id': pattern_id, 'surfdata': pattern_definition['surfdata']})
             pattern_objects.append(pattern_object)
-        # TODO: Add horizontal scroller to patterns section
 
-        NUM_PATTERN_ROWS = 3
-        patterns_columns = []
-        for patterns_column_elements in grouper(NUM_PATTERN_ROWS, pattern_objects):
-            patterns_column = thorpy.Box.make(list(patterns_column_elements))
-            thorpy.store(patterns_column, mode='v', gap=5, x=0, align='left')
-            patterns_column.set_main_color((255, 220, 255, 0))
-            patterns_columns.append(patterns_column)
-
-        patterns_container = thorpy.Ghost.make(patterns_columns)
-        thorpy.store(patterns_container, mode='h', gap=5, x=0)
-
-        self.patterns_area = thorpy.Box.make([patterns_title, patterns_container],
-                                             size=(SCREEN_WIDTH - DETAILS_AREA_WIDTH, PATTERNS_AREA_HEIGHT))
+        self.patterns_area = thorpy.Box.make([patterns_title, *pattern_objects],
+                                             size=(PATTERNS_AREA_WIDTH, SCREEN_HEIGHT))
         self.patterns_area.set_main_color((220, 220, 255, 180))
-        PATTERNS_AREA_TOP = SCREEN_HEIGHT - PATTERNS_AREA_HEIGHT
-        self.patterns_area.set_topleft((0, PATTERNS_AREA_TOP))
-        thorpy.store(self.patterns_area, mode='h', gap=15, x=0, align='top')
+        self.patterns_area.set_topleft((SCREEN_WIDTH + DETAILS_AREA_WIDTH, 0))
+        thorpy.store(self.patterns_area)
+        self.patterns_area.add_lift()
 
         self.menu = thorpy.Menu([self.game_area, self.patterns_area, self.details_area])
 
@@ -150,7 +141,7 @@ class LevelEditor(GameScene):
     def draw(self, screen):
         for level_object in self.level_objects:
             level_object.draw(self.render_queue)
-        self.render_queue.flush(screen)
+        self.render_queue.flush(screen, scale=(self.zoom, self.zoom), camera_position=(self.camera_x, self.camera_y))
 
         for element in [self.game_area, self.patterns_area, self.details_area]:
             element.blit()
@@ -159,22 +150,35 @@ class LevelEditor(GameScene):
         for element in [self.game_area, self.patterns_area, self.details_area]:
             element.update()
 
+    def backwardMouseTransform(self, pos):
+        x, y = pos
+        x /= self.zoom
+        y /= self.zoom
+        x += self.camera_x
+        y += self.camera_y
+        return(x, y)
+
     def handle_event(self, event):
         self.menu.react(event)
         if event.type == pygame.MOUSEBUTTONDOWN:
+            mouse_x, mouse_y = self.backwardMouseTransform(event.pos)
             # See if we are clicking on a game element
             for level_object in self.level_objects:
-                mouse_x, mouse_y = event.pos
                 if level_object.draw_position[0] < mouse_x < level_object.draw_position[0] + level_object.pattern.image.get_width() \
                         and level_object.draw_position[1] < mouse_y < level_object.draw_position[1] + level_object.pattern.image.get_height():
                     if event.button == 1:
                         # Drag element
                         self.dragging_object = level_object
-                        self.drag_offset = (level_object.draw_position[0] - mouse_x, level_object.draw_position[1] - mouse_y)
+                        self.drag_offset = (level_object.draw_position[0] - mouse_x,
+                                            level_object.draw_position[1] - mouse_y)
                         self.update_object_details_area(level_object)
                     elif event.button == 3:
                         # Delete element
                         self.level_objects.remove(level_object)
+            if event.button == 4:
+                self.doZoom(1.25, *event.pos)
+            elif event.button == 5:
+                self.doZoom(0.8, *event.pos)
 
         elif event.type == pygame.MOUSEBUTTONUP:
             if event.button == 1:
@@ -183,8 +187,30 @@ class LevelEditor(GameScene):
 
         elif event.type == pygame.MOUSEMOTION:
             if self.dragging_object is not None:
-                mouse_x, mouse_y = event.pos
+                mouse_x, mouse_y = self.backwardMouseTransform(event.pos)
                 self.dragging_object.set_draw_position(mouse_x + self.drag_offset[0], mouse_y + self.drag_offset[1])
+
+        elif event.type == pygame.KEYDOWN:
+            nudge_size = BLOCK_SIZE * 5 / self.zoom
+            if event.key == pygame.K_LEFT:
+                self.camera_x -= nudge_size
+            elif event.key == pygame.K_RIGHT:
+                self.camera_x += nudge_size
+            if event.key == pygame.K_UP:
+                self.camera_y -= nudge_size
+            elif event.key == pygame.K_DOWN:
+                self.camera_y += nudge_size
+
+    def doZoom(self, factor, cx, cy):
+        def nastyZoomTransform(z1, z2, m, c1):
+            c2 = (m / z1) - (m / z2) + c1
+            return c2
+        z1 = self.zoom
+        self.zoom *= factor
+        z2 = self.zoom
+        print("Zoom: %f", self.zoom)
+        self.camera_x = nastyZoomTransform(z1, z2, cx, self.camera_x)
+        self.camera_y = nastyZoomTransform(z1, z2, cy, self.camera_y)
 
     def update_object_details_area(self, level_object):
         if level_object is None:
@@ -230,5 +256,5 @@ def grouper(n, iterable):
 
 
 if __name__ == '__main__':
-    app = ezpygame.Application(title='Level Editor', resolution=(SCREEN_WIDTH, SCREEN_HEIGHT), update_rate=FPS)
+    app = ezpygame.Application(title='Level Editor', resolution=(SCREEN_WIDTH + DETAILS_AREA_WIDTH + PATTERNS_AREA_WIDTH, SCREEN_HEIGHT), update_rate=FPS)
     app.run(LevelEditor())
