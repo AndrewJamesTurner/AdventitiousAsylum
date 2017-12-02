@@ -94,7 +94,7 @@ class SharedValues:
     items = [
         ItemGenerator().getItemByName("pillow"),
         ItemGenerator().getItemByName("spaceship"),
-        ItemGenerator().getItemByName("tug boat"),
+        ItemGenerator().getItemByName("tugboat"),
         ]
     health = 1000
     max_health = health

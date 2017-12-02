@@ -86,7 +86,7 @@ class BattleScene(GameScene):
         self.render_queue = RenderQueue()
 
         # remove this
-        self.enemy = Enemy(1000, physical_type, [ItemGenerator().getItemByName("pillow"), ItemGenerator().getItemByName("spaceship"), ItemGenerator().getItemByName("tug boat")])
+        self.enemy = Enemy(1000, physical_type, [ItemGenerator().getItemByName("pillow"), ItemGenerator().getItemByName("spaceship"), ItemGenerator().getItemByName("tugboat")])
 
         self.move_font = pygame.font.Font("assets/Courgette-Regular.ttf", 24)
 
@@ -175,7 +175,26 @@ class BattleScene(GameScene):
             self.state = player_message_state
 
         elif self.state == player_message_state:
-            self.state = enemy_move_select_state
+
+            attack_type = self.items[self.currently_selected_item].type
+            defence_type = self.enemy.type
+            damage = self.items[self.currently_selected_item].damage
+
+            if get_multiplier(attack_type, defence_type) > 1:
+                message = "highly effective"
+            if get_multiplier(attack_type, defence_type) < 1:
+                message = "not very effective"
+            if get_multiplier(attack_type, defence_type) == 1:
+                message = "neutral"
+
+            font_colour = (0, 0, 0)
+            text = self.move_font.render(message, True, font_colour)
+
+            self.render_queue.add((100, 100), text, z_index=1)
+
+            # self.state = enemy_move_select_state
+
+            pass
 
         elif self.state == enemy_move_select_state:
 
