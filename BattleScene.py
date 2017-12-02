@@ -17,10 +17,13 @@ enemy_message_state = "enemy_message_state"
 
 def draw_health_bar(render_queue, x, y, health_percentage):
 
-    back = pygame.Surface((200, 20))
+    length = 150
+    height = 22
+
+    back = pygame.Surface((length, height))
     back.fill((255, 0, 0))
 
-    front = pygame.Surface((200, 20))
+    front = pygame.Surface((length, height))
     front.fill((0, 255, 0))
 
     render_queue.add((x, y), back, z_index=20)
@@ -75,6 +78,7 @@ class BattleScene(GameScene):
         self.max_health = get_shared_values().max_health
         self.type = get_shared_values().type
         self.enemy = get_shared_values().enemy
+        self.image = get_shared_values().image
         self.currently_selected_item = 0
         self.enemy_selected_item = 0
 
@@ -89,7 +93,7 @@ class BattleScene(GameScene):
         self.render_queue = RenderQueue()
 
         # remove this
-        self.enemy = Enemy(1000, physical_type, [ItemGenerator().getItemByName("pillow"), ItemGenerator().getItemByName("spaceship"), ItemGenerator().getItemByName("tugboat")])
+        self.enemy = Enemy("Bob", 1000, physical_type, [ItemGenerator().getItemByName("pillow"), ItemGenerator().getItemByName("spaceship"), ItemGenerator().getItemByName("tugboat")])
 
         self.move_font = pygame.font.Font("assets/Courgette-Regular.ttf", 24)
 
@@ -102,16 +106,25 @@ class BattleScene(GameScene):
         if self.health <= 0 or self.enemy.health <= 0:
             self.leave_scene()
 
-        draw_health_bar(self.render_queue, 50, 50, self.health / self.max_health)
-        draw_health_bar(self.render_queue, 500, 50, self.enemy.health / self.enemy.max_health)
+        draw_health_bar(self.render_queue, 218, 342, self.health / self.max_health)
+
+        draw_health_bar(self.render_queue, 605, 82, self.enemy.health / self.enemy.max_health)
+
+        enemy_pos_x = 765
+        enemy_pos_y = 50
+        self.render_queue.add((enemy_pos_x, enemy_pos_y), self.enemy.image, z_index=1)
+
+        player_pos_x = 95
+        player_pos_y = 111
+        self.render_queue.add((player_pos_x, player_pos_y), self.image, z_index=1)
 
         if self.state == player_move_select_state:
 
-            move_x_left = 88
-            move_x_right = 509
+            move_x_left = 90
+            move_x_right = 510
 
-            move_y_top = 200
-            move_y_bottom = 400
+            move_y_top = 410
+            move_y_bottom = 480
 
             text_y_offset = 10
             move_name_x_offset = 20
@@ -157,13 +170,13 @@ class BattleScene(GameScene):
                 self.render_queue.add((move_x_right, move_y_bottom), self.black_move)
 
             if self.currently_selected_item == 0:
-                self.render_queue.add((88, 200), self.blue_move)
+                self.render_queue.add((move_x_left, move_y_top), self.blue_move)
             if self.currently_selected_item == 1:
-                self.render_queue.add((509, 200), self.blue_move)
+                self.render_queue.add((move_x_right, move_y_top), self.blue_move)
             if self.currently_selected_item == 2:
-                self.render_queue.add((88, 400), self.blue_move)
+                self.render_queue.add((move_x_left, move_y_bottom), self.blue_move)
             if self.currently_selected_item == 3:
-                self.render_queue.add((509, 400), self.blue_move)
+                self.render_queue.add((move_x_right, move_y_bottom), self.blue_move)
 
         elif self.state == player_attack_animation_state:
 
@@ -189,7 +202,7 @@ class BattleScene(GameScene):
             if get_multiplier(attack_type, defence_type) == 1:
                 effectiveness = ItemEffectiveness().get_rand_low_effective()
 
-            self.message = "Player attacked {0} with {1}. It was {2}".format(self.enemy.name, item_name, effectiveness)
+            self.message = "Player attacked {0} with {1}. It was {2}!".format(self.enemy.name, item_name, effectiveness)
 
         elif self.state == player_message_state:
 
@@ -226,7 +239,7 @@ class BattleScene(GameScene):
             if get_multiplier(attack_type, defence_type) == 1:
                 effectiveness = ItemEffectiveness().get_rand_low_effective()
 
-            self.message = "{0} attacked Player with {1}. It was {2}".format(self.enemy.name, item_name, effectiveness)
+            self.message = "{0} attacked Player with {1}. It was {2}!".format(self.enemy.name, item_name, effectiveness)
 
         elif self.state == enemy_message_state:
 
