@@ -150,15 +150,19 @@ class LevelEditor(GameScene):
     def handle_event(self, event):
         self.menu.react(event)
         if event.type == pygame.MOUSEBUTTONDOWN:
-            if event.button == 1:
-                # See if we are clicking on a game element
-                for level_object in self.level_objects:
-                    mouse_x, mouse_y = event.pos
-                    if level_object.draw_position[0] < mouse_x < level_object.draw_position[0] + level_object.pattern.image.get_width() \
-                            and level_object.draw_position[1] < mouse_y < level_object.draw_position[1] + level_object.pattern.image.get_height():
+            # See if we are clicking on a game element
+            for level_object in self.level_objects:
+                mouse_x, mouse_y = event.pos
+                if level_object.draw_position[0] < mouse_x < level_object.draw_position[0] + level_object.pattern.image.get_width() \
+                        and level_object.draw_position[1] < mouse_y < level_object.draw_position[1] + level_object.pattern.image.get_height():
+                    if event.button == 1:
+                        # Drag element
                         self.dragging_object = level_object
                         self.drag_offset = (level_object.draw_position[0] - mouse_x, level_object.draw_position[1] - mouse_y)
                         self.update_object_details_area(level_object)
+                    elif event.button == 3:
+                        # Delete element
+                        self.level_objects.remove(level_object)
 
         elif event.type == pygame.MOUSEBUTTONUP:
             if event.button == 1:
