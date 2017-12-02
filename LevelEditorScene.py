@@ -20,28 +20,30 @@ class LevelEditor(GameScene):
 
         # Game area
         self.game_area = thorpy.Box.make([], size=(SCREEN_WIDTH - DETAILS_AREA_WIDTH, SCREEN_HEIGHT - PATTERNS_AREA_HEIGHT))
-        self.game_area.set_main_color((220, 255, 220, 100))
+        self.game_area.set_main_color((220, 255, 220, 0))
 
         # Level details area
-        level_details_title = thorpy.make_text('Level Details', 18, (0, 0, 0))
-        level_width_box = thorpy.Inserter.make(name='Width: ', value='')
-        level_height_box = thorpy.Inserter.make(name='Height: ', value='')
-        gravity_box = thorpy.Inserter.make(name='Gravity: ', value='')
-        jump_height_box = thorpy.Inserter.make(name='Jump height: ', value='')
-        player_speed_box = thorpy.Inserter.make(name='Player speed: ', value='')
-        self.level_details_area = thorpy.Box.make([level_details_title, level_width_box, level_height_box, gravity_box, jump_height_box, player_speed_box])
+        self.level_details_title = thorpy.make_text('Level Details', 18, (0, 0, 0))
+        self.level_name_box = thorpy.Inserter.make(name='Name: ', value='new_level')
+        self.level_width_box = thorpy.Inserter.make(name='Width: ', value='')
+        self.level_height_box = thorpy.Inserter.make(name='Height: ', value='')
+        self.gravity_box = thorpy.Inserter.make(name='Gravity: ', value='')
+        self.jump_height_box = thorpy.Inserter.make(name='Jump height: ', value='')
+        self.player_speed_box = thorpy.Inserter.make(name='Player speed: ', value='')
+        save_level_button = thorpy.make_button('Save level', self.save_level)
+        self.level_details_area = thorpy.Box.make([self.level_details_title, self.level_name_box, self.level_width_box, self.level_height_box, self.gravity_box, self.jump_height_box, self.player_speed_box, save_level_button])
 
         # Pattern details area
         pattern_details_title = thorpy.make_text('Pattern Details', 18, (0, 0, 0))
-        pattern_id_box = thorpy.Inserter.make(name='ID: ', value='')
-        image_file_box = thorpy.Inserter.make(name='Image file: ', value='')
-        pattern_width_box = thorpy.Inserter.make(name='Width: ', value='')
-        pattern_height_box = thorpy.Inserter.make(name='Height: ', value='')
-        block_data_box = thorpy.Inserter.make(name='Block data: ', value='')
-        stand_data_box = thorpy.Inserter.make(name='Stand data: ', value='')
-        climb_data_box = thorpy.Inserter.make(name='Climb data: ', value='')
-        damage_data_box = thorpy.Inserter.make(name='Damage data: ', value='')
-        self.pattern_details_area = thorpy.Box.make([pattern_details_title, pattern_id_box, image_file_box, pattern_width_box, pattern_height_box, block_data_box, stand_data_box, climb_data_box, damage_data_box])
+        self.pattern_id_box = thorpy.Inserter.make(name='ID: ', value='')
+        self.image_file_box = thorpy.Inserter.make(name='Image file: ', value='')
+        self.pattern_width_box = thorpy.Inserter.make(name='Width: ', value='')
+        self.pattern_height_box = thorpy.Inserter.make(name='Height: ', value='')
+        self.block_data_box = thorpy.Inserter.make(name='Block data: ', value='')
+        self.stand_data_box = thorpy.Inserter.make(name='Stand data: ', value='')
+        self.climb_data_box = thorpy.Inserter.make(name='Climb data: ', value='')
+        self.damage_data_box = thorpy.Inserter.make(name='Damage data: ', value='')
+        self.pattern_details_area = thorpy.Box.make([pattern_details_title, self.pattern_id_box, self.image_file_box, self.pattern_width_box, self.pattern_height_box, self.block_data_box, self.stand_data_box, self.climb_data_box, self.damage_data_box])
 
         # Object details area
         object_details_title = thorpy.make_text('Object Details', 18, (0, 0, 0))
@@ -107,6 +109,31 @@ class LevelEditor(GameScene):
 
         self.menu = thorpy.Menu([self.game_area, self.patterns_area, self.details_area])
 
+    def save_level(self):
+        # Collect level details
+        level = {
+            'width': self.level_width_box.get_value(),
+            'height': self.level_height_box.get_value(),
+            'gravity': self.gravity_box.get_value(),
+            'jumpheight': self.jump_height_box.get_value(),
+            'playerspeed': self.player_speed_box.get_value(),
+            'objects': [],
+        }
+        # Collect objects
+        for level_object in self.level_objects:
+            level['objects'].append({
+                'type': level_object.type,
+                'x': level_object.draw_position[0],
+                'y': level_object.draw_position[1],
+                'z': 0  # TODO
+            })
+        # Write file
+        file_name = self.level_name_box.get_value()
+        if not file_name.endswith('.json'):
+            file_name += '.json'
+        with open(os.path.join('levels', file_name), 'w') as file:
+            json.dump(level, file, indent=2)
+
     def draw(self, screen):
         for level_object in self.level_objects:
             level_object.draw(self.render_queue)
@@ -145,13 +172,22 @@ class LevelEditor(GameScene):
 
     def update_object_details_area(self, level_object):
         if level_object is None:
-            self.top_box.set_text('')
-            self.left_box.set_text('')
-            self.z_box.set_text('')
+            self.top_box.set_value('')
+            self.left_box.set_value('')
+            self.z_box.set_value('')
         else:
-            self.top_box.set_text(str(level_object.draw_position[1]))
-            self.left_box.set_text(str(level_object.draw_position[0]))
-            self.z_box.set_text('0')  # todo
+            self.top_box.set_value(str(level_object.draw_position[1]))
+            self.left_box.set_value(str(level_object.draw_position[0]))
+            self.z_box.set_value('0')  # todo
+
+            self.pattern_id_box.set_value(level_object.type)
+            self.image_file_box.set_value(level_object.pattern.definition['image'])
+            self.pattern_width_box.set_value(str(level_object.pattern.definition['width']))
+            self.pattern_height_box.set_value(str(level_object.pattern.definition['height']))
+            self.block_data_box.set_value('')
+            self.stand_data_box.set_value('')
+            self.climb_data_box.set_value('')
+            self.damage_data_box.set_value('')
 
 
 if __name__ == '__main__':

@@ -47,7 +47,8 @@ class LevelObject:
     z_index  = 0
     def __init__(self, objectDefinition, surfdata=None):
         o = objectDefinition
-        self.pattern  = LevelObjectPattern.get( o['type'] )
+        self.type = o['type']
+        self.pattern  = LevelObjectPattern.get( self.type )
         x = o['x']
         y = o['y']
 
