@@ -1540,7 +1540,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
      inkscape:cx="777.06276"
-     inkscape:cy="529.46849"
+     inkscape:cy="586.61135"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -1572,1433 +1572,1437 @@
      inkscape:groupmode="layer"
      id="layer1">
     <g
-       transform="matrix(0.2057771,0,0,0.2057771,-839.51843,-116.21604)"
-       style="clip-rule:evenodd;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
-       id="g5870"
-       inkscape:export-filename="/home/becky/Documents/GameJams/AdventitiousAsylum/assets/structures/door.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90">
+       id="g22957"
+       transform="translate(668.57143,-204.28571)">
       <g
-         id="g5872">
-        <rect
-           style="fill:#9e8b7b"
-           id="rect5874"
-           ry="51"
-           rx="50"
-           height="1172"
-           width="714"
-           y="785"
-           x="6540"
-           class="fil61" />
-        <rect
-           style="fill:#eee6e2"
-           id="rect5876"
-           ry="50"
-           rx="50"
-           height="1157"
-           width="705"
-           y="792"
-           x="6545"
-           class="fil10" />
-        <rect
-           style="fill:#bda897"
-           id="rect5878"
-           ry="50"
-           rx="49"
-           height="1150"
-           width="700"
-           y="796"
-           x="6548"
-           class="fil14" />
-        <rect
-           style="fill:#eee6e2"
-           id="rect5880"
-           ry="47"
-           rx="44"
-           height="1094"
-           width="624"
-           y="824"
-           x="6585"
-           class="fil10" />
-        <rect
-           style="fill:#9e8b7b"
-           id="rect5882"
-           ry="47"
-           rx="44"
-           height="1089"
-           width="619"
-           y="826"
-           x="6588"
-           class="fil61" />
-        <rect
-           style="fill:#eee6e2"
-           id="rect5884"
-           height="5.1539698"
-           width="69.192299"
-           y="1411"
-           x="6540"
-           class="fil10" />
-        <polygon
-           style="fill:#eee6e2;fill-rule:nonzero"
-           id="polygon5886"
-           points="6669,791 6669,790 6675,785 6681,785 6673,793 6673,826 6689,852 6683,852 6669,828 6669,827 6669,826 6669,792 "
-           class="fil62" />
-        <rect
-           style="fill:#000000"
-           id="rect5888"
-           ry="45"
-           rx="41"
-           height="1038"
-           width="576"
-           y="852"
-           x="6610"
-           class="fil6" />
-        <polygon
-           style="fill:#bda897"
-           id="polygon5890"
-           points="6759,773 6736,796 6743,807 6759,823 7036,823 7052,807 7058,796 7036,773 "
-           class="fil14" />
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/home/becky/Documents/GameJams/AdventitiousAsylum/assets/structures/door.png"
+         id="g5870"
+         style="clip-rule:evenodd;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
+         transform="matrix(0.27778652,0,0,0.33979463,-1514.7457,90.083089)">
         <g
-           id="g5892">
-          <path
-             style="fill:#ff4609"
-             inkscape:connector-curvature="0"
-             id="path5894"
-             d="M 6851,787 6944,787 C 6957,787 6968,798 6968,811 L 6968,811 C 6968,824 6957,835 6944,835 L 6851,835 C 6838,835 6827,824 6827,811 L 6827,811 C 6827,798 6838,787 6851,787 Z"
-             class="fil63" />
-          <path
-             style="fill:#736457"
-             inkscape:connector-curvature="0"
-             id="path5896"
-             d="M 6851,785 6944,785 C 6957,785 6968,796 6968,809 L 6968,809 C 6968,822 6957,833 6944,833 L 6851,833 C 6838,833 6827,822 6827,809 L 6827,809 C 6827,796 6838,785 6851,785 Z"
-             class="fil64" />
+           id="g5872">
+          <rect
+             class="fil61"
+             x="6540"
+             y="785"
+             width="714"
+             height="1172"
+             rx="50"
+             ry="51"
+             id="rect5874"
+             style="fill:#9e8b7b" />
+          <rect
+             class="fil10"
+             x="6545"
+             y="792"
+             width="705"
+             height="1157"
+             rx="50"
+             ry="50"
+             id="rect5876"
+             style="fill:#eee6e2" />
+          <rect
+             class="fil14"
+             x="6548"
+             y="796"
+             width="700"
+             height="1150"
+             rx="49"
+             ry="50"
+             id="rect5878"
+             style="fill:#bda897" />
+          <rect
+             class="fil10"
+             x="6585"
+             y="824"
+             width="624"
+             height="1094"
+             rx="44"
+             ry="47"
+             id="rect5880"
+             style="fill:#eee6e2" />
+          <rect
+             class="fil61"
+             x="6588"
+             y="826"
+             width="619"
+             height="1089"
+             rx="44"
+             ry="47"
+             id="rect5882"
+             style="fill:#9e8b7b" />
+          <rect
+             class="fil10"
+             x="6540"
+             y="1411"
+             width="69.192299"
+             height="5.1539698"
+             id="rect5884"
+             style="fill:#eee6e2" />
+          <polygon
+             class="fil62"
+             points="6689,852 6683,852 6669,828 6669,827 6669,826 6669,792 6669,791 6669,790 6675,785 6681,785 6673,793 6673,826 "
+             id="polygon5886"
+             style="fill:#eee6e2;fill-rule:nonzero" />
+          <rect
+             class="fil6"
+             x="6610"
+             y="852"
+             width="576"
+             height="1038"
+             rx="41"
+             ry="45"
+             id="rect5888"
+             style="fill:#000000" />
+          <polygon
+             class="fil14"
+             points="7058,796 7036,773 6759,773 6736,796 6743,807 6759,823 7036,823 7052,807 "
+             id="polygon5890"
+             style="fill:#bda897" />
           <g
-             id="g5898">
+             id="g5892">
             <path
-               style="fill:none;stroke:#ff4609;stroke-width:2.23902011"
+               class="fil63"
+               d="M 6851,787 6944,787 C 6957,787 6968,798 6968,811 L 6968,811 C 6968,824 6957,835 6944,835 L 6851,835 C 6838,835 6827,824 6827,811 L 6827,811 C 6827,798 6838,787 6851,787 Z"
+               id="path5894"
                inkscape:connector-curvature="0"
-               id="path5900"
-               d="M 6851,791 6943,791 C 6953,791 6961,799 6961,809 L 6961,809 C 6961,819 6953,827 6943,827 L 6851,827 C 6841,827 6833,819 6833,809 L 6833,809 C 6833,799 6841,791 6851,791 Z"
-               class="fil22 str6" />
+               style="fill:#ff4609" />
             <path
-               style="fill:#ae0000"
+               class="fil64"
+               d="M 6851,785 6944,785 C 6957,785 6968,796 6968,809 L 6968,809 C 6968,822 6957,833 6944,833 L 6851,833 C 6838,833 6827,822 6827,809 L 6827,809 C 6827,796 6838,785 6851,785 Z"
+               id="path5896"
                inkscape:connector-curvature="0"
-               d="M 6851,791 6943,791 C 6953,791 6961,799 6961,809 L 6961,809 C 6961,819 6953,827 6943,827 L 6851,827 C 6841,827 6833,819 6833,809 L 6833,809 C 6833,799 6841,791 6851,791 Z"
-               class="fil65"
-               id="path5902" />
-          </g>
-          <path
-             style="fill:#940000"
-             inkscape:connector-curvature="0"
-             id="path5904"
-             d="M 6961,805 C 6961,806 6961,808 6961,809 L 6961,809 C 6961,819 6953,827 6943,827 L 6851,827 C 6841,827 6833,819 6833,809 L 6833,809 C 6833,808 6833,806 6834,805 6835,813 6843,820 6851,820 L 6943,820 C 6952,820 6959,813 6961,805 Z"
-             class="fil28" />
-          <path
-             style="fill:#ff4609"
-             inkscape:connector-curvature="0"
-             id="path5906"
-             d="M 6850,792 6945,792 C 6949,792 6952,796 6952,800 L 6952,800 C 6952,804 6949,807 6945,807 L 6850,807 C 6846,807 6843,804 6843,800 L 6843,800 C 6843,796 6846,792 6850,792 Z"
-             class="fil63" />
-        </g>
-        <polygon
-           style="fill:#000000;fill-rule:nonzero"
-           id="polygon5908"
-           points="6670,791 6671,790 6677,785 6683,785 6675,793 6675,826 6690,852 6685,852 6671,828 6670,827 6670,826 6670,792 "
-           class="fil5" />
-        <polygon
-           style="fill:#eee6e2;fill-rule:nonzero"
-           id="polygon5910"
-           points="7130,791 7129,790 7123,785 7118,785 7125,793 7125,826 7110,852 7116,852 7130,828 7130,827 7130,826 7130,792 "
-           class="fil62" />
-        <polygon
-           style="fill:#000000;fill-rule:nonzero"
-           id="polygon5912"
-           points="7128,791 7128,790 7121,785 7116,785 7124,793 7124,826 7108,852 7114,852 7128,828 7128,827 7128,826 7128,792 "
-           class="fil5" />
-        <polygon
-           style="fill:#eee6e2;fill-rule:nonzero"
-           id="polygon5914"
-           points="6669,1951 6669,1952 6675,1957 6681,1957 6673,1949 6673,1916 6689,1890 6683,1890 6669,1914 6669,1914 6669,1915 6669,1950 "
-           class="fil62" />
-        <polygon
-           style="fill:#000000;fill-rule:nonzero"
-           id="polygon5916"
-           points="6670,1951 6671,1952 6677,1957 6683,1957 6675,1949 6675,1916 6690,1890 6685,1890 6671,1914 6670,1914 6670,1915 6670,1950 "
-           class="fil5" />
-        <polygon
-           style="fill:#eee6e2;fill-rule:nonzero"
-           id="polygon5918"
-           points="7130,1951 7129,1952 7123,1957 7118,1957 7125,1949 7125,1916 7110,1890 7116,1890 7130,1914 7130,1914 7130,1915 7130,1950 "
-           class="fil62" />
-        <polygon
-           style="fill:#000000;fill-rule:nonzero"
-           id="polygon5920"
-           points="7128,1951 7128,1952 7121,1957 7116,1957 7124,1949 7124,1916 7108,1890 7114,1890 7128,1914 7128,1914 7128,1915 7128,1950 "
-           class="fil5" />
-        <g
-           id="g5922">
-          <circle
-             style="fill:#d2c1b8"
-             id="circle5924"
-             r="12"
-             cy="811"
-             cx="6690"
-             class="fil9" />
-          <circle
-             style="fill:#9e8b7b"
-             id="circle5926"
-             r="12"
-             cy="810"
-             cx="6690"
-             class="fil61" />
-          <circle
-             style="fill:#000000"
-             id="circle5928"
-             r="6"
-             cy="810"
-             cx="6690"
-             class="fil6" />
-        </g>
-        <g
-           id="g5930">
-          <circle
-             style="fill:#d2c1b8"
-             id="circle5932"
-             r="12"
-             cy="811"
-             cx="7107"
-             class="fil9" />
-          <circle
-             style="fill:#9e8b7b"
-             id="circle5934"
-             r="12"
-             cy="810"
-             cx="7107"
-             class="fil61" />
-          <circle
-             style="fill:#000000"
-             id="circle5936"
-             r="6"
-             cy="810"
-             cx="7107"
-             class="fil6" />
-        </g>
-        <g
-           id="g5938">
-          <circle
-             style="fill:#d2c1b8"
-             id="circle5940"
-             r="12"
-             cy="1933"
-             cx="6689"
-             class="fil9" />
-          <circle
-             style="fill:#9e8b7b"
-             id="circle5942"
-             r="12"
-             cy="1932"
-             cx="6689"
-             class="fil61" />
-          <circle
-             style="fill:#000000"
-             id="circle5944"
-             r="6"
-             cy="1932"
-             cx="6689"
-             class="fil6" />
-        </g>
-        <g
-           id="g5946">
-          <circle
-             style="fill:#d2c1b8"
-             id="circle5948"
-             r="12"
-             cy="1933"
-             cx="7106"
-             class="fil9" />
-          <circle
-             style="fill:#9e8b7b"
-             id="circle5950"
-             r="12"
-             cy="1932"
-             cx="7106"
-             class="fil61" />
-          <circle
-             style="fill:#000000"
-             id="circle5952"
-             r="6"
-             cy="1932"
-             cx="7106"
-             class="fil6" />
-        </g>
-        <rect
-           style="fill:#eee6e2"
-           id="rect5954"
-           height="41.086899"
-           width="19.294201"
-           y="773"
-           x="6767"
-           class="fil10" />
-        <rect
-           style="fill:#eee6e2"
-           id="rect5956"
-           height="41.086899"
-           width="19.294201"
-           y="773"
-           x="6792"
-           class="fil10" />
-        <rect
-           style="fill:#eee6e2"
-           id="rect5958"
-           height="41.086899"
-           width="19.294201"
-           y="773"
-           x="6983"
-           class="fil10" />
-        <rect
-           style="fill:#eee6e2"
-           id="rect5960"
-           height="41.086899"
-           width="19.294201"
-           y="773"
-           x="7008"
-           class="fil10" />
-        <g
-           id="g5962">
-          <rect
-             style="fill:#eee6e2"
-             id="rect5964"
-             height="20.929701"
-             width="19.294201"
-             y="1925"
-             x="6850"
-             class="fil10" />
-          <rect
-             style="fill:#eee6e2"
-             id="rect5966"
-             height="20.929701"
-             width="19.294201"
-             y="1925"
-             x="6875"
-             class="fil10" />
-          <rect
-             style="fill:#eee6e2"
-             id="rect5968"
-             height="20.929701"
-             width="19.294201"
-             y="1925"
-             x="6900"
-             class="fil10" />
-          <rect
-             style="fill:#eee6e2"
-             id="rect5970"
-             height="20.929701"
-             width="19.294201"
-             y="1925"
-             x="6925"
-             class="fil10" />
-        </g>
-        <rect
-           style="fill:#000000"
-           id="rect5972"
-           height="5.1539698"
-           width="69.192299"
-           y="1408"
-           x="6540"
-           class="fil6" />
-        <rect
-           style="fill:#eee6e2"
-           id="rect5974"
-           height="5.1539698"
-           width="69.192299"
-           y="1411"
-           x="7185"
-           class="fil10" />
-        <rect
-           style="fill:#000000"
-           id="rect5976"
-           height="5.1539698"
-           width="69.192299"
-           y="1408"
-           x="7185"
-           class="fil6" />
-        <g
-           id="g5978">
-          <rect
-             style="fill:#eee6e2"
-             id="rect5980"
-             height="8.1473703"
-             width="30.9419"
-             y="1396"
-             x="6551"
-             class="fil10" />
-          <rect
-             style="fill:#000000"
-             id="rect5982"
-             height="8.1473703"
-             width="30.9419"
-             y="1394"
-             x="6551"
-             class="fil6" />
-        </g>
-        <g
-           id="g5984">
-          <rect
-             style="fill:#eee6e2"
-             id="rect5986"
-             height="8.1473703"
-             width="30.9419"
-             y="1383"
-             x="6551"
-             class="fil10" />
-          <rect
-             style="fill:#000000"
-             id="rect5988"
-             height="8.1473703"
-             width="30.9419"
-             y="1381"
-             x="6551"
-             class="fil6" />
-        </g>
-        <g
-           id="g5990">
-          <rect
-             style="fill:#eee6e2"
-             id="rect5992"
-             height="8.1473703"
-             width="30.9419"
-             y="1436"
-             x="6551"
-             class="fil10" />
-          <rect
-             style="fill:#000000"
-             id="rect5994"
-             height="8.1473703"
-             width="30.9419"
-             y="1435"
-             x="6551"
-             class="fil6" />
-        </g>
-        <g
-           id="g5996">
-          <rect
-             style="fill:#eee6e2"
-             id="rect5998"
-             height="8.1473703"
-             width="30.9419"
-             y="1423"
-             x="6551"
-             class="fil10" />
-          <rect
-             style="fill:#000000"
-             id="rect6000"
-             height="8.1473703"
-             width="30.9419"
-             y="1421"
-             x="6551"
-             class="fil6" />
-        </g>
-        <g
-           id="g6002">
-          <rect
-             style="fill:#eee6e2"
-             id="rect6004"
-             height="8.1473703"
-             width="30.9419"
-             y="1396"
-             x="7213"
-             class="fil10" />
-          <rect
-             style="fill:#000000"
-             id="rect6006"
-             height="8.1473703"
-             width="30.9419"
-             y="1394"
-             x="7213"
-             class="fil6" />
-        </g>
-        <g
-           id="g6008">
-          <rect
-             style="fill:#eee6e2"
-             id="rect6010"
-             height="8.1473703"
-             width="30.9419"
-             y="1383"
-             x="7213"
-             class="fil10" />
-          <rect
-             style="fill:#000000"
-             id="rect6012"
-             height="8.1473703"
-             width="30.9419"
-             y="1381"
-             x="7213"
-             class="fil6" />
-        </g>
-        <g
-           id="g6014">
-          <rect
-             style="fill:#eee6e2"
-             id="rect6016"
-             height="8.1473703"
-             width="30.9419"
-             y="1436"
-             x="7213"
-             class="fil10" />
-          <rect
-             style="fill:#000000"
-             id="rect6018"
-             height="8.1473703"
-             width="30.9419"
-             y="1435"
-             x="7213"
-             class="fil6" />
-        </g>
-        <g
-           id="g6020">
-          <rect
-             style="fill:#eee6e2"
-             id="rect6022"
-             height="8.1473703"
-             width="30.9419"
-             y="1423"
-             x="7213"
-             class="fil10" />
-          <rect
-             style="fill:#000000"
-             id="rect6024"
-             height="8.1473703"
-             width="30.9419"
-             y="1421"
-             x="7213"
-             class="fil6" />
-        </g>
-      </g>
-      <polygon
-         style="fill:#000000"
-         id="polygon6026"
-         points="6656,859 6616,899 6616,1843 6656,1882 7139,1882 7179,1843 7179,899 7139,859 "
-         class="fil6" />
-      <g
-         clip-path="url(#id12)"
-         id="g6028">
-        <g
-           id="g6030">
-          <g
-             id="g6032">
-            <rect
-               style="fill:#b3b3b3"
-               id="rect6034"
-               ry="44"
-               rx="40"
-               height="1023"
-               width="563"
-               y="859"
-               x="6616"
-               class="fil19" />
-            <rect
-               style="fill:#e6e6e6"
-               id="rect6036"
-               ry="43"
-               rx="38"
-               height="1005"
-               width="538"
-               y="868"
-               x="6628"
-               class="fil24" />
-            <rect
-               style="fill:#cccccc"
-               id="rect6038"
-               ry="43"
-               rx="38"
-               height="1000"
-               width="534"
-               y="871"
-               x="6630"
-               class="fil18" />
-            <polygon
-               style="fill:#e6e6e6;fill-rule:nonzero"
-               id="polygon6040"
-               points="6616,1006 6616,1001 6630,1001 6740,1001 6779,962 6780,961 6781,961 7013,961 7014,961 7015,962 7052,1001 7179,1001 7179,1006 7051,1006 7050,1006 7050,1005 7012,966 6781,966 6742,1005 6742,1006 6741,1006 6630,1006 "
-               class="fil66" />
-            <polygon
-               style="fill:#e6e6e6;fill-rule:nonzero"
-               id="polygon6042"
-               points="7166,1629 6628,1629 6616,1636 6616,1631 6627,1625 6627,1624 6628,1624 7167,1624 7168,1624 7168,1625 7179,1636 7179,1642 "
-               class="fil66" />
-            <rect
-               style="fill:#b3b3b3"
-               id="rect6044"
-               height="111"
-               width="563"
-               y="1686"
-               x="6616"
-               class="fil19" />
-            <polygon
-               style="fill:#fea000"
-               id="polygon6046"
-               points="7179,1701 7179,1797 6616,1797 6616,1701 "
-               class="fil67" />
-          </g>
-          <g
-             clip-path="url(#id13)"
-             id="g6048">
+               style="fill:#736457" />
             <g
-               id="g6050">
+               id="g5898">
+              <path
+                 class="fil22 str6"
+                 d="M 6851,791 6943,791 C 6953,791 6961,799 6961,809 L 6961,809 C 6961,819 6953,827 6943,827 L 6851,827 C 6841,827 6833,819 6833,809 L 6833,809 C 6833,799 6841,791 6851,791 Z"
+                 id="path5900"
+                 inkscape:connector-curvature="0"
+                 style="fill:none;stroke:#ff4609;stroke-width:2.23902011" />
+              <path
+                 id="path5902"
+                 class="fil65"
+                 d="M 6851,791 6943,791 C 6953,791 6961,799 6961,809 L 6961,809 C 6961,819 6953,827 6943,827 L 6851,827 C 6841,827 6833,819 6833,809 L 6833,809 C 6833,799 6841,791 6851,791 Z"
+                 inkscape:connector-curvature="0"
+                 style="fill:#ae0000" />
+            </g>
+            <path
+               class="fil28"
+               d="M 6961,805 C 6961,806 6961,808 6961,809 L 6961,809 C 6961,819 6953,827 6943,827 L 6851,827 C 6841,827 6833,819 6833,809 L 6833,809 C 6833,808 6833,806 6834,805 6835,813 6843,820 6851,820 L 6943,820 C 6952,820 6959,813 6961,805 Z"
+               id="path5904"
+               inkscape:connector-curvature="0"
+               style="fill:#940000" />
+            <path
+               class="fil63"
+               d="M 6850,792 6945,792 C 6949,792 6952,796 6952,800 L 6952,800 C 6952,804 6949,807 6945,807 L 6850,807 C 6846,807 6843,804 6843,800 L 6843,800 C 6843,796 6846,792 6850,792 Z"
+               id="path5906"
+               inkscape:connector-curvature="0"
+               style="fill:#ff4609" />
+          </g>
+          <polygon
+             class="fil5"
+             points="6690,852 6685,852 6671,828 6670,827 6670,826 6670,792 6670,791 6671,790 6677,785 6683,785 6675,793 6675,826 "
+             id="polygon5908"
+             style="fill:#000000;fill-rule:nonzero" />
+          <polygon
+             class="fil62"
+             points="7110,852 7116,852 7130,828 7130,827 7130,826 7130,792 7130,791 7129,790 7123,785 7118,785 7125,793 7125,826 "
+             id="polygon5910"
+             style="fill:#eee6e2;fill-rule:nonzero" />
+          <polygon
+             class="fil5"
+             points="7108,852 7114,852 7128,828 7128,827 7128,826 7128,792 7128,791 7128,790 7121,785 7116,785 7124,793 7124,826 "
+             id="polygon5912"
+             style="fill:#000000;fill-rule:nonzero" />
+          <polygon
+             class="fil62"
+             points="6689,1890 6683,1890 6669,1914 6669,1914 6669,1915 6669,1950 6669,1951 6669,1952 6675,1957 6681,1957 6673,1949 6673,1916 "
+             id="polygon5914"
+             style="fill:#eee6e2;fill-rule:nonzero" />
+          <polygon
+             class="fil5"
+             points="6690,1890 6685,1890 6671,1914 6670,1914 6670,1915 6670,1950 6670,1951 6671,1952 6677,1957 6683,1957 6675,1949 6675,1916 "
+             id="polygon5916"
+             style="fill:#000000;fill-rule:nonzero" />
+          <polygon
+             class="fil62"
+             points="7110,1890 7116,1890 7130,1914 7130,1914 7130,1915 7130,1950 7130,1951 7129,1952 7123,1957 7118,1957 7125,1949 7125,1916 "
+             id="polygon5918"
+             style="fill:#eee6e2;fill-rule:nonzero" />
+          <polygon
+             class="fil5"
+             points="7108,1890 7114,1890 7128,1914 7128,1914 7128,1915 7128,1950 7128,1951 7128,1952 7121,1957 7116,1957 7124,1949 7124,1916 "
+             id="polygon5920"
+             style="fill:#000000;fill-rule:nonzero" />
+          <g
+             id="g5922">
+            <circle
+               class="fil9"
+               cx="6690"
+               cy="811"
+               r="12"
+               id="circle5924"
+               style="fill:#d2c1b8" />
+            <circle
+               class="fil61"
+               cx="6690"
+               cy="810"
+               r="12"
+               id="circle5926"
+               style="fill:#9e8b7b" />
+            <circle
+               class="fil6"
+               cx="6690"
+               cy="810"
+               r="6"
+               id="circle5928"
+               style="fill:#000000" />
+          </g>
+          <g
+             id="g5930">
+            <circle
+               class="fil9"
+               cx="7107"
+               cy="811"
+               r="12"
+               id="circle5932"
+               style="fill:#d2c1b8" />
+            <circle
+               class="fil61"
+               cx="7107"
+               cy="810"
+               r="12"
+               id="circle5934"
+               style="fill:#9e8b7b" />
+            <circle
+               class="fil6"
+               cx="7107"
+               cy="810"
+               r="6"
+               id="circle5936"
+               style="fill:#000000" />
+          </g>
+          <g
+             id="g5938">
+            <circle
+               class="fil9"
+               cx="6689"
+               cy="1933"
+               r="12"
+               id="circle5940"
+               style="fill:#d2c1b8" />
+            <circle
+               class="fil61"
+               cx="6689"
+               cy="1932"
+               r="12"
+               id="circle5942"
+               style="fill:#9e8b7b" />
+            <circle
+               class="fil6"
+               cx="6689"
+               cy="1932"
+               r="6"
+               id="circle5944"
+               style="fill:#000000" />
+          </g>
+          <g
+             id="g5946">
+            <circle
+               class="fil9"
+               cx="7106"
+               cy="1933"
+               r="12"
+               id="circle5948"
+               style="fill:#d2c1b8" />
+            <circle
+               class="fil61"
+               cx="7106"
+               cy="1932"
+               r="12"
+               id="circle5950"
+               style="fill:#9e8b7b" />
+            <circle
+               class="fil6"
+               cx="7106"
+               cy="1932"
+               r="6"
+               id="circle5952"
+               style="fill:#000000" />
+          </g>
+          <rect
+             class="fil10"
+             x="6767"
+             y="773"
+             width="19.294201"
+             height="41.086899"
+             id="rect5954"
+             style="fill:#eee6e2" />
+          <rect
+             class="fil10"
+             x="6792"
+             y="773"
+             width="19.294201"
+             height="41.086899"
+             id="rect5956"
+             style="fill:#eee6e2" />
+          <rect
+             class="fil10"
+             x="6983"
+             y="773"
+             width="19.294201"
+             height="41.086899"
+             id="rect5958"
+             style="fill:#eee6e2" />
+          <rect
+             class="fil10"
+             x="7008"
+             y="773"
+             width="19.294201"
+             height="41.086899"
+             id="rect5960"
+             style="fill:#eee6e2" />
+          <g
+             id="g5962">
+            <rect
+               class="fil10"
+               x="6850"
+               y="1925"
+               width="19.294201"
+               height="20.929701"
+               id="rect5964"
+               style="fill:#eee6e2" />
+            <rect
+               class="fil10"
+               x="6875"
+               y="1925"
+               width="19.294201"
+               height="20.929701"
+               id="rect5966"
+               style="fill:#eee6e2" />
+            <rect
+               class="fil10"
+               x="6900"
+               y="1925"
+               width="19.294201"
+               height="20.929701"
+               id="rect5968"
+               style="fill:#eee6e2" />
+            <rect
+               class="fil10"
+               x="6925"
+               y="1925"
+               width="19.294201"
+               height="20.929701"
+               id="rect5970"
+               style="fill:#eee6e2" />
+          </g>
+          <rect
+             class="fil6"
+             x="6540"
+             y="1408"
+             width="69.192299"
+             height="5.1539698"
+             id="rect5972"
+             style="fill:#000000" />
+          <rect
+             class="fil10"
+             x="7185"
+             y="1411"
+             width="69.192299"
+             height="5.1539698"
+             id="rect5974"
+             style="fill:#eee6e2" />
+          <rect
+             class="fil6"
+             x="7185"
+             y="1408"
+             width="69.192299"
+             height="5.1539698"
+             id="rect5976"
+             style="fill:#000000" />
+          <g
+             id="g5978">
+            <rect
+               class="fil10"
+               x="6551"
+               y="1396"
+               width="30.9419"
+               height="8.1473703"
+               id="rect5980"
+               style="fill:#eee6e2" />
+            <rect
+               class="fil6"
+               x="6551"
+               y="1394"
+               width="30.9419"
+               height="8.1473703"
+               id="rect5982"
+               style="fill:#000000" />
+          </g>
+          <g
+             id="g5984">
+            <rect
+               class="fil10"
+               x="6551"
+               y="1383"
+               width="30.9419"
+               height="8.1473703"
+               id="rect5986"
+               style="fill:#eee6e2" />
+            <rect
+               class="fil6"
+               x="6551"
+               y="1381"
+               width="30.9419"
+               height="8.1473703"
+               id="rect5988"
+               style="fill:#000000" />
+          </g>
+          <g
+             id="g5990">
+            <rect
+               class="fil10"
+               x="6551"
+               y="1436"
+               width="30.9419"
+               height="8.1473703"
+               id="rect5992"
+               style="fill:#eee6e2" />
+            <rect
+               class="fil6"
+               x="6551"
+               y="1435"
+               width="30.9419"
+               height="8.1473703"
+               id="rect5994"
+               style="fill:#000000" />
+          </g>
+          <g
+             id="g5996">
+            <rect
+               class="fil10"
+               x="6551"
+               y="1423"
+               width="30.9419"
+               height="8.1473703"
+               id="rect5998"
+               style="fill:#eee6e2" />
+            <rect
+               class="fil6"
+               x="6551"
+               y="1421"
+               width="30.9419"
+               height="8.1473703"
+               id="rect6000"
+               style="fill:#000000" />
+          </g>
+          <g
+             id="g6002">
+            <rect
+               class="fil10"
+               x="7213"
+               y="1396"
+               width="30.9419"
+               height="8.1473703"
+               id="rect6004"
+               style="fill:#eee6e2" />
+            <rect
+               class="fil6"
+               x="7213"
+               y="1394"
+               width="30.9419"
+               height="8.1473703"
+               id="rect6006"
+               style="fill:#000000" />
+          </g>
+          <g
+             id="g6008">
+            <rect
+               class="fil10"
+               x="7213"
+               y="1383"
+               width="30.9419"
+               height="8.1473703"
+               id="rect6010"
+               style="fill:#eee6e2" />
+            <rect
+               class="fil6"
+               x="7213"
+               y="1381"
+               width="30.9419"
+               height="8.1473703"
+               id="rect6012"
+               style="fill:#000000" />
+          </g>
+          <g
+             id="g6014">
+            <rect
+               class="fil10"
+               x="7213"
+               y="1436"
+               width="30.9419"
+               height="8.1473703"
+               id="rect6016"
+               style="fill:#eee6e2" />
+            <rect
+               class="fil6"
+               x="7213"
+               y="1435"
+               width="30.9419"
+               height="8.1473703"
+               id="rect6018"
+               style="fill:#000000" />
+          </g>
+          <g
+             id="g6020">
+            <rect
+               class="fil10"
+               x="7213"
+               y="1423"
+               width="30.9419"
+               height="8.1473703"
+               id="rect6022"
+               style="fill:#eee6e2" />
+            <rect
+               class="fil6"
+               x="7213"
+               y="1421"
+               width="30.9419"
+               height="8.1473703"
+               id="rect6024"
+               style="fill:#000000" />
+          </g>
+        </g>
+        <polygon
+           class="fil6"
+           points="7179,899 7139,859 6656,859 6616,899 6616,1843 6656,1882 7139,1882 7179,1843 "
+           id="polygon6026"
+           style="fill:#000000" />
+        <g
+           id="g6028"
+           clip-path="url(#id12)">
+          <g
+             id="g6030">
+            <g
+               id="g6032">
+              <rect
+                 class="fil19"
+                 x="6616"
+                 y="859"
+                 width="563"
+                 height="1023"
+                 rx="40"
+                 ry="44"
+                 id="rect6034"
+                 style="fill:#b3b3b3" />
+              <rect
+                 class="fil24"
+                 x="6628"
+                 y="868"
+                 width="538"
+                 height="1005"
+                 rx="38"
+                 ry="43"
+                 id="rect6036"
+                 style="fill:#e6e6e6" />
+              <rect
+                 class="fil18"
+                 x="6630"
+                 y="871"
+                 width="534"
+                 height="1000"
+                 rx="38"
+                 ry="43"
+                 id="rect6038"
+                 style="fill:#cccccc" />
+              <polygon
+                 class="fil66"
+                 points="6781,961 7013,961 7014,961 7015,962 7052,1001 7179,1001 7179,1006 7051,1006 7050,1006 7050,1005 7012,966 6781,966 6742,1005 6742,1006 6741,1006 6630,1006 6616,1006 6616,1001 6630,1001 6740,1001 6779,962 6780,961 "
+                 id="polygon6040"
+                 style="fill:#e6e6e6;fill-rule:nonzero" />
+              <polygon
+                 class="fil66"
+                 points="6628,1624 7167,1624 7168,1624 7168,1625 7179,1636 7179,1642 7166,1629 6628,1629 6616,1636 6616,1631 6627,1625 6627,1624 "
+                 id="polygon6042"
+                 style="fill:#e6e6e6;fill-rule:nonzero" />
+              <rect
+                 class="fil19"
+                 x="6616"
+                 y="1686"
+                 width="563"
+                 height="111"
+                 id="rect6044"
+                 style="fill:#b3b3b3" />
+              <polygon
+                 class="fil67"
+                 points="6616,1797 6616,1701 7179,1701 7179,1797 "
+                 id="polygon6046"
+                 style="fill:#fea000" />
+            </g>
+            <g
+               id="g6048"
+               clip-path="url(#id13)">
               <g
-                 id="g6052">
+                 id="g6050">
                 <g
-                   id="g6054">
+                   id="g6052">
+                  <g
+                     id="g6054">
+                    <rect
+                       class="fil6"
+                       transform="matrix(0.81266,0,-0.578399,0.780155,6562.74,1700.09)"
+                       width="42.493099"
+                       height="125.687"
+                       id="rect6056"
+                       x="0"
+                       y="0"
+                       style="fill:#000000" />
+                    <rect
+                       class="fil6"
+                       transform="matrix(0.81266,0,-0.578399,0.780155,6627.08,1700.09)"
+                       width="42.493099"
+                       height="125.687"
+                       id="rect6058"
+                       x="0"
+                       y="0"
+                       style="fill:#000000" />
+                    <rect
+                       class="fil6"
+                       transform="matrix(0.81266,0,-0.578399,0.780155,6690.89,1700.09)"
+                       width="42.493099"
+                       height="125.687"
+                       id="rect6060"
+                       x="0"
+                       y="0"
+                       style="fill:#000000" />
+                    <rect
+                       class="fil6"
+                       transform="matrix(0.81266,0,-0.578399,0.780155,6755.23,1700.09)"
+                       width="42.493099"
+                       height="125.687"
+                       id="rect6062"
+                       x="0"
+                       y="0"
+                       style="fill:#000000" />
+                    <rect
+                       class="fil6"
+                       transform="matrix(0.81266,0,-0.578399,0.780155,6817.95,1700.09)"
+                       width="42.493099"
+                       height="125.687"
+                       id="rect6064"
+                       x="0"
+                       y="0"
+                       style="fill:#000000" />
+                  </g>
                   <rect
-                     style="fill:#000000"
-                     y="0"
-                     x="0"
-                     id="rect6056"
-                     height="125.687"
+                     class="fil6"
+                     transform="matrix(0.81266,0,-0.578399,0.780155,6881.92,1700.09)"
                      width="42.493099"
-                     transform="matrix(0.81266,0,-0.578399,0.780155,6562.74,1700.09)"
-                     class="fil6" />
+                     height="125.687"
+                     id="rect6066"
+                     x="0"
+                     y="0"
+                     style="fill:#000000" />
                   <rect
-                     style="fill:#000000"
-                     y="0"
-                     x="0"
-                     id="rect6058"
-                     height="125.687"
+                     class="fil6"
+                     transform="matrix(0.81266,0,-0.578399,0.780155,6498.12,1700.09)"
                      width="42.493099"
-                     transform="matrix(0.81266,0,-0.578399,0.780155,6627.08,1700.09)"
-                     class="fil6" />
+                     height="125.687"
+                     id="rect6068"
+                     x="0"
+                     y="0"
+                     style="fill:#000000" />
                   <rect
-                     style="fill:#000000"
-                     y="0"
-                     x="0"
-                     id="rect6060"
-                     height="125.687"
+                     class="fil6"
+                     transform="matrix(0.81266,0,-0.578399,0.780155,6434.92,1700.09)"
                      width="42.493099"
-                     transform="matrix(0.81266,0,-0.578399,0.780155,6690.89,1700.09)"
-                     class="fil6" />
-                  <rect
-                     style="fill:#000000"
-                     y="0"
-                     x="0"
-                     id="rect6062"
                      height="125.687"
-                     width="42.493099"
-                     transform="matrix(0.81266,0,-0.578399,0.780155,6755.23,1700.09)"
-                     class="fil6" />
-                  <rect
-                     style="fill:#000000"
-                     y="0"
+                     id="rect6070"
                      x="0"
-                     id="rect6064"
-                     height="125.687"
-                     width="42.493099"
-                     transform="matrix(0.81266,0,-0.578399,0.780155,6817.95,1700.09)"
-                     class="fil6" />
+                     y="0"
+                     style="fill:#000000" />
                 </g>
-                <rect
-                   style="fill:#000000"
-                   y="0"
-                   x="0"
-                   id="rect6066"
-                   height="125.687"
-                   width="42.493099"
-                   transform="matrix(0.81266,0,-0.578399,0.780155,6881.92,1700.09)"
-                   class="fil6" />
-                <rect
-                   style="fill:#000000"
-                   y="0"
-                   x="0"
-                   id="rect6068"
-                   height="125.687"
-                   width="42.493099"
-                   transform="matrix(0.81266,0,-0.578399,0.780155,6498.12,1700.09)"
-                   class="fil6" />
-                <rect
-                   style="fill:#000000"
-                   y="0"
-                   x="0"
-                   id="rect6070"
-                   height="125.687"
-                   width="42.493099"
-                   transform="matrix(0.81266,0,-0.578399,0.780155,6434.92,1700.09)"
-                   class="fil6" />
-              </g>
-              <g
-                 id="g6072">
                 <g
-                   id="g6074">
+                   id="g6072">
+                  <g
+                     id="g6074">
+                    <rect
+                       class="fil6"
+                       transform="matrix(0.81266,0,-0.578399,0.780155,7078.87,1700.09)"
+                       width="42.493099"
+                       height="125.687"
+                       id="rect6076"
+                       x="0"
+                       y="0"
+                       style="fill:#000000" />
+                    <rect
+                       class="fil6"
+                       transform="matrix(0.81266,0,-0.578399,0.780155,7143.22,1700.09)"
+                       width="42.493099"
+                       height="125.687"
+                       id="rect6078"
+                       x="0"
+                       y="0"
+                       style="fill:#000000" />
+                    <rect
+                       class="fil6"
+                       transform="matrix(0.81266,0,-0.578399,0.780155,7207.02,1700.09)"
+                       width="42.493099"
+                       height="125.687"
+                       id="rect6080"
+                       x="0"
+                       y="0"
+                       style="fill:#000000" />
+                    <rect
+                       class="fil6"
+                       transform="matrix(0.81266,0,-0.578399,0.780155,7271.37,1700.09)"
+                       width="42.493099"
+                       height="125.687"
+                       id="rect6082"
+                       x="0"
+                       y="0"
+                       style="fill:#000000" />
+                    <rect
+                       class="fil6"
+                       transform="matrix(0.81266,0,-0.578399,0.780155,7334.08,1700.09)"
+                       width="42.493099"
+                       height="125.687"
+                       id="rect6084"
+                       x="0"
+                       y="0"
+                       style="fill:#000000" />
+                  </g>
                   <rect
-                     style="fill:#000000"
-                     y="0"
-                     x="0"
-                     id="rect6076"
-                     height="125.687"
+                     class="fil6"
+                     transform="matrix(0.81266,0,-0.578399,0.780155,7398.06,1700.09)"
                      width="42.493099"
-                     transform="matrix(0.81266,0,-0.578399,0.780155,7078.87,1700.09)"
-                     class="fil6" />
+                     height="125.687"
+                     id="rect6086"
+                     x="0"
+                     y="0"
+                     style="fill:#000000" />
                   <rect
-                     style="fill:#000000"
-                     y="0"
-                     x="0"
-                     id="rect6078"
-                     height="125.687"
+                     class="fil6"
+                     transform="matrix(0.81266,0,-0.578399,0.780155,7014.26,1700.09)"
                      width="42.493099"
-                     transform="matrix(0.81266,0,-0.578399,0.780155,7143.22,1700.09)"
-                     class="fil6" />
+                     height="125.687"
+                     id="rect6088"
+                     x="0"
+                     y="0"
+                     style="fill:#000000" />
                   <rect
-                     style="fill:#000000"
-                     y="0"
-                     x="0"
-                     id="rect6080"
-                     height="125.687"
+                     class="fil6"
+                     transform="matrix(0.81266,0,-0.578399,0.780155,6951.06,1700.09)"
                      width="42.493099"
-                     transform="matrix(0.81266,0,-0.578399,0.780155,7207.02,1700.09)"
-                     class="fil6" />
-                  <rect
-                     style="fill:#000000"
-                     y="0"
-                     x="0"
-                     id="rect6082"
                      height="125.687"
-                     width="42.493099"
-                     transform="matrix(0.81266,0,-0.578399,0.780155,7271.37,1700.09)"
-                     class="fil6" />
-                  <rect
-                     style="fill:#000000"
-                     y="0"
+                     id="rect6090"
                      x="0"
-                     id="rect6084"
-                     height="125.687"
-                     width="42.493099"
-                     transform="matrix(0.81266,0,-0.578399,0.780155,7334.08,1700.09)"
-                     class="fil6" />
+                     y="0"
+                     style="fill:#000000" />
                 </g>
+              </g>
+            </g>
+            <g
+               id="g6092"
+               clip-path="url(#id14)">
+              <polygon
+                 class="fil22"
+                 points="6616,1797 6616,1701 7179,1701 7179,1797 "
+                 id="polygon6094"
+                 style="fill:none" />
+              <rect
+                 class="fil24"
+                 x="6628"
+                 y="1686"
+                 width="538.43903"
+                 height="1.68489"
+                 id="rect6096"
+                 style="fill:#e6e6e6" />
+              <rect
+                 class="fil24"
+                 x="6628"
+                 y="1797"
+                 width="538.43903"
+                 height="2.85042"
+                 id="rect6098"
+                 style="fill:#e6e6e6" />
+              <polygon
+                 class="fil54"
+                 points="7179,1701 7179,1720 7179,1797 7155,1797 7155,1720 6640,1720 6640,1797 6616,1797 6616,1720 6616,1701 6640,1701 7155,1701 "
+                 id="polygon6100"
+                 style="fill:#000000;fill-opacity:0.30196102" />
+              <polygon
+                 class="fil68"
+                 points="6628,1622 7167,1622 7168,1622 7168,1623 7179,1634 7179,1640 7166,1627 6628,1627 6616,1634 6616,1629 6627,1623 6627,1622 "
+                 id="polygon6102"
+                 style="fill:#666666;fill-rule:nonzero" />
+              <g
+                 id="g6104">
                 <rect
-                   style="fill:#000000"
-                   y="0"
+                   class="fil24"
+                   x="6638"
+                   y="1529"
+                   width="52.593399"
+                   height="84.4814"
+                   rx="6"
+                   ry="6"
+                   id="rect6106"
+                   style="fill:#e6e6e6" />
+                <rect
+                   class="fil23"
+                   x="6638"
+                   y="1528"
+                   width="52.593399"
+                   height="84.4814"
+                   rx="6"
+                   ry="6"
+                   id="rect6108"
+                   style="fill:#999999" />
+                <rect
+                   class="fil18"
+                   x="6643"
+                   y="1532"
+                   width="44.1464"
+                   height="75.571198"
+                   rx="5"
+                   ry="6"
+                   id="rect6110"
+                   style="fill:#cccccc" />
+                <g
+                   id="g6112">
+                  <rect
+                     class="fil24"
+                     x="6647"
+                     y="1540"
+                     width="36.031399"
+                     height="7.4527001"
+                     rx="343"
+                     ry="343"
+                     id="rect6114"
+                     style="fill:#e6e6e6" />
+                  <rect
+                     class="fil23"
+                     x="6647"
+                     y="1539"
+                     width="36.031399"
+                     height="7.4527001"
+                     rx="343"
+                     ry="343"
+                     id="rect6116"
+                     style="fill:#999999" />
+                </g>
+                <g
+                   id="g6118">
+                  <rect
+                     class="fil24"
+                     x="6647"
+                     y="1551"
+                     width="36.031399"
+                     height="7.4527001"
+                     rx="343"
+                     ry="343"
+                     id="rect6120"
+                     style="fill:#e6e6e6" />
+                  <rect
+                     class="fil23"
+                     x="6647"
+                     y="1550"
+                     width="36.031399"
+                     height="7.4527001"
+                     rx="343"
+                     ry="343"
+                     id="rect6122"
+                     style="fill:#999999" />
+                </g>
+                <g
+                   id="g6124">
+                  <rect
+                     class="fil24"
+                     x="6647"
+                     y="1562"
+                     width="36.031399"
+                     height="7.4527001"
+                     rx="343"
+                     ry="343"
+                     id="rect6126"
+                     style="fill:#e6e6e6" />
+                  <rect
+                     class="fil23"
+                     x="6647"
+                     y="1561"
+                     width="36.031399"
+                     height="7.4527001"
+                     rx="343"
+                     ry="343"
+                     id="rect6128"
+                     style="fill:#999999" />
+                </g>
+                <g
+                   id="g6130">
+                  <rect
+                     class="fil24"
+                     x="6647"
+                     y="1573"
+                     width="36.031399"
+                     height="7.4527001"
+                     rx="343"
+                     ry="343"
+                     id="rect6132"
+                     style="fill:#e6e6e6" />
+                  <rect
+                     class="fil23"
+                     x="6647"
+                     y="1572"
+                     width="36.031399"
+                     height="7.4527001"
+                     rx="343"
+                     ry="343"
+                     id="rect6134"
+                     style="fill:#999999" />
+                </g>
+                <g
+                   id="g6136">
+                  <rect
+                     class="fil24"
+                     x="6647"
+                     y="1584"
+                     width="36.031399"
+                     height="7.4527001"
+                     rx="343"
+                     ry="343"
+                     id="rect6138"
+                     style="fill:#e6e6e6" />
+                  <rect
+                     class="fil23"
+                     x="6647"
+                     y="1583"
+                     width="36.031399"
+                     height="7.4527001"
+                     rx="343"
+                     ry="343"
+                     id="rect6140"
+                     style="fill:#999999" />
+                </g>
+                <g
+                   id="g6142">
+                  <rect
+                     class="fil24"
+                     x="6647"
+                     y="1594"
+                     width="36.031399"
+                     height="7.4527001"
+                     rx="343"
+                     ry="343"
+                     id="rect6144"
+                     style="fill:#e6e6e6" />
+                  <rect
+                     class="fil23"
+                     x="6647"
+                     y="1593"
+                     width="36.031399"
+                     height="7.4527001"
+                     rx="343"
+                     ry="343"
+                     id="rect6146"
+                     style="fill:#999999" />
+                </g>
+              </g>
+              <g
+                 id="g6148">
+                <rect
+                   class="fil24"
+                   x="7103"
+                   y="1529"
+                   width="52.593399"
+                   height="84.4814"
+                   rx="6"
+                   ry="6"
+                   id="rect6150"
+                   style="fill:#e6e6e6" />
+                <rect
+                   class="fil23"
+                   x="7103"
+                   y="1528"
+                   width="52.593399"
+                   height="84.4814"
+                   rx="6"
+                   ry="6"
+                   id="rect6152"
+                   style="fill:#999999" />
+                <rect
+                   class="fil18"
+                   x="7107"
+                   y="1532"
+                   width="44.1464"
+                   height="75.571198"
+                   rx="5"
+                   ry="6"
+                   id="rect6154"
+                   style="fill:#cccccc" />
+                <g
+                   id="g6156">
+                  <rect
+                     class="fil24"
+                     x="7112"
+                     y="1540"
+                     width="36.031399"
+                     height="7.4527001"
+                     rx="343"
+                     ry="343"
+                     id="rect6158"
+                     style="fill:#e6e6e6" />
+                  <rect
+                     class="fil23"
+                     x="7112"
+                     y="1539"
+                     width="36.031399"
+                     height="7.4527001"
+                     rx="343"
+                     ry="343"
+                     id="rect6160"
+                     style="fill:#999999" />
+                </g>
+                <g
+                   id="g6162">
+                  <rect
+                     class="fil24"
+                     x="7112"
+                     y="1551"
+                     width="36.031399"
+                     height="7.4527001"
+                     rx="343"
+                     ry="343"
+                     id="rect6164"
+                     style="fill:#e6e6e6" />
+                  <rect
+                     class="fil23"
+                     x="7112"
+                     y="1550"
+                     width="36.031399"
+                     height="7.4527001"
+                     rx="343"
+                     ry="343"
+                     id="rect6166"
+                     style="fill:#999999" />
+                </g>
+                <g
+                   id="g6168">
+                  <rect
+                     class="fil24"
+                     x="7112"
+                     y="1562"
+                     width="36.031399"
+                     height="7.4527001"
+                     rx="343"
+                     ry="343"
+                     id="rect6170"
+                     style="fill:#e6e6e6" />
+                  <rect
+                     class="fil23"
+                     x="7112"
+                     y="1561"
+                     width="36.031399"
+                     height="7.4527001"
+                     rx="343"
+                     ry="343"
+                     id="rect6172"
+                     style="fill:#999999" />
+                </g>
+                <g
+                   id="g6174">
+                  <rect
+                     class="fil24"
+                     x="7112"
+                     y="1573"
+                     width="36.031399"
+                     height="7.4527001"
+                     rx="343"
+                     ry="343"
+                     id="rect6176"
+                     style="fill:#e6e6e6" />
+                  <rect
+                     class="fil23"
+                     x="7112"
+                     y="1572"
+                     width="36.031399"
+                     height="7.4527001"
+                     rx="343"
+                     ry="343"
+                     id="rect6178"
+                     style="fill:#999999" />
+                </g>
+                <g
+                   id="g6180">
+                  <rect
+                     class="fil24"
+                     x="7112"
+                     y="1584"
+                     width="36.031399"
+                     height="7.4527001"
+                     rx="343"
+                     ry="343"
+                     id="rect6182"
+                     style="fill:#e6e6e6" />
+                  <rect
+                     class="fil23"
+                     x="7112"
+                     y="1583"
+                     width="36.031399"
+                     height="7.4527001"
+                     rx="343"
+                     ry="343"
+                     id="rect6184"
+                     style="fill:#999999" />
+                </g>
+                <g
+                   id="g6186">
+                  <rect
+                     class="fil24"
+                     x="7112"
+                     y="1594"
+                     width="36.031399"
+                     height="7.4527001"
+                     rx="343"
+                     ry="343"
+                     id="rect6188"
+                     style="fill:#e6e6e6" />
+                  <rect
+                     class="fil23"
+                     x="7112"
+                     y="1593"
+                     width="36.031399"
+                     height="7.4527001"
+                     rx="343"
+                     ry="343"
+                     id="rect6190"
+                     style="fill:#999999" />
+                </g>
+              </g>
+              <g
+                 id="g6192">
+                <path
+                   class="fil24"
+                   d="M 6673,874 C 6678,874 6681,878 6681,883 6681,887 6678,891 6673,891 6669,891 6665,887 6665,883 6665,878 6669,874 6673,874 Z"
+                   id="path6194"
+                   inkscape:connector-curvature="0"
+                   style="fill:#e6e6e6" />
+                <path
+                   class="fil23"
+                   d="M 6673,874 C 6678,874 6681,877 6681,882 6681,886 6678,890 6673,890 6669,890 6665,886 6665,882 6665,877 6669,874 6673,874 Z"
+                   id="path6196"
+                   inkscape:connector-curvature="0"
+                   style="fill:#999999" />
+                <path
+                   class="fil6"
+                   d="M 6673,878 C 6675,878 6677,879 6677,882 6677,884 6675,886 6673,886 6671,886 6669,884 6669,882 6669,879 6671,878 6673,878 Z"
+                   id="path6198"
+                   inkscape:connector-curvature="0"
+                   style="fill:#000000" />
+              </g>
+              <g
+                 id="g6200">
+                <path
+                   class="fil24"
+                   d="M 6642,906 C 6647,906 6650,910 6650,914 6650,919 6647,923 6642,923 6638,923 6634,919 6634,914 6634,910 6638,906 6642,906 Z"
+                   id="path6202"
+                   inkscape:connector-curvature="0"
+                   style="fill:#e6e6e6" />
+                <path
+                   class="fil23"
+                   d="M 6642,905 C 6647,905 6650,909 6650,914 6650,918 6647,922 6642,922 6638,922 6634,918 6634,914 6634,909 6638,905 6642,905 Z"
+                   id="path6204"
+                   inkscape:connector-curvature="0"
+                   style="fill:#999999" />
+                <path
+                   class="fil6"
+                   d="M 6642,909 C 6645,909 6647,911 6647,914 6647,916 6645,918 6642,918 6640,918 6638,916 6638,914 6638,911 6640,909 6642,909 Z"
+                   id="path6206"
+                   inkscape:connector-curvature="0"
+                   style="fill:#000000" />
+              </g>
+              <g
+                 id="g6208">
+                <path
+                   class="fil24"
+                   d="M 7120,874 C 7116,874 7112,878 7112,883 7112,887 7116,891 7120,891 7125,891 7129,887 7129,883 7129,878 7125,874 7120,874 Z"
+                   id="path6210"
+                   inkscape:connector-curvature="0"
+                   style="fill:#e6e6e6" />
+                <path
+                   class="fil23"
+                   d="M 7120,874 C 7116,874 7112,877 7112,882 7112,886 7116,890 7120,890 7125,890 7129,886 7129,882 7129,877 7125,874 7120,874 Z"
+                   id="path6212"
+                   inkscape:connector-curvature="0"
+                   style="fill:#999999" />
+                <path
+                   class="fil6"
+                   d="M 7120,878 C 7118,878 7116,879 7116,882 7116,884 7118,886 7120,886 7123,886 7125,884 7125,882 7125,879 7123,878 7120,878 Z"
+                   id="path6214"
+                   inkscape:connector-curvature="0"
+                   style="fill:#000000" />
+              </g>
+              <g
+                 id="g6216">
+                <path
+                   class="fil24"
+                   d="M 7151,906 C 7147,906 7143,910 7143,914 7143,919 7147,923 7151,923 7156,923 7159,919 7159,914 7159,910 7156,906 7151,906 Z"
+                   id="path6218"
+                   inkscape:connector-curvature="0"
+                   style="fill:#e6e6e6" />
+                <path
+                   class="fil23"
+                   d="M 7151,905 C 7147,905 7143,909 7143,914 7143,918 7147,922 7151,922 7156,922 7159,918 7159,914 7159,909 7156,905 7151,905 Z"
+                   id="path6220"
+                   inkscape:connector-curvature="0"
+                   style="fill:#999999" />
+                <path
+                   class="fil6"
+                   d="M 7151,909 C 7149,909 7147,911 7147,914 7147,916 7149,918 7151,918 7154,918 7155,916 7155,914 7155,911 7154,909 7151,909 Z"
+                   id="path6222"
+                   inkscape:connector-curvature="0"
+                   style="fill:#000000" />
+              </g>
+              <g
+                 id="g6224">
+                <path
+                   class="fil24"
+                   d="M 7151,1818 C 7147,1818 7143,1822 7143,1827 7143,1831 7147,1835 7151,1835 7156,1835 7159,1831 7159,1827 7159,1822 7156,1818 7151,1818 Z"
+                   id="path6226"
+                   inkscape:connector-curvature="0"
+                   style="fill:#e6e6e6" />
+                <path
+                   class="fil23"
+                   d="M 7151,1818 C 7147,1818 7143,1821 7143,1826 7143,1830 7147,1834 7151,1834 7156,1834 7159,1830 7159,1826 7159,1821 7156,1818 7151,1818 Z"
+                   id="path6228"
+                   inkscape:connector-curvature="0"
+                   style="fill:#999999" />
+                <path
+                   class="fil6"
+                   d="M 7151,1822 C 7149,1822 7147,1823 7147,1826 7147,1828 7149,1830 7151,1830 7154,1830 7155,1828 7155,1826 7155,1823 7154,1822 7151,1822 Z"
+                   id="path6230"
+                   inkscape:connector-curvature="0"
+                   style="fill:#000000" />
+              </g>
+              <g
+                 id="g6232">
+                <path
+                   class="fil24"
+                   d="M 7119,1850 C 7114,1850 7110,1854 7110,1858 7110,1863 7114,1866 7119,1866 7123,1866 7127,1863 7127,1858 7127,1854 7123,1850 7119,1850 Z"
+                   id="path6234"
+                   inkscape:connector-curvature="0"
+                   style="fill:#e6e6e6" />
+                <path
+                   class="fil23"
+                   d="M 7119,1849 C 7114,1849 7110,1853 7110,1857 7110,1862 7114,1866 7119,1866 7123,1866 7127,1862 7127,1857 7127,1853 7123,1849 7119,1849 Z"
+                   id="path6236"
+                   inkscape:connector-curvature="0"
+                   style="fill:#999999" />
+                <path
+                   class="fil6"
+                   d="M 7119,1853 C 7116,1853 7114,1855 7114,1857 7114,1860 7116,1862 7119,1862 7121,1862 7123,1860 7123,1857 7123,1855 7121,1853 7119,1853 Z"
+                   id="path6238"
+                   inkscape:connector-curvature="0"
+                   style="fill:#000000" />
+              </g>
+              <g
+                 id="g6240">
+                <path
+                   class="fil24"
+                   d="M 6642,1818 C 6646,1818 6650,1822 6650,1827 6650,1831 6646,1835 6642,1835 6637,1835 6634,1831 6634,1827 6634,1822 6637,1818 6642,1818 Z"
+                   id="path6242"
+                   inkscape:connector-curvature="0"
+                   style="fill:#e6e6e6" />
+                <path
+                   class="fil23"
+                   d="M 6642,1818 C 6646,1818 6650,1821 6650,1826 6650,1830 6646,1834 6642,1834 6637,1834 6634,1830 6634,1826 6634,1821 6637,1818 6642,1818 Z"
+                   id="path6244"
+                   inkscape:connector-curvature="0"
+                   style="fill:#999999" />
+                <path
+                   class="fil6"
+                   d="M 6642,1822 C 6644,1822 6646,1823 6646,1826 6646,1828 6644,1830 6642,1830 6639,1830 6637,1828 6637,1826 6637,1823 6639,1822 6642,1822 Z"
+                   id="path6246"
+                   inkscape:connector-curvature="0"
+                   style="fill:#000000" />
+              </g>
+              <g
+                 id="g6248">
+                <path
+                   class="fil24"
+                   d="M 6674,1850 C 6679,1850 6683,1854 6683,1858 6683,1863 6679,1866 6674,1866 6670,1866 6666,1863 6666,1858 6666,1854 6670,1850 6674,1850 Z"
+                   id="path6250"
+                   inkscape:connector-curvature="0"
+                   style="fill:#e6e6e6" />
+                <path
+                   class="fil23"
+                   d="M 6674,1849 C 6679,1849 6683,1853 6683,1857 6683,1862 6679,1866 6674,1866 6670,1866 6666,1862 6666,1857 6666,1853 6670,1849 6674,1849 Z"
+                   id="path6252"
+                   inkscape:connector-curvature="0"
+                   style="fill:#999999" />
+                <path
+                   class="fil6"
+                   d="M 6674,1853 C 6677,1853 6679,1855 6679,1857 6679,1860 6677,1862 6674,1862 6672,1862 6670,1860 6670,1857 6670,1855 6672,1853 6674,1853 Z"
+                   id="path6254"
+                   inkscape:connector-curvature="0"
+                   style="fill:#000000" />
+              </g>
+              <g
+                 id="g6256">
+                <path
+                   class="fil24"
+                   d="M 6642,1666 C 6646,1666 6650,1669 6650,1674 6650,1678 6646,1682 6642,1682 6637,1682 6634,1678 6634,1674 6634,1669 6637,1666 6642,1666 Z"
+                   id="path6258"
+                   inkscape:connector-curvature="0"
+                   style="fill:#e6e6e6" />
+                <path
+                   class="fil23"
+                   d="M 6642,1665 C 6646,1665 6650,1668 6650,1673 6650,1677 6646,1681 6642,1681 6637,1681 6634,1677 6634,1673 6634,1668 6637,1665 6642,1665 Z"
+                   id="path6260"
+                   inkscape:connector-curvature="0"
+                   style="fill:#999999" />
+                <path
+                   class="fil6"
+                   d="M 6642,1669 C 6644,1669 6646,1671 6646,1673 6646,1675 6644,1677 6642,1677 6639,1677 6637,1675 6637,1673 6637,1671 6639,1669 6642,1669 Z"
+                   id="path6262"
+                   inkscape:connector-curvature="0"
+                   style="fill:#000000" />
+              </g>
+              <g
+                 id="g6264">
+                <path
+                   class="fil24"
+                   d="M 7153,1666 C 7158,1666 7161,1669 7161,1674 7161,1678 7158,1682 7153,1682 7149,1682 7145,1678 7145,1674 7145,1669 7149,1666 7153,1666 Z"
+                   id="path6266"
+                   inkscape:connector-curvature="0"
+                   style="fill:#e6e6e6" />
+                <path
+                   class="fil23"
+                   d="M 7153,1665 C 7158,1665 7161,1668 7161,1673 7161,1677 7158,1681 7153,1681 7149,1681 7145,1677 7145,1673 7145,1668 7149,1665 7153,1665 Z"
+                   id="path6268"
+                   inkscape:connector-curvature="0"
+                   style="fill:#999999" />
+                <path
+                   class="fil6"
+                   d="M 7153,1669 C 7156,1669 7158,1671 7158,1673 7158,1675 7156,1677 7153,1677 7151,1677 7149,1675 7149,1673 7149,1671 7151,1669 7153,1669 Z"
+                   id="path6270"
+                   inkscape:connector-curvature="0"
+                   style="fill:#000000" />
+              </g>
+              <polygon
+                 class="fil20"
+                 points="6781,960 7013,960 7014,960 7015,961 7052,1000 7179,1000 7179,1004 7051,1004 7050,1004 7050,1004 7012,964 6781,964 6742,1004 6742,1004 6741,1004 6630,1004 6616,1004 6616,1000 6630,1000 6740,1000 6779,960 6780,960 "
+                 id="polygon6272"
+                 style="fill:#808080;fill-rule:nonzero" />
+              <polygon
+                 class="fil66"
+                 points="6781,1111 7013,1111 7014,1111 7015,1111 7052,1071 7179,1071 7179,1067 7051,1067 7050,1067 7050,1067 7012,1107 6781,1107 6742,1067 6742,1067 6741,1067 6630,1067 6616,1067 6616,1071 6630,1071 6740,1071 6779,1111 6780,1111 "
+                 id="polygon6274"
+                 style="fill:#e6e6e6;fill-rule:nonzero" />
+              <polygon
+                 class="fil20"
+                 points="6781,1109 7013,1109 7014,1109 7015,1108 7052,1069 7179,1069 7179,1065 7051,1065 7050,1065 7050,1065 7012,1105 6781,1105 6742,1065 6742,1065 6741,1065 6630,1065 6616,1065 6616,1069 6630,1069 6740,1069 6779,1108 6780,1109 "
+                 id="polygon6276"
+                 style="fill:#808080;fill-rule:nonzero" />
+              <path
+                 class="fil61"
+                 d="M 6630,1134 6735,1134 6777,1175 6831,1175 6831,1138 6777,1138 6735,1096 6630,1096 6630,1134 Z M 6975,1175 7021,1175 7062,1134 7164,1134 7164,1097 7062,1097 7021,1138 6975,1138 6975,1175 Z"
+                 id="path6278"
+                 inkscape:connector-curvature="0"
+                 style="fill:#9e8b7b" />
+              <polygon
+                 class="fil64"
+                 points="6616,1134 6630,1134 6630,1096 6616,1096 "
+                 id="polygon6280"
+                 style="fill:#736457" />
+              <polygon
+                 class="fil64"
+                 points="7179,1097 7164,1097 7164,1134 7179,1134 "
+                 id="polygon6282"
+                 style="fill:#736457" />
+              <rect
+                 class="fil23"
+                 x="6773"
+                 y="979"
+                 width="253"
+                 height="109"
+                 rx="24"
+                 ry="20"
+                 id="rect6284"
+                 style="fill:#999999" />
+              <polygon
+                 class="fil69"
+                 points="6793,1088 6773,1068 6773,1007 6793,986 7005,986 7026,1007 7026,1068 7005,1088 "
+                 id="polygon6286"
+                 style="fill:#1a1a1a" />
+            </g>
+            <g
+               id="g6288"
+               clip-path="url(#id15)">
+              <g
+                 id="g6290">
+                <rect
+                   class="fil47"
+                   transform="matrix(1,0,-0.371097,1,6810.21,964.034)"
+                   width="31.9317"
+                   height="146.66499"
+                   id="rect6292"
                    x="0"
-                   id="rect6086"
-                   height="125.687"
-                   width="42.493099"
-                   transform="matrix(0.81266,0,-0.578399,0.780155,7398.06,1700.09)"
-                   class="fil6" />
-                <rect
-                   style="fill:#000000"
                    y="0"
-                   x="0"
-                   id="rect6088"
-                   height="125.687"
-                   width="42.493099"
-                   transform="matrix(0.81266,0,-0.578399,0.780155,7014.26,1700.09)"
-                   class="fil6" />
+                   style="fill:#333333" />
                 <rect
-                   style="fill:#000000"
+                   class="fil47"
+                   transform="matrix(0.500094,0,-0.371097,1,6856.78,964.034)"
+                   width="31.9317"
+                   height="146.66499"
+                   id="rect6294"
+                   x="0"
                    y="0"
+                   style="fill:#333333" />
+                <rect
+                   class="fil47"
+                   transform="matrix(1.65975,0,-0.371097,1,6939.28,964.034)"
+                   width="31.9317"
+                   height="146.66499"
+                   id="rect6296"
                    x="0"
-                   id="rect6090"
-                   height="125.687"
-                   width="42.493099"
-                   transform="matrix(0.81266,0,-0.578399,0.780155,6951.06,1700.09)"
-                   class="fil6" />
-              </g>
-            </g>
-          </g>
-          <g
-             clip-path="url(#id14)"
-             id="g6092">
-            <polygon
-               style="fill:none"
-               id="polygon6094"
-               points="7179,1701 7179,1797 6616,1797 6616,1701 "
-               class="fil22" />
-            <rect
-               style="fill:#e6e6e6"
-               id="rect6096"
-               height="1.68489"
-               width="538.43903"
-               y="1686"
-               x="6628"
-               class="fil24" />
-            <rect
-               style="fill:#e6e6e6"
-               id="rect6098"
-               height="2.85042"
-               width="538.43903"
-               y="1797"
-               x="6628"
-               class="fil24" />
-            <polygon
-               style="fill:#000000;fill-opacity:0.30196102"
-               id="polygon6100"
-               points="6640,1797 6616,1797 6616,1720 6616,1701 6640,1701 7155,1701 7179,1701 7179,1720 7179,1797 7155,1797 7155,1720 6640,1720 "
-               class="fil54" />
-            <polygon
-               style="fill:#666666;fill-rule:nonzero"
-               id="polygon6102"
-               points="7166,1627 6628,1627 6616,1634 6616,1629 6627,1623 6627,1622 6628,1622 7167,1622 7168,1622 7168,1623 7179,1634 7179,1640 "
-               class="fil68" />
-            <g
-               id="g6104">
-              <rect
-                 style="fill:#e6e6e6"
-                 id="rect6106"
-                 ry="6"
-                 rx="6"
-                 height="84.4814"
-                 width="52.593399"
-                 y="1529"
-                 x="6638"
-                 class="fil24" />
-              <rect
-                 style="fill:#999999"
-                 id="rect6108"
-                 ry="6"
-                 rx="6"
-                 height="84.4814"
-                 width="52.593399"
-                 y="1528"
-                 x="6638"
-                 class="fil23" />
-              <rect
-                 style="fill:#cccccc"
-                 id="rect6110"
-                 ry="6"
-                 rx="5"
-                 height="75.571198"
-                 width="44.1464"
-                 y="1532"
-                 x="6643"
-                 class="fil18" />
-              <g
-                 id="g6112">
+                   y="0"
+                   style="fill:#333333" />
                 <rect
-                   style="fill:#e6e6e6"
-                   id="rect6114"
-                   ry="343"
-                   rx="343"
-                   height="7.4527001"
-                   width="36.031399"
-                   y="1540"
-                   x="6647"
-                   class="fil24" />
-                <rect
-                   style="fill:#999999"
-                   id="rect6116"
-                   ry="343"
-                   rx="343"
-                   height="7.4527001"
-                   width="36.031399"
-                   y="1539"
-                   x="6647"
-                   class="fil23" />
-              </g>
-              <g
-                 id="g6118">
-                <rect
-                   style="fill:#e6e6e6"
-                   id="rect6120"
-                   ry="343"
-                   rx="343"
-                   height="7.4527001"
-                   width="36.031399"
-                   y="1551"
-                   x="6647"
-                   class="fil24" />
-                <rect
-                   style="fill:#999999"
-                   id="rect6122"
-                   ry="343"
-                   rx="343"
-                   height="7.4527001"
-                   width="36.031399"
-                   y="1550"
-                   x="6647"
-                   class="fil23" />
-              </g>
-              <g
-                 id="g6124">
-                <rect
-                   style="fill:#e6e6e6"
-                   id="rect6126"
-                   ry="343"
-                   rx="343"
-                   height="7.4527001"
-                   width="36.031399"
-                   y="1562"
-                   x="6647"
-                   class="fil24" />
-                <rect
-                   style="fill:#999999"
-                   id="rect6128"
-                   ry="343"
-                   rx="343"
-                   height="7.4527001"
-                   width="36.031399"
-                   y="1561"
-                   x="6647"
-                   class="fil23" />
-              </g>
-              <g
-                 id="g6130">
-                <rect
-                   style="fill:#e6e6e6"
-                   id="rect6132"
-                   ry="343"
-                   rx="343"
-                   height="7.4527001"
-                   width="36.031399"
-                   y="1573"
-                   x="6647"
-                   class="fil24" />
-                <rect
-                   style="fill:#999999"
-                   id="rect6134"
-                   ry="343"
-                   rx="343"
-                   height="7.4527001"
-                   width="36.031399"
-                   y="1572"
-                   x="6647"
-                   class="fil23" />
-              </g>
-              <g
-                 id="g6136">
-                <rect
-                   style="fill:#e6e6e6"
-                   id="rect6138"
-                   ry="343"
-                   rx="343"
-                   height="7.4527001"
-                   width="36.031399"
-                   y="1584"
-                   x="6647"
-                   class="fil24" />
-                <rect
-                   style="fill:#999999"
-                   id="rect6140"
-                   ry="343"
-                   rx="343"
-                   height="7.4527001"
-                   width="36.031399"
-                   y="1583"
-                   x="6647"
-                   class="fil23" />
-              </g>
-              <g
-                 id="g6142">
-                <rect
-                   style="fill:#e6e6e6"
-                   id="rect6144"
-                   ry="343"
-                   rx="343"
-                   height="7.4527001"
-                   width="36.031399"
-                   y="1594"
-                   x="6647"
-                   class="fil24" />
-                <rect
-                   style="fill:#999999"
-                   id="rect6146"
-                   ry="343"
-                   rx="343"
-                   height="7.4527001"
-                   width="36.031399"
-                   y="1593"
-                   x="6647"
-                   class="fil23" />
+                   class="fil47"
+                   transform="matrix(0.830032,0,-0.371097,1,7016.58,964.034)"
+                   width="31.9317"
+                   height="146.66499"
+                   id="rect6298"
+                   x="0"
+                   y="0"
+                   style="fill:#333333" />
               </g>
             </g>
             <g
-               id="g6148">
-              <rect
-                 style="fill:#e6e6e6"
-                 id="rect6150"
-                 ry="6"
-                 rx="6"
-                 height="84.4814"
-                 width="52.593399"
-                 y="1529"
-                 x="7103"
-                 class="fil24" />
-              <rect
-                 style="fill:#999999"
-                 id="rect6152"
-                 ry="6"
-                 rx="6"
-                 height="84.4814"
-                 width="52.593399"
-                 y="1528"
-                 x="7103"
-                 class="fil23" />
-              <rect
-                 style="fill:#cccccc"
-                 id="rect6154"
-                 ry="6"
-                 rx="5"
-                 height="75.571198"
-                 width="44.1464"
-                 y="1532"
-                 x="7107"
-                 class="fil18" />
-              <g
-                 id="g6156">
-                <rect
-                   style="fill:#e6e6e6"
-                   id="rect6158"
-                   ry="343"
-                   rx="343"
-                   height="7.4527001"
-                   width="36.031399"
-                   y="1540"
-                   x="7112"
-                   class="fil24" />
-                <rect
-                   style="fill:#999999"
-                   id="rect6160"
-                   ry="343"
-                   rx="343"
-                   height="7.4527001"
-                   width="36.031399"
-                   y="1539"
-                   x="7112"
-                   class="fil23" />
-              </g>
-              <g
-                 id="g6162">
-                <rect
-                   style="fill:#e6e6e6"
-                   id="rect6164"
-                   ry="343"
-                   rx="343"
-                   height="7.4527001"
-                   width="36.031399"
-                   y="1551"
-                   x="7112"
-                   class="fil24" />
-                <rect
-                   style="fill:#999999"
-                   id="rect6166"
-                   ry="343"
-                   rx="343"
-                   height="7.4527001"
-                   width="36.031399"
-                   y="1550"
-                   x="7112"
-                   class="fil23" />
-              </g>
-              <g
-                 id="g6168">
-                <rect
-                   style="fill:#e6e6e6"
-                   id="rect6170"
-                   ry="343"
-                   rx="343"
-                   height="7.4527001"
-                   width="36.031399"
-                   y="1562"
-                   x="7112"
-                   class="fil24" />
-                <rect
-                   style="fill:#999999"
-                   id="rect6172"
-                   ry="343"
-                   rx="343"
-                   height="7.4527001"
-                   width="36.031399"
-                   y="1561"
-                   x="7112"
-                   class="fil23" />
-              </g>
-              <g
-                 id="g6174">
-                <rect
-                   style="fill:#e6e6e6"
-                   id="rect6176"
-                   ry="343"
-                   rx="343"
-                   height="7.4527001"
-                   width="36.031399"
-                   y="1573"
-                   x="7112"
-                   class="fil24" />
-                <rect
-                   style="fill:#999999"
-                   id="rect6178"
-                   ry="343"
-                   rx="343"
-                   height="7.4527001"
-                   width="36.031399"
-                   y="1572"
-                   x="7112"
-                   class="fil23" />
-              </g>
-              <g
-                 id="g6180">
-                <rect
-                   style="fill:#e6e6e6"
-                   id="rect6182"
-                   ry="343"
-                   rx="343"
-                   height="7.4527001"
-                   width="36.031399"
-                   y="1584"
-                   x="7112"
-                   class="fil24" />
-                <rect
-                   style="fill:#999999"
-                   id="rect6184"
-                   ry="343"
-                   rx="343"
-                   height="7.4527001"
-                   width="36.031399"
-                   y="1583"
-                   x="7112"
-                   class="fil23" />
-              </g>
-              <g
-                 id="g6186">
-                <rect
-                   style="fill:#e6e6e6"
-                   id="rect6188"
-                   ry="343"
-                   rx="343"
-                   height="7.4527001"
-                   width="36.031399"
-                   y="1594"
-                   x="7112"
-                   class="fil24" />
-                <rect
-                   style="fill:#999999"
-                   id="rect6190"
-                   ry="343"
-                   rx="343"
-                   height="7.4527001"
-                   width="36.031399"
-                   y="1593"
-                   x="7112"
-                   class="fil23" />
-              </g>
+               id="g6300"
+               clip-path="url(#id16)">
+              <polygon
+                 class="fil22"
+                 points="6793,1088 6773,1068 6773,1007 6793,986 7005,986 7026,1007 7026,1068 7005,1088 "
+                 id="polygon6302"
+                 style="fill:none" />
             </g>
-            <g
-               id="g6192">
-              <path
-                 style="fill:#e6e6e6"
-                 inkscape:connector-curvature="0"
-                 id="path6194"
-                 d="M 6673,874 C 6678,874 6681,878 6681,883 6681,887 6678,891 6673,891 6669,891 6665,887 6665,883 6665,878 6669,874 6673,874 Z"
-                 class="fil24" />
-              <path
-                 style="fill:#999999"
-                 inkscape:connector-curvature="0"
-                 id="path6196"
-                 d="M 6673,874 C 6678,874 6681,877 6681,882 6681,886 6678,890 6673,890 6669,890 6665,886 6665,882 6665,877 6669,874 6673,874 Z"
-                 class="fil23" />
-              <path
-                 style="fill:#000000"
-                 inkscape:connector-curvature="0"
-                 id="path6198"
-                 d="M 6673,878 C 6675,878 6677,879 6677,882 6677,884 6675,886 6673,886 6671,886 6669,884 6669,882 6669,879 6671,878 6673,878 Z"
-                 class="fil6" />
-            </g>
-            <g
-               id="g6200">
-              <path
-                 style="fill:#e6e6e6"
-                 inkscape:connector-curvature="0"
-                 id="path6202"
-                 d="M 6642,906 C 6647,906 6650,910 6650,914 6650,919 6647,923 6642,923 6638,923 6634,919 6634,914 6634,910 6638,906 6642,906 Z"
-                 class="fil24" />
-              <path
-                 style="fill:#999999"
-                 inkscape:connector-curvature="0"
-                 id="path6204"
-                 d="M 6642,905 C 6647,905 6650,909 6650,914 6650,918 6647,922 6642,922 6638,922 6634,918 6634,914 6634,909 6638,905 6642,905 Z"
-                 class="fil23" />
-              <path
-                 style="fill:#000000"
-                 inkscape:connector-curvature="0"
-                 id="path6206"
-                 d="M 6642,909 C 6645,909 6647,911 6647,914 6647,916 6645,918 6642,918 6640,918 6638,916 6638,914 6638,911 6640,909 6642,909 Z"
-                 class="fil6" />
-            </g>
-            <g
-               id="g6208">
-              <path
-                 style="fill:#e6e6e6"
-                 inkscape:connector-curvature="0"
-                 id="path6210"
-                 d="M 7120,874 C 7116,874 7112,878 7112,883 7112,887 7116,891 7120,891 7125,891 7129,887 7129,883 7129,878 7125,874 7120,874 Z"
-                 class="fil24" />
-              <path
-                 style="fill:#999999"
-                 inkscape:connector-curvature="0"
-                 id="path6212"
-                 d="M 7120,874 C 7116,874 7112,877 7112,882 7112,886 7116,890 7120,890 7125,890 7129,886 7129,882 7129,877 7125,874 7120,874 Z"
-                 class="fil23" />
-              <path
-                 style="fill:#000000"
-                 inkscape:connector-curvature="0"
-                 id="path6214"
-                 d="M 7120,878 C 7118,878 7116,879 7116,882 7116,884 7118,886 7120,886 7123,886 7125,884 7125,882 7125,879 7123,878 7120,878 Z"
-                 class="fil6" />
-            </g>
-            <g
-               id="g6216">
-              <path
-                 style="fill:#e6e6e6"
-                 inkscape:connector-curvature="0"
-                 id="path6218"
-                 d="M 7151,906 C 7147,906 7143,910 7143,914 7143,919 7147,923 7151,923 7156,923 7159,919 7159,914 7159,910 7156,906 7151,906 Z"
-                 class="fil24" />
-              <path
-                 style="fill:#999999"
-                 inkscape:connector-curvature="0"
-                 id="path6220"
-                 d="M 7151,905 C 7147,905 7143,909 7143,914 7143,918 7147,922 7151,922 7156,922 7159,918 7159,914 7159,909 7156,905 7151,905 Z"
-                 class="fil23" />
-              <path
-                 style="fill:#000000"
-                 inkscape:connector-curvature="0"
-                 id="path6222"
-                 d="M 7151,909 C 7149,909 7147,911 7147,914 7147,916 7149,918 7151,918 7154,918 7155,916 7155,914 7155,911 7154,909 7151,909 Z"
-                 class="fil6" />
-            </g>
-            <g
-               id="g6224">
-              <path
-                 style="fill:#e6e6e6"
-                 inkscape:connector-curvature="0"
-                 id="path6226"
-                 d="M 7151,1818 C 7147,1818 7143,1822 7143,1827 7143,1831 7147,1835 7151,1835 7156,1835 7159,1831 7159,1827 7159,1822 7156,1818 7151,1818 Z"
-                 class="fil24" />
-              <path
-                 style="fill:#999999"
-                 inkscape:connector-curvature="0"
-                 id="path6228"
-                 d="M 7151,1818 C 7147,1818 7143,1821 7143,1826 7143,1830 7147,1834 7151,1834 7156,1834 7159,1830 7159,1826 7159,1821 7156,1818 7151,1818 Z"
-                 class="fil23" />
-              <path
-                 style="fill:#000000"
-                 inkscape:connector-curvature="0"
-                 id="path6230"
-                 d="M 7151,1822 C 7149,1822 7147,1823 7147,1826 7147,1828 7149,1830 7151,1830 7154,1830 7155,1828 7155,1826 7155,1823 7154,1822 7151,1822 Z"
-                 class="fil6" />
-            </g>
-            <g
-               id="g6232">
-              <path
-                 style="fill:#e6e6e6"
-                 inkscape:connector-curvature="0"
-                 id="path6234"
-                 d="M 7119,1850 C 7114,1850 7110,1854 7110,1858 7110,1863 7114,1866 7119,1866 7123,1866 7127,1863 7127,1858 7127,1854 7123,1850 7119,1850 Z"
-                 class="fil24" />
-              <path
-                 style="fill:#999999"
-                 inkscape:connector-curvature="0"
-                 id="path6236"
-                 d="M 7119,1849 C 7114,1849 7110,1853 7110,1857 7110,1862 7114,1866 7119,1866 7123,1866 7127,1862 7127,1857 7127,1853 7123,1849 7119,1849 Z"
-                 class="fil23" />
-              <path
-                 style="fill:#000000"
-                 inkscape:connector-curvature="0"
-                 id="path6238"
-                 d="M 7119,1853 C 7116,1853 7114,1855 7114,1857 7114,1860 7116,1862 7119,1862 7121,1862 7123,1860 7123,1857 7123,1855 7121,1853 7119,1853 Z"
-                 class="fil6" />
-            </g>
-            <g
-               id="g6240">
-              <path
-                 style="fill:#e6e6e6"
-                 inkscape:connector-curvature="0"
-                 id="path6242"
-                 d="M 6642,1818 C 6646,1818 6650,1822 6650,1827 6650,1831 6646,1835 6642,1835 6637,1835 6634,1831 6634,1827 6634,1822 6637,1818 6642,1818 Z"
-                 class="fil24" />
-              <path
-                 style="fill:#999999"
-                 inkscape:connector-curvature="0"
-                 id="path6244"
-                 d="M 6642,1818 C 6646,1818 6650,1821 6650,1826 6650,1830 6646,1834 6642,1834 6637,1834 6634,1830 6634,1826 6634,1821 6637,1818 6642,1818 Z"
-                 class="fil23" />
-              <path
-                 style="fill:#000000"
-                 inkscape:connector-curvature="0"
-                 id="path6246"
-                 d="M 6642,1822 C 6644,1822 6646,1823 6646,1826 6646,1828 6644,1830 6642,1830 6639,1830 6637,1828 6637,1826 6637,1823 6639,1822 6642,1822 Z"
-                 class="fil6" />
-            </g>
-            <g
-               id="g6248">
-              <path
-                 style="fill:#e6e6e6"
-                 inkscape:connector-curvature="0"
-                 id="path6250"
-                 d="M 6674,1850 C 6679,1850 6683,1854 6683,1858 6683,1863 6679,1866 6674,1866 6670,1866 6666,1863 6666,1858 6666,1854 6670,1850 6674,1850 Z"
-                 class="fil24" />
-              <path
-                 style="fill:#999999"
-                 inkscape:connector-curvature="0"
-                 id="path6252"
-                 d="M 6674,1849 C 6679,1849 6683,1853 6683,1857 6683,1862 6679,1866 6674,1866 6670,1866 6666,1862 6666,1857 6666,1853 6670,1849 6674,1849 Z"
-                 class="fil23" />
-              <path
-                 style="fill:#000000"
-                 inkscape:connector-curvature="0"
-                 id="path6254"
-                 d="M 6674,1853 C 6677,1853 6679,1855 6679,1857 6679,1860 6677,1862 6674,1862 6672,1862 6670,1860 6670,1857 6670,1855 6672,1853 6674,1853 Z"
-                 class="fil6" />
-            </g>
-            <g
-               id="g6256">
-              <path
-                 style="fill:#e6e6e6"
-                 inkscape:connector-curvature="0"
-                 id="path6258"
-                 d="M 6642,1666 C 6646,1666 6650,1669 6650,1674 6650,1678 6646,1682 6642,1682 6637,1682 6634,1678 6634,1674 6634,1669 6637,1666 6642,1666 Z"
-                 class="fil24" />
-              <path
-                 style="fill:#999999"
-                 inkscape:connector-curvature="0"
-                 id="path6260"
-                 d="M 6642,1665 C 6646,1665 6650,1668 6650,1673 6650,1677 6646,1681 6642,1681 6637,1681 6634,1677 6634,1673 6634,1668 6637,1665 6642,1665 Z"
-                 class="fil23" />
-              <path
-                 style="fill:#000000"
-                 inkscape:connector-curvature="0"
-                 id="path6262"
-                 d="M 6642,1669 C 6644,1669 6646,1671 6646,1673 6646,1675 6644,1677 6642,1677 6639,1677 6637,1675 6637,1673 6637,1671 6639,1669 6642,1669 Z"
-                 class="fil6" />
-            </g>
-            <g
-               id="g6264">
-              <path
-                 style="fill:#e6e6e6"
-                 inkscape:connector-curvature="0"
-                 id="path6266"
-                 d="M 7153,1666 C 7158,1666 7161,1669 7161,1674 7161,1678 7158,1682 7153,1682 7149,1682 7145,1678 7145,1674 7145,1669 7149,1666 7153,1666 Z"
-                 class="fil24" />
-              <path
-                 style="fill:#999999"
-                 inkscape:connector-curvature="0"
-                 id="path6268"
-                 d="M 7153,1665 C 7158,1665 7161,1668 7161,1673 7161,1677 7158,1681 7153,1681 7149,1681 7145,1677 7145,1673 7145,1668 7149,1665 7153,1665 Z"
-                 class="fil23" />
-              <path
-                 style="fill:#000000"
-                 inkscape:connector-curvature="0"
-                 id="path6270"
-                 d="M 7153,1669 C 7156,1669 7158,1671 7158,1673 7158,1675 7156,1677 7153,1677 7151,1677 7149,1675 7149,1673 7149,1671 7151,1669 7153,1669 Z"
-                 class="fil6" />
-            </g>
-            <polygon
-               style="fill:#808080;fill-rule:nonzero"
-               id="polygon6272"
-               points="6616,1004 6616,1000 6630,1000 6740,1000 6779,960 6780,960 6781,960 7013,960 7014,960 7015,961 7052,1000 7179,1000 7179,1004 7051,1004 7050,1004 7050,1004 7012,964 6781,964 6742,1004 6742,1004 6741,1004 6630,1004 "
-               class="fil20" />
-            <polygon
-               style="fill:#e6e6e6;fill-rule:nonzero"
-               id="polygon6274"
-               points="6616,1067 6616,1071 6630,1071 6740,1071 6779,1111 6780,1111 6781,1111 7013,1111 7014,1111 7015,1111 7052,1071 7179,1071 7179,1067 7051,1067 7050,1067 7050,1067 7012,1107 6781,1107 6742,1067 6742,1067 6741,1067 6630,1067 "
-               class="fil66" />
-            <polygon
-               style="fill:#808080;fill-rule:nonzero"
-               id="polygon6276"
-               points="6616,1065 6616,1069 6630,1069 6740,1069 6779,1108 6780,1109 6781,1109 7013,1109 7014,1109 7015,1108 7052,1069 7179,1069 7179,1065 7051,1065 7050,1065 7050,1065 7012,1105 6781,1105 6742,1065 6742,1065 6741,1065 6630,1065 "
-               class="fil20" />
-            <path
-               style="fill:#9e8b7b"
-               inkscape:connector-curvature="0"
-               id="path6278"
-               d="M 6630,1134 6735,1134 6777,1175 6831,1175 6831,1138 6777,1138 6735,1096 6630,1096 6630,1134 Z M 6975,1175 7021,1175 7062,1134 7164,1134 7164,1097 7062,1097 7021,1138 6975,1138 6975,1175 Z"
-               class="fil61" />
-            <polygon
-               style="fill:#736457"
-               id="polygon6280"
-               points="6630,1096 6616,1096 6616,1134 6630,1134 "
-               class="fil64" />
-            <polygon
-               style="fill:#736457"
-               id="polygon6282"
-               points="7164,1134 7179,1134 7179,1097 7164,1097 "
-               class="fil64" />
-            <rect
-               style="fill:#999999"
-               id="rect6284"
-               ry="20"
-               rx="24"
-               height="109"
-               width="253"
-               y="979"
-               x="6773"
-               class="fil23" />
-            <polygon
-               style="fill:#1a1a1a"
-               id="polygon6286"
-               points="6773,1007 6793,986 7005,986 7026,1007 7026,1068 7005,1088 6793,1088 6773,1068 "
-               class="fil69" />
-          </g>
-          <g
-             clip-path="url(#id15)"
-             id="g6288">
-            <g
-               id="g6290">
-              <rect
-                 style="fill:#333333"
-                 y="0"
-                 x="0"
-                 id="rect6292"
-                 height="146.66499"
-                 width="31.9317"
-                 transform="matrix(1,0,-0.371097,1,6810.21,964.034)"
-                 class="fil47" />
-              <rect
-                 style="fill:#333333"
-                 y="0"
-                 x="0"
-                 id="rect6294"
-                 height="146.66499"
-                 width="31.9317"
-                 transform="matrix(0.500094,0,-0.371097,1,6856.78,964.034)"
-                 class="fil47" />
-              <rect
-                 style="fill:#333333"
-                 y="0"
-                 x="0"
-                 id="rect6296"
-                 height="146.66499"
-                 width="31.9317"
-                 transform="matrix(1.65975,0,-0.371097,1,6939.28,964.034)"
-                 class="fil47" />
-              <rect
-                 style="fill:#333333"
-                 y="0"
-                 x="0"
-                 id="rect6298"
-                 height="146.66499"
-                 width="31.9317"
-                 transform="matrix(0.830032,0,-0.371097,1,7016.58,964.034)"
-                 class="fil47" />
-            </g>
-          </g>
-          <g
-             clip-path="url(#id16)"
-             id="g6300">
-            <polygon
-               style="fill:none"
-               id="polygon6302"
-               points="6773,1007 6793,986 7005,986 7026,1007 7026,1068 7005,1088 6793,1088 6773,1068 "
-               class="fil22" />
           </g>
         </g>
+        <polygon
+           class="fil22"
+           points="7179,899 7139,859 6656,859 6616,899 6616,1843 6656,1882 7139,1882 7179,1843 "
+           id="polygon6304"
+           style="fill:none" />
       </g>
-      <polygon
-         style="fill:none"
-         id="polygon6304"
-         points="6656,859 6616,899 6616,1843 6656,1882 7139,1882 7179,1843 7179,899 7139,859 "
-         class="fil22" />
     </g>
     <g
-       transform="matrix(0.22122296,0,0,0.22122296,-1021.3257,145.15888)"
+       transform="matrix(0.24287941,0,0,0.24287941,-901.80727,-11.861587)"
        style="clip-rule:evenodd;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
        id="g4954"
        inkscape:export-filename="/home/becky/Documents/GameJams/AdventitiousAsylum/assets/structures/barrel.png"
@@ -3015,28 +3019,28 @@
         <polygon
            style="fill:none;stroke:#295412;stroke-width:6.42133999"
            id="polygon4960"
-           points="6194,64 6570,64 6570,622 6194,622 "
+           points="6570,64 6570,622 6194,622 6194,64 "
            class="fil22 str1" />
         <polygon
            style="fill:#38691d"
-           points="6194,64 6570,64 6570,622 6194,622 "
+           points="6570,64 6570,622 6194,622 6194,64 "
            class="fil33"
            id="polygon4962" />
       </g>
       <polygon
          style="fill:#417426"
          id="polygon4964"
-         points="6207,64 6501,64 6501,622 6207,622 "
+         points="6501,64 6501,622 6207,622 6207,64 "
          class="fil34" />
       <polygon
          style="fill:#518038"
          id="polygon4966"
-         points="6226,64 6305,64 6305,622 6226,622 "
+         points="6305,64 6305,622 6226,622 6226,64 "
          class="fil35" />
       <polygon
          style="fill:#518038"
          id="polygon4968"
-         points="6316,64 6341,64 6341,622 6316,622 "
+         points="6341,64 6341,622 6316,622 6316,64 "
          class="fil35" />
       <g
          id="g4970">
@@ -3048,24 +3052,24 @@
            class="fil32" />
         <polygon
            style="fill:#38691d"
-           points="6174,64 6590,64 6590,102 6174,102 "
+           points="6590,64 6590,102 6174,102 6174,64 "
            class="fil33"
            id="polygon4974" />
       </g>
       <polygon
          style="fill:#417426"
          id="polygon4976"
-         points="6188,64 6514,64 6514,102 6188,102 "
+         points="6514,64 6514,102 6188,102 6188,64 "
          class="fil34" />
       <polygon
          style="fill:#518038"
          id="polygon4978"
-         points="6210,64 6296,64 6296,102 6210,102 "
+         points="6296,64 6296,102 6210,102 6210,64 "
          class="fil35" />
       <polygon
          style="fill:#518038"
          id="polygon4980"
-         points="6309,64 6337,64 6337,102 6309,102 "
+         points="6337,64 6337,102 6309,102 6309,64 "
          class="fil35" />
       <g
          id="g4982">
@@ -3077,24 +3081,24 @@
            class="fil32" />
         <polygon
            style="fill:#38691d"
-           points="6184,228 6580,228 6580,266 6184,266 "
+           points="6580,228 6580,266 6184,266 6184,228 "
            class="fil33"
            id="polygon4986" />
       </g>
       <polygon
          style="fill:#417426"
          id="polygon4988"
-         points="6197,228 6507,228 6507,266 6197,266 "
+         points="6507,228 6507,266 6197,266 6197,228 "
          class="fil34" />
       <polygon
          style="fill:#518038"
          id="polygon4990"
-         points="6218,228 6300,228 6300,266 6218,266 "
+         points="6300,228 6300,266 6218,266 6218,228 "
          class="fil35" />
       <polygon
          style="fill:#518038"
          id="polygon4992"
-         points="6312,228 6339,228 6339,266 6312,266 "
+         points="6339,228 6339,266 6312,266 6312,228 "
          class="fil35" />
       <g
          id="g4994">
@@ -3106,24 +3110,24 @@
            class="fil32" />
         <polygon
            style="fill:#38691d"
-           points="6184,435 6580,435 6580,472 6184,472 "
+           points="6580,435 6580,472 6184,472 6184,435 "
            class="fil33"
            id="polygon4998" />
       </g>
       <polygon
          style="fill:#417426"
          id="polygon5000"
-         points="6197,435 6507,435 6507,472 6197,472 "
+         points="6507,435 6507,472 6197,472 6197,435 "
          class="fil34" />
       <polygon
          style="fill:#518038"
          id="polygon5002"
-         points="6218,435 6300,435 6300,472 6218,472 "
+         points="6300,435 6300,472 6218,472 6218,435 "
          class="fil35" />
       <polygon
          style="fill:#518038"
          id="polygon5004"
-         points="6312,435 6339,435 6339,472 6312,472 "
+         points="6339,435 6339,472 6312,472 6312,435 "
          class="fil35" />
       <g
          id="g5006">
@@ -3135,29 +3139,29 @@
            class="fil32" />
         <polygon
            style="fill:#38691d"
-           points="6174,599 6590,599 6590,637 6174,637 "
+           points="6590,599 6590,637 6174,637 6174,599 "
            class="fil33"
            id="polygon5010" />
       </g>
       <polygon
          style="fill:#417426"
          id="polygon5012"
-         points="6188,599 6514,599 6514,637 6188,637 "
+         points="6514,599 6514,637 6188,637 6188,599 "
          class="fil34" />
       <polygon
          style="fill:#518038"
          id="polygon5014"
-         points="6210,599 6296,599 6296,637 6210,637 "
+         points="6296,599 6296,637 6210,637 6210,599 "
          class="fil35" />
       <polygon
          style="fill:#518038"
          id="polygon5016"
-         points="6309,599 6337,599 6337,637 6309,637 "
+         points="6337,599 6337,637 6309,637 6309,599 "
          class="fil35" />
       <polygon
          style="fill:#ffcc00"
          id="polygon5018"
-         points="6382,276 6419,314 6457,351 6419,389 6382,426 6344,389 6307,351 6344,314 "
+         points="6344,389 6307,351 6344,314 6382,276 6419,314 6457,351 6419,389 6382,426 "
          class="fil31" />
       <g
          id="g5020">
@@ -3188,110 +3192,117 @@
       </g>
     </g>
     <g
-       style="clip-rule:evenodd;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
-       id="g14228"
-       transform="matrix(0.35783664,0,0,0.46526319,-955.60409,-1043.2979)">
-      <path
-         style="clip-rule:evenodd;fill:#999999;fill-rule:nonzero;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
-         inkscape:connector-curvature="0"
-         id="path2159-9"
-         d="M 4831.3637,3474.898 4537.3637,3474.898 4537.3637,3484.898 4831.3637,3484.898 C 4834.3637,3484.898 4837.3637,3485.898 4839.3637,3487.898 4841.3637,3489.898 4842.3637,3492.898 4842.3637,3495.898 L 4842.3637,3855.898 4803.3637,3855.898 4803.3637,3537.898 C 4803.3637,3532.898 4801.3637,3527.898 4798.3637,3524.898 L 4798.3637,3524.898 C 4794.3637,3521.898 4790.3637,3519.898 4784.3637,3519.898 L 4537.3637,3519.898 4537.3637,3529.898 4784.3637,3529.898 C 4787.3637,3529.898 4789.3637,3530.898 4791.3637,3531.898 L 4791.3637,3531.898 C 4792.3637,3533.898 4793.3637,3535.898 4793.3637,3537.898 L 4793.3637,3860.898 4793.3637,3865.898 4798.3637,3865.898 4847.3637,3865.898 4852.3637,3865.898 4852.3637,3860.898 4852.3637,3495.898 C 4852.3637,3489.898 4850.3637,3484.898 4846.3637,3480.898 4842.3637,3476.898 4837.3637,3474.898 4831.3637,3474.898 Z"
-         class="fil17" />
-      <path
-         style="clip-rule:evenodd;fill:#cccccc;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
-         inkscape:connector-curvature="0"
-         id="path2161-2"
-         d="M 4831.3637,3479.898 4537.3637,3479.898 4537.3637,3524.898 4784.3637,3524.898 C 4792.3637,3524.898 4798.3637,3530.898 4798.3637,3537.898 L 4798.3637,3860.898 4847.3637,3860.898 4847.3637,3495.898 C 4847.3637,3486.898 4840.3637,3479.898 4831.3637,3479.898 Z"
-         class="fil18" />
-      <path
-         style="clip-rule:evenodd;fill:#ffffff;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
-         inkscape:connector-curvature="0"
-         id="path2163-0"
-         d="M 4836.3637,3504.898 C 4836.3637,3495.898 4829.3637,3488.898 4820.3637,3488.898 L 4537.3637,3488.898 4537.3637,3481.898 4828.3637,3481.898 C 4837.3637,3481.898 4844.3637,3488.898 4844.3637,3497.898 L 4844.3637,3858.898 4836.3637,3858.898 4836.3637,3504.898 Z"
-         class="fil13" />
-      <path
-         style="clip-rule:evenodd;fill:#b3b3b3;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
-         inkscape:connector-curvature="0"
-         id="path2165-2"
-         d="M 4537.3637,3512.898 4798.3637,3512.898 C 4806.3637,3512.898 4813.3637,3519.898 4813.3637,3528.898 L 4813.3637,3860.898 4798.3637,3860.898 4798.3637,3537.898 C 4798.3637,3530.898 4792.3637,3524.898 4784.3637,3524.898 L 4537.3637,3524.898 4537.3637,3512.898 Z"
-         class="fil19" />
-      <path
-         style="clip-rule:evenodd;fill:none;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
-         inkscape:connector-curvature="0"
-         id="path2865-5"
-         d="M 4798.3637,3865.898 4537.3637,3865.898 4537.3637,3524.898 4784.3637,3524.898 C 4792.3637,3524.898 4798.3637,3530.898 4798.3637,3538.898 L 4798.3637,3865.898 Z"
-         class="fil22" />
-      <path
-         style="clip-rule:evenodd;fill:none;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
-         inkscape:connector-curvature="0"
-         id="path4109-3"
-         d="M 3883.3637,3865.898 4537.3637,3865.898 4537.3637,3538.898 C 4537.3637,3530.898 4531.3637,3524.898 4523.3637,3524.898 L 3897.3637,3524.898 C 3889.3637,3524.898 3883.3637,3530.898 3883.3637,3538.898 L 3883.3637,3865.898 Z"
-         class="fil22" />
-      <polygon
-         transform="translate(1921.3637,-58.101981)"
-         style="clip-rule:evenodd;fill:#999999;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
-         id="polygon4111-9"
-         points="2616,3588 1962,3588 1962,3533 2616,3533 "
-         class="fil23" />
-      <polygon
-         transform="translate(1921.3637,-58.101981)"
-         style="clip-rule:evenodd;fill:#cccccc;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
-         id="polygon4113-9"
-         points="2616,3583 1962,3583 1962,3538 2616,3538 "
-         class="fil18" />
-      <polygon
-         transform="translate(1921.3637,-58.101981)"
-         style="clip-rule:evenodd;fill:#ffffff;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
-         id="polygon4115-5"
-         points="2616,3547 1962,3547 1962,3540 2616,3540 "
-         class="fil13" />
-      <polygon
-         transform="translate(1921.3637,-58.101981)"
-         style="clip-rule:evenodd;fill:#b3b3b3;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
-         id="polygon4117-2"
-         points="2616,3583 1962,3583 1962,3571 2616,3571 "
-         class="fil19" />
-      <path
-         style="clip-rule:evenodd;fill:#999999;fill-rule:nonzero;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
-         inkscape:connector-curvature="0"
-         id="path4121-3"
-         d="M 3589.3637,3474.898 3883.3637,3474.898 3883.3637,3484.898 3589.3637,3484.898 C 3586.3637,3484.898 3583.3637,3485.898 3581.3637,3487.898 3579.3637,3489.898 3578.3637,3492.898 3578.3637,3495.898 L 3578.3637,3855.898 3617.3637,3855.898 3617.3637,3537.898 C 3617.3637,3532.898 3619.3637,3527.898 3623.3637,3524.898 L 3623.3637,3524.898 C 3626.3637,3521.898 3631.3637,3519.898 3636.3637,3519.898 L 3883.3637,3519.898 3883.3637,3529.898 3636.3637,3529.898 C 3633.3637,3529.898 3631.3637,3530.898 3630.3637,3531.898 L 3630.3637,3531.898 C 3628.3637,3533.898 3627.3637,3535.898 3627.3637,3537.898 L 3627.3637,3860.898 3627.3637,3865.898 3622.3637,3865.898 3573.3637,3865.898 3568.3637,3865.898 3568.3637,3860.898 3568.3637,3495.898 C 3568.3637,3489.898 3570.3637,3484.898 3574.3637,3480.898 3578.3637,3476.898 3583.3637,3474.898 3589.3637,3474.898 Z"
-         class="fil17" />
-      <path
-         style="clip-rule:evenodd;fill:#cccccc;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
-         inkscape:connector-curvature="0"
-         id="path4123-0"
-         d="M 3589.3637,3479.898 3883.3637,3479.898 3883.3637,3524.898 3636.3637,3524.898 C 3628.3637,3524.898 3622.3637,3530.898 3622.3637,3537.898 L 3622.3637,3860.898 3573.3637,3860.898 3573.3637,3495.898 C 3573.3637,3486.898 3580.3637,3479.898 3589.3637,3479.898 Z"
-         class="fil18" />
-      <path
-         style="clip-rule:evenodd;fill:#ffffff;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
-         inkscape:connector-curvature="0"
-         id="path4125-9"
-         d="M 3584.3637,3504.898 C 3584.3637,3495.898 3591.3637,3488.898 3600.3637,3488.898 L 3883.3637,3488.898 3883.3637,3481.898 3592.3637,3481.898 C 3583.3637,3481.898 3576.3637,3488.898 3576.3637,3497.898 L 3576.3637,3858.898 3584.3637,3858.898 3584.3637,3504.898 Z"
-         class="fil13" />
-      <path
-         style="clip-rule:evenodd;fill:#b3b3b3;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
-         inkscape:connector-curvature="0"
-         id="path4127-9"
-         d="M 3883.3637,3512.898 3622.3637,3512.898 C 3614.3637,3512.898 3608.3637,3519.898 3608.3637,3528.898 L 3608.3637,3860.898 3622.3637,3860.898 3622.3637,3537.898 C 3622.3637,3530.898 3628.3637,3524.898 3636.3637,3524.898 L 3883.3637,3524.898 3883.3637,3512.898 Z"
-         class="fil19" />
-      <path
-         style="clip-rule:evenodd;fill:none;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
-         inkscape:connector-curvature="0"
-         id="path4807-2"
-         d="M 3622.3637,3865.898 3883.3637,3865.898 3883.3637,3524.898 3636.3637,3524.898 C 3628.3637,3524.898 3622.3637,3530.898 3622.3637,3538.898 L 3622.3637,3865.898 Z"
-         class="fil22" />
+       id="g22721"
+       inkscape:export-filename="/home/becky/Documents/GameJams/AdventitiousAsylum/assets/structures/table.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       transform="translate(750,-664.28571)">
+      <g
+         transform="matrix(0.35783664,0,0,0.46526319,-955.60409,-1043.2979)"
+         id="g14228"
+         style="clip-rule:evenodd;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision">
+        <path
+           class="fil17"
+           d="M 4831.3637,3474.898 4537.3637,3474.898 4537.3637,3484.898 4831.3637,3484.898 C 4834.3637,3484.898 4837.3637,3485.898 4839.3637,3487.898 4841.3637,3489.898 4842.3637,3492.898 4842.3637,3495.898 L 4842.3637,3855.898 4803.3637,3855.898 4803.3637,3537.898 C 4803.3637,3532.898 4801.3637,3527.898 4798.3637,3524.898 L 4798.3637,3524.898 C 4794.3637,3521.898 4790.3637,3519.898 4784.3637,3519.898 L 4537.3637,3519.898 4537.3637,3529.898 4784.3637,3529.898 C 4787.3637,3529.898 4789.3637,3530.898 4791.3637,3531.898 L 4791.3637,3531.898 C 4792.3637,3533.898 4793.3637,3535.898 4793.3637,3537.898 L 4793.3637,3860.898 4793.3637,3865.898 4798.3637,3865.898 4847.3637,3865.898 4852.3637,3865.898 4852.3637,3860.898 4852.3637,3495.898 C 4852.3637,3489.898 4850.3637,3484.898 4846.3637,3480.898 4842.3637,3476.898 4837.3637,3474.898 4831.3637,3474.898 Z"
+           id="path2159-9"
+           inkscape:connector-curvature="0"
+           style="clip-rule:evenodd;fill:#999999;fill-rule:nonzero;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision" />
+        <path
+           class="fil18"
+           d="M 4831.3637,3479.898 4537.3637,3479.898 4537.3637,3524.898 4784.3637,3524.898 C 4792.3637,3524.898 4798.3637,3530.898 4798.3637,3537.898 L 4798.3637,3860.898 4847.3637,3860.898 4847.3637,3495.898 C 4847.3637,3486.898 4840.3637,3479.898 4831.3637,3479.898 Z"
+           id="path2161-2"
+           inkscape:connector-curvature="0"
+           style="clip-rule:evenodd;fill:#cccccc;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision" />
+        <path
+           class="fil13"
+           d="M 4836.3637,3504.898 C 4836.3637,3495.898 4829.3637,3488.898 4820.3637,3488.898 L 4537.3637,3488.898 4537.3637,3481.898 4828.3637,3481.898 C 4837.3637,3481.898 4844.3637,3488.898 4844.3637,3497.898 L 4844.3637,3858.898 4836.3637,3858.898 4836.3637,3504.898 Z"
+           id="path2163-0"
+           inkscape:connector-curvature="0"
+           style="clip-rule:evenodd;fill:#ffffff;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision" />
+        <path
+           class="fil19"
+           d="M 4537.3637,3512.898 4798.3637,3512.898 C 4806.3637,3512.898 4813.3637,3519.898 4813.3637,3528.898 L 4813.3637,3860.898 4798.3637,3860.898 4798.3637,3537.898 C 4798.3637,3530.898 4792.3637,3524.898 4784.3637,3524.898 L 4537.3637,3524.898 4537.3637,3512.898 Z"
+           id="path2165-2"
+           inkscape:connector-curvature="0"
+           style="clip-rule:evenodd;fill:#b3b3b3;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision" />
+        <path
+           class="fil22"
+           d="M 4798.3637,3865.898 4537.3637,3865.898 4537.3637,3524.898 4784.3637,3524.898 C 4792.3637,3524.898 4798.3637,3530.898 4798.3637,3538.898 L 4798.3637,3865.898 Z"
+           id="path2865-5"
+           inkscape:connector-curvature="0"
+           style="clip-rule:evenodd;fill:none;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision" />
+        <path
+           class="fil22"
+           d="M 3883.3637,3865.898 4537.3637,3865.898 4537.3637,3538.898 C 4537.3637,3530.898 4531.3637,3524.898 4523.3637,3524.898 L 3897.3637,3524.898 C 3889.3637,3524.898 3883.3637,3530.898 3883.3637,3538.898 L 3883.3637,3865.898 Z"
+           id="path4109-3"
+           inkscape:connector-curvature="0"
+           style="clip-rule:evenodd;fill:none;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision" />
+        <polygon
+           class="fil23"
+           points="1962,3588 1962,3533 2616,3533 2616,3588 "
+           id="polygon4111-9"
+           style="clip-rule:evenodd;fill:#999999;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
+           transform="translate(1921.3637,-58.101981)" />
+        <polygon
+           class="fil18"
+           points="1962,3583 1962,3538 2616,3538 2616,3583 "
+           id="polygon4113-9"
+           style="clip-rule:evenodd;fill:#cccccc;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
+           transform="translate(1921.3637,-58.101981)" />
+        <polygon
+           class="fil13"
+           points="1962,3547 1962,3540 2616,3540 2616,3547 "
+           id="polygon4115-5"
+           style="clip-rule:evenodd;fill:#ffffff;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
+           transform="translate(1921.3637,-58.101981)" />
+        <polygon
+           class="fil19"
+           points="1962,3583 1962,3571 2616,3571 2616,3583 "
+           id="polygon4117-2"
+           style="clip-rule:evenodd;fill:#b3b3b3;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision"
+           transform="translate(1921.3637,-58.101981)" />
+        <path
+           class="fil17"
+           d="M 3589.3637,3474.898 3883.3637,3474.898 3883.3637,3484.898 3589.3637,3484.898 C 3586.3637,3484.898 3583.3637,3485.898 3581.3637,3487.898 3579.3637,3489.898 3578.3637,3492.898 3578.3637,3495.898 L 3578.3637,3855.898 3617.3637,3855.898 3617.3637,3537.898 C 3617.3637,3532.898 3619.3637,3527.898 3623.3637,3524.898 L 3623.3637,3524.898 C 3626.3637,3521.898 3631.3637,3519.898 3636.3637,3519.898 L 3883.3637,3519.898 3883.3637,3529.898 3636.3637,3529.898 C 3633.3637,3529.898 3631.3637,3530.898 3630.3637,3531.898 L 3630.3637,3531.898 C 3628.3637,3533.898 3627.3637,3535.898 3627.3637,3537.898 L 3627.3637,3860.898 3627.3637,3865.898 3622.3637,3865.898 3573.3637,3865.898 3568.3637,3865.898 3568.3637,3860.898 3568.3637,3495.898 C 3568.3637,3489.898 3570.3637,3484.898 3574.3637,3480.898 3578.3637,3476.898 3583.3637,3474.898 3589.3637,3474.898 Z"
+           id="path4121-3"
+           inkscape:connector-curvature="0"
+           style="clip-rule:evenodd;fill:#999999;fill-rule:nonzero;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision" />
+        <path
+           class="fil18"
+           d="M 3589.3637,3479.898 3883.3637,3479.898 3883.3637,3524.898 3636.3637,3524.898 C 3628.3637,3524.898 3622.3637,3530.898 3622.3637,3537.898 L 3622.3637,3860.898 3573.3637,3860.898 3573.3637,3495.898 C 3573.3637,3486.898 3580.3637,3479.898 3589.3637,3479.898 Z"
+           id="path4123-0"
+           inkscape:connector-curvature="0"
+           style="clip-rule:evenodd;fill:#cccccc;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision" />
+        <path
+           class="fil13"
+           d="M 3584.3637,3504.898 C 3584.3637,3495.898 3591.3637,3488.898 3600.3637,3488.898 L 3883.3637,3488.898 3883.3637,3481.898 3592.3637,3481.898 C 3583.3637,3481.898 3576.3637,3488.898 3576.3637,3497.898 L 3576.3637,3858.898 3584.3637,3858.898 3584.3637,3504.898 Z"
+           id="path4125-9"
+           inkscape:connector-curvature="0"
+           style="clip-rule:evenodd;fill:#ffffff;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision" />
+        <path
+           class="fil19"
+           d="M 3883.3637,3512.898 3622.3637,3512.898 C 3614.3637,3512.898 3608.3637,3519.898 3608.3637,3528.898 L 3608.3637,3860.898 3622.3637,3860.898 3622.3637,3537.898 C 3622.3637,3530.898 3628.3637,3524.898 3636.3637,3524.898 L 3883.3637,3524.898 3883.3637,3512.898 Z"
+           id="path4127-9"
+           inkscape:connector-curvature="0"
+           style="clip-rule:evenodd;fill:#b3b3b3;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision" />
+        <path
+           class="fil22"
+           d="M 3622.3637,3865.898 3883.3637,3865.898 3883.3637,3524.898 3636.3637,3524.898 C 3628.3637,3524.898 3622.3637,3530.898 3622.3637,3538.898 L 3622.3637,3865.898 Z"
+           id="path4807-2"
+           inkscape:connector-curvature="0"
+           style="clip-rule:evenodd;fill:none;fill-rule:evenodd;image-rendering:optimizeQuality;shape-rendering:geometricPrecision;text-rendering:geometricPrecision" />
+      </g>
+      <rect
+         ry="7.1338968"
+         y="553.29437"
+         x="300.84076"
+         height="21.981998"
+         width="500.3551"
+         id="rect17866"
+         style="opacity:1;fill:#808080;fill-opacity:1;stroke:none;stroke-width:0.77999997;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     </g>
-    <rect
-       style="opacity:1;fill:#808080;fill-opacity:1;stroke:none;stroke-width:0.77999997;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="rect17866"
-       width="500.3551"
-       height="21.981998"
-       x="300.84076"
-       y="553.29437"
-       ry="7.1338968" />
     <g
-       transform="matrix(0.45265241,0,0,0.45265241,-68.492218,-579.5326)"
+       transform="matrix(0.81896931,0,0,0.81896931,1143.5969,145.24495)"
        id="g3"
        inkscape:export-filename="/home/becky/Documents/GameJams/AdventitiousAsylum/assets/structures/bookshelf.png"
        inkscape:export-xdpi="90"
@@ -3686,7 +3697,7 @@
     </g>
     <g
        id="g19880"
-       transform="matrix(0.16702774,0,0,0.16702774,349.62661,26.896507)">
+       transform="matrix(0.14466129,0,0,0.14466129,395.9016,453.37474)">
       <image
          style="overflow:visible"
          y="-34.869709"
@@ -4292,17 +4303,17 @@
     </g>
     <g
        style="fill:#e80000;fill-opacity:1"
-       transform="matrix(1.0567334,0,0,-1.0567334,130.63993,396.30094)"
+       transform="matrix(1.0567334,0,0,-1.0567334,146.35421,394.87237)"
        id="g6127"
        inkscape:export-filename="/home/becky/Documents/GameJams/AdventitiousAsylum/assets/characters/physical-orderly.png"
        inkscape:export-xdpi="93.449402"
        inkscape:export-ydpi="93.449402">
       <path
          style="fill:#e80000;fill-opacity:1"
-         transform="matrix(0.8,0,0,-0.8,-409.74,205.43)"
          d="M 522.47,255.44 C 521.1894,255.446 519.9498,255.5167 518.7512,255.65875 515.555,256.03375 512.1887,256.78375 512.1887,256.78375 512.1887,256.78375 502.7825,265.04625 502.7825,272.37775 502.7825,279.70655 503.1575,282.34655 503.1575,282.34655 503.1575,282.34655 501.845,282.1503 501.845,285.72155 501.845,289.2928 501.09125,293.62535 503.1575,294.19035 L 505.22,294.75285 C 505.22,294.75285 505.222,295.87035 507.095,297.94035 508.9762,300.00535 509.5325,302.09655 509.5325,302.09655 509.5325,302.09655 510.2825,303.40535 510.2825,305.47155 510.2825,307.53655 510.1,308.84535 508.97,310.15905 507.8425,311.47525 502.7612,312.99285 499.9388,315.81525 497.1213,318.63405 496.0013,319.00275 496.0013,319.00275 496.0013,319.00275 492.0801,321.99775 487.1888,323.87775 482.3076,325.75775 475.5388,326.53395 473.0948,326.53395 470.6498,326.53395 469.496,329.14895 470.626,332.90895 471.7535,336.66895 471.56475,338.55895 470.626,339.69015 469.68475,340.81395 464.6285,360.35015 462.5635,373.31515 460.4935,386.28715 460.8773,386.84515 460.6885,388.34615 460.4985,389.84865 458.2185,392.31235 457.8447,394.37735 457.46595,396.44735 457.46595,396.62735 457.8447,397.37735 458.21845,398.12985 456.9072,400.56485 456.9072,400.56485 456.9072,400.56485 456.53345,401.68865 457.2822,402.25235 458.0347,402.8161 458.0322,404.52985 457.6572,405.47115 457.2797,406.4099 456.5334,404.7174 457.2822,406.40865 458.0347,408.09985 458.2197,409.21865 458.2197,409.97115 458.2197,410.72365 458.62595,411.08615 458.62595,415.22115 458.62595,419.35615 458.78095,419.18865 459.3447,419.75235 459.90845,420.31605 460.31345,421.25235 460.31345,422.56485 460.31345,423.88235 459.5597,424.62485 460.50095,425.37735 461.44345,426.1261 461.62345,428.75235 463.12595,429.68985 464.62715,430.63235 466.50095,431.97105 466.50095,431.97105 466.50095,431.97105 462.93975,434.95855 464.43845,440.22105 465.94465,445.48355 471.40465,448.49605 473.28225,450.94005 475.15845,453.38505 475.90725,451.8813 475.90725,450.56505 475.90725,449.24505 476.46475,448.12625 477.03225,448.31505 477.596,448.50005 477.781,450.55625 479.65725,455.81505 481.53725,461.08125 480.4035,469.35005 482.46975,480.62705 484.53855,491.90505 487.36725,497.18805 489.62595,512.40805 491.87975,527.63205 492.99095,540.03805 495.81345,550.37705 498.63225,560.71305 500.90465,561.46905 501.65725,574.62705 502.406,587.77805 504.28105,597.73105 505.96975,607.87705 507.66355,618.02705 509.71725,618.01505 509.15725,624.03305 508.5935,630.04185 508.03105,630.99305 508.96975,634.56405 509.911,638.13525 510.65725,642.46405 511.03225,645.28305 511.411,648.10185 512.001,648.84555 512.001,648.84555 512.001,648.84555 509.7272,654.68305 504.6572,658.81435 499.5834,662.95315 498.4447,663.68815 496.5634,664.25185 494.6834,664.8156 490.5772,668.40305 498.4696,669.53305 506.3571,670.66055 505.6084,670.07555 513.8756,665.75185 522.1418,661.42805 523.6531,659.37565 525.7196,658.25185 526.5471,657.9081 528.1571,659.00185 528.1571,659.00185 528.1571,659.00185 531.1496,657.88185 533.2196,656.56435 535.2884,655.24815 535.8434,655.78935 536.0321,653.72055 536.2146,651.65435 535.84335,651.29435 536.0321,644.90805 536.2146,638.51555 534.7283,616.71405 532.4696,607.12705 530.2121,597.54085 530.9708,598.67705 530.7821,590.59605 530.5921,582.51605 528.1633,552.99705 528.3446,543.22105 528.53085,533.44855 529.09585,494.91605 529.8446,490.59605 L 530.5946,486.28355 C 530.5946,486.28355 532.6496,481.75475 535.2821,493.22105 537.9083,504.68505 543.7509,523.67205 543.7509,530.81505 543.7509,537.95805 546.3771,564.44905 547.1259,573.84605 547.8759,583.24355 548.2459,588.90205 550.5009,605.25205 552.7521,621.60305 552.7721,622.92105 554.8447,630.62705 556.9072,638.33705 556.5247,639.82825 558.5947,647.34605 560.6672,654.86355 561.4072,659.00205 561.4072,659.00205 561.4072,659.00205 560.8447,661.80955 561.4072,664.06455 561.97095,666.31955 563.4984,666.90705 565.001,667.09575 566.5022,667.282 565.926,664.27575 569.876,668.03325 573.8222,671.79325 575.8985,673.08445 581.157,676.84575 586.4232,680.60575 584.7332,680.62695 591.876,680.62695 599.0188,680.62695 599.7448,680.62695 601.8135,679.31445 603.8823,677.99445 603.881,675.72825 602.001,672.72065 600.1248,669.71315 597.3222,669.88065 594.501,666.87685 591.6822,663.86935 588.0972,661.26065 586.5948,658.06435 585.0898,654.86815 585.6548,652.81435 586.4073,652.81435 587.1598,652.81435 588.0973,651.66185 587.9073,649.59555 587.7223,647.52675 587.34355,637.39055 586.5948,633.25155 585.8423,629.12035 585.096,607.30555 583.7823,599.22055 582.4661,591.13935 580.4111,560.71255 579.0948,550.75155 577.7848,540.79035 579.25855,511.64655 578.87605,504.12655 578.5048,496.60905 575.31355,470.11055 575.31355,464.09555 575.31355,458.08055 577.21975,454.87675 577.21975,453.56455 577.21975,452.24835 579.65355,449.44455 580.21975,449.25205 580.7835,449.0658 581.89975,449.62455 582.28225,450.75205 582.65975,451.88325 586.96475,448.29585 589.21975,444.34585 591.47725,440.39965 592.62095,434.22585 592.81355,431.97085 593.0023,429.71205 592.43355,428.19585 593.37605,426.68965 594.3173,425.18845 594.1248,423.68965 594.31355,422.75215 594.4998,421.8134 594.12855,421.63095 594.68855,420.68965 595.2523,419.7484 595.25105,417.87715 595.25105,417.87715 595.25105,417.87715 596.18605,415.97335 597.31355,415.59595 598.43735,415.22095 601.44855,395.29695 599.75105,390.78395 598.06355,386.27895 594.50855,373.68495 591.12605,362.59595 587.74355,351.50495 581.91105,338.92395 580.97005,332.53395 580.0313,326.14515 579.47005,322.37795 579.47005,322.37795 579.47005,322.37795 578.8813,320.50415 574.00125,319.94045 569.11625,319.3767 566.49125,318.63795 557.65725,315.44045 548.82725,312.24795 543.94225,311.10165 542.25125,309.22165 540.55625,307.34545 538.12375,306.79045 537.56375,303.97165 536.9925,301.15285 538.31,298.51285 539.06375,295.31545 539.81625,292.11925 541.69125,293.63295 542.62625,290.81545 543.5675,287.99665 543.94245,283.85165 543.56375,281.97165 L 542.06375,280.84665 C 542.06375,280.84665 542.44,279.72785 541.87625,276.90915 541.3125,274.08665 541.28625,268.26295 538.28245,264.50315 535.27865,260.74565 533.60495,257.16435 529.46995,256.22195 526.88795,255.63758 524.60435,255.43151 522.46995,255.4407 Z M 566.782,396.6 C 566.782,396.6 568.4906,401.528 569.4382,407.6 570.41434,413.8106 568.46655,422.274 568.0944,427.444 567.71585,432.8282 565.4382,441.132 565.4382,441.132 L 565.21945,441.97575 564.5632,441.41325 C 564.5632,441.41325 562.4773,439.73235 561.4382,438.06945 561.06886,437.48115 560.97108,436.70085 560.90695,435.72565 560.84285,434.75046 560.84025,433.59395 560.87575,432.44445 560.94665,430.14535 561.157,427.82955 561.157,427.06945 561.157,426.37348 560.82709,425.20345 560.50075,424.13195 560.33758,423.59619 560.19095,423.05625 560.06325,422.60075 559.93555,422.14525 559.81325,421.78261 559.81325,421.41325 559.81325,420.67345 560.28181,420.09465 560.7195,419.63205 561.15719,419.16945 561.6079,418.77385 561.8445,418.53825 561.8676,418.50145 561.9087,418.44255 561.9382,418.35075 561.9972,418.16713 562.06197,417.9141 562.1257,417.60075 562.25317,416.97406 562.36467,416.11665 562.46945,415.25695 562.679,413.53775 562.84445,411.66145 562.84445,410.88195 562.84445,409.35275 562.05082,407.23115 563.5007,404.94445 564.04639,404.08434 564.6368,401.93675 565.0319,400.10065 565.427,398.26455 565.6569,396.72565 565.6569,396.72565 L 566.2194,396.78815 566.7819,396.60065 Z"
          id="path6129"
-         inkscape:connector-curvature="0" />
+         inkscape:connector-curvature="0"
+         transform="matrix(0.8,0,0,-0.8,-409.74,205.43)" />
     </g>
     <image
        y="-552.63782"
