@@ -23,16 +23,16 @@ class ItemGenerator:
 
     def __init__(self):
 
-        imagePath = 'assets/weapon-images'
+        imagePath = 'assets/items/weapons'
 
         self.items = [Item('pillow', imagePath + '/astronaut_small.png', 7, 10, physical_type),
                       Item('spaceship', imagePath + '/spaceship-side.png', 300, 0, mental_type),
                       Item('tugboat', imagePath + '/astronaut_small.png', 100, 2, mental_type),
-                      Item('elephant', imagePath + '/astronaut_small.png', 150, 2, 'physical')]
+                      Item('elephant', imagePath + '/astronaut_small.png', 150, 2, physical_type)]
 
     def getItem(self):
 
-        item = random.randint(0, len(self.items))
+        item = random.randint(0, len(self.items)-1)
         return item
 
     def getItemByName(self, name):
@@ -59,5 +59,5 @@ class ItemDescriptor:
                         'runny', 'wearisome', 'hopeful', 'sharp', 'whimsical']
 
     def getDescriptor(self):
-        descriptor = random.randint(0, len(self.descriptors))
+        descriptor = random.randint(0, len(self.descriptors)-1)
         return descriptor
