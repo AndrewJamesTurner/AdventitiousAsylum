@@ -27,6 +27,8 @@ class MovementPath:
         self.duration = duration
         self.points = points
         self.progress = 0
+        if self.points[0] is not (0, 0):
+            self.points = [(0, 0)] + self.points
 
     def step(self, dt):
         self.progress = min(self.progress + dt, self.duration)
