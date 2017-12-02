@@ -206,5 +206,5 @@ def str_to_int(integer):
 
 
 if __name__ == '__main__':
-    app = ezpygame.Application(title='Level Editor', resolution=(SCREEN_WIDTH, SCREEN_HEIGHT), update_rate=10)
+    app = ezpygame.Application(title='Level Editor', resolution=(SCREEN_WIDTH, SCREEN_HEIGHT), update_rate=FPS)
     app.run(LevelEditor())
