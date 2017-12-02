@@ -44,13 +44,13 @@ class LevelObject:
     Has a position in blocks (x,y), caches related calculated draw position
     Shares data from a LevelObjectPattern.
     """
-    z_index  = 0
     def __init__(self, objectDefinition, surfdata=None):
         o = objectDefinition
         self.type = o['type']
         self.pattern  = LevelObjectPattern.get( self.type )
         x = o['x']
         y = o['y']
+        z_index = o['z']
 
         self.block_position = (x, y)
         self.draw_position = (x * BLOCK_SIZE, y * BLOCK_SIZE)
