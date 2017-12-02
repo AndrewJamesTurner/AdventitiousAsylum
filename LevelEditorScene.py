@@ -101,11 +101,11 @@ class LevelEditor(GameScene):
             file_name += '.json'
         with open(os.path.join('levels', file_name), 'r') as level_file:
             level_info = json.load(level_file)
-        self.level_width_box.set_value(level_info['width'])
-        self.level_height_box.set_value(level_info['height'])
-        self.gravity_box.set_value(level_info['gravity'])
-        self.jump_height_box.set_value(level_info['jumpheight'])
-        self.player_speed_box.set_value(level_info['playerspeed'])
+        self.level_width_box.set_value(str(level_info['width']))
+        self.level_height_box.set_value(str(level_info['height']))
+        self.gravity_box.set_value(str(level_info['gravity']))
+        self.jump_height_box.set_value(str(level_info['jumpheight']))
+        self.player_speed_box.set_value(str(level_info['playerspeed']))
         self.level_objects = []
         for level_object_info in level_info['objects']:
             self.level_objects.append(LevelObject(objectDefinition=level_object_info))
@@ -113,11 +113,11 @@ class LevelEditor(GameScene):
     def save_level(self):
         # Collect level details
         level = {
-            'width': self.level_width_box.get_value(),
-            'height': self.level_height_box.get_value(),
-            'gravity': self.gravity_box.get_value(),
-            'jumpheight': self.jump_height_box.get_value(),
-            'playerspeed': self.player_speed_box.get_value(),
+            'width': str_to_int(self.level_width_box.get_value()),
+            'height': str_to_int(self.level_height_box.get_value()),
+            'gravity': str_to_float(self.gravity_box.get_value()),
+            'jumpheight': str_to_float(self.jump_height_box.get_value()),
+            'playerspeed': str_to_float(self.player_speed_box.get_value()),
             'objects': [],
         }
         # Collect objects
@@ -189,6 +189,20 @@ class LevelEditor(GameScene):
             self.stand_data_box.set_value('')
             self.climb_data_box.set_value('')
             self.damage_data_box.set_value('')
+
+
+def str_to_float(string):
+    if string == '':
+        return 0.0
+    else:
+        return float(string)
+
+
+def str_to_int(integer):
+    if integer == '':
+        return 0
+    else:
+        return int(integer)
 
 
 if __name__ == '__main__':
