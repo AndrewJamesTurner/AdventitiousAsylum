@@ -39,6 +39,7 @@ class LevelEditor(GameScene):
         self.player_speed_box = thorpy.Inserter.make(name='Player speed: ', value='')
         save_level_button = thorpy.make_button('Save level', self.save_level)
         self.level_details_area = thorpy.Box.make([self.level_details_title, self.level_name_box, load_level_button, self.level_width_box, self.level_height_box, self.gravity_box, self.jump_height_box, self.player_speed_box, save_level_button])
+        self.level_details_area.fit_children()
 
         # Pattern details area
         pattern_details_title = thorpy.make_text('Pattern Details', 18, (0, 0, 0))
@@ -92,10 +93,16 @@ class LevelEditor(GameScene):
             pattern_object = thorpy.make_button(pattern_id, func=click_pattern, params={'pattern_id': pattern_id, 'surfdata': pattern_definition['surfdata']})
             pattern_objects.append(pattern_object)
 
-        self.patterns_area = thorpy.Box.make([patterns_title, *pattern_objects],
-                                             size=(PATTERNS_AREA_WIDTH, SCREEN_HEIGHT))
-        self.patterns_area.set_main_color((220, 220, 255, 180))
+        self.patterns_list = thorpy.Box.make([patterns_title, *pattern_objects], size=(PATTERNS_AREA_WIDTH, SCREEN_HEIGHT))
+        self.patterns_list.set_main_color((220, 220, 255, 180))
+        # self.patterns_list.add_lift()
+        self.patterns_list.fit_children()
+
+        # self.patterns_area = self.patterns_list
+
+        self.patterns_area = thorpy.Box.make([self.patterns_list], size=(PATTERNS_AREA_WIDTH, SCREEN_HEIGHT))
         self.patterns_area.set_topleft((SCREEN_WIDTH + DETAILS_AREA_WIDTH, 0))
+        self.patterns_area.fit_children()
         thorpy.store(self.patterns_area)
         self.patterns_area.add_lift()
 
@@ -211,6 +218,9 @@ class LevelEditor(GameScene):
                 self.camera_y += nudge_size
             if event.key == pygame.K_d:
                 self.debug_draw = not self.debug_draw
+
+        elif event.type == pygame.QUIT:
+            pygame.quit()
 
     def doZoom(self, factor, cx, cy):
         def nastyZoomTransform(z1, z2, m, c1):
