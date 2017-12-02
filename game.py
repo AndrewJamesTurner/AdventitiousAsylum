@@ -91,11 +91,12 @@ class SharedValues:
 
     import constants
 
-    items = [
-        ItemGenerator().getItemByName("pillow"),
-        ItemGenerator().getItemByName("spaceship"),
-        ItemGenerator().getItemByName("tugboat"),
-        ]
+    # items = [
+    #     ItemGenerator().getItemByName("pillow"),
+    # ]
+
+    items = ItemGenerator().getItems(4)
+
     health = 1000
     max_health = health
     enemy = None
