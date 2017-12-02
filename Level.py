@@ -24,16 +24,16 @@ class SurfData:
     def __init__(self, width, height):
         self.ary = numpy.zeros((width, height), SurfData.TYPE)
 
-        self.damage_image = Surface(BLOCK_SIZE, BLOCK_SIZE, SRCALPHA)
+        self.damage_image = Surface((BLOCK_SIZE, BLOCK_SIZE), SRCALPHA)
         self.damage_image.fill((255, 0, 0), Rect(0, 0, 0.3*BLOCK_SIZE, BLOCK_SIZE))
 
-        self.block_image = Surface(BLOCK_SIZE, BLOCK_SIZE, SRCALPHA)
+        self.block_image = Surface((BLOCK_SIZE, BLOCK_SIZE), SRCALPHA)
         self.block_image.fill((0, 255, 0))
 
-        self.stand_image = Surface(BLOCK_SIZE, BLOCK_SIZE, SRCALPHA)
+        self.stand_image = Surface((BLOCK_SIZE, BLOCK_SIZE), SRCALPHA)
         self.stand_image.fill((0, 0, 255), Rect(0, 0, BLOCK_SIZE, 0.3 * BLOCK_SIZE))
 
-        self.climb_image = Surface(BLOCK_SIZE, BLOCK_SIZE, SRCALPHA)
+        self.climb_image = Surface((BLOCK_SIZE, BLOCK_SIZE), SRCALPHA)
         self.climb_image.fill((255, 0, 255), Rect(0.7*BLOCK_SIZE, 0, 0.3*BLOCK_SIZE, BLOCK_SIZE))
 
     """
@@ -64,8 +64,8 @@ class SurfData:
             print( ''.join(list) )
 
     def debug_draw(self, render_queue):
-        for x in range(self.ary.size(1)):
-            for y in range(self.ary.size(0)):
+        for x in range(self.ary.shape[0]):
+            for y in range(self.ary.shape[1]):
                 data = self.ary[x, y]
                 screen_x = x * BLOCK_SIZE
                 screen_y = y * BLOCK_SIZE

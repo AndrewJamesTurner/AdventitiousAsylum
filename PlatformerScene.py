@@ -25,6 +25,7 @@ class PlatformerScene(GameScene):
         self.level.update(dt / 1000.0)
 
     def draw(self, screen):
+        self.level.surfdata.debug_draw(self.rq)
         self.level.draw(self.rq)
         self.rq.flush(screen)
 
