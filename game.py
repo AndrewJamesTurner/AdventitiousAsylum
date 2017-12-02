@@ -5,7 +5,7 @@ import ezpygame
 import pygame
 
 from constants import *
-from items import Item
+from items import ItemGenerator
 
 os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (50, 50)
 
@@ -91,7 +91,11 @@ class SharedValues:
 
     import constants
 
-    items = [Item.create_pillow()]
+    items = [
+        ItemGenerator().getItemByName("pillow"),
+        ItemGenerator().getItemByName("spaceship"),
+        ItemGenerator().getItemByName("tug boat"),
+        ]
     health = 100
     enemy = None
 

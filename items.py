@@ -28,7 +28,7 @@ class Item:
 
 class ItemGenerator:
 
-    def __init__(self, _type):
+    def __init__(self):
 
         self.items = [Item('pillow', 'assets/astronaut_small.png', 7, 10, 'physical'),
                       Item('spaceship', 'assets/astronaut_small.png', 300, 0, 'mental'),
