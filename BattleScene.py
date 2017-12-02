@@ -186,7 +186,7 @@ class BattleScene(GameScene):
 
                 name_text = self.move_font.render(str(self.items[1].name), True, font_colour)
                 damage_text = self.move_font.render(str(self.items[1].damage), True, font_colour)
-                type_text = self.move_font.render(str(move_type), True, font_colour)
+                type_text = self.move_font.render(self.items[1].type, True, font_colour)
 
                 self.render_queue.add((move_x_right, move_y_top), self.black_move)
                 self.render_queue.add((move_x_right + move_name_x_offset, move_y_top + text_y_offset), name_text, z_index=2)
@@ -197,7 +197,7 @@ class BattleScene(GameScene):
 
                 name_text = self.move_font.render(str(self.items[2].name), True, font_colour)
                 damage_text = self.move_font.render(str(self.items[2].damage), True, font_colour)
-                type_text = self.move_font.render(str(move_type), True, font_colour)
+                type_text = self.move_font.render(self.items[2].type, True, font_colour)
 
                 self.render_queue.add((move_x_left, move_y_bottom), self.black_move)
                 self.render_queue.add((move_x_left + move_name_x_offset, move_y_bottom + text_y_offset), name_text, z_index=2)
@@ -208,7 +208,7 @@ class BattleScene(GameScene):
 
                 name_text = self.move_font.render(str(self.items[3].name), True, font_colour)
                 damage_text = self.move_font.render(str(self.items[3].damage), True, font_colour)
-                type_text = self.move_font.render(str(move_type), True, font_colour)
+                type_text = self.move_font.render(self.items[3].type, True, font_colour)
 
                 self.render_queue.add((move_x_right, move_y_bottom), self.black_move)
                 self.render_queue.add((move_x_right + move_name_x_offset, move_y_bottom + text_y_offset), name_text, z_index=2)
@@ -293,14 +293,14 @@ class BattleScene(GameScene):
 
                     attack_type = self.enemy.items[self.enemy_selected_item].type
                     defence_type = self.type
-                    damage = self.items[self.currently_selected_item].damage
+                    damage = self.items[self.enemy_selected_item].damage
                     damage = damage * get_multiplier(attack_type, defence_type)
 
                     self.health -= damage
                 else:
                     self.movement_path.step(dt)
 
-                    item_image = self.items[self.currently_selected_item].image
+                    item_image = self.enemy.items[self.enemy_selected_item].image
                     self.render_queue.add(self.movement_path.get_position(), item_image, z_index=100)
 
             item_name = self.enemy.items[self.enemy_selected_item].name
