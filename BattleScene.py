@@ -105,13 +105,19 @@ class BattleScene(GameScene):
 
     def update(self, dt):
 
+        message_box_x = 54
+        message_box_y = 398
+
+        message_text_offset_x = 10
+        message_text_offset_y = 10
+
         if self.health <= 0 or self.enemy.health <= 0:
             self.leave_scene()
 
         draw_health_bar(self.render_queue, 218, 342, self.health / self.max_health)
         draw_health_bar(self.render_queue, 605, 82, self.enemy.health / self.enemy.max_health)
 
-        self.render_queue.add((0, 0), self.boarder, z_index=1)
+        self.render_queue.add((0, 0), self.boarder, z_index=0)
 
         enemy_pos_x = 765
         enemy_pos_y = 50
@@ -212,14 +218,8 @@ class BattleScene(GameScene):
             font_colour = (0, 0, 0)
             text = self.move_font.render(self.message, True, font_colour)
 
-            message_box_x = 54
-            message_box_y = 398
-
-            text_offset_x = 10
-            text_offset_y = 10
-
             self.render_queue.add((message_box_x, message_box_y), self.message_box, z_index=0)
-            self.render_queue.add((message_box_x + text_offset_x, message_box_y + text_offset_y), text, z_index=1)
+            self.render_queue.add((message_box_x + message_text_offset_x, message_box_y + message_text_offset_y), text, z_index=1)
 
         elif self.state == enemy_move_select_state:
 
@@ -256,7 +256,8 @@ class BattleScene(GameScene):
             font_colour = (0, 0, 0)
             text = self.move_font.render(self.message, True, font_colour)
 
-            self.render_queue.add((100, 100), text, z_index=1)
+            self.render_queue.add((message_box_x, message_box_y), self.message_box, z_index=0)
+            self.render_queue.add((message_box_x + message_text_offset_x, message_box_y + message_text_offset_y), text, z_index=1)
 
     def handle_event(self, event):
 
