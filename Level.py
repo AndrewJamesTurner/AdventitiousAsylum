@@ -31,19 +31,16 @@ class Level:
 
         self.surfdata = SurfData(self.width, self.height)
 
-        self.levelObjects = []
-        for obj in l['objects']:
-            o = LevelObject(obj, self.surfdata)
-            self.addObject(o)
+        if 'objects' in l:
+            self.levelObjects = [ LevelObject(o, self.surfdata) for o in l['objects'] ]
+        if 'spawners' in l:
+            self.spawners = [ Spawner(s) for s in l['spawners'] ]
         self.levelEntities = []
 
     @classmethod
     def load(cls, filename):
         with open(os.path.join(LEVELS_PATH, filename)) as json_data:
             return Level(json.load(json_data))
-
-    def addObject(self, lObject):
-        self.levelObjects.append(lObject)
 
     def addEntity(self, lEntity):
         self.levelEntities.append(lEntity)
