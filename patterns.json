@@ -61,6 +61,17 @@
     }
   },
 
+  "ladder":{
+    "image":"structures/ladderSection.png",
+    "width": 1,
+    "height": 1,
+    "surfdata":{
+      "climb" :[
+        "#"
+      ]
+    }
+  },
+
   "bookshelf":{
     "image":"structures/bookshelf.png",
     "width": 3,
