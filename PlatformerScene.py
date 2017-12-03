@@ -4,16 +4,18 @@ from game import *
 from GameScene import GameScene
 from RenderQueue import RenderQueue
 from LevelObject import *
-from Level import Level
+from Level import *
 
 class PlatformerScene(GameScene):
     def __init__(self):
         self.rq = RenderQueue()
         LevelObjectPattern.init()
+        Spawner.init()
 
         self.level = Level.load('test.json')
         self.spedec = SpecEcController(LevelEntity(7, 0, 1, 2, 'arrow.png'))
         self.level.addEntity(self.spedec.le)
+        Spawner.setPlayerEntity(self.spedec.le)
         self.level.addEntity(LevelEntity(9,0,1,2,'health.png'))
 
     def on_enter(self, previous_scene):
