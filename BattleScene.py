@@ -2,7 +2,7 @@ from game import pygame, SCREEN_WIDTH, SCREEN_HEIGHT, ezpygame, FPS, get_shared_
 from GameScene import GameScene
 from RenderQueue import RenderQueue
 from movement_path import MovementPath
-from enemy import Enemy
+from orderly import Orderly
 from items import physical_type, mental_type, chemical_type
 from items import ItemGenerator
 from items import ItemEffectiveness, ItemDescriptor
@@ -85,6 +85,7 @@ class BattleScene(GameScene):
 
         self.previous_scene = previous_scene
         self.state = player_move_select_state
+
         self.items = get_shared_values().items
         self.health = get_shared_values().health
         self.max_health = get_shared_values().max_health
@@ -118,9 +119,7 @@ class BattleScene(GameScene):
 
         enemy_items = ItemGenerator().getItems(4)
 
-        self.enemy = Enemy("Bob", 1000, physical_type, enemy_items)
-
-        self.enemy.image = pygame.image.load("assets/characters/doctor_woman.png")
+        self.enemy = Orderly("Bob", "assets/characters/doctor_woman.png", 1000, physical_type, enemy_items)
 
         self.move_font = pygame.font.Font("assets/Courgette-Regular.ttf", 24)
 
