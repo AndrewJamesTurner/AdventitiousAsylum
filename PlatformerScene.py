@@ -13,10 +13,9 @@ class PlatformerScene(GameScene):
         Spawner.init()
 
         self.level = Level.load('test.json')
-        self.spedec = SpecEcController(LevelEntity(7, 0, 1, 2, 'arrow.png'))
+        self.spedec = SpedEcController(self.level.playerentity)
         self.level.addEntity(self.spedec.le)
         Spawner.setPlayerEntity(self.spedec.le)
-        self.level.addEntity(LevelEntity(9,0,1,2,'health.png'))
 
     def on_enter(self, previous_scene):
         super(PlatformerScene, self).on_enter(previous_scene)
