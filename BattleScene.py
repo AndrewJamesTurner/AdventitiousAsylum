@@ -9,6 +9,7 @@ from items import physical_type, mental_type, chemical_type
 # from items import ItemGenerator
 from items import ItemEffectiveness, ItemDescriptor
 from random import randint
+from animation import Animation
 
 player_move_select_state = "player_move_select_state"
 player_attack_animation_state = "player_attack_animation_state"
@@ -111,6 +112,8 @@ class BattleScene(GameScene):
 
         self.render_queue = RenderQueue()
 
+        self.test_anim = Animation(True, pygame.image.load("assets/characters/spedec-2/spedec-man-walk-2-sheet.png"), 180)
+
         # remove this
         # enemy_items = [
         #     ItemGenerator().getItem(),
@@ -131,6 +134,9 @@ class BattleScene(GameScene):
         self.render_queue.flush(screen)
 
     def update(self, dt):
+
+        self.test_anim.step()
+        self.render_queue.add((200, 200), self.test_anim.get_current_frame(), z_index=400)
 
         message_box_x = 54
         message_box_y = 420
