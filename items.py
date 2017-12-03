@@ -33,6 +33,20 @@ class ItemGenerator:
         for weapon in weapons:
 
             item = Item(weapon["name"], weapon["image"], weapon["damage"], weapon["sanity"], weapon["type"])
+
+            image_width = item.image.get_width()
+            image_height = item.image.get_height()
+
+            max_size = 80.0
+
+            width_scale = max_size/image_width
+            height_scale = max_size/image_height
+
+            if width_scale < height_scale:
+                item.image = pygame.transform.smoothscale(item.image, (int(width_scale * image_width), int(width_scale * image_height)))
+            else:
+                item.image = pygame.transform.smoothscale(item.image, (int(height_scale * image_width), int(height_scale * image_height)))
+
             self.items.append(item)
 
     def getItem(self):
