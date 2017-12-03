@@ -41,5 +41,8 @@ PLAYER_ACCEL = 0.2
 PLAYER_DECEL = 1.0
 PLAYER_ACCEL_AIR = 0.1
 
+# Number of blocks beyond something is "offscreen"
+SCREEN_MARGIN = 2.0
+
 ASSETS_PATH = 'assets'
 LEVELS_PATH = 'levels'

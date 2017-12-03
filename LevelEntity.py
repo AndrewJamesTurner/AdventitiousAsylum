@@ -6,11 +6,16 @@ class LevelEntity:
     An entity that can roam around a level.
     Physics can be done on entities, and they interact with the surfdata.
     """
-    def __init__(self, x, y, width, height, asset=None):
+    def __init__(self, x, y, archetype, entityDefinition):
+        self.archetype = archetype
+        self.entityname = entityDefinition['name']
+        e = entityDefinition
+        w = float( e['width'] )
+        h = float( e['height'] )
         self.top = float(y)
         self.left = float(x)
-        self.width = float(width)
-        self.height = float(height)
+        self.width = w
+        self.height = h
         self.vel_x = 0
         self.vel_y = 0
 
@@ -26,9 +31,9 @@ class LevelEntity:
         self.jump = 0
         self.grab = 0
 
-        if asset is not None:
-            rawimage = pygame.image.load(os.path.join(ASSETS_PATH, asset)).convert_alpha()
-            self.image = pygame.transform.smoothscale(rawimage, (int(width * BLOCK_SIZE), int(height * BLOCK_SIZE)))
+        if 'image' in e:
+            rawimage = pygame.image.load(os.path.join(ASSETS_PATH, e['image'])).convert_alpha()
+            self.image = pygame.transform.smoothscale(rawimage, (int(w * BLOCK_SIZE), int(h * BLOCK_SIZE)))
         else:
             self.image = None
 
