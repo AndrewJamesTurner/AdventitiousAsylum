@@ -6,6 +6,8 @@ import pygame
 
 from constants import *
 from items import ItemGenerator, none_type
+from player import Player
+from orderly import Orderly
 
 os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (50, 50)
 
@@ -104,6 +106,14 @@ class SharedValues:
     enemy = None
     image = pygame.image.load("assets/characters/spedec.png")
     type = none_type
+
+
+    # here
+        # Orderly name
+    player = Player("spedecWoman")
+    orderly = Orderly("doctor")
+    distance_through_level = 0.5
+    #
 
     def reset(self):
 

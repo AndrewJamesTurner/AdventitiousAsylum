@@ -1,56 +1,75 @@
 # from items import physical_type, mental_type, chemical_type
-from game import pygame
+# from game import pygame
 import json
-from random import shuffle
-import random
+# from random import shuffle
+# import random
+from items import ItemGenerator
+from game import pygame
 
 
 class Orderly:
 
-    def __init__(self, name, image, health, _type, items):
+    def __init__(self, name):
 
-        self.health = health
-        self.max_health = health
-        self.type = _type
-        self.items = items
+        _json = json.load(open('entities.json'))
+
+        for thing in _json["orderly"]:
+            if thing["name"] == name:
+                orderly_json = thing
+
         self.name = name
+        self.health = 1000
+        self.max_health = 1000
+        self.type = orderly_json["type"]
+        self.items = [ItemGenerator().getItemByName("pillow")]
+        # self.image = orderly_json["image"]
 
-        self.image = pygame.image.load(image)
+        self.image_path = orderly_json["image"]
+        self.image = pygame.image.load("assets/" + self.image_path)
+
+        image_width = self.image.get_width()
+        image_height = self.image.get_height()
+
+        desired_height = 300
+        ratio = desired_height / image_height
+
+        self.image_width_scaler = ratio
+        self.image_height_scaler = ratio
 
 
-class OrderlyGenerator:
+# class OrderlyGenerator:
 
-    def __init__(self):
+#     def __init__(self):
 
-        orderlys = json.load(open('entities.json'))["orderly"]
+#         orderlys = json.load(open('entities.json'))["orderly"]
 
-        self.orderlys = []
+#         self.orderlys = []
 
-        for ordd in orderlys:
+#         for ordd in orderlys:
 
-            xxx = Orderly(ordd["name"], ordd["image"], ordd["type"], [])
-            self.orderlys.append(xxx)
+#             xxx = Orderly(ordd["name"], ordd["image"], ordd["type"], [])
+#             self.orderlys.append(xxx)
 
-    def getOrderly(self):
+#     def getOrderly(self):
 
-        ordd = self.orderlys[random.randint(0, len(self.orderlys)-1)]
-        return ordd
+#         ordd = self.orderlys[random.randint(0, len(self.orderlys)-1)]
+#         return ordd
 
-    def getOrderlys(self, num=4):
+#     def getOrderlys(self, num=4):
 
-        shuffle(self.orderlys)
+#         shuffle(self.orderlys)
 
-        return self.orderlys[0:num]
+#         return self.orderlys[0:num]
 
-    def getOrderlyByName(self, name):
+#     def getOrderlyByName(self, name):
 
-        itemFound = False
+#         itemFound = False
 
-        for xxx in self.orderlys:
+#         for xxx in self.orderlys:
 
-            if xxx.name == name:
-                itemFound = True
-                return xxx
+#             if xxx.name == name:
+#                 itemFound = True
+#                 return xxx
 
-        if not itemFound:
-            return None
+#         if not itemFound:
+#             return None
