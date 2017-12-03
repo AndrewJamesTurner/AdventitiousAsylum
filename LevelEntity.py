@@ -73,8 +73,6 @@ class LevelEntity:
         self.left += dx
         self.top += dy
 
-        print(dx)
-
         if dx > 0.03:
             self.direction_multiplier = 1
 
