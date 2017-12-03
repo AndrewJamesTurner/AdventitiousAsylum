@@ -38,6 +38,9 @@ class RenderQueue:
             screen.fill(background)
         for item in self.queue:
             if item.scale is not (1, 1):  # Scale if necessary
+                if item.scale[0] < 0:
+                    item.image = pygame.transform.flip(item.image, True, False)
+                    item.scale = (-item.scale[0], item.scale[1])
                 item.image = pygame.transform.scale(item.image, ( int(item.image.get_width() * item.scale[0] * scale[0]), int(item.image.get_height() * item.scale[1] * scale[1])))
 
             # Draw the image

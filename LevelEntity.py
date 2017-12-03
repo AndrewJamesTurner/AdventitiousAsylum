@@ -37,6 +37,8 @@ class LevelEntity:
 
         self.anim = None
 
+        self.direction_multiplier = 1
+
         if archetype == 'player':
             self.anim = Animation(True,
                                   pygame.image.load('assets/characters/spedec-2/spedec-man-walk-2-sheet.png'), 180)
@@ -62,12 +64,22 @@ class LevelEntity:
         elif self.image is not None:
             im = self.image
 
+        scale = (self.direction_multiplier*scale[0], scale[1])
+
         if im is not None:
             rq.add(draw_position, im, scale, 50000)
 
     def move(self, dx, dy):
         self.left += dx
         self.top += dy
+
+        print(dx)
+
+        if dx > 0.03:
+            self.direction_multiplier = 1
+
+        if dx < -0.03:
+            self.direction_multiplier = -1
 
     @property
     def right(self):
