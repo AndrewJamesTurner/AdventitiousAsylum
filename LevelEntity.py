@@ -1,5 +1,6 @@
 from game import *
 import pygame
+from sharedValues import *
 
 class LevelEntity:
     """
@@ -69,22 +70,36 @@ class SpedEcController:
     """
     def __init__(self, entity):
         self.le = entity
-        self.flushInputs()
+        self.afterUpdate()
+        self.dead = 0
 
     def setInputs(self, keys):
         l = self.le
+        if self.dead:
+            l.go_u = False
+            l.go_d = False
+            l.go_grab = False
+            l.go_l = False
+            l.go_r = False
+            return
         l.go_u  = keys[pygame.K_UP] or keys[pygame.K_w]
         l.go_d  = keys[pygame.K_DOWN] or keys[pygame.K_s]
         l.grab  = keys[pygame.K_LSHIFT]
         l.go_l  = keys[pygame.K_LEFT] or keys[pygame.K_a]
         l.go_r  = keys[pygame.K_RIGHT] or keys[pygame.K_d]
 
+    def afterUpdate(self):
+        self.get_item = 0
+        self.le.jump = 0
+        if self.le.offscreen:
+            self.dead = 1
+        if get_shared_values().player.health <= 0:
+            self.dead = 1
+
     def onKeydown(self, key):
+        if self.dead:
+            return
         if key == pygame.K_RSHIFT or  key == pygame.K_TAB:
             self.get_item = 1
         elif key == pygame.K_SPACE:
             self.le.jump = 1
-
-    def flushInputs(self):
-        self.get_item = 0
-        self.le.jump = 0
