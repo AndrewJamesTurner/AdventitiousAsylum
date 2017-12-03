@@ -148,6 +148,8 @@ class ItemEffectiveness():
             'traumatic',
             'distressing',
             'diarrhea inducing',
+            'something to be remembered',
+            'tear educing',
         ]
 
         self.neutral = [
@@ -164,7 +166,6 @@ class ItemEffectiveness():
             'OK',
             'passable',
             'a bit funny',
-            'something to be remembered',
         ]
 
         self.low = [

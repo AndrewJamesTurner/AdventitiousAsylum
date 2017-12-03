@@ -32,6 +32,27 @@
 			"height": 2,
 			"type": "chemical"
 		}
+		{
+			"name": "doctor_man",
+			"image": "characters/doctor_man.png",
+			"width": 1.03,
+			"height": 1.8,
+			"type": "chemical"
+		}
+		{
+			"name": "doctor_woman",
+			"image": "characters/doctor_woman.png",
+			"width": 0.448,
+			"height": 2,
+			"type": "chemical"
+		}
+		{
+			"name": "astronaut",
+			"image": "characters/astronaut_small2.png",
+			"width": 0.966,
+			"height": 1.9,
+			"type": "mental"
+		}
 	],
 
 	"weapon": [
@@ -204,7 +225,8 @@
 			"name": "medicine",
 			"image": "items/health/medicine.png",
 			"width": 0.5,
-			"height": 0.720
+			"height": 0.720,
+			"amount": 100,
 		}
 	]
 }
