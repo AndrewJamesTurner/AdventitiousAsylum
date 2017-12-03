@@ -23,7 +23,17 @@ class PlatformerScene(GameScene):
     def update(self, dt):
         keys = pygame.key.get_pressed()
 
-        #print(self.level.collidingEntities(self.spedec.le))
+        # Go back to last lamppost if we run out of health
+        if get_shared_values().health <= 0:
+            # TODO: reset this scene to the last lamppost
+            self.application.change_scene(get_game_over_scene())
+
+        # TODO: Win if we get to the end of the level
+        # if self.spedec.??x position?? > ??level width??:
+        #     self.application.change_scene(get_win_scene())
+
+        for colliding_entity in self.level.collidingEntities(self.spedec.le):
+            self.handle_collision(colliding_entity)
 
         self.spedec.setInputs(keys)
         self.level.update(dt / 1000.0)
@@ -31,6 +41,18 @@ class PlatformerScene(GameScene):
         # If we do a death animation, we might not adjust this
         self.camera_x = self.spedec.le.centre
         self.camera_y = self.spedec.le.middle
+
+    def handle_collision(self, entity):
+        """
+        Called when the player collides with an entity.
+        :param entity: The entity that the player collided with
+        """
+        # TODO: Only start a battle if entity is an orderly
+        # if entity.??? == 'orderly':
+        # TODO: Set the type of orderly in the shared values, so the battle scene can show the correct image
+        # get_shared_values().enemy = ???
+        self.level.levelEntities.remove(entity)  # safe to remove here, because if we lose the battle we won't be staying here
+        self.application.change_scene(get_battle_scene())
 
     def cameraPosition(self):
         def limit(aim, extent, limit0, limit1):
