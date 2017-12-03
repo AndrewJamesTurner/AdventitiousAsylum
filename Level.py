@@ -5,9 +5,11 @@ import numpy
 import random
 
 from game import *
+from sharedValues import get_shared_values
 from constants import *
 from LevelObject import *
 from SurfData import *
+from LevelEntity import *
 
 class Level:
     """
@@ -38,11 +40,17 @@ class Level:
             print("Warning: Level has no objects")
             self.levelObjects = []
         if 'spawners' in l:
-            print("Info: Level has no spawners")
             self.spawners = [ Spawner(s, self) for s in l['spawners'] ]
         else:
+            print("Warning: Level has no spawners")
             self.spawners = []
         self.levelEntities = []
+
+        for s in [ s for s in self.spawners if s.type in ['oneshot'] ]:
+            s.update(0)
+
+    def getSpedEcEntity(self):
+        return [ e for e in self.levelEntities if e.archetype == 'player' ][0]
 
     @classmethod
     def load(cls, filename):
@@ -65,30 +73,53 @@ class Level:
     def collidingEntities(self, entity):
         return [ e for e in self.levelEntities if self.collides(entity, e) ]
 
+    def setScreenRect(self, l, t, r, b):
+        l -= SCREEN_MARGIN
+        t -= SCREEN_MARGIN
+        r += SCREEN_MARGIN
+        b += SCREEN_MARGIN
+        # Rly?
+        self.screenEntity = LevelEntity(l, t, 'screen', {'name':'screen','width':(r-l),'height':(b-t)})
+
+    def isOnscreen(self, entity):
+        return collides(screenEntity, entity)
+
+    def screenRelative(self, x, y):
+        sx = (x - self.screenEntity.centre) / (self.screenEntity.width  / 2)
+        sy = (y - self.screenEntity.middle) / (self.screenEntity.height / 2)
+        return (sx, sy)
+
     # Update all of the entities
     def update(self, dt):
         for s in self.spawners:
-            s.update()
+            s.update(dt)
 
         for le in self.levelEntities:
             # Apply inputs
             if le.vcontact == Level.CONTACT_FLOOR:
+                accel = PLAYER_ACCEL
+                decel = PLAYER_DECEL
                 if le.jump:
                     le.vel_y = self.jump_v
-                speedtarget = 0.0
-                if le.go_r:
-                    speedtarget += self.playerspeed
-                if le.go_l:
-                    speedtarget -= self.playerspeed
-                speeddiff = speedtarget - le.vel_x
-                if abs(speeddiff) < PLAYER_ACCEL:
-                    le.vel_x = speedtarget
-                else:
-                    le.vel_x += numpy.sign(speeddiff) * PLAYER_ACCEL
             else:
+                accel = PLAYER_ACCEL_AIR
+                decel = accel
                 if le.jump and le.hcontact != 0:
                     le.vel_y = 0.5 * self.jump_v
                     le.vel_x = self.jump_v * le.hcontact
+
+            speedtarget = 0.0
+            if le.go_r:
+                speedtarget += self.playerspeed
+            if le.go_l:
+                speedtarget -= self.playerspeed
+            if numpy.sign(speedtarget) != numpy.sign(le.vel_x):
+                accel = decel
+            speeddiff = speedtarget - le.vel_x
+            if abs(speeddiff) < accel:
+                le.vel_x = speedtarget
+            else:
+                le.vel_x += numpy.sign(speeddiff) * accel
 
             # Gravity
             if le.grab and self.surfdata.check(SurfData.MASK['climb'],
@@ -174,7 +205,7 @@ class Spawner:
     def setPlayerEntity(cls, pe):
         cls.playerentity = pe
 
-    def __init__(self, level, spawnerDefinition):
+    def __init__(self, spawnerDefinition, level):
         s = spawnerDefinition
         self.level = level
         self.x = s['x']
@@ -189,26 +220,34 @@ class Spawner:
         self.timer = 1.0 / self.rate
 
     def update(self, dt):
+
         if self.active():
             self.timer -= dt
             if(self.timer <= 0):
+                self.setTimer(0)
                 self.spawn()
-                self.setTimer()
 
     def active(self):
-        if self.type in ['goright','goleft']:
-            if abs(Spawner.playerentity.centre - (self.x + 0.5)) > 20:
-                return False
-            if abs(Spawner.playerentity.middle - (self.y + 0.5)) > 30:
-                return False
-        elif self.type in ['oneshot']:
-            status = (self.rate == -1)
+        if self.type == 'oneshot':
+            status = (self.rate != -1)
             self.rate = -1
             return status
-        return True
+        else:
+            sx, sy = self.level.screenRelative(self.x + 0.5, self.y + 0.5)
+            if   self.type == 'goleft':
+                return (sx > 0.5 and sy > -2.0 and sy < 2.0)
+            elif self.type == 'goright':
+                return (sx < -0.5 and sy > -2.0 and sy < 2.0)
+        return False
 
     def spawn(self):
-        entitydata = random.choice(Spawner.entities[self.entitytype])
+
+        edefs = Spawner.entities[self.entitytype]
+
+        if self.entitytype == 'player':
+            entitydata = [ d for d in edefs if d['name'] == get_shared_values().player.name ][0]
+        else:
+            entitydata = random.choice(edefs)
         width  = entitydata['width']
         height = entitydata['height']
         # Spawn above the bottom of the current block
@@ -216,11 +255,11 @@ class Spawner:
         m = self.x + 0.5
         x = m - width  / 2.0
         y = b - height
-        entity     = LevelEntity(x, y, width, height, entitydata['image'])
+        entity     = LevelEntity(x, y, self.entitytype, entitydata)
         # TODO: Assign a proper controller
         if self.type == 'goright':
             entity.go_r = 1
         elif self.type == 'goleft':
             entity.go_l = 1
 
-        self.level.addEntity(LevelEntity)
+        self.level.addEntity(entity)
