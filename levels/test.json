@@ -1,217 +1,249 @@
 {
+  "height": 9,
+  "playerspeed": 5.0,
+  "gravity": 1.0,
+  "width": 50,
   "spawners": [
     {
-      "x": 33,
-      "filter": "easydoctor",
       "rate": 0.1,
+      "x": 33,
       "entitytype": "orderly",
+      "y": 7,
       "spawnertype": "goleft",
-      "y": 7
+      "filter": "easydoctor"
     },
     {
-      "x": 2,
-      "filter": "",
       "rate": 0.0,
+      "x": 2,
       "entitytype": "player",
+      "y": 7,
       "spawnertype": "oneshot",
-      "y": 7
+      "filter": ""
     },
     {
-      "x": 14,
-      "filter": "",
       "rate": 0.25,
+      "x": 14,
       "entitytype": "orderly",
+      "y": 7,
       "spawnertype": "goright",
-      "y": 7
+      "filter": ""
     },
     {
-      "x": 21,
-      "filter": "",
       "rate": 0.3,
+      "x": 21,
       "entitytype": "health",
+      "y": 7,
       "spawnertype": "oneshot",
-      "y": 7
+      "filter": ""
+    },
+    {
+      "rate": 0.3,
+      "x": 40,
+      "entitytype": "weapon",
+      "y": 3,
+      "spawnertype": "oneshot",
+      "filter": ""
+    },
+    {
+      "rate": 0.3,
+      "x": 41,
+      "entitytype": "weapon",
+      "y": 3,
+      "spawnertype": "oneshot",
+      "filter": ""
+    },
+    {
+      "rate": 0.3,
+      "x": 42,
+      "entitytype": "weapon",
+      "y": 3,
+      "spawnertype": "oneshot",
+      "filter": ""
+    },
+    {
+      "rate": 0.3,
+      "x": 45,
+      "entitytype": "weapon",
+      "y": 3,
+      "spawnertype": "oneshot",
+      "filter": ""
     }
   ],
-  "gravity": 1.0,
-  "playerspeed": 5.0,
-  "jumpheight": 2.2,
-  "width": 50,
-  "height": 9,
   "objects": [
     {
-      "x": 26,
-      "z": 0,
       "y": 8,
-      "type": "floor"
+      "type": "floor",
+      "z": 0,
+      "x": 26
     },
     {
-      "x": 10,
-      "z": 0,
       "y": 8,
-      "type": "floor"
+      "type": "floor",
+      "z": 0,
+      "x": 10
     },
     {
-      "x": 4,
-      "z": 0,
       "y": 8,
-      "type": "floor"
+      "type": "floor",
+      "z": 0,
+      "x": 4
     },
     {
-      "x": 30,
-      "z": 0,
       "y": 8,
-      "type": "floor"
+      "type": "floor",
+      "z": 0,
+      "x": 30
     },
     {
-      "x": 0,
-      "z": 0,
       "y": 8,
-      "type": "floor"
+      "type": "floor",
+      "z": 0,
+      "x": 0
     },
     {
-      "x": 7,
-      "z": 0,
       "y": 7,
-      "type": "warning1"
+      "type": "warning1",
+      "z": 0,
+      "x": 7
     },
     {
-      "x": 10,
-      "z": 0,
       "y": 7,
-      "type": "warning2"
+      "type": "warning2",
+      "z": 0,
+      "x": 10
     },
     {
-      "x": 18,
-      "z": 0,
       "y": 1,
-      "type": "noticeboard"
+      "type": "noticeboard",
+      "z": 0,
+      "x": 18
     },
     {
-      "x": 0,
-      "z": 0,
       "y": 4,
-      "type": "bookshelf"
+      "type": "bookshelf",
+      "z": 0,
+      "x": 0
     },
     {
-      "x": 6,
-      "z": 0,
       "y": 7,
-      "type": "sign"
+      "type": "sign",
+      "z": 0,
+      "x": 6
     },
     {
-      "x": 0,
-      "z": 0,
       "y": 2,
-      "type": "TV"
+      "type": "TV",
+      "z": 0,
+      "x": 0
     },
     {
-      "x": 12,
-      "z": 0,
       "y": 4,
-      "type": "ambulance_background"
+      "type": "ambulance_background",
+      "z": 0,
+      "x": 12
     },
     {
-      "x": 14,
-      "z": 0,
       "y": 8,
-      "type": "floor"
+      "type": "floor",
+      "z": 0,
+      "x": 14
     },
     {
-      "x": 18,
-      "z": 0,
       "y": 8,
-      "type": "floor"
+      "type": "floor",
+      "z": 0,
+      "x": 18
     },
     {
-      "x": 11,
-      "z": 0,
       "y": 6,
-      "type": "filingcabinet"
+      "type": "filingcabinet",
+      "z": 0,
+      "x": 11
     },
     {
-      "x": 23,
-      "z": 0,
       "y": 2,
-      "type": "'naut"
+      "type": "'naut",
+      "z": 0,
+      "x": 23
     },
     {
-      "x": 1,
-      "z": 0,
       "y": 2,
-      "type": "computer"
+      "type": "computer",
+      "z": 0,
+      "x": 1
     },
     {
-      "x": 22,
-      "z": 0,
       "y": 8,
-      "type": "floor"
+      "type": "floor",
+      "z": 0,
+      "x": 22
     },
     {
-      "x": 34,
-      "z": 0,
       "y": 8,
-      "type": "floor"
+      "type": "floor",
+      "z": 0,
+      "x": 34
     },
     {
-      "x": 38,
-      "z": 0,
       "y": 8,
-      "type": "floor"
+      "type": "floor",
+      "z": 0,
+      "x": 38
     },
     {
-      "x": 42,
-      "z": 0,
       "y": 8,
-      "type": "floor"
+      "type": "floor",
+      "z": 0,
+      "x": 42
     },
     {
-      "x": 46,
-      "z": 0,
       "y": 8,
-      "type": "floor"
+      "type": "floor",
+      "z": 0,
+      "x": 46
     },
     {
-      "x": 45,
-      "z": 0,
       "y": 7,
-      "type": "crate"
+      "type": "crate",
+      "z": 0,
+      "x": 45
     },
     {
-      "x": 33,
-      "z": 0,
       "y": 4,
-      "type": "door"
+      "type": "door",
+      "z": 0,
+      "x": 33
     },
     {
-      "x": 40,
-      "z": 0,
       "y": 4,
-      "type": "bookshelf"
+      "type": "bookshelf",
+      "z": 0,
+      "x": 40
     },
     {
-      "x": 45,
-      "z": 0,
       "y": 6,
-      "type": "crate"
+      "type": "crate",
+      "z": 0,
+      "x": 45
     },
     {
-      "x": 46,
-      "z": 0,
       "y": 7,
-      "type": "crate"
+      "type": "crate",
+      "z": 0,
+      "x": 46
     },
     {
-      "x": 9,
-      "z": 0,
       "y": 0,
-      "type": "quote1"
+      "type": "quote1",
+      "z": 0,
+      "x": 9
     },
     {
-      "x": 4,
-      "z": 0,
       "y": 3,
-      "type": "window"
+      "type": "window",
+      "z": 0,
+      "x": 4
     }
-  ]
+  ],
+  "jumpheight": 2.2
 }

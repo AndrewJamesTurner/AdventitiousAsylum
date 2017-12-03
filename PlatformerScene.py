@@ -9,7 +9,6 @@ from sharedValues import get_shared_values
 from player import Player
 from orderly import Orderly
 
-
 class PlatformerScene(GameScene):
 
     def __init__(self):
@@ -26,9 +25,15 @@ class PlatformerScene(GameScene):
 
         self.level.addEntity(self.spedec.le)
 
+        self.itemgen = ItemGenerator()
+
 
     def on_enter(self, previous_scene):
         super(PlatformerScene, self).on_enter(previous_scene)
+
+    def handle_event(self, event):
+        if event.type == pygame.KEYDOWN:
+            self.spedec.onKeydown(event.key)
 
     def update(self, dt):
         keys = pygame.key.get_pressed()
@@ -49,6 +54,8 @@ class PlatformerScene(GameScene):
 
         self.level.update(dt / 1000.0)
 
+        self.spedec.flushInputs()
+
         # If we do a death animation, we might not adjust this
         self.aimCamera(self.spedec.le.centre, self.spedec.le.middle)
 
@@ -64,6 +71,23 @@ class PlatformerScene(GameScene):
         for health in matches['health']:
             get_shared_values().player.adjust_health(health.definition['amount'])
             self.level.dropEntity(health)
+
+        # Process weapon pickups
+        if self.spedec.get_item and matches['weapon']:
+            weapon = matches['weapon'][0]
+            self.level.dropEntity(weapon)
+            game_item = self.itemgen.getItemByName(weapon.definition['name'])
+            itemDropped = get_shared_values().player.add_item(game_item)
+            if itemDropped:
+                weaponName = itemDropped.name
+                weapons = Spawner.entities['weapon']
+                definitions = [ d for d in weapons if d['name'] == weaponName ]
+                if definitions:
+                    x, y = (self.spedec.le.centre, self.spedec.le.middle)
+                    entity = LevelEntity(x, y, 'weapon', definitions[0])
+                    self.level.addEntity(entity)
+                else:
+                    print("Can't drop item '%s'!" % weaponName)
 
         # Only process the first orderly to collide with
         if matches['orderly']:
