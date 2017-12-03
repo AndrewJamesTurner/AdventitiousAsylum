@@ -48,17 +48,17 @@
 			"width": 0.448,
 			"height": 2,
 			"type": "chemical",
-			"health": 100,
-
-			{
-				"name": "astronaut",
-				"image": "characters/astronaut_small2.png",
-				"width": 0.966,
-				"height": 1.9,
-				"type": "mental",
-				"health": 500
-			}
-		],
+			"health": 100
+		}
+		{
+			"name": "astronaut",
+			"image": "characters/astronaut_small2.png",
+			"width": 0.966,
+			"height": 1.9,
+			"type": "mental",
+			"health": 500
+		}
+	],
 
 	"weapon": [
 		{
