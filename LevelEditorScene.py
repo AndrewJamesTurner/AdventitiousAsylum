@@ -86,25 +86,21 @@ class LevelEditor(GameScene):
         LevelObjectPattern.init()
         with open('patterns.json', 'r') as patterns_file:
             patterns_descriptions = json.load(patterns_file)
-        for pattern_id, pattern_definition in patterns_descriptions.items():
-            pattern = LevelObjectPattern(pattern_definition)
+
+        patterns_temp = list(patterns_descriptions.items())
+        patterns_temp.sort(key=lambda x: x[0])
+
+        for pattern_id, pattern_definition in patterns_temp:
+            pattern = LevelObjectPattern(pattern_definition, pattern_id)
             patterns.append(pattern)
             # TODO: Add a small version of the image to this object
             pattern_object = thorpy.make_button(pattern_id, func=click_pattern, params={'pattern_id': pattern_id, 'surfdata': pattern_definition['surfdata']})
             pattern_objects.append(pattern_object)
 
-        self.patterns_list = thorpy.Box.make([patterns_title, *pattern_objects], size=(PATTERNS_AREA_WIDTH, SCREEN_HEIGHT))
-        self.patterns_list.set_main_color((220, 220, 255, 180))
-        # self.patterns_list.add_lift()
-        self.patterns_list.fit_children()
-
-        # self.patterns_area = self.patterns_list
-
-        self.patterns_area = thorpy.Box.make([self.patterns_list], size=(PATTERNS_AREA_WIDTH, SCREEN_HEIGHT))
+        self.patterns_area = thorpy.Box.make([patterns_title, *pattern_objects], size=(PATTERNS_AREA_WIDTH, SCREEN_HEIGHT))
         self.patterns_area.set_topleft((SCREEN_WIDTH + DETAILS_AREA_WIDTH, 0))
-        self.patterns_area.fit_children()
-        thorpy.store(self.patterns_area)
-        self.patterns_area.add_lift()
+        thorpy.store(self.patterns_area, y=0)
+        self.patterns_area.refresh_lift()
 
         self.menu = thorpy.Menu([self.game_area, self.patterns_area, self.details_area])
 

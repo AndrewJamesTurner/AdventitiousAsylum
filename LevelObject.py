@@ -15,9 +15,10 @@ class LevelObjectPattern:
     patternDefs = None
     pattern = {}
 
-    def __init__(self, patternDefinition):
+    def __init__(self, patternDefinition, id=None):
         p = patternDefinition
         self.definition = p
+        self.id = id
         asset = p['image']
         width = p['width']
         height = p['height']
