@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 744.09448819 1052.3622047"
+   id="svg24338"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="spawn.svg">
+  <defs
+     id="defs24340" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="292.0922"
+     inkscape:cy="589.22588"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1056"
+     inkscape:window-x="1920"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata24343">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="opacity:0.97000002;fill:#800080;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect24886"
+       width="268.57144"
+       height="268.57144"
+       x="185.71428"
+       y="283.79077"
+       rx="0"
+       ry="0"
+       inkscape:export-filename="/home/becky/Documents/GameJams/AdventitiousAsylum/assets/spawn.png"
+       inkscape:export-xdpi="93.450798"
+       inkscape:export-ydpi="93.450798" />
+    <path
+       sodipodi:type="spiral"
+       style="fill:#00ffff;fill-rule:evenodd;stroke:#000000;stroke-width:0.90637845px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="path24888"
+       sodipodi:cx="309.71933"
+       sodipodi:cy="423.79095"
+       sodipodi:expansion="1"
+       sodipodi:revolution="3"
+       sodipodi:radius="134.13333"
+       sodipodi:argument="-18.064157"
+       sodipodi:t0="0"
+       d="M 309.71933,423.79095 C 314.47479,428.54641 305.65524,432.54739 301.81545,431.69483 291.40984,429.38446 289.73707,416.05618 293.91157,407.98319 301.37877,393.5425 320.76945,391.85078 333.43098,400.07931 352.0123,412.15501 353.73757,438.30861 341.33485,455.40649 324.80397,478.19528 291.68011,479.93847 270.19991,463.31036 243.16927,442.38558 241.41607,402.20442 262.29605,376.36765 287.5845,345.07586 334.86769,343.31661 365.04652,368.46379 400.61123,398.09888 402.37439,452.51017 372.95037,487.02203 338.97918,526.86734 277.42321,528.63315 238.58437,494.92588 194.4532,456.62553 192.6855,387.9137 230.68053,344.75211 273.3052,296.33132 349.18081,294.56224 396.66206,336.84827 449.37525,383.79379 451.14538,466.83899 404.56589,518.63757" />
+  </g>
+</svg>

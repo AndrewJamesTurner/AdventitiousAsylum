@@ -2,6 +2,7 @@
 import math
 import json
 import numpy
+import random
 
 from game import *
 from constants import *
@@ -33,8 +34,14 @@ class Level:
 
         if 'objects' in l:
             self.levelObjects = [ LevelObject(o, self.surfdata) for o in l['objects'] ]
+        else:
+            print("Warning: Level has no objects")
+            self.levelObjects = []
         if 'spawners' in l:
-            self.spawners = [ Spawner(s) for s in l['spawners'] ]
+            print("Info: Level has no spawners")
+            self.spawners = [ Spawner(s, self) for s in l['spawners'] ]
+        else:
+            self.spawners = []
         self.levelEntities = []
 
     @classmethod
@@ -60,6 +67,9 @@ class Level:
 
     # Update all of the entities
     def update(self, dt):
+        for s in self.spawners:
+            s.update(dt)
+
         for le in self.levelEntities:
             # Apply inputs
             if le.vcontact == Level.CONTACT_FLOOR:
@@ -150,3 +160,67 @@ class Level:
             lo.draw(rq)
         for le in self.levelEntities:
             le.draw(rq)
+
+class Spawner:
+    """
+    Something that spawns entities
+    """
+    @classmethod
+    def init(cls):
+        with open('entities.json') as json_data:
+            cls.entities = json.load(json_data)
+
+    @classmethod
+    def setPlayerEntity(cls, pe):
+        cls.playerentity = pe
+
+    def __init__(self, spawnerDefinition, level):
+        s = spawnerDefinition
+        self.level = level
+        self.x = s['x']
+        self.y = s['y']
+        self.type = s['spawnertype']
+        self.rate = s['rate']
+        self.entitytype = s['entitytype']
+        self.timer = 0
+
+    def setTimer(self, r):
+        # TODO: Use r to randomize
+        self.timer = 1.0 / self.rate
+
+    def update(self, dt):
+        if self.active():
+            self.timer -= dt
+            if(self.timer <= 0):
+                self.spawn()
+                self.setTimer(0)
+
+    def active(self):
+        if self.type in ['goright','goleft']:
+            if abs(Spawner.playerentity.centre - (self.x + 0.5)) > 20:
+                return False
+            if abs(Spawner.playerentity.middle - (self.y + 0.5)) > 30:
+                return False
+        elif self.type in ['oneshot']:
+            status = (self.rate == -1)
+            self.rate = -1
+            return status
+        return True
+
+    def spawn(self):
+        entitydata = random.choice(Spawner.entities[self.entitytype])
+        width  = entitydata['width']
+        height = entitydata['height']
+        # Spawn above the bottom of the current block
+        b = self.y + 0.99
+        m = self.x + 0.5
+        x = m - width  / 2.0
+        y = b - height
+        entity     = LevelEntity(x, y, width, height, entitydata['image'])
+        # TODO: Assign a proper controller
+        if self.type == 'goright':
+            entity.go_r = 1
+        elif self.type == 'goleft':
+            entity.go_l = 1
+
+        self.level.addEntity(entity)

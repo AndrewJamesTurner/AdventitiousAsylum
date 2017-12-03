@@ -1,7 +1,7 @@
 import pygame
 import random
 from random import shuffle
-
+import json
 # health max 1000
 # sanity max 10, min 0
 
@@ -26,27 +26,15 @@ class ItemGenerator:
 
     def __init__(self):
 
-        imagePath = 'assets/items/weapons'
+        weapons = json.load(open('entities.json'))["weapon"]
 
-        self.items = [Item('pillow', imagePath + '/pillow.png', 7, 10, physical_type),
-                      Item('spaceship', imagePath + '/spaceship-side.png', 300, 0, mental_type),
-                      Item('tugboat', imagePath + '/tugboat.png', 100, 2, mental_type),
-                      Item('elephant', imagePath + '/elephant.png', 150, 2, physical_type),
-                      Item('bat', imagePath + '/bat.png', 50, 4, chemical_type),
-                      Item('filing cabinet', imagePath + '/filing-cabinet.png', 70, 10, physical_type),
-                      Item('unicorn', imagePath + '/unicorn.png', 250, 0, mental_type),
-                      Item('brick', imagePath + '/brick.png', 40, 8, physical_type),
-                      Item('syringe', imagePath + '/syringe.png', 90, 9, chemical_type),
-                      Item('goldfish', imagePath + '/goldfish.png', 105, 5, mental_type),
-                      Item('small moon', imagePath + '/small-moon.png', 55, 1, physical_type),
-                      Item('sheep with a staple gun', imagePath + '/sheep-with-staple-gun.png', 109, 2, physical_type),
-                      Item('javelin', imagePath + '/javelin.png', 76, 5, physical_type),
-                      # Item('discus', imagePath + '/discus.png', 50, 3, chemical_type),
-                      Item('paperclip', imagePath + '/paperclip.png', 50, 10, mental_type),
-                      Item('trout', imagePath + '/trout.png', 80, 5, mental_type),
-                      Item('cat poop', imagePath + '/cat-poop.png', 80, 6, chemical_type),
-                      Item('snow globe', imagePath + '/snow-globe.png', 80, 6, physical_type),
-                      Item('bunch of sage', imagePath + '/bunch-of-sage.png', 5, 6, chemical_type)]
+        self.items = []
+
+        for weapon in weapons:
+
+            item = Item(weapon["name"], weapon["image"], weapon["damage"], weapon["sanity"], weapon["type"])
+            self.items.append(item)
+
 
     def getItem(self):
 
