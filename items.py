@@ -35,7 +35,6 @@ class ItemGenerator:
             item = Item(weapon["name"], weapon["image"], weapon["damage"], weapon["sanity"], weapon["type"])
             self.items.append(item)
 
-
     def getItem(self):
 
         item = self.items[random.randint(0, len(self.items)-1)]
@@ -65,9 +64,52 @@ class ItemDescriptor:
 
     def __init__(self):
 
-        self.descriptors = ['sparkly', 'singing', 'wet', 'slimy', 'fluffy', 'peppered', 'noisy', 'foiled', 'upsidedown',
-                        'pert', 'loose', 'wobbly', 'troubling', 'wavy', 'erotic', 'alarming', 'dangerous', 'meddling',
-                        'runny', 'wearisome', 'hopeful', 'sharp', 'whimsical', 'sassy', 'floral']
+        self.descriptors = [
+            'sparkly',
+            'singing',
+            'wet',
+            'slimy',
+            'fluffy',
+            'peppered',
+            'noisy',
+            'foiled',
+            'upsidedown',
+            'pert',
+            'loose',
+            'wobbly',
+            'troubling',
+            'freshly shaven',
+            'wavy',
+            'erotic',
+            'alarming',
+            'dangerous',
+            'meddling',
+            'runny',
+            'wearisome',
+            'hopeful',
+            'sharp',
+            'whimsical',
+            'sassy',
+            'floral',
+            'homoeroctic',
+            'indifferent',
+            'succulent',
+            'subservient',
+            'childish',
+            'long-haired',
+            'syphilis-ridden',
+            'hopeful',
+            'relaxed',
+            'happy',
+            'barbaric',
+            'prehistoric',
+            'soiled',
+            'shitty',
+            'warm',
+            'moist',
+            'old old',
+            'fresh',
+        ]
 
     def getDescriptor(self):
 
@@ -87,11 +129,56 @@ class ItemEffectiveness():
 
     def __init__(self):
 
-        self.high = ['effective', 'very effective', 'painful', 'super effective', 'exquisite', 'phenomenal',
-                     'spectacular', 'a spectacle', 'fabulous', 'overwhelming', 'horrific', 'Brian Blessedesque']
-        self.neutral = ['neutral', 'confusing', 'disturbing', 'unsettling', 'quite', 'whelming', 'hilarious', 'rather',
-                        'amicable']
-        self.low = ['not very effective', 'erotic', 'pitiful', 'pathetic', 'underwhelming', 'horrific']
+        self.high = [
+            'effective',
+            'very effective',
+            'painful',
+            'super effective',
+            'exquisite',
+            'phenomenal',
+            'spectacular',
+            'a spectacle',
+            'fabulous',
+            'overwhelming',
+            'horrific',
+            'Brian Blessedesque',
+            'devastating',
+            'limp educing',
+            'violating',
+            'traumatic',
+            'distressing',
+            'diarrhea inducing',
+            'something to be remembered',
+            'tear educing',
+        ]
+
+        self.neutral = [
+            'neutral',
+            'confusing',
+            'disturbing',
+            'unsettling',
+            'quite',
+            'whelming',
+            'hilarious',
+            'rather',
+            'amicable',
+            'fine',
+            'OK',
+            'passable',
+            'a bit funny',
+        ]
+
+        self.low = [
+            'not very effective',
+            'erotic',
+            'pitiful',
+            'pathetic',
+            'underwhelming',
+            'horrific',
+            'a poor move',
+            'pretty dull',
+            'tedious',
+        ]
 
     def get_rand_high_effective(self):
         effectiveness = self.high[random.randint(0, len(self.high)-1)]

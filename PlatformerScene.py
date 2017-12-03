@@ -59,13 +59,11 @@ class PlatformerScene(GameScene):
         Called when the player collides with an entity.
         :param entity: The entity that the player collided with
         """
-        # TODO: Only start a battle if entity is an orderly
-        # if entity.??? == 'orderly':
-        # TODO: Set the type of orderly in the shared values, so the battle scene can show the correct image
-        get_shared_values().orderly = Orderly("doctor")
-        # get_shared_values().enemy = ???
-        self.level.levelEntities.remove(entity)  # safe to remove here, because if we lose the battle we won't be staying here
-        self.application.change_scene(get_battle_scene())
+        # Only start a battle if entity is an orderly
+        if entity.archetype == 'orderly':
+            get_shared_values().orderly = Orderly(entity.entityname)
+            self.level.levelEntities.remove(entity)  # safe to remove here, because if we lose the battle we won't be staying here
+            self.application.change_scene(get_battle_scene())
 
     def aimCamera(self, x, y):
         def limit(aim, extent, limit0, limit1):

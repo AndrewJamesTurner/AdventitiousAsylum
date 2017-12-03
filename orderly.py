@@ -24,8 +24,8 @@ class Orderly:
                 orderly_json = thing
 
         self.name = name
-        self.health = 1000
-        self.max_health = 1000
+        self.health = thing["health"]
+        self.max_health = thing["health"]
         self.type = orderly_json["type"]
 
         self.image_path = orderly_json["image"]
