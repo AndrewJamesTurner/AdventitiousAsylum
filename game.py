@@ -91,36 +91,13 @@ shared_values = None
 
 class SharedValues:
 
-    import constants
-
-    # items = [
-    #     ItemGenerator().getItemByName("pillow"),
-    # ]
-
-    items = ItemGenerator().getItems(4)
-
-    spedecentity = 'spedecWoman' # Which entity do we use for the player
-
-    health = 1000
-    max_health = health
-    enemy = None
-    image = pygame.image.load("assets/characters/spedec.png")
-    type = none_type
-
-
-    # here
-        # Orderly name
     player = Player("spedecWoman")
     orderly = Orderly("doctor")
     distance_through_level = 0.5
-    #
 
     def reset(self):
 
-        import constants
-        self.items = [create_pillow()]
-        self.health = 100
-        self.enemy = None
+        pass
 
 
 def get_shared_values():
