@@ -23,7 +23,7 @@ class PlatformerScene(GameScene):
     def update(self, dt):
         keys = pygame.key.get_pressed()
 
-        print(self.level.collidingEntities(self.spedec.le))
+        #print(self.level.collidingEntities(self.spedec.le))
 
         self.spedec.setInputs(keys)
         self.level.update(dt / 1000.0)
@@ -43,9 +43,7 @@ class PlatformerScene(GameScene):
         return ( x - SCREEN_WIDTH / 2, y - SCREEN_HEIGHT / 2)
 
     def draw(self, screen):
-        # Work out the camera position: Where the camera centres on
-
-        self.level.surfdata.debug_draw(self.rq)
+        #self.level.surfdata.debug_draw(self.rq)
         self.level.draw(self.rq)
         self.rq.flush(screen, camera_position = self.cameraPosition())
 
