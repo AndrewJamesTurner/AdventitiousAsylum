@@ -95,6 +95,8 @@ class Level:
         for s in self.spawners:
             s.update(dt)
 
+        see = self.getSpedEcEntity()
+
         for le in self.levelEntities:
             # Apply inputs
             if le.vcontact == Level.CONTACT_FLOOR:
@@ -133,60 +135,73 @@ class Level:
             else:
                 le.vel_y += (self.gravity * dt)
 
-            # Calculate delta movement
-            dx = le.vel_x * BLOCKS_PER_M * dt
-            dy = le.vel_y * BLOCKS_PER_M * dt
+            # Calculate delta movement: convert to blocks NOW
+            vx = le.vel_x * BLOCKS_PER_M
+            vy = le.vel_y * BLOCKS_PER_M
+            dx = vx * dt
+            dy = vy * dt
 
-            # Do H movement
-            if dx != 0:
-                if(dx > 0):
-                    xc = le.right
-                    xp = xc + dx
-                    transition = ( 1 if math.ceil(xc) == math.floor(xp) else 0 )
+            # Check which gridlines will be crossed
+            def findCrossingParams(edge0, edge1, ds, axis):
+                if ds == 0:
+                    return []
                 else:
-                    xc = le.left
-                    xp = xc + dx
-                    transition = ( 1 if math.floor(xc) == math.ceil(xp) else 0 )
+                    offset = 0 if ds > 0 else -1
+                    if ds > 0:
+                        s0 = edge1
+                        sr = range(math.ceil(s0), math.ceil(s0 + ds))
+                    else:
+                        s0 = edge0
+                        sr = range(math.floor(s0 + ds) + 1, math.floor(s0) + 1)
+                    return [ ((s - s0) / ds, s + offset, axis) for s in sr ]
+            dtx = findCrossingParams(le.left, le.right, dx, 0)
+            dty = findCrossingParams(le.top, le.bottom, dy, 1)
 
-                move = 1
-                if transition:
+            dps = sorted(dtx + dty, key=lambda e: e[0])
+
+            stop = [0, 0]
+            # phys_margin = 0.2
+            # xmarg = numpy.sign(dx) * phys_margin
+            # ymarg = numpy.sign(dy) * phys_margin
+            # le.move(-xmarg, -ymarg)
+            pp = 0.0
+            for p,s,axis in dps:
+                dp = p - pp
+                pp = p
+                le.move(dp * dx, dp * dy)
+                if stop[axis]:
+                    continue
+                if axis == 0:
                     if self.surfdata.check(SurfData.MASK['block'],
-                                            xp, math.floor(le.top),
-                                            xp, math.ceil(le.bottom) - 1):
-                        move = 0
-
-                if move:
-                    le.move(dx, 0)
-                    le.hcontact = 0
-                else:
-                    le.vel_x = 0.0
-                    le.hcontact = Level.CONTACT_RIGHT if (dx > 0) else Level.CONTACT_LEFT
-
-            # Do V movement
-            if dy != 0:
-                if(dy > 0):
-                    yc = le.bottom
-                    yp = yc + dy
-                    transition = ( 1 if math.ceil(yc) == math.floor(yp) else 0 )
-                else:
-                    yc = le.top
-                    yp = yc + dy
-                    transition = ( 1 if math.floor(yc) == math.ceil(yp) else 0 )
-
-                move = 1
-                if transition:
+                                            s, math.floor(le.top),
+                                            s, math.ceil(le.bottom) - 1):
+                        stop[0] = 1
+                        le.hcontact = Level.CONTACT_RIGHT if (dx > 0) else Level.CONTACT_LEFT
+                        dx = 0
+                    else:
+                        le.hcontact = 0
+                if axis == 1:
                     surfmask = SurfData.MASK['block']
                     if (dy > 0) and not le.go_d:
                         surfmask |= SurfData.MASK['stand']
-                    surfmask |= ( 0x3 if (dy > 0) and not le.go_d else 0x1 )
-                    if self.surfdata.check(surfmask, math.floor(le.left), yp, math.ceil(le.right) - 1, yp):
-                        move = 0
-                if move:
-                    le.move(0, dy)
-                    le.vcontact = 0
-                else:
-                    le.vel_y = 0.0
-                    le.vcontact = Level.CONTACT_FLOOR if (dy > 0) else Level.CONTACT_CEILING
+                    if self.surfdata.check(surfmask,
+                                            math.floor(le.left), s,
+                                            math.ceil(le.right) - 1, s):
+                        stop[1] = 1
+                        le.vcontact = Level.CONTACT_FLOOR if (dy > 0) else Level.CONTACT_CEILING
+                        dy = 0
+                    else:
+                        le.vcontact = 0
+            # Do the remaining movement
+            dp = 1.0 - pp
+            le.move(dp * dx, dp * dy)
+
+            # le.move(xmarg, ymarg)
+
+            if stop[0]:
+                le.vel_x = 0.0
+            if stop[1]:
+                le.vel_y = 0.0
 
             # Do offscreen checks and cull from the level
             if self.isOffscreen(le):
@@ -265,8 +280,8 @@ class Spawner:
             entitydata = [ d for d in edefs if d['name'] == get_shared_values().player.name ][0]
         else:
             entitydata = random.choice(edefs)
-        width  = entitydata['width']
-        height = entitydata['height']
+        width  = entitydata['width']  * BLOCKS_PER_M
+        height = entitydata['height'] * BLOCKS_PER_M
         # Spawn above the bottom of the current block
         b = self.y + 0.99
         m = self.x + 0.5
