@@ -22,13 +22,15 @@
 			"name": "monster",
 			"image": "assets/characters/monster.png",
 			"width": 2.239,
-			"height": 2
+			"height": 2,
+			"type": "physical"
 		},
 		{
 			"name": "doctor",
 			"image": "assets/characters/doctor.png",
 			"width": 1.80,
-			"height": 2
+			"height": 2,
+			"type": "chemical"
 		}
 	],
 
