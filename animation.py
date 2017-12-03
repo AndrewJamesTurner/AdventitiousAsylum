@@ -1,19 +1,19 @@
-from pygame import Surface, Rect
+from pygame import Surface, Rect, SRCALPHA
 
 
 class Animation:
     def __init__(self, repeats=False, sprite_sheet=None, frame_width=None):
         self.repeats = repeats
 
-        if sprite_sheet is None:
-            self.frames = []
-            self.frameNo = 0
-        else:
+        self.frames = []
+        self.frameNo = 0
+
+        if sprite_sheet is not None:
             x = 0
             frame_height = sprite_sheet.get_width()
 
-            while x < sprite_sheet.width:
-                frame = Surface((frame_width, frame_height))
+            while x < sprite_sheet.get_width():
+                frame = Surface((frame_width, frame_height), flags=SRCALPHA)
                 frame.blit(sprite_sheet, (0, 0), Rect(x, 0, frame_width, frame_height))
                 self.add_frame(frame)
                 x += frame_width
