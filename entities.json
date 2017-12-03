@@ -35,7 +35,7 @@
 			"health": 500
 		},
 		{
-			"name": "doctor_man",
+			"name": "doctor man",
 			"image": "characters/doctor_man.png",
 			"width": 1.03,
 			"height": 1.8,
@@ -43,7 +43,7 @@
 			"health": 100
 		},
 		{
-			"name": "doctor_woman",
+			"name": "doctor woman",
 			"image": "characters/doctor_woman.png",
 			"width": 0.448,
 			"height": 2,
@@ -66,7 +66,7 @@
 			"image": "items/weapons/pillow.png",
 			"width": 0.5,
 			"height": 0.5,
-			"damage": 7,
+			"damage": 25,
 			"sanity": 10,
 			"type": "physical"
 		},

@@ -378,7 +378,7 @@ if __name__ == '__main__':
 
     app = ezpygame.Application(title='The Game', resolution=(SCREEN_WIDTH, SCREEN_HEIGHT), update_rate=FPS)
 
-    get_shared_values().orderly = Orderly("doctor")
+    get_shared_values().orderly = Orderly("doctor woman")
     get_shared_values().player = Player("spedecWoman")
 
 
