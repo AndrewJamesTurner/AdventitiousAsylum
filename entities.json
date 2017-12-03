@@ -23,6 +23,12 @@
 			"image": "assets/characters/monster.png",
 			"width": 2.239,
 			"height": 2
+		},
+		{
+			"name": "doctor",
+			"image": "assets/characters/doctor.png",
+			"width": 1.80,
+			"height": 2
 		}
 	],
 
