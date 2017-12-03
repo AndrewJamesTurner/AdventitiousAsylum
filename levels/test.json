@@ -184,6 +184,7 @@
     {
       "x": 33,
       "entitytype": "orderly",
+      "filter": "easydoctor",
       "rate": 0.1,
       "y": 7,
       "spawnertype": "goleft"
@@ -197,7 +198,7 @@
     },
     {
       "x": 14,
-      "entitytype": "",
+      "entitytype": "orderly",
       "rate": 0.25,
       "y": 7,
       "spawnertype": "goright"

@@ -18,10 +18,7 @@ enemy_attack_animation_state = "enemy_attack_animation_state"
 enemy_message_state = "enemy_message_state"
 
 
-def draw_health_bar(render_queue, x, y, health_percentage):
-
-    length = 150
-    height = 22
+def draw_health_bar(render_queue, x, y, health_percentage, length, height):
 
     back = pygame.Surface((length, height))
     back.fill((255, 0, 0))
@@ -136,27 +133,35 @@ class BattleScene(GameScene):
     def update(self, dt):
 
         message_box_x = 54
-        message_box_y = 398
+        message_box_y = 420
 
         message_text_offset_x = 10
         message_text_offset_y = 10
 
-        if self.player.health <= 0 or self.enemy.health <= 0:
-            self.leave_scene()
-
-        draw_health_bar(self.render_queue, 218, 342, self.player.health / self.player.max_health)
-        draw_health_bar(self.render_queue, 605, 82, self.enemy.health / self.enemy.max_health)
-
-        self.render_queue.add((0, 0), self.border, z_index=0)
-
-        enemy_pos_x = 765
-        enemy_pos_y = 65
-        self.render_queue.add((enemy_pos_x, enemy_pos_y), self.enemy.image, scale=(self.enemy.image_width_scaler, self.enemy.image_height_scaler), z_index=1)
-
         player_pos_x = 95
         player_pos_y = 111
 
-        self.render_queue.add((player_pos_x, player_pos_y), self.player.image, scale=(self.player.image_width_scaler, self.player.image_height_scaler), z_index=1)
+        enemy_pos_x = 900 - self.enemy.image_width
+        enemy_pos_y = 85
+
+        health_bar_height = 25
+        health_bar_width = 200
+        health_bar_padding = 15
+
+        if self.player.health <= 0 or self.enemy.health <= 0:
+            self.leave_scene()
+
+        player_mid_x = player_pos_x + max(self.player.image_width, health_bar_width) / 2
+        enemy_mid_x = enemy_pos_x + max(self.enemy.image_width, health_bar_width) / 2
+
+        draw_health_bar(self.render_queue, player_mid_x - (health_bar_width / 2), player_pos_y + self.player.desired_height + health_bar_padding, self.player.health / self.player.max_health, health_bar_width, health_bar_height)
+        draw_health_bar(self.render_queue, enemy_mid_x - (health_bar_width / 2), enemy_pos_y - (health_bar_height + health_bar_padding), self.enemy.health / self.enemy.max_health, health_bar_width, health_bar_height)
+
+        self.render_queue.add((0, 0), self.border, z_index=0)
+
+        self.render_queue.add((enemy_mid_x - self.enemy.image_width/2, enemy_pos_y), self.enemy.image, z_index=1)
+
+        self.render_queue.add((player_mid_x - self.player.image_width/2, player_pos_y), self.player.image, scale=(self.player.image_width_scaler, self.player.image_height_scaler), z_index=1)
         # self.render_queue.add((player_pos_x, player_pos_y), self.player.image, z_index=1)
 
         if self.state == player_move_select_state:
@@ -236,7 +241,7 @@ class BattleScene(GameScene):
             attack_type = self.player.items[self.player_selected_item].type
 
             if self.movement_path is None:
-                self.movement_path = MovementPath(player_pos_x + 10, player_pos_y + 50, 1000, [(0, 0), (SCREEN_WIDTH*0.35, -SCREEN_HEIGHT * 0.4), (SCREEN_WIDTH*0.65, -SCREEN_HEIGHT * 0.1)])
+                self.movement_path = MovementPath(player_pos_x + self.player.image_width, player_pos_y + 50, 1000, [(0, 0), (SCREEN_WIDTH*0.27, -SCREEN_HEIGHT * 0.4), (SCREEN_WIDTH*0.5, -SCREEN_HEIGHT * 0.1)])
             else:
                 if self.movement_path.is_done():
                     self.state = player_message_state
@@ -249,7 +254,6 @@ class BattleScene(GameScene):
 
                     self.enemy.health -= damage
 
-                    # exit()
                 else:
                     self.movement_path.step(dt)
 
@@ -288,7 +292,7 @@ class BattleScene(GameScene):
         elif self.state == enemy_attack_animation_state:
 
             if self.movement_path is None:
-                self.movement_path = MovementPath(enemy_pos_x, enemy_pos_y + 100, 1000, [(0, 0), (-SCREEN_WIDTH*0.35, -SCREEN_HEIGHT * 0.4), (-SCREEN_WIDTH*0.65, -SCREEN_HEIGHT * 0.1)])
+                self.movement_path = MovementPath(enemy_pos_x, enemy_pos_y + 100, 1000, [(0, 0), (-SCREEN_WIDTH*0.27, -SCREEN_HEIGHT * 0.4), (-SCREEN_WIDTH*0.5, -SCREEN_HEIGHT * 0.1)])
 
             else:
                 if self.movement_path.is_done():
@@ -374,7 +378,7 @@ if __name__ == '__main__':
 
     app = ezpygame.Application(title='The Game', resolution=(SCREEN_WIDTH, SCREEN_HEIGHT), update_rate=FPS)
 
-    get_shared_values().orderly = Orderly("doctor")
+    get_shared_values().orderly = Orderly("doctor woman")
     get_shared_values().player = Player("spedecWoman")
 
 

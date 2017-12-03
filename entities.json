@@ -24,7 +24,8 @@
 			"width": 2.239,
 			"height": 2,
 			"type": "physical",
-			"health": 1000
+			"health": 1000,
+			"filter": "monster"
 		},
 		{
 			"name": "doctor",
@@ -32,23 +33,26 @@
 			"width": 1.80,
 			"height": 2,
 			"type": "chemical",
-			"health": 500
+			"health": 500,
+			"filter": "doctor"
 		},
 		{
-			"name": "doctor_man",
+			"name": "doctor man",
 			"image": "characters/doctor_man.png",
 			"width": 1.03,
 			"height": 1.8,
 			"type": "chemical",
-			"health": 100
+			"health": 100,
+			"filter": "easydoctor"
 		},
 		{
-			"name": "doctor_woman",
+			"name": "doctor woman",
 			"image": "characters/doctor_woman.png",
 			"width": 0.448,
 			"height": 2,
 			"type": "chemical",
-			"health": 100
+			"health": 100,
+			"filter": "easydoctor"
 		},
 		{
 			"name": "astronaut",
@@ -56,7 +60,8 @@
 			"width": 0.966,
 			"height": 1.9,
 			"type": "mental",
-			"health": 500
+			"health": 500,
+			"filter": "monster"
 		}
 	],
 
@@ -66,7 +71,7 @@
 			"image": "items/weapons/pillow.png",
 			"width": 0.5,
 			"height": 0.5,
-			"damage": 7,
+			"damage": 25,
 			"sanity": 10,
 			"type": "physical"
 		},
