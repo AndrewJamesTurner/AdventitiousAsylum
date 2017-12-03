@@ -18,10 +18,11 @@ class Spawner:
     A representation of spawners that draws an image to the screen - for the level editor.
     """
 
-    def __init__(self, x, y, entity_type, spawner_type, rate):
+    def __init__(self, x, y, entity_type, filter, spawner_type, rate):
         self.block_position = (x, y)
         self.draw_position = (x * BLOCK_SIZE, y * BLOCK_SIZE)
         self.entity_type = entity_type
+        self.filter = filter
         self.spawner_type = spawner_type
         self.rate = rate
         width = 1
@@ -161,11 +162,14 @@ class LevelEditor(GameScene):
         self.spawner_x_box = thorpy.Inserter.make(name='X: ', value='')
         self.spawner_y_box = thorpy.Inserter.make(name='Y: ', value='')
         self.spawner_entity_type_box = thorpy.Inserter.make(name='Entity type: ', value='')
+        self.spawner_filter_box = thorpy.Inserter.make(name='Filter: ', value='')
         self.spawner_spawner_type_box = thorpy.Inserter.make(name='Spawner type: ', value='')
         self.spawner_rate_box = thorpy.Inserter.make(name='Rate: ', value='')
 
         def change_spawner_entity_type(event):
             self.selected_spawner.entity_type = event.value
+        def change_spawner_filter(event):
+            self.selected_spawner.filter = event.value
         def change_spawner_spawner_type(event):
             self.selected_spawner.spawner_type = event.value
         def change_spawner_rate(event):
@@ -173,6 +177,9 @@ class LevelEditor(GameScene):
         entity_type_reaction = thorpy.Reaction(reacts_to=thorpy.constants.THORPY_EVENT,
                                                reac_func=change_spawner_entity_type,
                                                event_args={'id': thorpy.constants.EVENT_INSERT, 'el': self.spawner_entity_type_box})
+        filter_reaction = thorpy.Reaction(reacts_to=thorpy.constants.THORPY_EVENT,
+                                          reac_func=change_spawner_filter, event_args={'id': thorpy.constants.EVENT_INSERT,
+                                                                                            'el': self.spawner_filter_box})
         spawner_type_reaction = thorpy.Reaction(reacts_to=thorpy.constants.THORPY_EVENT,
                                                reac_func=change_spawner_spawner_type,
                                                event_args={'id': thorpy.constants.EVENT_INSERT, 'el': self.spawner_spawner_type_box})
@@ -181,12 +188,13 @@ class LevelEditor(GameScene):
                                                event_args={'id': thorpy.constants.EVENT_INSERT,
                                                            'el': self.spawner_rate_box})
         self.spawner_entity_type_box.add_reaction(entity_type_reaction)
+        self.spawner_filter_box.add_reaction(filter_reaction)
         self.spawner_spawner_type_box.add_reaction(spawner_type_reaction)
         self.spawner_rate_box.add_reaction(rate_reaction)
 
         spawner_details_area = thorpy.Box.make(
-            [spawner_details_title, self.spawner_x_box, self.spawner_y_box, self.spawner_entity_type_box,
-             self.spawner_spawner_type_box, self.spawner_rate_box, ])
+            [spawner_details_title, self.spawner_x_box, self.spawner_y_box, self.spawner_spawner_type_box,
+             self.spawner_entity_type_box, self.spawner_filter_box, self.spawner_rate_box, ])
 
         self.spawners_area = thorpy.Box.make([spawners_title, add_spawner_button, spawner_details_area], size=(SPAWNERS_AREA_WIDTH, SCREEN_HEIGHT))
         self.spawners_area.set_main_color((255, 255, 220, 180))
@@ -211,8 +219,11 @@ class LevelEditor(GameScene):
             self.level_objects.append(LevelObject(objectDefinition=level_object_info))
         if 'spawners' in level_info:
             for spawner_info in level_info['spawners']:
+                if 'filter' not in spawner_info:
+                    spawner_info['filter'] = ''  # default to blank, for old level files
                 self.spawner_objects.append(Spawner(x=spawner_info['x'], y=spawner_info['y'],
                                                     entity_type=spawner_info['entitytype'],
+                                                    filter=spawner_info['filter'],
                                                     spawner_type=spawner_info['spawnertype'],
                                                     rate=spawner_info['rate']))
 
@@ -247,6 +258,7 @@ class LevelEditor(GameScene):
                 'x': spawner.block_position[0] - min_x,
                 'y': spawner.block_position[1] - min_y,
                 'entitytype': spawner.entity_type,
+                'filter': spawner.filter,
                 'spawnertype': spawner.spawner_type,
                 'rate': spawner.rate,
             })
@@ -383,12 +395,14 @@ class LevelEditor(GameScene):
             self.spawner_x_box.set_value('')
             self.spawner_y_box.set_value('')
             self.spawner_entity_type_box.set_value('')
+            self.spawner_filter_box.set_value('')
             self.spawner_spawner_type_box.set_value('')
             self.spawner_rate_box.set_value('')
         else:
             self.spawner_x_box.set_value(str(spawner_object.block_position[0]))
             self.spawner_y_box.set_value(str(spawner_object.block_position[1]))
             self.spawner_entity_type_box.set_value(spawner_object.entity_type)
+            self.spawner_filter_box.set_value(spawner_object.filter)
             self.spawner_spawner_type_box.set_value(spawner_object.spawner_type)
             self.spawner_rate_box.set_value(str(spawner_object.rate))
 
