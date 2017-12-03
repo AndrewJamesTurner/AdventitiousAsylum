@@ -146,19 +146,18 @@ class Level:
                 if ds == 0:
                     return []
                 else:
+                    offset = 0 if ds > 0 else -1
                     if ds > 0:
                         s0 = edge1
                         sr = range(math.ceil(s0), math.ceil(s0 + ds))
                     else:
                         s0 = edge0
-                        sr = range(math.floor(s0 + ds), math.floor(s0))
-                    return [ ((s - s0) / ds, s, axis) for s in sr ]
+                        sr = range(math.floor(s0 + ds) + 1, math.floor(s0) + 1)
+                    return [ ((s - s0) / ds, s + offset, axis) for s in sr ]
             dtx = findCrossingParams(le.left, le.right, dx, 0)
             dty = findCrossingParams(le.top, le.bottom, dy, 1)
 
-            dts = sorted(dtx + dty, key=lambda e: e[0])
-            if le is see:
-                print(dts)
+            dps = sorted(dtx + dty, key=lambda e: e[0])
 
             stop = [0, 0]
             # phys_margin = 0.2
@@ -166,12 +165,10 @@ class Level:
             # ymarg = numpy.sign(dy) * phys_margin
             # le.move(-xmarg, -ymarg)
             pp = 0.0
-            for p,s,axis in dts:
+            for p,s,axis in dps:
                 dp = p - pp
                 pp = p
                 le.move(dp * dx, dp * dy)
-                if le is see:
-                    print(p,le.left,le.top,le.right,le.bottom)
                 if stop[axis]:
                     continue
                 if axis == 0:
@@ -195,6 +192,9 @@ class Level:
                         dy = 0
                     else:
                         le.vcontact = 0
+            # Do the remaining movement
+            dp = 1.0 - pp
+            le.move(dp * dx, dp * dy)
 
             # le.move(xmarg, ymarg)
 
@@ -211,7 +211,7 @@ class Level:
 
     def draw(self, rq):
         for lo in self.levelObjects:
-            lo.draw(rq, debug_draw = True)
+            lo.draw(rq)
         for le in self.levelEntities:
             le.draw(rq)
 
