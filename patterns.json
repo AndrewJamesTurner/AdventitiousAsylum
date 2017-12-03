@@ -348,7 +348,7 @@
 
   "outside_background_extender":{
     "image":"backgrounds/forest-lid.png",
-    "width": 14,
+    "width": 20,
     "height": 20,
     "surfdata":{
 
@@ -414,6 +414,26 @@
     "width": 1,
     "height": 1,
     "surfdata":{
+    }
+  },
+
+  "tree":{
+    "image":"structures/tree.png",
+    "width": 6,
+    "height": 6,
+    "surfdata":{
+      "climb" :[
+        "......",
+        "..##..",
+        "..##..",
+        "..##.."
+      ],
+      "stand" :[
+        "......",
+        "......",
+        "######",
+        "......"
+      ]
     }
   },
 
