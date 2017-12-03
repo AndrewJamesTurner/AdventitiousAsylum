@@ -10,7 +10,7 @@ class Animation:
 
         if sprite_sheet is not None:
             x = 0
-            frame_height = sprite_sheet.get_width()
+            frame_height = sprite_sheet.get_height()
 
             while x < sprite_sheet.get_width():
                 frame = Surface((frame_width, frame_height), flags=SRCALPHA)

@@ -112,7 +112,7 @@ class BattleScene(GameScene):
 
         self.render_queue = RenderQueue()
 
-        self.test_anim = Animation(True, pygame.image.load("assets/characters/spedec-2/spedec-man-walk-2-sheet.png"), 180)
+        # self.test_anim = Animation(True, pygame.image.load("assets/characters/spedec-2/spedec-man-walk-2-sheet.png"), 180)
 
         # remove this
         # enemy_items = [
@@ -135,8 +135,8 @@ class BattleScene(GameScene):
 
     def update(self, dt):
 
-        self.test_anim.step()
-        self.render_queue.add((200, 200), self.test_anim.get_current_frame(), z_index=400)
+        # self.test_anim.step()
+        # self.render_queue.add((200, 200), self.test_anim.get_current_frame(), z_index=400)
 
         message_box_x = 54
         message_box_y = 420

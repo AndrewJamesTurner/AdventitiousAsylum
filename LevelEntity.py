@@ -1,5 +1,6 @@
 from game import *
 import pygame
+from animation import Animation
 
 class LevelEntity:
     """
@@ -31,16 +32,35 @@ class LevelEntity:
         self.jump = 0
         self.grab = 0
 
-        if 'image' in e:
-            rawimage = pygame.image.load(os.path.join(ASSETS_PATH, e['image'])).convert_alpha()
-            self.image = pygame.transform.smoothscale(rawimage, (int(w * BLOCK_SIZE), int(h * BLOCK_SIZE)))
+        self.anim = None
+
+        if archetype == 'player':
+            self.anim = Animation(True,
+                                  pygame.image.load('assets/characters/spedec-2/spedec-man-walk-2-sheet.png'), 180)
         else:
-            self.image = None
+            if 'image' in e:
+                rawimage = pygame.image.load(os.path.join(ASSETS_PATH, e['image'])).convert_alpha()
+                self.image = pygame.transform.smoothscale(rawimage, (int(w * BLOCK_SIZE), int(h * BLOCK_SIZE)))
+            else:
+                self.image = None
 
     def draw(self, rq):
         draw_position = (self.left * BLOCK_SIZE, self.top * BLOCK_SIZE)
-        if self.image is not None:
-            rq.add(draw_position, self.image)
+
+        im = None
+
+        scale = (1, 1)
+        if self.anim is not None:
+            self.anim.step()
+            im = self.anim.get_current_frame()
+            sf_x = (1.0*BLOCK_SIZE*self.width)/im.get_width()
+            sf_y = (1.0*BLOCK_SIZE*self.height)/im.get_height()
+            scale = (sf_x, sf_y)
+        elif self.image is not None:
+            im = self.image
+
+        if im is not None:
+            rq.add(draw_position, im, scale, 50000)
 
     def move(self, dx, dy):
         self.left += dx

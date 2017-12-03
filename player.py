@@ -1,6 +1,7 @@
 from items import ItemGenerator, none_type
 import json
 from game import pygame
+from animation import Animation
 
 
 class Player:
@@ -16,11 +17,11 @@ class Player:
         for thing in json.load(open('entities.json'))["player"]:
             if thing["name"] == name:
 
-                self.image_path = thing["image"]
-                self.image = pygame.image.load("assets/" + self.image_path)
+                self.anim = Animation(True,
+                                      pygame.image.load('assets/characters/spedec-2/spedec-man-walk-2-sheet.png'), 180)
 
-                image_width = self.image.get_width()
-                image_height = self.image.get_height()
+                image_width = self.anim.get_current_frame().get_width()
+                image_height = self.anim.get_current_frame().get_height()
 
                 self.desired_height = 250
                 ratio = self.desired_height / image_height
@@ -31,7 +32,6 @@ class Player:
                 self.image_width = image_width * ratio
                 self.image_height = self.desired_height
 
-                self.image = pygame.transform.smoothscale(self.image, (int(self.image_width), int(self.image_height)))
 
     def add_item(self, item):
 
