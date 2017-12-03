@@ -26,7 +26,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="307.44934"
+     inkscape:cx="292.0922"
      inkscape:cy="589.22588"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -60,7 +60,10 @@
        x="185.71428"
        y="283.79077"
        rx="0"
-       ry="0" />
+       ry="0"
+       inkscape:export-filename="/home/becky/Documents/GameJams/AdventitiousAsylum/assets/spawn.png"
+       inkscape:export-xdpi="93.450798"
+       inkscape:export-ydpi="93.450798" />
     <path
        sodipodi:type="spiral"
        style="fill:#00ffff;fill-rule:evenodd;stroke:#000000;stroke-width:0.90637845px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
