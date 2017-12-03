@@ -140,37 +140,43 @@ class Level:
             dy = vy * dt
 
             # Check which gridlines will be crossed
-            def findCrossingTimes(edge0, edge1, ds, vs, axis):
-                if vs == 0:
+            def findCrossingParams(edge0, edge1, ds, axis):
+                if ds == 0:
                     return []
                 else:
-                    if vs > 0:
+                    if ds > 0:
                         s0 = edge1
-                        sr = range(math.ceil(s0), math.ceil(s0 + ds))
+                        sr = range(math.ceil(s0), math.ceil(s0 + ds) + 1)
                     else:
                         s0 = edge0
-                        sr = range(math.floor(s0 + ds), math.floor(s0))
-                    return [ ((s - s0) / vs, s, axis) for s in sr ]
-            dtx = findCrossingTimes(le.left, le.right, dx, vx, 0)
-            dty = findCrossingTimes(le.top, le.bottom, dy, vy, 1)
+                        sr = range(math.floor(s0 + ds) - 1, math.floor(s0))
+                    return [ ((s - s0) / ds, s, axis) for s in sr ]
+            dtx = findCrossingParams(le.left, le.right, dx, 0)
+            dty = findCrossingParams(le.top, le.bottom, dy, 1)
 
             dts = sorted(dtx + dty, key=lambda e: e[1])
 
             stop = [0, 0]
-            phys_margin = 0.2
-            for ddt,s,axis in dts:
-                xmarg = numpy.sign(dx) * phys_margin
-                ymarg = numpy.sign(dy) * phys_margin
-                le.move(ddt * vx - xmarg, ddt * vy - ymarg)
+            # phys_margin = 0.2
+            # xmarg = numpy.sign(dx) * phys_margin
+            # ymarg = numpy.sign(dy) * phys_margin
+            # le.move(-xmarg, -ymarg)
+            pp = 0.0
+            for p,s,axis in dts:
+                dp = p - pp
+                pp = p
+                le.move(dp * dx, dp * dy)
                 if stop[axis]:
                     continue
                 if axis == 0:
                     if self.surfdata.check(SurfData.MASK['block'],
                                             s, math.floor(le.top),
                                             s, math.ceil(le.bottom) - 1):
-                        vx = 0
                         stop[0] = 1
                         le.hcontact = Level.CONTACT_RIGHT if (dx > 0) else Level.CONTACT_LEFT
+                        dx = 0
+                    else:
+                        le.hcontact = 0
                 if axis == 1:
                     surfmask = SurfData.MASK['block']
                     if (dy > 0) and not le.go_d:
@@ -178,9 +184,13 @@ class Level:
                     if self.surfdata.check(surfmask,
                                             math.floor(le.left), s,
                                             math.ceil(le.right) - 1, s):
-                        vy = 0
                         stop[1] = 1
                         le.vcontact = Level.CONTACT_FLOOR if (dy > 0) else Level.CONTACT_CEILING
+                        dy = 0
+                    else:
+                        le.vcontact = 0
+
+            # le.move(xmarg, ymarg)
 
             if stop[0]:
                 le.vel_x = 0.0
@@ -195,7 +205,7 @@ class Level:
 
     def draw(self, rq):
         for lo in self.levelObjects:
-            lo.draw(rq)
+            lo.draw(rq, debug_draw = True)
         for le in self.levelEntities:
             le.draw(rq)
 
