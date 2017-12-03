@@ -389,29 +389,71 @@
     "width": 1,
     "height": 5,
     "surfdata":{
-    }},
+    }
+  },
 
 
-    "bed":{
-      "image":"structures/bed.png",
-      "width": 4,
-      "height": 5,
-      "surfdata":{
-        "stand" :[
-          "....",
-          "####",
-          "....",
-          "....",
-          "####"
-        ],
-        "climb" :[
-          "....",
-          "##..",
-          "##..",
-          "##..",
-          "##.."
-        ]
-      }
+  "toadstool":{
+    "image":"structures/toadstool.png",
+    "width": 1,
+    "height": 1,
+    "surfdata":{
+    }
+  },
+
+  "stool":{
+    "image":"structures/stool.png",
+    "width": 1,
+    "height": 1,
+    "surfdata":{
+    }
+  },
+
+  "bush":{
+    "image":"structures/bush.png",
+    "width": 1,
+    "height": 1,
+    "surfdata":{
+    }
+  },
+
+  "rock":{
+    "image":"structures/rock.png",
+    "width": 1,
+    "height": 1,
+    "surfdata":{
+    }
+  },
+
+  "tree-stump":{
+    "image":"structures/tree-stump.png",
+    "width": 3,
+    "height": 1,
+    "surfdata":{
+    }
+  },
+
+
+  "bed":{
+    "image":"structures/bed.png",
+    "width": 4,
+    "height": 5,
+    "surfdata":{
+      "stand" :[
+        "....",
+        "####",
+        "....",
+        "....",
+        "####"
+      ],
+      "climb" :[
+        "....",
+        "##..",
+        "##..",
+        "##..",
+        "##.."
+      ]
     }
   }
+}
 
