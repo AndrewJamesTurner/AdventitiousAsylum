@@ -232,6 +232,14 @@
 			"width": 0.5,
 			"height": 0.720,
 			"amount": 100
+		},
+		{
+			"name": "apple",
+			"image": "items/health/apple.png",
+			"width": 0.443,
+			"height": 0.5,
+			"amount": 20
 		}
+
 	]
 }
