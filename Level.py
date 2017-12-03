@@ -95,6 +95,8 @@ class Level:
         for s in self.spawners:
             s.update(dt)
 
+        see = self.getSpedEcEntity()
+
         for le in self.levelEntities:
             # Apply inputs
             if le.vcontact == Level.CONTACT_FLOOR:
@@ -146,15 +148,17 @@ class Level:
                 else:
                     if ds > 0:
                         s0 = edge1
-                        sr = range(math.ceil(s0), math.ceil(s0 + ds) + 1)
+                        sr = range(math.ceil(s0), math.ceil(s0 + ds))
                     else:
                         s0 = edge0
-                        sr = range(math.floor(s0 + ds) - 1, math.floor(s0))
+                        sr = range(math.floor(s0 + ds), math.floor(s0))
                     return [ ((s - s0) / ds, s, axis) for s in sr ]
             dtx = findCrossingParams(le.left, le.right, dx, 0)
             dty = findCrossingParams(le.top, le.bottom, dy, 1)
 
-            dts = sorted(dtx + dty, key=lambda e: e[1])
+            dts = sorted(dtx + dty, key=lambda e: e[0])
+            if le is see:
+                print(dts)
 
             stop = [0, 0]
             # phys_margin = 0.2
@@ -166,6 +170,8 @@ class Level:
                 dp = p - pp
                 pp = p
                 le.move(dp * dx, dp * dy)
+                if le is see:
+                    print(p,le.left,le.top,le.right,le.bottom)
                 if stop[axis]:
                     continue
                 if axis == 0:
