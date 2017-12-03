@@ -98,6 +98,7 @@ class LevelEditor(GameScene):
             pattern_objects.append(pattern_object)
 
         self.patterns_area = thorpy.Box.make([patterns_title, *pattern_objects], size=(PATTERNS_AREA_WIDTH, SCREEN_HEIGHT))
+        self.patterns_area.set_main_color((220, 220, 255, 180))
         self.patterns_area.set_topleft((SCREEN_WIDTH + DETAILS_AREA_WIDTH, 0))
         thorpy.store(self.patterns_area, y=0)
         self.patterns_area.refresh_lift()
