@@ -297,6 +297,15 @@ class LevelEditor(GameScene):
         self.menu.react(event)
         if event.type == pygame.MOUSEBUTTONDOWN:
             mouse_x, mouse_y = self.backwardMouseTransform(event.pos)
+
+            # Ctrl + mouse wheel zooms level
+            if pygame.key.get_mods() == pygame.KMOD_LCTRL:
+                if event.button == 4:
+                    self.doZoom(1.25, *event.pos)
+                elif event.button == 5:
+                    self.doZoom(0.8, *event.pos)
+                return
+
             # See if we are clicking on a game element
             for level_object in sorted(self.level_objects, key=lambda lo: -lo.z_index):
                 if level_object.draw_position[0] < mouse_x < level_object.draw_position[0] + level_object.pattern.image.get_width() \
@@ -311,6 +320,14 @@ class LevelEditor(GameScene):
                     elif event.button == 3:
                         # Delete element
                         self.level_objects.remove(level_object)
+                    elif event.button == 4:
+                        # Mouse wheel decrease z index
+                        level_object.z_index -= 1
+                        self.update_object_details_area(level_object)
+                    elif event.button == 5:
+                        # Mouse wheel increase z index
+                        level_object.z_index += 1
+                        self.update_object_details_area(level_object)
                     return  # Only act on the first object
             for spawner_object in self.spawner_objects:
                 if spawner_object.draw_position[0] < mouse_x < spawner_object.draw_position[0] + spawner_object.image.get_width() \
@@ -328,10 +345,6 @@ class LevelEditor(GameScene):
                     elif event.button == 3:
                         # Delete spawner
                         self.spawner_objects.remove(spawner_object)
-            if event.button == 4:
-                self.doZoom(1.25, *event.pos)
-            elif event.button == 5:
-                self.doZoom(0.8, *event.pos)
 
         elif event.type == pygame.MOUSEBUTTONUP:
             if event.button == 1:
