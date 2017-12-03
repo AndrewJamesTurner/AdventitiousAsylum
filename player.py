@@ -8,6 +8,7 @@ class Player:
     def __init__(self, name):
 
         self.items = [ItemGenerator().getItemByName("pillow")]
+        self.name = name
         self.health = 1000
         self.max_health = 1000
         self.type = none_type
