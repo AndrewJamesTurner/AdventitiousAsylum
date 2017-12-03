@@ -219,9 +219,9 @@ class LevelEditor(GameScene):
     def save_level(self):
         # Move objects to positive positions
         min_x = min(level_object.block_position[0] for level_object in self.level_objects)
-        max_x = max(level_object.block_position[0] for level_object in self.level_objects)
+        max_x = max(level_object.block_position[0] + level_object.pattern.definition['width'] for level_object in self.level_objects)
         min_y = min(level_object.block_position[1] for level_object in self.level_objects)
-        max_y = max(level_object.block_position[1] for level_object in self.level_objects)
+        max_y = max(level_object.block_position[1] + level_object.pattern.definition['height'] for level_object in self.level_objects)
 
         # Collect level details
         level = {

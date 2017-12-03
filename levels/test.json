@@ -1,162 +1,206 @@
 {
-  "height": 80,
-  "playerspeed": 5.0,
+  "width": 50,
   "objects": [
     {
       "x": 26,
-      "y": 46,
       "z": 0,
+      "y": 8,
       "type": "floor"
     },
     {
       "x": 10,
-      "y": 46,
       "z": 0,
+      "y": 8,
       "type": "floor"
     },
     {
-      "x": 6,
-      "y": 46,
+      "x": 4,
       "z": 0,
+      "y": 8,
       "type": "floor"
     },
     {
       "x": 30,
-      "y": 46,
       "z": 0,
+      "y": 8,
       "type": "floor"
     },
     {
       "x": 0,
-      "y": 46,
       "z": 0,
+      "y": 8,
       "type": "floor"
     },
     {
-      "x": 3,
-      "y": 45,
+      "x": 7,
       "z": 0,
+      "y": 7,
       "type": "warning1"
     },
     {
-      "x": 6,
-      "y": 45,
+      "x": 10,
       "z": 0,
+      "y": 7,
       "type": "warning2"
     },
     {
-      "x": 9,
-      "y": 42,
+      "x": 18,
       "z": 0,
+      "y": 1,
       "type": "noticeboard"
     },
     {
       "x": 0,
-      "y": 42,
       "z": 0,
+      "y": 4,
       "type": "bookshelf"
     },
     {
-      "x": 0,
-      "y": 2,
-      "z": 0,
-      "type": "crate"
-    },
-    {
-      "x": 4,
-      "y": 7,
-      "z": 0,
-      "type": "crate"
-    },
-    {
-      "x": 2,
-      "y": 7,
-      "z": 0,
-      "type": "crate"
-    },
-    {
       "x": 6,
+      "z": 0,
       "y": 7,
-      "z": 0,
-      "type": "crate"
-    },
-    {
-      "x": 9,
-      "y": 45,
-      "z": 0,
       "type": "sign"
     },
     {
       "x": 0,
-      "y": 40,
       "z": 0,
+      "y": 2,
       "type": "TV"
     },
     {
-      "x": 13,
-      "y": 42,
+      "x": 12,
       "z": 0,
+      "y": 4,
       "type": "ambulance_background"
     },
     {
       "x": 14,
-      "y": 46,
       "z": 0,
+      "y": 8,
       "type": "floor"
     },
     {
       "x": 18,
-      "y": 46,
       "z": 0,
+      "y": 8,
       "type": "floor"
     },
     {
       "x": 11,
-      "y": 44,
       "z": 0,
+      "y": 6,
       "type": "filingcabinet"
     },
     {
       "x": 23,
-      "y": 40,
       "z": 0,
+      "y": 2,
       "type": "'naut"
     },
     {
       "x": 1,
-      "y": 40,
       "z": 0,
+      "y": 2,
       "type": "computer"
     },
     {
       "x": 22,
-      "y": 46,
       "z": 0,
+      "y": 8,
       "type": "floor"
     },
     {
-      "x": 0,
-      "y": 0,
+      "x": 34,
       "z": 0,
-      "type": "sign"
+      "y": 8,
+      "type": "floor"
+    },
+    {
+      "x": 38,
+      "z": 0,
+      "y": 8,
+      "type": "floor"
+    },
+    {
+      "x": 42,
+      "z": 0,
+      "y": 8,
+      "type": "floor"
+    },
+    {
+      "x": 46,
+      "z": 0,
+      "y": 8,
+      "type": "floor"
+    },
+    {
+      "x": 45,
+      "z": 0,
+      "y": 7,
+      "type": "crate"
+    },
+    {
+      "x": 33,
+      "z": 0,
+      "y": 4,
+      "type": "door"
+    },
+    {
+      "x": 40,
+      "z": 0,
+      "y": 4,
+      "type": "bookshelf"
+    },
+    {
+      "x": 45,
+      "z": 0,
+      "y": 6,
+      "type": "crate"
+    },
+    {
+      "x": 46,
+      "z": 0,
+      "y": 7,
+      "type": "crate"
+    },
+    {
+      "x": 9,
+      "z": 0,
+      "y": 0,
+      "type": "quote1"
+    },
+    {
+      "x": 4,
+      "z": 0,
+      "y": 3,
+      "type": "window"
     }
   ],
-  "spawners": [{
-    "x": 20,
-    "y": 45,
-    "entitytype": "orderly",
-    "spawnertype": "goleft",
-    "rate": 0.1
-  },
-  {
-    "x": 2,
-    "y": 45,
-    "entitytype": "player",
-    "spawnertype": "oneshot",
-    "rate": 0.0
-  }
-  ],
-  "width": 40,
+  "height": 9,
+  "gravity": 1.0,
+  "playerspeed": 5.0,
   "jumpheight": 2.2,
-  "gravity": 1.0
+  "spawners": [
+    {
+      "x": 33,
+      "entitytype": "orderly",
+      "rate": 0.1,
+      "y": 7,
+      "spawnertype": "goleft"
+    },
+    {
+      "x": 2,
+      "entitytype": "player",
+      "rate": 0.0,
+      "y": 7,
+      "spawnertype": "oneshot"
+    },
+    {
+      "x": 14,
+      "entitytype": "",
+      "rate": 0.25,
+      "y": 7,
+      "spawnertype": "goright"
+    }
+  ]
 }
