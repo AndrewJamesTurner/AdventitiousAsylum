@@ -141,7 +141,7 @@ class BattleScene(GameScene):
         player_pos_x = 95
         player_pos_y = 111
 
-        enemy_pos_x = 900 - self.enemy.image_width
+        enemy_pos_x = 950 - self.enemy.image_width
         enemy_pos_y = 85
 
         health_bar_height = 25
@@ -152,7 +152,7 @@ class BattleScene(GameScene):
             self.leave_scene()
 
         player_mid_x = player_pos_x + max(self.player.image_width, health_bar_width) / 2
-        enemy_mid_x = enemy_pos_x + max(self.enemy.image_width, health_bar_width) / 2
+        enemy_mid_x = enemy_pos_x - max(self.enemy.image_width, health_bar_width) / 2
 
         draw_health_bar(self.render_queue, player_mid_x - (health_bar_width / 2), player_pos_y + self.player.desired_height + health_bar_padding, self.player.health / self.player.max_health, health_bar_width, health_bar_height)
         draw_health_bar(self.render_queue, enemy_mid_x - (health_bar_width / 2), enemy_pos_y - (health_bar_height + health_bar_padding), self.enemy.health / self.enemy.max_health, health_bar_width, health_bar_height)
