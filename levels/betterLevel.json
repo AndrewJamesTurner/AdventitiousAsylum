@@ -1,207 +1,629 @@
 {
-  "height": 12,
-  "gravity": 0.0,
-  "playerspeed": 0.0,
+  "width": 101,
+  "gravity": 1.0,
+  "jumpheight": 3.0,
+  "height": 26,
   "spawners": [
     {
-      "rate": 0.3,
-      "spawnertype": "oneshot",
-      "x": 7,
-      "y": 9,
-      "filter": "",
-      "entitytype": "player"
+      "filter": "easydoctor",
+      "y": 23,
+      "entitytype": "orderly",
+      "rate": 0.05,
+      "x": 27,
+      "spawnertype": "goleft"
     },
     {
+      "filter": "",
+      "y": 22,
+      "entitytype": "player",
       "rate": 0.3,
-      "spawnertype": "goleft",
-      "x": 29,
-      "y": 8,
+      "x": 4,
+      "spawnertype": "oneshot"
+    },
+    {
+      "filter": "",
+      "y": 20,
+      "entitytype": "weapon",
+      "rate": 0.3,
+      "x": 12,
+      "spawnertype": "oneshot"
+    },
+    {
+      "filter": "",
+      "y": 22,
+      "entitytype": "weapon",
+      "rate": 0.3,
+      "x": 51,
+      "spawnertype": "oneshot"
+    },
+    {
       "filter": "easydoctor",
-      "entitytype": "orderly"
+      "y": 21,
+      "entitytype": "orderly",
+      "rate": 0.01,
+      "x": 83,
+      "spawnertype": "goleft"
+    },
+    {
+      "filter": "easydoctor",
+      "y": 21,
+      "entitytype": "orderly",
+      "rate": 0.3,
+      "x": 72,
+      "spawnertype": "goright"
+    },
+    {
+      "filter": "",
+      "y": 23,
+      "entitytype": "health",
+      "rate": 0.3,
+      "x": 91,
+      "spawnertype": "oneshot"
+    },
+    {
+      "filter": "",
+      "y": 8,
+      "entitytype": "orderly",
+      "rate": 0.01,
+      "x": 90,
+      "spawnertype": "goleft"
+    },
+    {
+      "filter": "",
+      "y": 11,
+      "entitytype": "weapon",
+      "rate": 0.3,
+      "x": 70,
+      "spawnertype": "oneshot"
     }
   ],
-  "jumpheight": 0.0,
-  "width": 77,
+  "playerspeed": 2.5,
   "objects": [
     {
+      "type": "floor",
       "z": 0,
-      "y": 11,
-      "x": 1,
-      "type": "floor"
+      "y": 25,
+      "x": 1
     },
     {
+      "type": "floor",
       "z": 0,
-      "y": 11,
-      "x": 5,
-      "type": "floor"
+      "y": 25,
+      "x": 5
     },
     {
+      "type": "floor",
       "z": 0,
-      "y": 11,
-      "x": 9,
-      "type": "floor"
+      "y": 25,
+      "x": 9
     },
     {
+      "type": "floor",
       "z": 0,
-      "y": 11,
-      "x": 13,
-      "type": "floor"
+      "y": 25,
+      "x": 13
     },
     {
+      "type": "floor",
       "z": 0,
-      "y": 11,
-      "x": 17,
-      "type": "floor"
+      "y": 25,
+      "x": 17
     },
     {
+      "type": "floor",
       "z": 0,
-      "y": 11,
-      "x": 21,
-      "type": "floor"
+      "y": 25,
+      "x": 21
     },
     {
+      "type": "floor",
       "z": 0,
-      "y": 11,
-      "x": 25,
-      "type": "floor"
+      "y": 25,
+      "x": 25
     },
     {
+      "type": "floor",
       "z": 0,
-      "y": 11,
-      "x": 29,
-      "type": "floor"
+      "y": 25,
+      "x": 29
     },
     {
+      "type": "noticeboard",
       "z": 0,
-      "y": 8,
-      "x": 13,
-      "type": "noticeboard"
+      "y": 22,
+      "x": 14
     },
     {
+      "type": "floor",
       "z": 0,
-      "y": 11,
-      "x": 33,
-      "type": "floor"
+      "y": 25,
+      "x": 33
     },
     {
+      "type": "floor",
       "z": 0,
-      "y": 11,
-      "x": 37,
-      "type": "floor"
+      "y": 25,
+      "x": 37
     },
     {
+      "type": "floor",
       "z": 0,
-      "y": 11,
-      "x": 41,
-      "type": "floor"
+      "y": 25,
+      "x": 45
     },
     {
+      "type": "floor",
       "z": 0,
-      "y": 11,
-      "x": 45,
-      "type": "floor"
+      "y": 25,
+      "x": 49
     },
     {
+      "type": "floor",
       "z": 0,
-      "y": 11,
-      "x": 49,
-      "type": "floor"
+      "y": 25,
+      "x": 53
     },
     {
+      "type": "floor",
       "z": 0,
-      "y": 11,
-      "x": 53,
-      "type": "floor"
+      "y": 25,
+      "x": 57
     },
     {
+      "type": "floor",
       "z": 0,
-      "y": 11,
-      "x": 57,
-      "type": "floor"
+      "y": 25,
+      "x": 61
     },
     {
+      "type": "floor",
       "z": 0,
-      "y": 11,
-      "x": 61,
-      "type": "floor"
+      "y": 25,
+      "x": 65
     },
     {
+      "type": "floor",
       "z": 0,
-      "y": 11,
-      "x": 65,
-      "type": "floor"
+      "y": 25,
+      "x": 69
     },
     {
+      "type": "floor",
       "z": 0,
-      "y": 11,
-      "x": 69,
-      "type": "floor"
+      "y": 25,
+      "x": 73
     },
     {
+      "type": "bed",
       "z": 0,
-      "y": 11,
-      "x": 73,
-      "type": "floor"
+      "y": 20,
+      "x": 2
     },
     {
+      "type": "wallend",
       "z": 0,
-      "y": 6,
-      "x": 5,
-      "type": "bed"
+      "y": 20,
+      "x": 23
     },
     {
+      "type": "wallend",
       "z": 0,
-      "y": 6,
-      "x": 23,
-      "type": "wallend"
+      "y": 15,
+      "x": 23
     },
     {
+      "type": "ceiling",
       "z": 0,
-      "y": 1,
-      "x": 23,
-      "type": "wallend"
+      "y": 14,
+      "x": 0
     },
     {
+      "type": "ceiling",
       "z": 0,
-      "y": 0,
-      "x": 0,
-      "type": "ceiling"
+      "y": 14,
+      "x": 4
     },
     {
+      "type": "ceiling",
       "z": 0,
-      "y": 0,
-      "x": 4,
-      "type": "ceiling"
+      "y": 14,
+      "x": 8
     },
     {
+      "type": "ceiling",
       "z": 0,
-      "y": 0,
-      "x": 8,
-      "type": "ceiling"
+      "y": 14,
+      "x": 12
     },
     {
+      "type": "ceiling",
       "z": 0,
-      "y": 0,
-      "x": 12,
-      "type": "ceiling"
+      "y": 14,
+      "x": 16
     },
     {
+      "type": "ceiling",
       "z": 0,
-      "y": 0,
-      "x": 16,
-      "type": "ceiling"
+      "y": 14,
+      "x": 20
     },
     {
+      "type": "clock",
       "z": 0,
-      "y": 0,
-      "x": 20,
-      "type": "ceiling"
+      "y": 21,
+      "x": 18
     },
     {
+      "type": "light",
+      "z": 0,
+      "y": 15,
+      "x": 16
+    },
+    {
+      "type": "light",
+      "z": 0,
+      "y": 15,
+      "x": 5
+    },
+    {
+      "type": "ceiling",
+      "z": 0,
+      "y": 13,
+      "x": 23
+    },
+    {
+      "type": "ceiling",
+      "z": 0,
+      "y": 13,
+      "x": 26
+    },
+    {
+      "type": "ceiling",
+      "z": 0,
+      "y": 13,
+      "x": 29
+    },
+    {
+      "type": "bed",
+      "z": 0,
+      "y": 20,
+      "x": 9
+    },
+    {
+      "type": "ceiling",
+      "z": 0,
+      "y": 13,
+      "x": 33
+    },
+    {
+      "type": "ceiling",
+      "z": 0,
+      "y": 13,
+      "x": 37
+    },
+    {
+      "type": "filingcabinet",
+      "z": 0,
+      "y": 23,
+      "x": 34
+    },
+    {
+      "type": "ceiling",
+      "z": 0,
+      "y": 13,
+      "x": 40
+    },
+    {
+      "type": "ceiling",
+      "z": 0,
+      "y": 13,
+      "x": 43
+    },
+    {
+      "type": "light",
+      "z": 0,
+      "y": 14,
+      "x": 29
+    },
+    {
+      "type": "light",
+      "z": 0,
+      "y": 14,
+      "x": 39
+    },
+    {
+      "type": "door",
+      "z": 1,
+      "y": 21,
+      "x": 65
+    },
+    {
+      "type": "filingcabinet",
+      "z": 0,
+      "y": 23,
+      "x": 35
+    },
+    {
+      "type": "warning2",
+      "z": 0,
+      "y": 21,
+      "x": 63
+    },
+    {
+      "type": "blockingWall",
+      "z": 0,
+      "y": 15,
+      "x": 0
+    },
+    {
+      "type": "blockingWall",
+      "z": 0,
+      "y": 18,
+      "x": 0
+    },
+    {
+      "type": "blockingWall",
+      "z": 0,
+      "y": 22,
+      "x": 0
+    },
+    {
+      "type": "table",
+      "z": 0,
+      "y": 23,
+      "x": 50
+    },
+    {
+      "type": "ceiling",
+      "z": 0,
+      "y": 13,
+      "x": 47
+    },
+    {
+      "type": "ceiling",
+      "z": 0,
+      "y": 13,
+      "x": 51
+    },
+    {
+      "type": "ceiling",
+      "z": 0,
+      "y": 13,
+      "x": 55
+    },
+    {
+      "type": "computer",
+      "z": 0,
+      "y": 21,
+      "x": 52
+    },
+    {
+      "type": "ceiling",
+      "z": 0,
+      "y": 13,
+      "x": 59
+    },
+    {
+      "type": "ceiling",
+      "z": 0,
+      "y": 13,
+      "x": 63
+    },
+    {
+      "type": "crate",
+      "z": 0,
+      "y": 24,
+      "x": 51
+    },
+    {
+      "type": "wallend",
+      "z": 0,
+      "y": 14,
+      "x": 66
+    },
+    {
+      "type": "wallend",
+      "z": 0,
+      "y": 20,
+      "x": 66
+    },
+    {
+      "type": "wallend",
+      "z": 0,
+      "y": 18,
+      "x": 66
+    },
+    {
+      "type": "light",
+      "z": 0,
+      "y": 14,
+      "x": 49
+    },
+    {
+      "type": "light",
+      "z": 0,
+      "y": 14,
+      "x": 58
+    },
+    {
+      "type": "ceiling",
+      "z": 0,
+      "y": 12,
+      "x": 66
+    },
+    {
+      "type": "ceiling",
+      "z": 0,
+      "y": 12,
+      "x": 70
+    },
+    {
+      "type": "ceiling",
+      "z": 0,
+      "y": 12,
+      "x": 74
+    },
+    {
+      "type": "ceiling",
+      "z": 0,
+      "y": 12,
+      "x": 78
+    },
+    {
+      "type": "floor",
+      "z": 0,
+      "y": 25,
+      "x": 77
+    },
+    {
+      "type": "floor",
+      "z": 0,
+      "y": 25,
+      "x": 81
+    },
+    {
+      "type": "ceiling",
+      "z": 0,
+      "y": 12,
+      "x": 81
+    },
+    {
+      "type": "floor",
+      "z": 0,
+      "y": 25,
+      "x": 85
+    },
+    {
+      "type": "floor",
+      "z": 0,
+      "y": 25,
+      "x": 89
+    },
+    {
+      "type": "bearOnChair",
+      "z": 0,
+      "y": 22,
+      "x": 90
+    },
+    {
+      "type": "floor",
+      "z": 0,
+      "y": 25,
+      "x": 93
+    },
+    {
+      "type": "floor",
+      "z": 0,
+      "y": 25,
+      "x": 97
+    },
+    {
+      "type": "ceiling",
+      "z": 0,
+      "y": 12,
+      "x": 85
+    },
+    {
+      "type": "ceiling",
+      "z": 0,
+      "y": 12,
+      "x": 89
+    },
+    {
+      "type": "ceiling",
+      "z": 0,
+      "y": 12,
+      "x": 93
+    },
+    {
+      "type": "bookshelf",
+      "z": 0,
+      "y": 21,
+      "x": 76
+    },
+    {
+      "type": "light",
+      "z": 0,
+      "y": 13,
+      "x": 71
+    },
+    {
+      "type": "light",
+      "z": 0,
+      "y": 13,
+      "x": 81
+    },
+    {
+      "type": "quote3",
+      "z": 0,
+      "y": 19,
+      "x": 94
+    },
+    {
+      "type": "blockingWall",
+      "z": 0,
+      "y": 10,
+      "x": 0
+    },
+    {
+      "type": "blockingWall",
       "z": 0,
       "y": 7,
-      "x": 18,
-      "type": "clock"
+      "x": 0
+    },
+    {
+      "type": "blockingWall",
+      "z": 0,
+      "y": 4,
+      "x": 0
+    },
+    {
+      "type": "blockingWall",
+      "z": 0,
+      "y": 0,
+      "x": 0
+    },
+    {
+      "type": "ceiling",
+      "z": 0,
+      "y": 0,
+      "x": 0
+    },
+    {
+      "type": "ceiling",
+      "z": 0,
+      "y": 0,
+      "x": 4
+    },
+    {
+      "type": "ceiling",
+      "z": 0,
+      "y": 0,
+      "x": 8
+    },
+    {
+      "type": "ceiling",
+      "z": 0,
+      "y": 0,
+      "x": 12
+    },
+    {
+      "type": "crate",
+      "z": 0,
+      "y": 12,
+      "x": 65
+    },
+    {
+      "type": "quote5",
+      "z": 0,
+      "y": 6,
+      "x": 78
+    },
+    {
+      "type": "floor",
+      "z": 0,
+      "y": 25,
+      "x": 41
     }
   ]
 }
