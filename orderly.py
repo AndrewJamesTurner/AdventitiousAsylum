@@ -34,11 +34,13 @@ class Orderly:
         # image_width = self.image.get_width()
         image_height = self.image.get_height()
 
-        desired_height = 300
+        desired_height = 250
         ratio = desired_height / image_height
 
-        self.image_width_scaler = ratio
-        self.image_height_scaler = ratio
+        self.image = pygame.transform.smoothscale(self.image, (int(self.image.get_width() * ratio), int(self.image.get_height() * ratio)))
+
+        self.image_width = self.image.get_width()
+        self.image_height = self.image.get_height()
 
         approperate_items = []
         for item in _json["weapon"]:
