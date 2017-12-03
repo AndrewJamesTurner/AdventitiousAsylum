@@ -112,6 +112,7 @@ class SharedValues:
         self.health = 100
         self.enemy = None
 
+
 def get_shared_values():
 
     global shared_values
@@ -119,6 +120,7 @@ def get_shared_values():
         shared_values = SharedValues()
     return shared_values
 
+
 if __name__ == '__main__':
-    app = ezpygame.Application(title="Metal Ass", resolution=(SCREEN_WIDTH, SCREEN_HEIGHT), update_rate=FPS)
+    app = ezpygame.Application(title='Adventitious Asylum', resolution=(SCREEN_WIDTH, SCREEN_HEIGHT), update_rate=FPS)
     app.run(get_menu_scene())
