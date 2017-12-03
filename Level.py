@@ -116,7 +116,6 @@ class Level:
             sign_x = numpy.sign(le.vel_x)
             if numpy.sign(speedtarget) != sign_x and sign_x != 0:
                 accel = decel
-                print("Decelerating")
             speeddiff = speedtarget - le.vel_x
             if abs(speeddiff) < accel:
                 le.vel_x = speedtarget
