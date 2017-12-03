@@ -1,5 +1,43 @@
 {
+  "spawners": [
+    {
+      "x": 33,
+      "filter": "easydoctor",
+      "rate": 0.1,
+      "entitytype": "orderly",
+      "spawnertype": "goleft",
+      "y": 7
+    },
+    {
+      "x": 2,
+      "filter": "",
+      "rate": 0.0,
+      "entitytype": "player",
+      "spawnertype": "oneshot",
+      "y": 7
+    },
+    {
+      "x": 14,
+      "filter": "",
+      "rate": 0.25,
+      "entitytype": "orderly",
+      "spawnertype": "goright",
+      "y": 7
+    },
+    {
+      "x": 21,
+      "filter": "",
+      "rate": 0.3,
+      "entitytype": "health",
+      "spawnertype": "oneshot",
+      "y": 7
+    }
+  ],
+  "gravity": 1.0,
+  "playerspeed": 5.0,
+  "jumpheight": 2.2,
   "width": 50,
+  "height": 9,
   "objects": [
     {
       "x": 26,
@@ -174,34 +212,6 @@
       "z": 0,
       "y": 3,
       "type": "window"
-    }
-  ],
-  "height": 9,
-  "gravity": 1.0,
-  "playerspeed": 5.0,
-  "jumpheight": 2.2,
-  "spawners": [
-    {
-      "x": 33,
-      "entitytype": "orderly",
-      "filter": "easydoctor",
-      "rate": 0.1,
-      "y": 7,
-      "spawnertype": "goleft"
-    },
-    {
-      "x": 2,
-      "entitytype": "player",
-      "rate": 0.0,
-      "y": 7,
-      "spawnertype": "oneshot"
-    },
-    {
-      "x": 14,
-      "entitytype": "orderly",
-      "rate": 0.25,
-      "y": 7,
-      "spawnertype": "goright"
     }
   ]
 }
