@@ -180,6 +180,20 @@
     }
   },
 
+  "blockingWall":{
+    "image":"structures/ceiling.png",
+    "width": 1,
+    "height": 4,
+    "surfdata":{
+      "block" :[
+        "#",
+        "#",
+        "#",
+        "#"
+      ]
+    }
+  },
+
   "grass":{
     "image":"structures/grass.png",
     "width": 4,
@@ -356,26 +370,26 @@
     }},
 
 
-  "bed":{
-    "image":"structures/bed.png",
-    "width": 4,
-    "height": 5,
-    "surfdata":{
-      "stand" :[
-        "....",
-        "####",
-        "....",
-        "....",
-        "####"
-      ],
-      "climb" :[
-        "....",
-        "##..",
-        "##..",
-        "##..",
-        "##.."
-      ]
+    "bed":{
+      "image":"structures/bed.png",
+      "width": 4,
+      "height": 5,
+      "surfdata":{
+        "stand" :[
+          "....",
+          "####",
+          "....",
+          "....",
+          "####"
+        ],
+        "climb" :[
+          "....",
+          "##..",
+          "##..",
+          "##..",
+          "##.."
+        ]
+      }
     }
   }
-}
 
