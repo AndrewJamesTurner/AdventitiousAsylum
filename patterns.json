@@ -290,5 +290,23 @@
         "###"
       ]
     }
+  },
+
+  "outside_background":{
+    "image":"backgrounds/forest.png",
+    "width": 14,
+    "height": 11,
+    "surfdata":{
+
+    }
+  },
+
+  "outside_background_extender":{
+    "image":"backgrounds/forest-lid.png",
+    "width": 14,
+    "height": 1,
+    "surfdata":{
+
+    }
   }
 }
