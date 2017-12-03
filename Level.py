@@ -79,7 +79,7 @@ class Level:
         r += SCREEN_MARGIN
         b += SCREEN_MARGIN
         # Rly?
-        self.screenEntity = LevelEntity(l, t, 'screen', {'name':'screen','width':(l-r),'height':(b-t)})
+        self.screenEntity = LevelEntity(l, t, 'screen', {'name':'screen','width':(r-l),'height':(b-t)})
 
     def isOnscreen(self, entity):
         return collides(screenEntity, entity)
