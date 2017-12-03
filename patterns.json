@@ -61,6 +61,17 @@
     }
   },
 
+  "ladder":{
+    "image":"structures/ladderSection.png",
+    "width": 1,
+    "height": 1,
+    "surfdata":{
+      "climb" :[
+        "#"
+      ]
+    }
+  },
+
   "bookshelf":{
     "image":"structures/bookshelf.png",
     "width": 3,
@@ -165,6 +176,31 @@
     "surfdata":{
       "block" :[
         "####"
+      ]
+    }
+  },
+
+  "ceiling":{
+    "image":"structures/ceiling.png",
+    "width": 4,
+    "height": 1,
+    "surfdata":{
+      "block" :[
+        "####"
+      ]
+    }
+  },
+
+  "blockingWall":{
+    "image":"structures/ceiling.png",
+    "width": 1,
+    "height": 4,
+    "surfdata":{
+      "block" :[
+        "#",
+        "#",
+        "#",
+        "#"
       ]
     }
   },
@@ -313,27 +349,69 @@
   "outside_background_extender":{
     "image":"backgrounds/forest-lid.png",
     "width": 14,
-    "height": 1,
+    "height": 20,
     "surfdata":{
 
     }
   },
 
-  "brick":{
+
+  "wall":{
     "image":"backgrounds/brick-wall.png",
     "width": 15,
-    "height": 10,
+    "height": 11,
     "surfdata":{
 
     }
   },
 
-  "brickWavy":{
-    "image":"backgrounds/WavyBrickPattern.png",
+  "wall_in":{
+    "image":"backgrounds/bricks-fadeout-flipped.png",
     "width": 15,
-    "height": 10,
+    "height": 11,
     "surfdata":{
 
     }
+  },
+
+  "wall_out":{
+    "image":"backgrounds/bricks-fadeout.png",
+    "width": 15,
+    "height": 11,
+    "surfdata":{
+
+    }
+  },
+
+
+  "wallend":{
+    "image":"structures/wall.png",
+    "width": 1,
+    "height": 5,
+    "surfdata":{
+    }},
+
+
+    "bed":{
+      "image":"structures/bed.png",
+      "width": 4,
+      "height": 5,
+      "surfdata":{
+        "stand" :[
+          "....",
+          "####",
+          "....",
+          "....",
+          "####"
+        ],
+        "climb" :[
+          "....",
+          "##..",
+          "##..",
+          "##..",
+          "##.."
+        ]
+      }
+    }
   }
-}
+

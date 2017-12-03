@@ -32,7 +32,7 @@ class MenuScene(ezpygame.Scene):
         self.left_indicator_icon = pygame.transform.smoothscale(self.left_indicator_icon, (int(indicator_rect.width * scale_down), int(indicator_rect.height * scale_down)))
 
     def add_option(self, text, callback, font_size, selectable=True):
-        font = pygame.font.Font("assets/TitilliumWeb-Regular.ttf", font_size)
+        font = pygame.font.Font("assets/GloriaHallelujah.ttf", font_size)
         label = font.render(text, True, (255, 255, 255))
         self.options.append(self.MenuOption(callback, label, self.next_y, selectable))
 

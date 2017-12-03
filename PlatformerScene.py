@@ -9,24 +9,25 @@ from sharedValues import get_shared_values
 from player import Player
 from orderly import Orderly
 
+from BattleScene import draw_health_bar
+
 class PlatformerScene(GameScene):
 
     def __init__(self):
-
         self.rq = RenderQueue()
         LevelObjectPattern.init()
         Spawner.init()
+        self.itemgen = ItemGenerator()
 
         get_shared_values().player = Player("spedecWoman")
 
-        self.level = Level.load('mainLevel.json')
+        self.resetLevel()
+
+    def resetLevel(self):
+        self.level = Level.load(get_shared_values().levelfile)
         self.spedec = SpedEcController(self.level.getSpedEcEntity())
         self.aimCamera(self.spedec.le.centre, self.spedec.le.middle)
-
-        self.level.addEntity(self.spedec.le)
-
-        self.itemgen = ItemGenerator()
-
+        self.death = 0
 
     def on_enter(self, previous_scene):
         super(PlatformerScene, self).on_enter(previous_scene)
@@ -48,16 +49,14 @@ class PlatformerScene(GameScene):
         # if self.spedec.??x position?? > ??level width??:
         #     self.application.change_scene(get_win_scene())
         self.handle_collisions()
-
-        #print(self.level.collidingEntities(self.spedec.le))
         self.level.setScreenRect(self.camera_left, self.camera_top, self.camera_right, self.camera_bottom)
-
         self.level.update(dt / 1000.0)
+        self.spedec.afterUpdate()
 
-        self.spedec.flushInputs()
-
-        # If we do a death animation, we might not adjust this
-        self.aimCamera(self.spedec.le.centre, self.spedec.le.middle)
+        if not self.spedec.dead:
+            self.aimCamera(self.spedec.le.centre, self.spedec.le.middle)
+        else:
+            self.resetLevel()
 
     def handle_collisions(self):
         """
@@ -115,10 +114,25 @@ class PlatformerScene(GameScene):
     def cameraPosition(self):
         return ( self.camera_left * BLOCK_SIZE, self.camera_top * BLOCK_SIZE )
 
+    def drawInterface(self):
+        margin = 8
+        healthPercent = get_shared_values().player.health / get_shared_values().player.max_health
+        draw_health_bar(self.rq, margin, margin, healthPercent,
+                        SCREEN_WIDTH / 2 - 2*margin, 16)
+        weapons = get_shared_values().player.items
+        item_spacing = ( (SCREEN_WIDTH / 2) - (4 * THUMB_SIZE) ) / 5
+        x = SCREEN_WIDTH / 2
+        for i in weapons:
+            x += item_spacing
+            self.rq.add((x, margin), i.thumb)
+            x += THUMB_SIZE
+
     def draw(self, screen):
         #self.level.surfdata.debug_draw(self.rq)
         self.level.draw(self.rq)
         self.rq.flush(screen, camera_position = self.cameraPosition())
+        self.drawInterface()
+        self.rq.flush(screen, erase=False)
 
 if __name__ == '__main__':
 

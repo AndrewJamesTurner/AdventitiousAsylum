@@ -30,7 +30,7 @@ class Level:
         # Calculate the player's jump impulse velocity
         # v**2 = u**2 + 2*a*s
         # v = 0 at the top of the jump
-        self.jump_v = -math.sqrt( 2 * self.gravity * l['jumpheight'] )
+        self.jump_v = -math.sqrt( 2 * self.gravity * l['jumpheight'] / BLOCKS_PER_M )
 
         self.surfdata = SurfData(self.width, self.height)
 
@@ -79,14 +79,15 @@ class Level:
         r += SCREEN_MARGIN
         b += SCREEN_MARGIN
         # Rly?
-        self.screenEntity = LevelEntity(l, t, 'screen', {'name':'screen','width':(r-l),'height':(b-t)})
+        self.screenEntity = LevelEntity(l, t, 'screen', {'name':'screen','width':(r-l),'height':(b-t)}, scale=1.0)
 
-    def isOnscreen(self, entity):
-        return collides(screenEntity, entity)
+    def isOffscreen(self, entity):
+        return not self.collides(self.screenEntity, entity)
 
     def screenRelative(self, x, y):
         sx = (x - self.screenEntity.centre) / (self.screenEntity.width  / 2)
         sy = (y - self.screenEntity.middle) / (self.screenEntity.height / 2)
+        #print("(%f,%f) --[%f,%f:%f,%f]-> (%f,%f)" % (x,y,self.screenEntity.left,self.screenEntity.top,self.screenEntity.right,self.screenEntity.bottom,sx,sy))
         return (sx, sy)
 
     # Update all of the entities
@@ -113,7 +114,8 @@ class Level:
                 speedtarget += self.playerspeed
             if le.go_l:
                 speedtarget -= self.playerspeed
-            if numpy.sign(speedtarget) != numpy.sign(le.vel_x):
+            sign_x = numpy.sign(le.vel_x)
+            if numpy.sign(speedtarget) != sign_x and sign_x != 0:
                 accel = decel
             speeddiff = speedtarget - le.vel_x
             if abs(speeddiff) < accel:
@@ -132,8 +134,8 @@ class Level:
                 le.vel_y += (self.gravity * dt)
 
             # Calculate delta movement
-            dx = le.vel_x * dt
-            dy = le.vel_y * dt
+            dx = le.vel_x * BLOCKS_PER_M * dt
+            dy = le.vel_y * BLOCKS_PER_M * dt
 
             # Do H movement
             if dx != 0:
@@ -185,6 +187,11 @@ class Level:
                 else:
                     le.vel_y = 0.0
                     le.vcontact = Level.CONTACT_FLOOR if (dy > 0) else Level.CONTACT_CEILING
+
+            # Do offscreen checks and cull from the level
+            if self.isOffscreen(le):
+                le.offscreen = 1
+                self.dropEntity(le)
 
     def draw(self, rq):
         for lo in self.levelObjects:

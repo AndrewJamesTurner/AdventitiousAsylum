@@ -9,6 +9,7 @@ class SharedValues:
     distance_through_level = 0.5
     player = None
     orderly = None
+    levelfile = 'betterLevel.json'
 
     def reset(self):
         pass

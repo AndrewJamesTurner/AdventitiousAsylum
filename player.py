@@ -17,11 +17,13 @@ class Player:
         for thing in json.load(open('entities.json'))["player"]:
             if thing["name"] == name:
 
-                self.anim = Animation(True,
+                anim = Animation(True,
                                       pygame.image.load('assets/characters/spedec-2/spedec-man-walk-2-sheet.png'), 180)
 
-                image_width = self.anim.get_current_frame().get_width()
-                image_height = self.anim.get_current_frame().get_height()
+                self.image = anim.get_current_frame()
+
+                image_width = self.image.get_width()
+                image_height = self.image.get_height()
 
                 self.desired_height = 250
                 ratio = self.desired_height / image_height

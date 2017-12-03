@@ -16,13 +16,18 @@ class MessageScene(MenuScene):
             self.application.change_scene(get_platformer_scene())
 
         self.next_y += 200
-        self.add_option("Escape!!!", new_game, 48)
+
+        self.font_size = 48
+
+        self.add_option("Escape!!!", new_game, self.font_size)
 
         messages = [
-'Escape from the asylum, or something...',
-]
+            "I'm sick of being cooped up in this asylum.",
+            "There's nothing wrong with me anyway.",
+            "I wonder if I can get outside?",
+        ]
 
-        message_font = pygame.font.Font("assets/Courgette-Regular.ttf", 30)
+        message_font = pygame.font.Font("assets/GloriaHallelujah.ttf", 36)
         self.message_images = []
         for message in messages:
             self.message_images.append(message_font.render(message, True, (255, 255, 255)))
@@ -42,7 +47,7 @@ class MessageScene(MenuScene):
         y_pos = 50
         for message_image in self.message_images:
             screen.blit(message_image, (80, y_pos))
-            y_pos += 30
+            y_pos += self.font_size
 
 if __name__ == '__main__':
     app = ezpygame.Application(title='The Game', resolution=(SCREEN_WIDTH, SCREEN_HEIGHT), update_rate=FPS)
