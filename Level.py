@@ -79,7 +79,7 @@ class Level:
         r += SCREEN_MARGIN
         b += SCREEN_MARGIN
         # Rly?
-        self.screenEntity = LevelEntity(l, t, 'screen', {'name':'screen','width':(r-l),'height':(b-t)})
+        self.screenEntity = LevelEntity(l, t, 'screen', {'name':'screen','width':(r-l),'height':(b-t)}, scale=1.0)
 
     def isOffscreen(self, entity):
         return not self.collides(self.screenEntity, entity)
@@ -87,6 +87,7 @@ class Level:
     def screenRelative(self, x, y):
         sx = (x - self.screenEntity.centre) / (self.screenEntity.width  / 2)
         sy = (y - self.screenEntity.middle) / (self.screenEntity.height / 2)
+        #print("(%f,%f) --[%f,%f:%f,%f]-> (%f,%f)" % (x,y,self.screenEntity.left,self.screenEntity.top,self.screenEntity.right,self.screenEntity.bottom,sx,sy))
         return (sx, sy)
 
     # Update all of the entities
