@@ -16,7 +16,7 @@ class MessageScene(MenuScene):
             self.application.change_scene(get_platformer_scene())
 
         self.next_y += 200
-        self.add_option("GO!!!!!!!!!!", new_game, 48)
+        self.add_option("Escape!!!", new_game, 48)
 
         messages = [
 'Escape from the asylum, or something...',

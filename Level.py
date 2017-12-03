@@ -8,6 +8,7 @@ from game import *
 from constants import *
 from LevelObject import *
 from SurfData import *
+from LevelEntity import *
 
 class Level:
     """
@@ -78,22 +79,29 @@ class Level:
         for le in self.levelEntities:
             # Apply inputs
             if le.vcontact == Level.CONTACT_FLOOR:
+                accel = PLAYER_ACCEL
+                decel = PLAYER_DECEL
                 if le.jump:
                     le.vel_y = self.jump_v
-                speedtarget = 0.0
-                if le.go_r:
-                    speedtarget += self.playerspeed
-                if le.go_l:
-                    speedtarget -= self.playerspeed
-                speeddiff = speedtarget - le.vel_x
-                if abs(speeddiff) < PLAYER_ACCEL:
-                    le.vel_x = speedtarget
-                else:
-                    le.vel_x += numpy.sign(speeddiff) * PLAYER_ACCEL
             else:
+                accel = PLAYER_ACCEL_AIR
+                decel = accel
                 if le.jump and le.hcontact != 0:
                     le.vel_y = 0.5 * self.jump_v
                     le.vel_x = self.jump_v * le.hcontact
+
+            speedtarget = 0.0
+            if le.go_r:
+                speedtarget += self.playerspeed
+            if le.go_l:
+                speedtarget -= self.playerspeed
+            if numpy.sign(speedtarget) != numpy.sign(le.vel_x):
+                accel = decel
+            speeddiff = speedtarget - le.vel_x
+            if abs(speeddiff) < accel:
+                le.vel_x = speedtarget
+            else:
+                le.vel_x += numpy.sign(speeddiff) * accel
 
             # Gravity
             if le.grab and self.surfdata.check(SurfData.MASK['climb'],

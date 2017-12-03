@@ -350,21 +350,21 @@ class BattleScene(GameScene):
 
                 self.player_selected_item = self.player_selected_item % len(self.player.items)
 
-                if event.key == pygame.K_RETURN:
+                if event.key == pygame.K_RETURN or event.key == pygame.K_SPACE:
                     self.state = player_attack_animation_state
 
         elif self.state == player_message_state:
 
             if event.type == pygame.KEYDOWN:
 
-                if event.key == pygame.K_RETURN:
+                if event.key == pygame.K_RETURN or event.key == pygame.K_SPACE:
                     self.state = enemy_move_select_state
 
         elif self.state == enemy_message_state:
 
             if event.type == pygame.KEYDOWN:
 
-                if event.key == pygame.K_RETURN:
+                if event.key == pygame.K_RETURN or event.key == pygame.K_SPACE:
                     self.state = player_move_select_state
 
 

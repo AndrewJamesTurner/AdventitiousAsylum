@@ -13,17 +13,17 @@ class GameOverScene(MenuScene):
         message_font = pygame.font.Font("assets/Courgette-Regular.ttf", 72)
         self.title_image = message_font.render("Game Over", True, (255, 255, 255))
 
-        death_reason = 'You died!'
+        death_reason = 'You died! \nTODO: replace this \nwith resetting the level'
 
         death_reason_font = pygame.font.Font("assets/TitilliumWeb-Regular.ttf", 60)
         self.death_reason_image = death_reason_font.render(death_reason, True, (255, 255, 255))
 
-        def new_game():
-            get_shared_values().reset()
-            self.application.change_scene(get_platformer_scene())
+        # def new_game():
+        #     get_shared_values().reset()
+        #     self.application.change_scene(get_platformer_scene())
 
         self.next_y += 130
-        self.add_option("Restart Game", new_game, 48)
+        # self.add_option("Restart Game", new_game, 48)
         self.add_option("Quit", sys.exit, 48)
 
         self.scull_crossbones = pygame.image.load("assets/crossbones.png").convert()
