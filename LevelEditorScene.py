@@ -298,7 +298,7 @@ class LevelEditor(GameScene):
         if event.type == pygame.MOUSEBUTTONDOWN:
             mouse_x, mouse_y = self.backwardMouseTransform(event.pos)
             # See if we are clicking on a game element
-            for level_object in sorted(self.level_objects, key=lambda lo: lo.z_index):
+            for level_object in sorted(self.level_objects, key=lambda lo: -lo.z_index):
                 if level_object.draw_position[0] < mouse_x < level_object.draw_position[0] + level_object.pattern.image.get_width() \
                         and level_object.draw_position[1] < mouse_y < level_object.draw_position[1] + level_object.pattern.image.get_height():
                     if event.button == 1:
@@ -311,6 +311,7 @@ class LevelEditor(GameScene):
                     elif event.button == 3:
                         # Delete element
                         self.level_objects.remove(level_object)
+                    return  # Only act on the first object
             for spawner_object in self.spawner_objects:
                 if spawner_object.draw_position[0] < mouse_x < spawner_object.draw_position[0] + spawner_object.image.get_width() \
                         and spawner_object.draw_position[1] < mouse_y < spawner_object.draw_position[1] + spawner_object.image.get_height():
