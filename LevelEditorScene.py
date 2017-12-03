@@ -92,6 +92,12 @@ class LevelEditor(GameScene):
         self.z_box = thorpy.Inserter.make(name='Z index: ', value='')
         self.object_details_area = thorpy.Box.make([object_details_title, self.top_box, self.left_box, self.z_box])
 
+        def change_z_index(event):
+            self.selected_object.z_index = str_to_int(event.value)
+        z_index_reaction = thorpy.Reaction(reacts_to=thorpy.constants.THORPY_EVENT, reac_func=change_z_index,
+                                               event_args={'id': thorpy.constants.EVENT_INSERT, 'el': self.z_box})
+        self.z_box.add_reaction(z_index_reaction)
+
         self.details_area = thorpy.Box.make([self.level_details_area, self.pattern_details_area, self.object_details_area],
                                             size=(DETAILS_AREA_WIDTH, SCREEN_HEIGHT))
         self.details_area.set_main_color((255, 220, 255, 180))
@@ -279,7 +285,7 @@ class LevelEditor(GameScene):
         if event.type == pygame.MOUSEBUTTONDOWN:
             mouse_x, mouse_y = self.backwardMouseTransform(event.pos)
             # See if we are clicking on a game element
-            for level_object in self.level_objects:
+            for level_object in sorted(self.level_objects, key=lambda lo: lo.z_index):
                 if level_object.draw_position[0] < mouse_x < level_object.draw_position[0] + level_object.pattern.image.get_width() \
                         and level_object.draw_position[1] < mouse_y < level_object.draw_position[1] + level_object.pattern.image.get_height():
                     if event.button == 1:
@@ -315,7 +321,7 @@ class LevelEditor(GameScene):
 
         elif event.type == pygame.MOUSEBUTTONUP:
             if event.button == 1:
-                self.update_object_details_area(self.dragging_object)
+                self.update_object_details_area(self.selected_object)
                 self.dragging_object = None
                 self.dragging_spawner = None
 
