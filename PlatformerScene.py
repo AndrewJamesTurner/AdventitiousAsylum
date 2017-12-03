@@ -14,19 +14,19 @@ from BattleScene import draw_health_bar
 class PlatformerScene(GameScene):
 
     def __init__(self):
-
         self.rq = RenderQueue()
         LevelObjectPattern.init()
         Spawner.init()
+        self.itemgen = ItemGenerator()
 
         get_shared_values().player = Player("spedecWoman")
 
-        self.level = Level.load('mainLevel.json')
+        self.resetLevel()
+
+    def resetLevel(self):
+        self.level = Level.load(get_shared_values().levelfile)
         self.spedec = SpedEcController(self.level.getSpedEcEntity())
         self.aimCamera(self.spedec.le.centre, self.spedec.le.middle)
-
-        self.itemgen = ItemGenerator()
-
 
     def on_enter(self, previous_scene):
         super(PlatformerScene, self).on_enter(previous_scene)
@@ -48,12 +48,8 @@ class PlatformerScene(GameScene):
         # if self.spedec.??x position?? > ??level width??:
         #     self.application.change_scene(get_win_scene())
         self.handle_collisions()
-
-        #print(self.level.collidingEntities(self.spedec.le))
         self.level.setScreenRect(self.camera_left, self.camera_top, self.camera_right, self.camera_bottom)
-
         self.level.update(dt / 1000.0)
-
         self.spedec.flushInputs()
 
         # If we do a death animation, we might not adjust this

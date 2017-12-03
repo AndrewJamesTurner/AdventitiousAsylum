@@ -81,8 +81,8 @@ class Level:
         # Rly?
         self.screenEntity = LevelEntity(l, t, 'screen', {'name':'screen','width':(r-l),'height':(b-t)})
 
-    def isOnscreen(self, entity):
-        return collides(screenEntity, entity)
+    def isOffscreen(self, entity):
+        return not self.collides(self.screenEntity, entity)
 
     def screenRelative(self, x, y):
         sx = (x - self.screenEntity.centre) / (self.screenEntity.width  / 2)
@@ -186,6 +186,11 @@ class Level:
                 else:
                     le.vel_y = 0.0
                     le.vcontact = Level.CONTACT_FLOOR if (dy > 0) else Level.CONTACT_CEILING
+
+            # Do offscreen checks and cull from the level
+            if self.isOffscreen(le):
+                le.offscreen = 1
+                self.dropEntity(le)
 
     def draw(self, rq):
         for lo in self.levelObjects:
