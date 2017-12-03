@@ -73,14 +73,14 @@ class SpedEcController:
     def setInputs(self, keys):
         l = self.le
         l.jump  = keys[pygame.K_SPACE]
-        l.go_u  = keys[pygame.K_UP]
-        l.go_d  = keys[pygame.K_DOWN]
+        l.go_u  = keys[pygame.K_UP] or keys[pygame.K_w]
+        l.go_d  = keys[pygame.K_DOWN] or keys[pygame.K_s]
         l.grab  = keys[pygame.K_LSHIFT]
-        l.go_l  = keys[pygame.K_LEFT]
-        l.go_r  = keys[pygame.K_RIGHT]
+        l.go_l  = keys[pygame.K_LEFT] or keys[pygame.K_a]
+        l.go_r  = keys[pygame.K_RIGHT] or keys[pygame.K_d]
 
     def onKeydown(self, key):
-        if key == pygame.K_RSHIFT:
+        if key == pygame.K_RSHIFT or  key == pygame.K_TAB:
             self.get_item = 1
 
     def flushInputs(self):
