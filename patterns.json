@@ -169,6 +169,17 @@
     }
   },
 
+  "ceiling":{
+    "image":"structures/ceiling.png",
+    "width": 4,
+    "height": 1,
+    "surfdata":{
+      "block" :[
+        "####"
+      ]
+    }
+  },
+
   "grass":{
     "image":"structures/grass.png",
     "width": 4,
