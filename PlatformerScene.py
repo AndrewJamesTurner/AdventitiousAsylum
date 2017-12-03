@@ -9,6 +9,8 @@ from sharedValues import get_shared_values
 from player import Player
 from orderly import Orderly
 
+from BattleScene import draw_health_bar
+
 class PlatformerScene(GameScene):
 
     def __init__(self):
@@ -119,6 +121,12 @@ class PlatformerScene(GameScene):
         #self.level.surfdata.debug_draw(self.rq)
         self.level.draw(self.rq)
         self.rq.flush(screen, camera_position = self.cameraPosition())
+
+        healthbar_margin = 8
+        healthPercent = get_shared_values().player.health / get_shared_values().player.max_health
+        draw_health_bar(self.rq, healthbar_margin, healthbar_margin, healthPercent,
+                        SCREEN_WIDTH / 2 - 2*healthbar_margin, 16)
+        self.rq.flush(screen, erase=False)
 
 if __name__ == '__main__':
 

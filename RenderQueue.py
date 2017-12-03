@@ -17,7 +17,7 @@ class RenderQueue:
     def add(self, location, image, scale=(1, 1), z_index=1):
         self.queue.append(RenderItem(location, image.convert_alpha(), scale, z_index))
 
-    def flush(self, screen, scale=(1, 1), camera_position=(0, 0), background=(255, 255, 255)):
+    def flush(self, screen, scale=(1, 1), camera_position=(0, 0), background=(255, 255, 255), erase=True):
 
         # Adjust item locations
         for item in self.queue:
@@ -34,7 +34,8 @@ class RenderQueue:
         # Sort by z depth
         self.queue.sort(key=lambda x: x.z)
 
-        screen.fill(background)
+        if erase:
+            screen.fill(background)
         for item in self.queue:
             if item.scale is not (1, 1):  # Scale if necessary
                 item.image = pygame.transform.scale(item.image, ( int(item.image.get_width() * item.scale[0] * scale[0]), int(item.image.get_height() * item.scale[1] * scale[1])))
