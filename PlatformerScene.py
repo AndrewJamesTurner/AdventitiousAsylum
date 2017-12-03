@@ -27,6 +27,7 @@ class PlatformerScene(GameScene):
         self.level = Level.load(get_shared_values().levelfile)
         self.spedec = SpedEcController(self.level.getSpedEcEntity())
         self.aimCamera(self.spedec.le.centre, self.spedec.le.middle)
+        self.death = 0
 
     def on_enter(self, previous_scene):
         super(PlatformerScene, self).on_enter(previous_scene)
@@ -50,10 +51,12 @@ class PlatformerScene(GameScene):
         self.handle_collisions()
         self.level.setScreenRect(self.camera_left, self.camera_top, self.camera_right, self.camera_bottom)
         self.level.update(dt / 1000.0)
-        self.spedec.flushInputs()
+        self.spedec.afterUpdate()
 
-        # If we do a death animation, we might not adjust this
-        self.aimCamera(self.spedec.le.centre, self.spedec.le.middle)
+        if not self.spedec.dead:
+            self.aimCamera(self.spedec.le.centre, self.spedec.le.middle)
+        else:
+            self.resetLevel()
 
     def handle_collisions(self):
         """
