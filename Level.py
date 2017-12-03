@@ -241,7 +241,7 @@ class Spawner:
     def spawn(self):
         edefs = Spawner.entities[self.entitytype]
         if self.entitytype == 'player':
-            entitydata = [ d for d in edefs if d['name'] == SharedValues.spedecentity ][0]
+            entitydata = [ d for d in edefs if d['name'] == get_shared_values().player.name ][0]
         else:
             entitydata = random.choice(edefs)
         width  = entitydata['width']
