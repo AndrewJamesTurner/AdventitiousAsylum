@@ -68,6 +68,7 @@ class SpedEcController:
     """
     def __init__(self, entity):
         self.le = entity
+        self.flushInputs()
 
     def setInputs(self, keys):
         l = self.le
@@ -77,3 +78,10 @@ class SpedEcController:
         l.grab  = keys[pygame.K_LSHIFT]
         l.go_l  = keys[pygame.K_LEFT]
         l.go_r  = keys[pygame.K_RIGHT]
+
+    def onKeydown(self, key):
+        if key == pygame.K_RSHIFT:
+            self.get_item = 1
+
+    def flushInputs(self):
+        self.get_item = 0
