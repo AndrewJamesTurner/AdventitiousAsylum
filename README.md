@@ -36,7 +36,8 @@ Run the level editor
 
 Notes on using the level editor:
 
-* Zoom in and out using the mouse wheel
+* Zoom in and out using Ctrl + mouse wheel
+* Change the z-index of level objects using the mouse wheel (without Ctrl)
 * Pan using the arrow keys
 * Can't add new patterns using the level editor (or change existing patterns)
     * Add / modify patterns by manually editing `patterns.json`
