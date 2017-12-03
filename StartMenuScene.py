@@ -18,11 +18,12 @@ class StartMenuScene(MenuScene):
         self.add_option("New Game", new_game, 48)
         self.add_option("Quit", sys.exit, 48)
 
-        title_font = pygame.font.Font("assets/Courgette-Regular.ttf", 56)
+        title_font = pygame.font.Font("assets/Courgette-Regular.ttf", 72)
         self.title_image = title_font.render("Adventitious Asylum", True, (255, 255, 255))
 
-        self.backdrop = pygame.image.load("assets/backdrop1.jpg").convert()
-        scale_down = 1
+        # self.backdrop = pygame.image.load("assets/hallway.jpg").convert()
+        self.backdrop = pygame.image.load("assets/cough.jpg").convert()
+        scale_down = 0.666666
         backdrop_rect = self.backdrop.get_rect()
         self.backdrop = pygame.transform.smoothscale(self.backdrop, (int(backdrop_rect.width * scale_down), int(backdrop_rect.height * scale_down)))
 
@@ -33,7 +34,7 @@ class StartMenuScene(MenuScene):
 
         self.draw_menu_options(screen)
 
-        screen.blit(self.title_image, (SCREEN_WIDTH / 2 - self.title_image.get_rect().width / 2, 100))
+        screen.blit(self.title_image, (SCREEN_WIDTH / 2 - self.title_image.get_rect().width / 2, 50))
 
 if __name__ == '__main__':
     app = ezpygame.Application(title='The Game', resolution=(SCREEN_WIDTH, SCREEN_HEIGHT), update_rate=FPS)

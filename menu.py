@@ -26,8 +26,8 @@ class MenuScene(ezpygame.Scene):
         self.next_y = 0.4 * SCREEN_HEIGHT
         self.selected_idx = 0
 
-        self.left_indicator_icon = pygame.image.load("assets/spaceship-side.png")
-        scale_down = 0.4
+        self.left_indicator_icon = pygame.image.load("assets/syringe.png")
+        scale_down = 0.07
         indicator_rect = self.left_indicator_icon.get_rect()
         self.left_indicator_icon = pygame.transform.smoothscale(self.left_indicator_icon, (int(indicator_rect.width * scale_down), int(indicator_rect.height * scale_down)))
 
