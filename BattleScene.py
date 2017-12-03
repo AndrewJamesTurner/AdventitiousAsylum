@@ -1,4 +1,5 @@
-from game import pygame, SCREEN_WIDTH, SCREEN_HEIGHT, ezpygame, FPS, get_shared_values
+from game import pygame, SCREEN_WIDTH, SCREEN_HEIGHT, ezpygame, FPS
+from sharedValues import get_shared_values
 from GameScene import GameScene
 from RenderQueue import RenderQueue
 from movement_path import MovementPath
@@ -296,7 +297,7 @@ class BattleScene(GameScene):
 
                     attack_type = self.enemy.items[self.enemy_selected_item].type
                     defence_type = self.player.type
-                    damage = self.player.items[self.enemy_selected_item].damage
+                    damage = self.enemy.items[self.enemy_selected_item].damage
                     damage = damage * get_multiplier(attack_type, defence_type)
 
                     self.player.health -= damage

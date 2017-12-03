@@ -6,8 +6,8 @@ import pygame
 
 from constants import *
 from items import ItemGenerator, none_type
-from player import Player
-from orderly import Orderly
+# from player import Player
+# from orderly import Orderly
 
 os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (50, 50)
 
@@ -85,27 +85,26 @@ def get_win_scene():
         win_scene = WinScene()
     return win_scene
 
-# Values shared by every scene
-shared_values = None
+# # Values shared by every scene
+# shared_values = None
 
 
-class SharedValues:
+# class SharedValues:
 
-    player = Player("spedecWoman")
-    orderly = Orderly("doctor")
-    distance_through_level = 0.5
+#     distance_through_level = 0.5
+#     player = Player("spedecWoman")
+#     orderly = Orderly("doctor")
 
-    def reset(self):
+#     def reset(self):
+#         pass
 
-        pass
 
+# def get_shared_values():
 
-def get_shared_values():
-
-    global shared_values
-    if shared_values is None:
-        shared_values = SharedValues()
-    return shared_values
+#     global shared_values
+#     if shared_values is None:
+#         shared_values = SharedValues()
+#     return shared_values
 
 
 if __name__ == '__main__':

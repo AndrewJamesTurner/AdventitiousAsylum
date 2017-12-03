@@ -5,17 +5,26 @@ from GameScene import GameScene
 from RenderQueue import RenderQueue
 from LevelObject import *
 from Level import *
+from sharedValues import get_shared_values
+from player import Player
+from orderly import Orderly
+
 
 class PlatformerScene(GameScene):
+
     def __init__(self):
+
         self.rq = RenderQueue()
         LevelObjectPattern.init()
         Spawner.init()
+
+        get_shared_values().player = Player("spedecWoman")
 
         self.level = Level.load('test.json')
         self.spedec = SpedEcController(self.level.playerentity)
         self.level.addEntity(self.spedec.le)
         Spawner.setPlayerEntity(self.spedec.le)
+
 
     def on_enter(self, previous_scene):
         super(PlatformerScene, self).on_enter(previous_scene)
@@ -24,7 +33,7 @@ class PlatformerScene(GameScene):
         keys = pygame.key.get_pressed()
 
         # Go back to last lamppost if we run out of health
-        if get_shared_values().health <= 0:
+        if get_shared_values().player.health <= 0:
             # TODO: reset this scene to the last lamppost
             self.application.change_scene(get_game_over_scene())
 
@@ -50,6 +59,7 @@ class PlatformerScene(GameScene):
         # TODO: Only start a battle if entity is an orderly
         # if entity.??? == 'orderly':
         # TODO: Set the type of orderly in the shared values, so the battle scene can show the correct image
+        get_shared_values().orderly = Orderly("doctor")
         # get_shared_values().enemy = ???
         self.level.levelEntities.remove(entity)  # safe to remove here, because if we lose the battle we won't be staying here
         self.application.change_scene(get_battle_scene())
@@ -70,5 +80,6 @@ class PlatformerScene(GameScene):
         self.rq.flush(screen, camera_position = self.cameraPosition())
 
 if __name__ == '__main__':
+
     app = ezpygame.Application(title='The Game', resolution=(SCREEN_WIDTH, SCREEN_HEIGHT), update_rate=FPS)
     app.run(PlatformerScene())

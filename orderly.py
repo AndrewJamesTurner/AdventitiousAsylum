@@ -4,12 +4,18 @@ import json
 # from random import shuffle
 # import random
 from items import ItemGenerator
-from game import pygame
+import pygame
+import random
+from sharedValues import get_shared_values
+
+# sanity 0 - 10
 
 
 class Orderly:
 
     def __init__(self, name):
+
+        sanity = round(10 * get_shared_values().distance_through_level)
 
         _json = json.load(open('entities.json'))
 
@@ -21,13 +27,11 @@ class Orderly:
         self.health = 1000
         self.max_health = 1000
         self.type = orderly_json["type"]
-        self.items = [ItemGenerator().getItemByName("pillow")]
-        # self.image = orderly_json["image"]
 
         self.image_path = orderly_json["image"]
         self.image = pygame.image.load("assets/" + self.image_path)
 
-        image_width = self.image.get_width()
+        # image_width = self.image.get_width()
         image_height = self.image.get_height()
 
         desired_height = 300
@@ -36,6 +40,21 @@ class Orderly:
         self.image_width_scaler = ratio
         self.image_height_scaler = ratio
 
+        approperate_items = []
+        for item in _json["weapon"]:
+            if item["sanity"] > (sanity - 2) and item["sanity"] < (sanity + 2):
+                approperate_items.append(item["name"])
+
+        self.items = []
+
+        if len(approperate_items) < 4:
+            for approperate_item in approperate_items:
+                self.items.append(ItemGenerator().getItemByName(approperate_item))
+
+        else:
+            random.shuffle(approperate_items)
+            for approperate_item in approperate_items[:4]:
+                self.items.append(ItemGenerator().getItemByName(approperate_item))
 
 # class OrderlyGenerator:
 

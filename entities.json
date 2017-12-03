@@ -68,7 +68,7 @@
 			"width": 0.5,
 			"height": 0.5,
 			"damage": 150,
-			"sanity": 2,
+			"sanity": 3,
 			"type": "physical"
 		},
 		{
@@ -122,7 +122,7 @@
 			"width": 0.5,
 			"height": 0.5,
 			"damage": 105,
-			"sanity": 5,
+			"sanity": 7,
 			"type": "mental"
 		},
 		{
