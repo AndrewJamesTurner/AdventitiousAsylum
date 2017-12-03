@@ -41,3 +41,11 @@ class Player:
             return self.items.pop(0)
         else:
             return None
+
+    def adjust_health(self, change):
+        self.health += change
+        if self.health > self.max_health:
+            self.health = self.max_health
+        if self.health < 0:
+            self.health = 0
+        return self.health > 0

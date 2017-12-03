@@ -151,6 +151,7 @@ class LevelEditor(GameScene):
                 entity_type='',
                 spawner_type='',
                 rate=0.3,
+                filter=''
             )
             self.spawner_objects.append(spawner_object)
 

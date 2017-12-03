@@ -8,8 +8,8 @@ class LevelEntity:
     """
     def __init__(self, x, y, archetype, entityDefinition):
         self.archetype = archetype
-        self.entityname = entityDefinition['name']
         e = entityDefinition
+        self.definition = e
         w = float( e['width'] )
         h = float( e['height'] )
         self.top = float(y)
