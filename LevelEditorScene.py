@@ -205,6 +205,18 @@ class LevelEditor(GameScene):
         self.menu = thorpy.Menu([self.game_area, self.patterns_area, self.details_area, self.spawners_area])
 
     def load_level(self):
+
+        self.level_objects = []
+        self.spawner_objects = []
+        self.dragging_object = None
+        self.dragging_spawner = None
+        self.selected_object = None
+        self.selected_spawner = None
+        self.drag_offset = None
+        self.zoom = 1.0
+        self.camera_x = 0
+        self.camera_y = 0
+
         file_name = self.level_name_box.get_value()
         if not file_name.endswith('.json'):
             file_name += '.json'
