@@ -2,6 +2,7 @@ import pygame
 import random
 from random import shuffle
 import json
+from constants import *
 # health max 1000
 # sanity max 10, min 0
 
@@ -10,6 +11,16 @@ mental_type = "mental"
 chemical_type = "chemical"
 none_type = "none"
 
+def thumbnail(image):
+    w = float(image.get_width())
+    h = float(image.get_height())
+    if(w > h):
+        h = THUMB_SIZE * (h / w)
+        w = THUMB_SIZE
+    else:
+        w = THUMB_SIZE * (w / h)
+        h = THUMB_SIZE
+    return pygame.transform.smoothscale(image, (int(w),int(h)))
 
 class Item:
 
@@ -17,6 +28,7 @@ class Item:
 
         self.name = name
         self.image = pygame.image.load("assets/" + image)
+        self.thumb = thumbnail(self.image)
         self.damage = damage
         self.sanity = sanity
         self.type = _type
