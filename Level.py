@@ -134,59 +134,58 @@ class Level:
                 le.vel_y += (self.gravity * dt)
 
             # Calculate delta movement
-            dx = le.vel_x * BLOCKS_PER_M * dt
-            dy = le.vel_y * BLOCKS_PER_M * dt
+            vx = le.vel_x * BLOCKS_PER_M
+            vy = le.vel_y * BLOCKS_PER_M
+            dx = vx * dt
+            dy = vy * dt
 
-            # Do H movement
-            if dx != 0:
-                if(dx > 0):
-                    xc = le.right
-                    xp = xc + dx
-                    transition = ( 1 if math.ceil(xc) == math.floor(xp) else 0 )
+            # Check which gridlines will be crossed
+            def findCrossingTimes(edge0, edge1, ds, vs, axis):
+                if vs == 0:
+                    return []
                 else:
-                    xc = le.left
-                    xp = xc + dx
-                    transition = ( 1 if math.floor(xc) == math.ceil(xp) else 0 )
+                    if vs > 0:
+                        s0 = edge1
+                        sr = range(math.ceil(s0), math.ceil(s0 + ds))
+                    else:
+                        s0 = edge0
+                        sr = range(math.floor(s0 + ds), math.floor(s0))
+                    return [ ((s - s0) / vs, s, axis) for s in sr ]
+            dtx = findCrossingTimes(le.left, le.right, dx, vx, 0)
+            dty = findCrossingTimes(le.top, le.bottom, dy, vy, 1)
 
-                move = 1
-                if transition:
+            dts = sorted(dtx + dty, key=lambda e: e[1])
+
+            stop = [0, 0]
+            phys_margin = 0.2
+            for ddt,s,axis in dts:
+                xmarg = numpy.sign(dx) * phys_margin
+                ymarg = numpy.sign(dy) * phys_margin
+                le.move(ddt * vx - xmarg, ddt * vy - ymarg)
+                if stop[axis]:
+                    continue
+                if axis == 0:
                     if self.surfdata.check(SurfData.MASK['block'],
-                                            xp, math.floor(le.top),
-                                            xp, math.ceil(le.bottom) - 1):
-                        move = 0
-
-                if move:
-                    le.move(dx, 0)
-                    le.hcontact = 0
-                else:
-                    le.vel_x = 0.0
-                    le.hcontact = Level.CONTACT_RIGHT if (dx > 0) else Level.CONTACT_LEFT
-
-            # Do V movement
-            if dy != 0:
-                if(dy > 0):
-                    yc = le.bottom
-                    yp = yc + dy
-                    transition = ( 1 if math.ceil(yc) == math.floor(yp) else 0 )
-                else:
-                    yc = le.top
-                    yp = yc + dy
-                    transition = ( 1 if math.floor(yc) == math.ceil(yp) else 0 )
-
-                move = 1
-                if transition:
+                                            s, math.floor(le.top),
+                                            s, math.ceil(le.bottom) - 1):
+                        vx = 0
+                        stop[0] = 1
+                        le.hcontact = Level.CONTACT_RIGHT if (dx > 0) else Level.CONTACT_LEFT
+                if axis == 1:
                     surfmask = SurfData.MASK['block']
                     if (dy > 0) and not le.go_d:
                         surfmask |= SurfData.MASK['stand']
-                    surfmask |= ( 0x3 if (dy > 0) and not le.go_d else 0x1 )
-                    if self.surfdata.check(surfmask, math.floor(le.left), yp, math.ceil(le.right) - 1, yp):
-                        move = 0
-                if move:
-                    le.move(0, dy)
-                    le.vcontact = 0
-                else:
-                    le.vel_y = 0.0
-                    le.vcontact = Level.CONTACT_FLOOR if (dy > 0) else Level.CONTACT_CEILING
+                    if self.surfdata.check(surfmask,
+                                            math.floor(le.left), s,
+                                            math.ceil(le.right) - 1, s):
+                        vy = 0
+                        stop[1] = 1
+                        le.vcontact = Level.CONTACT_FLOOR if (dy > 0) else Level.CONTACT_CEILING
+
+            if stop[0]:
+                le.vel_x = 0.0
+            if stop[1]:
+                le.vel_y = 0.0
 
             # Do offscreen checks and cull from the level
             if self.isOffscreen(le):
