@@ -16,7 +16,7 @@ class Item:
     def __init__(self, name, image, damage, sanity, _type):
 
         self.name = name
-        self.image = pygame.image.load(image)
+        self.image = pygame.image.load("assets/" + image)
         self.damage = damage
         self.sanity = sanity
         self.type = _type
