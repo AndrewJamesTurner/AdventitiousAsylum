@@ -33,7 +33,7 @@
 			"height": 2,
 			"type": "chemical",
 			"health": 500
-		}
+		},
 		{
 			"name": "doctor_man",
 			"image": "characters/doctor_man.png",
@@ -41,7 +41,7 @@
 			"height": 1.8,
 			"type": "chemical",
 			"health": 100
-		}
+		},
 		{
 			"name": "doctor_woman",
 			"image": "characters/doctor_woman.png",
@@ -49,7 +49,7 @@
 			"height": 2,
 			"type": "chemical",
 			"health": 100
-		}
+		},
 		{
 			"name": "astronaut",
 			"image": "characters/astronaut_small2.png",
@@ -231,7 +231,7 @@
 			"image": "items/health/medicine.png",
 			"width": 0.5,
 			"height": 0.720,
-			"amount": 100,
+			"amount": 100
 		}
 	]
 }
