@@ -25,8 +25,6 @@ class PlatformerScene(GameScene):
         self.spedec = SpedEcController(self.level.getSpedEcEntity())
         self.aimCamera(self.spedec.le.centre, self.spedec.le.middle)
 
-        self.level.addEntity(self.spedec.le)
-
         self.itemgen = ItemGenerator()
 
 

@@ -9,7 +9,7 @@ BLOCK_SIZE = 32
 GRAVITY = 20.0
 
 # Pixels per meter, converting between box2d world and pygame screen
-PPM = 20.0
+BLOCKS_PER_M = 2.0
 
 # Frames per second, for rendering and physics
 FPS = 60
@@ -36,7 +36,7 @@ yellow = 255, 255, 0, 0
 grey = 160, 160, 160, 0
 green = 0, 255, 0, 0
 
-PLAYER_ACCEL = 0.2
+PLAYER_ACCEL = 0.15
 PLAYER_DECEL = 1.0
 PLAYER_ACCEL_AIR = 0.1
 
