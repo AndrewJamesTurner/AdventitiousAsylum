@@ -10,8 +10,8 @@ class LevelEntity:
         self.archetype = archetype
         e = entityDefinition
         self.definition = e
-        w = float( e['width'] )
-        h = float( e['height'] )
+        w = float( e['width']  * BLOCKS_PER_M )
+        h = float( e['height'] * BLOCKS_PER_M )
         self.top = float(y)
         self.left = float(x)
         self.width = w
@@ -22,6 +22,7 @@ class LevelEntity:
         # Results of physics stuff - usable on the next frame
         self.hcontact = 0
         self.vcontact = 0
+        self.offscreen = 0
 
         # Input actions
         self.go_u = 0
