@@ -6,7 +6,7 @@ SCREEN_HEIGHT = 600
 BLOCK_SIZE = 32
 
 # Default gravity
-GRAVITY = 20.0
+GRAVITY = 10.0
 
 # Pixels per meter, converting between box2d world and pygame screen
 BLOCKS_PER_M = 2.0

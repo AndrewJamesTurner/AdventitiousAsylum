@@ -135,7 +135,7 @@ class Level:
             else:
                 le.vel_y += (self.gravity * dt)
 
-            # Calculate delta movement
+            # Calculate delta movement: convert to blocks NOW
             vx = le.vel_x * BLOCKS_PER_M
             vy = le.vel_y * BLOCKS_PER_M
             dx = vx * dt
@@ -280,8 +280,8 @@ class Spawner:
             entitydata = [ d for d in edefs if d['name'] == get_shared_values().player.name ][0]
         else:
             entitydata = random.choice(edefs)
-        width  = entitydata['width']
-        height = entitydata['height']
+        width  = entitydata['width']  * BLOCKS_PER_M
+        height = entitydata['height'] * BLOCKS_PER_M
         # Spawn above the bottom of the current block
         b = self.y + 0.99
         m = self.x + 0.5
