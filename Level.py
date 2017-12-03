@@ -8,6 +8,7 @@ from game import *
 from constants import *
 from LevelObject import *
 from SurfData import *
+from LevelEntity import *
 
 class Level:
     """
