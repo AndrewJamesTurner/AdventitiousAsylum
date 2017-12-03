@@ -97,6 +97,8 @@ class SharedValues:
 
     items = ItemGenerator().getItems(4)
 
+    spedecentity = 'spedecWoman' # Which entity do we use for the player
+
     health = 1000
     max_health = health
     enemy = None

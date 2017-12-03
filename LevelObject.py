@@ -133,7 +133,7 @@ class LevelEntity:
     def middle(self):
         return self.top + 0.5 * self.height
 
-class SpecEcController:
+class SpedEcController:
     """
     The player object (SPAREDESK)
     """

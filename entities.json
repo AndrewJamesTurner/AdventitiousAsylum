@@ -4,13 +4,13 @@
 
 		{
 			"name": "spedecWoman",
-			"image": "assets/characters/spedec.png",
+			"image": "characters/spedec.png",
 			"width": 0.823,
 			"height": 1.8
 		},
 		{
 			"name": "spedecMan",
-			"image": "assets/characters/man-spedec.png",
+			"image": "characters/man-spedec.png",
 			"width": 0.566,
 			"height": 1.8
 		}
@@ -20,14 +20,14 @@
 
 		{
 			"name": "monster",
-			"image": "assets/characters/monster.png",
+			"image": "characters/monster.png",
 			"width": 2.239,
 			"height": 2,
 			"type": "physical"
 		},
 		{
 			"name": "doctor",
-			"image": "assets/characters/doctor.png",
+			"image": "characters/doctor.png",
 			"width": 1.80,
 			"height": 2,
 			"type": "chemical"
@@ -37,7 +37,7 @@
 	"weapon": [
 		{
 			"name": "pillow",
-			"image": "assets/items/weapons/pillow.png",
+			"image": "items/weapons/pillow.png",
 			"width": 0.5,
 			"height": 0.5,
 			"damage": 7,
@@ -46,7 +46,7 @@
 		},
 		{
 			"name": "spaceship",
-			"image": "assets/items/weapons/spaceship-side.png",
+			"image": "items/weapons/spaceship-side.png",
 			"width": 0.5,
 			"height": 0.5,
 			"damage": 300,
@@ -55,7 +55,7 @@
 		},
 		{
 			"name": "tugboat",
-			"image": "assets/items/weapons/tugboat.png",
+			"image": "items/weapons/tugboat.png",
 			"width": 0.5,
 			"height": 0.5,
 			"damage": 100,
@@ -64,7 +64,7 @@
 		},
 		{
 			"name": "elephant",
-			"image": "assets/items/weapons/elephant.png",
+			"image": "items/weapons/elephant.png",
 			"width": 0.5,
 			"height": 0.5,
 			"damage": 150,
@@ -73,7 +73,7 @@
 		},
 		{
 			"name": "bat",
-			"image": "assets/items/weapons/bat.png",
+			"image": "items/weapons/bat.png",
 			"width": 0.5,
 			"height": 0.5,
 			"damage": 50,
@@ -82,7 +82,7 @@
 		},
 		{
 			"name": "filing cabinet",
-			"image": "assets/items/weapons/filing-cabinet.png",
+			"image": "items/weapons/filing-cabinet.png",
 			"width": 0.5,
 			"height": 0.5,
 			"damage": 70,
@@ -91,7 +91,7 @@
 		},
 		{
 			"name": "unicorn",
-			"image": "assets/items/weapons/unicorn.png",
+			"image": "items/weapons/unicorn.png",
 			"width": 0.5,
 			"height": 0.5,
 			"damage": 250,
@@ -100,7 +100,7 @@
 		},
 		{
 			"name": "brick",
-			"image": "assets/items/weapons/brick.png",
+			"image": "items/weapons/brick.png",
 			"width": 0.5,
 			"height": 0.423,
 			"damage": 40,
@@ -109,7 +109,7 @@
 		},
 		{
 			"name": "syringe",
-			"image": "assets/items/weapons/syringe.png",
+			"image": "items/weapons/syringe.png",
 			"width": 0.5,
 			"height": 0.5,
 			"damage": 90,
@@ -118,7 +118,7 @@
 		},
 		{
 			"name": "goldfish",
-			"image": "assets/items/weapons/goldfish.png",
+			"image": "items/weapons/goldfish.png",
 			"width": 0.5,
 			"height": 0.5,
 			"damage": 105,
@@ -127,7 +127,7 @@
 		},
 		{
 			"name": "small moon",
-			"image": "assets/items/weapons/small-moon.png",
+			"image": "items/weapons/small-moon.png",
 			"width": 0.5,
 			"height": 0.5,
 			"damage": 55,
@@ -136,7 +136,7 @@
 		},
 		{
 			"name": "sheep with a staple gun",
-			"image": "assets/items/weapons/sheep-with-staple-gun.png",
+			"image": "items/weapons/sheep-with-staple-gun.png",
 			"width": 0.5,
 			"height": 0.5,
 			"damage": 109,
@@ -145,7 +145,7 @@
 		},
 		{
 			"name": "javelin",
-			"image": "assets/items/weapons/javelin.png",
+			"image": "items/weapons/javelin.png",
 			"width": 0.5,
 			"height": 0.5,
 			"damage": 76,
@@ -154,7 +154,7 @@
 		},
 		{
 			"name": "paperclip",
-			"image": "assets/items/weapons/paperclip.png",
+			"image": "items/weapons/paperclip.png",
 			"width": 0.5,
 			"height": 0.5,
 			"damage": 50,
@@ -163,7 +163,7 @@
 		},
 		{
 			"name": "trout",
-			"image": "assets/items/weapons/trout.png",
+			"image": "items/weapons/trout.png",
 			"width": 0.5,
 			"height": 0.5,
 			"damage": 80,
@@ -172,7 +172,7 @@
 		},
 		{
 			"name": "cat poop",
-			"image": "assets/items/weapons/cat-poop.png",
+			"image": "items/weapons/cat-poop.png",
 			"width": 0.5,
 			"height": 0.5,
 			"damage": 80,
@@ -181,7 +181,7 @@
 		},
 		{
 			"name": "snow globe",
-			"image": "assets/items/weapons/snow-globe.png",
+			"image": "items/weapons/snow-globe.png",
 			"width": 0.5,
 			"height": 0.5,
 			"damage": 80,
@@ -190,7 +190,7 @@
 		},
 		{
 			"name": "bunch of sage",
-			"image": "assets/items/weapons/bunch-of-sage.png",
+			"image": "items/weapons/bunch-of-sage.png",
 			"width": 0.5,
 			"height": 0.5,
 			"damage": 5,
@@ -202,7 +202,7 @@
 	"health": [
 		{
 			"name": "medicine",
-			"image": "assets/items/health/medicine.png",
+			"image": "items/health/medicine.png",
 			"width": 0.5,
 			"height": 0.720
 		}

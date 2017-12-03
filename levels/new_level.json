@@ -1,0 +1,255 @@
+{
+  "playerspeed": 0.0,
+  "width": 28,
+  "gravity": 0.0,
+  "objects": [
+    {
+      "z": 0,
+      "type": "TV",
+      "x": 11,
+      "y": 6
+    },
+    {
+      "z": 0,
+      "type": "light",
+      "x": 3,
+      "y": 0
+    },
+    {
+      "z": 0,
+      "type": "quote2",
+      "x": 6,
+      "y": 4
+    },
+    {
+      "z": 0,
+      "type": "quote5",
+      "x": 27,
+      "y": 5
+    },
+    {
+      "z": 0,
+      "type": "table",
+      "x": 8,
+      "y": 8
+    },
+    {
+      "z": 0,
+      "type": "window",
+      "x": 14,
+      "y": 5
+    },
+    {
+      "z": 0,
+      "type": "grass",
+      "x": 18,
+      "y": 9
+    },
+    {
+      "z": 0,
+      "type": "grass",
+      "x": 9,
+      "y": 9
+    },
+    {
+      "z": 0,
+      "type": "grass",
+      "x": 15,
+      "y": 9
+    },
+    {
+      "z": 0,
+      "type": "crate",
+      "x": 9,
+      "y": 9
+    },
+    {
+      "z": 0,
+      "type": "floor",
+      "x": 4,
+      "y": 10
+    },
+    {
+      "z": 0,
+      "type": "floor",
+      "x": 6,
+      "y": 10
+    },
+    {
+      "z": 0,
+      "type": "grass",
+      "x": 9,
+      "y": 9
+    },
+    {
+      "z": 0,
+      "type": "floor",
+      "x": 0,
+      "y": 10
+    },
+    {
+      "z": 0,
+      "type": "noticeboard",
+      "x": 4,
+      "y": 7
+    },
+    {
+      "z": 0,
+      "type": "bearOnChair",
+      "x": 17,
+      "y": 7
+    },
+    {
+      "z": 0,
+      "type": "bench",
+      "x": 23,
+      "y": 7
+    },
+    {
+      "z": 0,
+      "type": "grass",
+      "x": 21,
+      "y": 9
+    },
+    {
+      "z": 0,
+      "type": "grass",
+      "x": 24,
+      "y": 9
+    },
+    {
+      "z": 0,
+      "type": "grass",
+      "x": 26,
+      "y": 9
+    },
+    {
+      "z": 0,
+      "type": "filingcabinet",
+      "x": 21,
+      "y": 8
+    },
+    {
+      "z": 0,
+      "type": "grass",
+      "x": 19,
+      "y": 9
+    },
+    {
+      "z": 0,
+      "type": "sign",
+      "x": 28,
+      "y": 9
+    },
+    {
+      "z": 0,
+      "type": "light",
+      "x": 12,
+      "y": 0
+    },
+    {
+      "z": 0,
+      "type": "light",
+      "x": 20,
+      "y": 0
+    },
+    {
+      "z": 0,
+      "type": "grass",
+      "x": 12,
+      "y": 9
+    },
+    {
+      "z": 0,
+      "type": "bookshelf",
+      "x": 0,
+      "y": 6
+    },
+    {
+      "z": 0,
+      "type": "ambulance_background",
+      "x": 18,
+      "y": 13
+    },
+    {
+      "z": 0,
+      "type": "'naut",
+      "x": 13,
+      "y": 12
+    },
+    {
+      "z": 0,
+      "type": "floor",
+      "x": 11,
+      "y": 17
+    },
+    {
+      "z": 0,
+      "type": "floor",
+      "x": 7,
+      "y": 17
+    },
+    {
+      "z": 0,
+      "type": "floor",
+      "x": 3,
+      "y": 17
+    },
+    {
+      "z": 0,
+      "type": "floor",
+      "x": 0,
+      "y": 17
+    },
+    {
+      "z": 0,
+      "type": "floor",
+      "x": 27,
+      "y": 17
+    },
+    {
+      "z": 0,
+      "type": "floor",
+      "x": 23,
+      "y": 17
+    },
+    {
+      "z": 0,
+      "type": "floor",
+      "x": 19,
+      "y": 17
+    },
+    {
+      "z": 0,
+      "type": "floor",
+      "x": 15,
+      "y": 17
+    },
+    {
+      "z": 0,
+      "type": "computer",
+      "x": 2,
+      "y": 15
+    },
+    {
+      "z": 0,
+      "type": "warning2",
+      "x": 6,
+      "y": 14
+    },
+    {
+      "z": 0,
+      "type": "warning3",
+      "x": 8,
+      "y": 14
+    },
+    {
+      "z": 0,
+      "type": "warning2",
+      "x": 4,
+      "y": 14
+    }
+  ],
+  "height": 17,
+  "jumpheight": 0.0
+}

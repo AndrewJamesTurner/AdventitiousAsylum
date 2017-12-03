@@ -23,7 +23,8 @@ class RenderQueue:
         for item in self.queue:
             item.loc = ((item.loc[0] - camera_position[0]) * scale[0],
                         (item.loc[1] - camera_position[1]) * scale[1])
-            item.item_rect = pygame.Rect(item.loc, item.image.get_size())
+            size = item.image.get_size()
+            item.item_rect = pygame.Rect(item.loc, (size[0] * scale[0], size[1] * scale[1]))
 
         screen_box = screen.get_rect()
 

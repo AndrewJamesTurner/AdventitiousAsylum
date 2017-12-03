@@ -13,10 +13,9 @@ class PlatformerScene(GameScene):
         Spawner.init()
 
         self.level = Level.load('test.json')
-        self.spedec = SpecEcController(LevelEntity(7, 0, 1, 2, 'arrow.png'))
+        self.spedec = SpedEcController(self.level.playerentity)
         self.level.addEntity(self.spedec.le)
         Spawner.setPlayerEntity(self.spedec.le)
-        self.level.addEntity(LevelEntity(9,0,1,2,'health.png'))
 
     def on_enter(self, previous_scene):
         super(PlatformerScene, self).on_enter(previous_scene)
@@ -24,7 +23,7 @@ class PlatformerScene(GameScene):
     def update(self, dt):
         keys = pygame.key.get_pressed()
 
-        print(self.level.collidingEntities(self.spedec.le))
+        #print(self.level.collidingEntities(self.spedec.le))
 
         self.spedec.setInputs(keys)
         self.level.update(dt / 1000.0)
@@ -44,9 +43,7 @@ class PlatformerScene(GameScene):
         return ( x - SCREEN_WIDTH / 2, y - SCREEN_HEIGHT / 2)
 
     def draw(self, screen):
-        # Work out the camera position: Where the camera centres on
-
-        self.level.surfdata.debug_draw(self.rq)
+        #self.level.surfdata.debug_draw(self.rq)
         self.level.draw(self.rq)
         self.rq.flush(screen, camera_position = self.cameraPosition())
 

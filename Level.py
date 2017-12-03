@@ -38,11 +38,16 @@ class Level:
             print("Warning: Level has no objects")
             self.levelObjects = []
         if 'spawners' in l:
-            print("Info: Level has no spawners")
+            print("Warning: Level has no spawners")
             self.spawners = [ Spawner(s, self) for s in l['spawners'] ]
         else:
             self.spawners = []
         self.levelEntities = []
+
+        for s in [ s for s in self.spawners if s.type in ['player','oneshot'] ]:
+            e = s.update(0)
+            if(s.type == 'player'):
+                self.playerentity = e
 
     @classmethod
     def load(cls, filename):
@@ -192,8 +197,8 @@ class Spawner:
         if self.active():
             self.timer -= dt
             if(self.timer <= 0):
-                self.spawn()
                 self.setTimer(0)
+                return self.spawn()
 
     def active(self):
         if self.type in ['goright','goleft']:
@@ -201,14 +206,18 @@ class Spawner:
                 return False
             if abs(Spawner.playerentity.middle - (self.y + 0.5)) > 30:
                 return False
-        elif self.type in ['oneshot']:
-            status = (self.rate == -1)
+        elif self.type in ['oneshot','player']:
+            status = (self.rate != -1)
             self.rate = -1
             return status
         return True
 
     def spawn(self):
-        entitydata = random.choice(Spawner.entities[self.entitytype])
+        edefs = Spawner.entities[self.entitytype]
+        if self.type == 'player':
+            entitydata = [ d for d in edefs if d['name'] == SharedValues.spedecentity ][0]
+        else:
+            entitydata = random.choice(edefs)
         width  = entitydata['width']
         height = entitydata['height']
         # Spawn above the bottom of the current block
@@ -224,3 +233,4 @@ class Spawner:
             entity.go_l = 1
 
         self.level.addEntity(entity)
+        return entity

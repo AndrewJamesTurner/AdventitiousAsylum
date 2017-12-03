@@ -147,7 +147,15 @@
     "entitytype": "orderly",
     "spawnertype": "goleft",
     "rate": 0.1
-  }],
+  },
+  {
+    "x": 2,
+    "y": 45,
+    "entitytype": "player",
+    "spawnertype": "player",
+    "rate": 0.0
+  }
+  ],
   "width": 40,
   "jumpheight": 2.2,
   "gravity": 1.0
