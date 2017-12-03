@@ -10,7 +10,7 @@
       "entitytype": "player"
     }
   ],
-  "gravity": 20.0,
+  "gravity": 1.1,
   "height": 14,
   "objects": [
     {
@@ -821,7 +821,7 @@
       "y": 3,
       "x": 30,
       "type": "brick",
-      "z": -1
+      "z": -2
     },
     {
       "y": 3,
