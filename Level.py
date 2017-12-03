@@ -191,7 +191,8 @@ class Level:
             # Do offscreen checks and cull from the level
             if self.isOffscreen(le):
                 le.offscreen = 1
-                self.dropEntity(le)
+                if le.archetype not in ['health','weapon']:
+                    self.dropEntity(le)
 
     def draw(self, rq):
         for lo in self.levelObjects:
@@ -231,7 +232,6 @@ class Spawner:
         self.timer = 1.0 / self.rate
 
     def update(self, dt):
-
         if self.active():
             self.timer -= dt
             if(self.timer <= 0):
@@ -241,7 +241,8 @@ class Spawner:
     def active(self):
         if self.type == 'oneshot':
             status = (self.rate != -1)
-            self.rate = -1
+            self.timer = -1
+            self.rate  = -1
             return status
         else:
             sx, sy = self.level.screenRelative(self.x + 0.5, self.y + 0.5)
