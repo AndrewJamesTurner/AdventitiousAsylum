@@ -19,8 +19,10 @@ class MessageScene(MenuScene):
         self.add_option("Escape!!!", new_game, 48)
 
         messages = [
-'Escape from the asylum, or something...',
-]
+            "I'm sick of being cooped up in this asylum.",
+            "There's nothing wrong with me anyway.",
+            "I wonder if I can get outside?",
+        ]
 
         message_font = pygame.font.Font("assets/Courgette-Regular.ttf", 30)
         self.message_images = []
