@@ -157,7 +157,7 @@ class ItemEffectiveness():
             'horrific',
             'Brian Blessedesque',
             'devastating',
-            'limp educing',
+            'limp inducing',
             'violating',
             'traumatic',
             'distressing',
