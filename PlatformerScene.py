@@ -21,9 +21,10 @@ class PlatformerScene(GameScene):
         get_shared_values().player = Player("spedecWoman")
 
         self.level = Level.load('test.json')
-        self.spedec = SpedEcController(self.level.playerentity)
+        self.spedec = SpedEcController(self.level.getSpedEcEntity())
+        self.aimCamera(self.spedec.le.centre, self.spedec.le.middle)
+
         self.level.addEntity(self.spedec.le)
-        Spawner.setPlayerEntity(self.spedec.le)
 
 
     def on_enter(self, previous_scene):
@@ -31,6 +32,7 @@ class PlatformerScene(GameScene):
 
     def update(self, dt):
         keys = pygame.key.get_pressed()
+        self.spedec.setInputs(keys)
 
         # Go back to last lamppost if we run out of health
         if get_shared_values().player.health <= 0:
@@ -44,12 +46,13 @@ class PlatformerScene(GameScene):
         for colliding_entity in self.level.collidingEntities(self.spedec.le):
             self.handle_collision(colliding_entity)
 
-        self.spedec.setInputs(keys)
+        #print(self.level.collidingEntities(self.spedec.le))
+        self.level.setScreenRect(self.camera_left, self.camera_top, self.camera_right, self.camera_bottom)
+
         self.level.update(dt / 1000.0)
 
         # If we do a death animation, we might not adjust this
-        self.camera_x = self.spedec.le.centre
-        self.camera_y = self.spedec.le.middle
+        self.aimCamera(self.spedec.le.centre, self.spedec.le.middle)
 
     def handle_collision(self, entity):
         """
@@ -64,15 +67,24 @@ class PlatformerScene(GameScene):
         self.level.levelEntities.remove(entity)  # safe to remove here, because if we lose the battle we won't be staying here
         self.application.change_scene(get_battle_scene())
 
-    def cameraPosition(self):
+    def aimCamera(self, x, y):
         def limit(aim, extent, limit0, limit1):
             if extent > (limit1 - limit0):
                 return (limit0 + limit1) / 2
             return min(max(aim, limit0 + extent / 2), limit1 - extent / 2)
 
-        x = limit(self.camera_x * BLOCK_SIZE, SCREEN_WIDTH,  0, self.level.width  * BLOCK_SIZE )
-        y = limit(self.camera_y * BLOCK_SIZE, SCREEN_HEIGHT, 0, self.level.height * BLOCK_SIZE )
-        return ( x - SCREEN_WIDTH / 2, y - SCREEN_HEIGHT / 2)
+        blocks_w = SCREEN_WIDTH  / BLOCK_SIZE
+        blocks_h = SCREEN_HEIGHT / BLOCK_SIZE
+
+        x = limit(x, blocks_w, 0, self.level.width  )
+        y = limit(y, blocks_h, 0, self.level.height )
+        self.camera_left   = x - blocks_w / 2
+        self.camera_right  = x + blocks_w / 2
+        self.camera_top    = y - blocks_h / 2
+        self.camera_bottom = y + blocks_h / 2
+
+    def cameraPosition(self):
+        return ( self.camera_left * BLOCK_SIZE, self.camera_top * BLOCK_SIZE )
 
     def draw(self, screen):
         #self.level.surfdata.debug_draw(self.rq)

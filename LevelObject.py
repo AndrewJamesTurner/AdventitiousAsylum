@@ -19,12 +19,11 @@ class LevelObjectPattern:
         p = patternDefinition
         self.definition = p
         self.id = id
-        asset = p['image']
         width = p['width']
         height = p['height']
 
-        if asset is not None:
-            rawimage = pygame.image.load(os.path.join(ASSETS_PATH, asset)).convert_alpha()
+        if 'image' in p:
+            rawimage = pygame.image.load(os.path.join(ASSETS_PATH, p['image'])).convert_alpha()
             self.image = pygame.transform.smoothscale(rawimage, (width * BLOCK_SIZE, height * BLOCK_SIZE))
         else:
             self.image = None

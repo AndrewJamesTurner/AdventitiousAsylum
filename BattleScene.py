@@ -3,7 +3,8 @@ from sharedValues import get_shared_values
 from GameScene import GameScene
 from RenderQueue import RenderQueue
 from movement_path import MovementPath
-# from orderly import Orderly
+from orderly import Orderly
+from player import Player
 from items import physical_type, mental_type, chemical_type
 # from items import ItemGenerator
 from items import ItemEffectiveness, ItemDescriptor
@@ -372,5 +373,9 @@ class BattleScene(GameScene):
 if __name__ == '__main__':
 
     app = ezpygame.Application(title='The Game', resolution=(SCREEN_WIDTH, SCREEN_HEIGHT), update_rate=FPS)
+
+    get_shared_values().orderly = Orderly("doctor")
+    get_shared_values().player = Player("spedecWoman")
+
 
     app.run(BattleScene())
