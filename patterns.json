@@ -326,5 +326,14 @@
     "surfdata":{
 
     }
+  },
+
+  "brickWavy":{
+    "image":"backgrounds/WavyBrickPattern.png",
+    "width": 15,
+    "height": 10,
+    "surfdata":{
+
+    }
   }
 }
