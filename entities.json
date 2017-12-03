@@ -48,8 +48,8 @@
 		{
 			"name": "doctor woman",
 			"image": "characters/doctor_woman.png",
-			"width": 0.448,
-			"height": 2,
+			"width": 0.4,
+			"height": 1.8,
 			"type": "chemical",
 			"health": 100,
 			"filter": "easydoctor"
