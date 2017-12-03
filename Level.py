@@ -68,7 +68,7 @@ class Level:
     # Update all of the entities
     def update(self, dt):
         for s in self.spawners:
-            s.update()
+            s.update(dt)
 
         for le in self.levelEntities:
             # Apply inputs
@@ -174,7 +174,7 @@ class Spawner:
     def setPlayerEntity(cls, pe):
         cls.playerentity = pe
 
-    def __init__(self, level, spawnerDefinition):
+    def __init__(self, spawnerDefinition, level):
         s = spawnerDefinition
         self.level = level
         self.x = s['x']
@@ -193,7 +193,7 @@ class Spawner:
             self.timer -= dt
             if(self.timer <= 0):
                 self.spawn()
-                self.setTimer()
+                self.setTimer(0)
 
     def active(self):
         if self.type in ['goright','goleft']:
@@ -223,4 +223,4 @@ class Spawner:
         elif self.type == 'goleft':
             entity.go_l = 1
 
-        self.level.addEntity(LevelEntity)
+        self.level.addEntity(entity)

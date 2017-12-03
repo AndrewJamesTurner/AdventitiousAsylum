@@ -103,7 +103,7 @@ class LevelEntity:
 
         if asset is not None:
             rawimage = pygame.image.load(os.path.join(ASSETS_PATH, asset)).convert_alpha()
-            self.image = pygame.transform.smoothscale(rawimage, (width * BLOCK_SIZE, height * BLOCK_SIZE))
+            self.image = pygame.transform.smoothscale(rawimage, (int(width * BLOCK_SIZE), int(height * BLOCK_SIZE)))
         else:
             self.image = None
 
