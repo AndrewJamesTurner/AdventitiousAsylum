@@ -349,9 +349,9 @@
   },
 
   "wallend":{
-    "image":"backgrounds/wall.png",
-    "width": 5,
-    "height": 1,
+    "image":"structures/wall.png",
+    "width": 1,
+    "height": 5,
     "surfdata":{
     }},
 

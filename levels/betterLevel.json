@@ -1,145 +1,207 @@
 {
-  "height": 6,
-  "jumpheight": 0.0,
+  "height": 12,
+  "gravity": 0.0,
+  "playerspeed": 0.0,
   "spawners": [
     {
-      "filter": "",
       "rate": 0.3,
-      "y": 3,
-      "x": 6,
-      "entitytype": "player",
-      "spawnertype": "oneshot"
+      "spawnertype": "oneshot",
+      "x": 7,
+      "y": 9,
+      "filter": "",
+      "entitytype": "player"
+    },
+    {
+      "rate": 0.3,
+      "spawnertype": "goleft",
+      "x": 29,
+      "y": 8,
+      "filter": "easydoctor",
+      "entitytype": "orderly"
     }
   ],
-  "playerspeed": 0.0,
-  "width": 76,
-  "gravity": 0.0,
+  "jumpheight": 0.0,
+  "width": 77,
   "objects": [
     {
-      "y": 5,
-      "x": 0,
       "z": 0,
+      "y": 11,
+      "x": 1,
       "type": "floor"
     },
     {
-      "y": 5,
-      "x": 4,
       "z": 0,
+      "y": 11,
+      "x": 5,
       "type": "floor"
     },
     {
-      "y": 5,
-      "x": 8,
       "z": 0,
+      "y": 11,
+      "x": 9,
       "type": "floor"
     },
     {
-      "y": 5,
-      "x": 12,
       "z": 0,
+      "y": 11,
+      "x": 13,
       "type": "floor"
     },
     {
-      "y": 5,
-      "x": 16,
       "z": 0,
+      "y": 11,
+      "x": 17,
       "type": "floor"
     },
     {
-      "y": 5,
-      "x": 20,
       "z": 0,
+      "y": 11,
+      "x": 21,
       "type": "floor"
     },
     {
-      "y": 5,
-      "x": 24,
       "z": 0,
+      "y": 11,
+      "x": 25,
       "type": "floor"
     },
     {
-      "y": 5,
-      "x": 28,
       "z": 0,
+      "y": 11,
+      "x": 29,
       "type": "floor"
     },
     {
-      "y": 2,
-      "x": 11,
       "z": 0,
+      "y": 8,
+      "x": 13,
       "type": "noticeboard"
     },
     {
-      "y": 5,
-      "x": 32,
       "z": 0,
+      "y": 11,
+      "x": 33,
       "type": "floor"
     },
     {
-      "y": 5,
-      "x": 36,
       "z": 0,
+      "y": 11,
+      "x": 37,
       "type": "floor"
     },
     {
-      "y": 5,
-      "x": 40,
       "z": 0,
+      "y": 11,
+      "x": 41,
       "type": "floor"
     },
     {
-      "y": 5,
-      "x": 44,
       "z": 0,
+      "y": 11,
+      "x": 45,
       "type": "floor"
     },
     {
-      "y": 5,
-      "x": 48,
       "z": 0,
+      "y": 11,
+      "x": 49,
       "type": "floor"
     },
     {
-      "y": 5,
-      "x": 52,
       "z": 0,
+      "y": 11,
+      "x": 53,
       "type": "floor"
     },
     {
-      "y": 5,
-      "x": 56,
       "z": 0,
+      "y": 11,
+      "x": 57,
       "type": "floor"
     },
     {
-      "y": 5,
-      "x": 60,
       "z": 0,
+      "y": 11,
+      "x": 61,
       "type": "floor"
     },
     {
-      "y": 5,
-      "x": 64,
       "z": 0,
+      "y": 11,
+      "x": 65,
       "type": "floor"
     },
     {
-      "y": 5,
-      "x": 68,
       "z": 0,
+      "y": 11,
+      "x": 69,
       "type": "floor"
     },
     {
-      "y": 5,
-      "x": 72,
       "z": 0,
+      "y": 11,
+      "x": 73,
       "type": "floor"
     },
     {
+      "z": 0,
+      "y": 6,
+      "x": 5,
+      "type": "bed"
+    },
+    {
+      "z": 0,
+      "y": 6,
+      "x": 23,
+      "type": "wallend"
+    },
+    {
+      "z": 0,
+      "y": 1,
+      "x": 23,
+      "type": "wallend"
+    },
+    {
+      "z": 0,
+      "y": 0,
+      "x": 0,
+      "type": "ceiling"
+    },
+    {
+      "z": 0,
       "y": 0,
       "x": 4,
+      "type": "ceiling"
+    },
+    {
       "z": 0,
-      "type": "bed"
+      "y": 0,
+      "x": 8,
+      "type": "ceiling"
+    },
+    {
+      "z": 0,
+      "y": 0,
+      "x": 12,
+      "type": "ceiling"
+    },
+    {
+      "z": 0,
+      "y": 0,
+      "x": 16,
+      "type": "ceiling"
+    },
+    {
+      "z": 0,
+      "y": 0,
+      "x": 20,
+      "type": "ceiling"
+    },
+    {
+      "z": 0,
+      "y": 7,
+      "x": 18,
+      "type": "clock"
     }
   ]
 }
