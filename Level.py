@@ -213,6 +213,10 @@ class Spawner:
         self.type = s['spawnertype']
         self.rate = s['rate']
         self.entitytype = s['entitytype']
+        if 'filter' in s and s['filter'] != '':
+            self.filter = s['filter']
+        else:
+            self.filter = None
         self.timer = 0
 
     def setTimer(self, r):
@@ -241,8 +245,13 @@ class Spawner:
         return False
 
     def spawn(self):
+        if self.entitytype not in Spawner.entities:
+            print("Can't spawn entitytype '%s'" % self.entitytype)
+            return
 
         edefs = Spawner.entities[self.entitytype]
+        if self.filter is not None:
+            edefs = [ e for e in edefs if 'filter' in e and e['filter'] == self.filter ]
 
         if self.entitytype == 'player':
             entitydata = [ d for d in edefs if d['name'] == get_shared_values().player.name ][0]
