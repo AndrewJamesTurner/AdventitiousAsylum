@@ -355,23 +355,34 @@
     }
   },
 
-  "brick":{
+
+  "wall":{
     "image":"backgrounds/brick-wall.png",
     "width": 15,
-    "height": 10,
+    "height": 11,
     "surfdata":{
 
     }
   },
 
-  "brickWavy":{
-    "image":"backgrounds/WavyBrickPattern.png",
+  "wall_in":{
+    "image":"backgrounds/bricks-fadeout-flipped.png",
     "width": 15,
-    "height": 10,
+    "height": 11,
     "surfdata":{
 
     }
   },
+
+  "wall_out":{
+    "image":"backgrounds/bricks-fadeout.png",
+    "width": 15,
+    "height": 11,
+    "surfdata":{
+
+    }
+  },
+
 
   "wallend":{
     "image":"structures/wall.png",
