@@ -22,14 +22,16 @@ class Player:
                 image_width = self.image.get_width()
                 image_height = self.image.get_height()
 
-                desired_height = 280
-                ratio = desired_height / image_height
+                self.desired_height = 250
+                ratio = self.desired_height / image_height
 
                 self.image_width_scaler = ratio
                 self.image_height_scaler = ratio
 
                 self.image_width = image_width * ratio
-                self.image_height = desired_height
+                self.image_height = self.desired_height
+
+                self.image = pygame.transform.smoothscale(self.image, (int(self.image_width), int(self.image_height)))
 
     def add_item(self, item):
 
