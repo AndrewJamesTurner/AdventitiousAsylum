@@ -42,9 +42,7 @@ class PlatformerScene(GameScene):
         # TODO: Win if we get to the end of the level
         # if self.spedec.??x position?? > ??level width??:
         #     self.application.change_scene(get_win_scene())
-
-        for colliding_entity in self.level.collidingEntities(self.spedec.le):
-            self.handle_collision(colliding_entity)
+        self.handle_collisions()
 
         #print(self.level.collidingEntities(self.spedec.le))
         self.level.setScreenRect(self.camera_left, self.camera_top, self.camera_right, self.camera_bottom)
@@ -54,15 +52,24 @@ class PlatformerScene(GameScene):
         # If we do a death animation, we might not adjust this
         self.aimCamera(self.spedec.le.centre, self.spedec.le.middle)
 
-    def handle_collision(self, entity):
+    def handle_collisions(self):
         """
-        Called when the player collides with an entity.
-        :param entity: The entity that the player collided with
+        Checks collisions and applies rules based on that
         """
-        # Only start a battle if entity is an orderly
-        if entity.archetype == 'orderly':
-            get_shared_values().orderly = Orderly(entity.entityname)
-            self.level.levelEntities.remove(entity)  # safe to remove here, because if we lose the battle we won't be staying here
+        colliding = self.level.collidingEntities(self.spedec.le)
+        matches = { t:[ e for e in colliding if e.archetype == t]
+                    for t in ['health','orderly','weapon'] }
+
+        # Process health items first
+        for health in matches['health']:
+            get_shared_values().player.adjust_health(health.definition['amount'])
+            self.level.dropEntity(health)
+
+        # Only process the first orderly to collide with
+        if matches['orderly']:
+            orderly = matches['orderly'][0]
+            get_shared_values().orderly = Orderly(orderly.definition['name'])
+            self.level.dropEntity(orderly)
             self.application.change_scene(get_battle_scene())
 
     def aimCamera(self, x, y):
