@@ -23,37 +23,42 @@
 			"image": "characters/monster.png",
 			"width": 2.239,
 			"height": 2,
-			"type": "physical"
+			"type": "physical",
+			"health": 1000
 		},
 		{
 			"name": "doctor",
 			"image": "characters/doctor.png",
 			"width": 1.80,
 			"height": 2,
-			"type": "chemical"
+			"type": "chemical",
+			"health": 500
 		}
 		{
 			"name": "doctor_man",
 			"image": "characters/doctor_man.png",
 			"width": 1.03,
 			"height": 1.8,
-			"type": "chemical"
+			"type": "chemical",
+			"health": 100
 		}
 		{
 			"name": "doctor_woman",
 			"image": "characters/doctor_woman.png",
 			"width": 0.448,
 			"height": 2,
-			"type": "chemical"
-		}
-		{
-			"name": "astronaut",
-			"image": "characters/astronaut_small2.png",
-			"width": 0.966,
-			"height": 1.9,
-			"type": "mental"
-		}
-	],
+			"type": "chemical",
+			"health": 100,
+
+			{
+				"name": "astronaut",
+				"image": "characters/astronaut_small2.png",
+				"width": 0.966,
+				"height": 1.9,
+				"type": "mental",
+				"health": 500
+			}
+		],
 
 	"weapon": [
 		{
