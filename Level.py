@@ -213,7 +213,11 @@ class Spawner:
         return True
 
     def spawn(self):
-        entitydata = random.choice(Spawner.entities[self.entitytype])
+        edefs = Spawner.entities[self.entitytype]
+        if self.type == 'player':
+            entitydata = [ d for d in edefs if d['name'] == SharedValues.spedecentity ][0]
+        else:
+            entitydata = random.choice(edefs)
         width  = entitydata['width']
         height = entitydata['height']
         # Spawn above the bottom of the current block
