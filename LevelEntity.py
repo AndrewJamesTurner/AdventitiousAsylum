@@ -7,16 +7,16 @@ class LevelEntity:
     An entity that can roam around a level.
     Physics can be done on entities, and they interact with the surfdata.
     """
-    def __init__(self, x, y, archetype, entityDefinition):
+    def __init__(self, x, y, archetype, entityDefinition, scale = BLOCKS_PER_M):
         self.archetype = archetype
         e = entityDefinition
         self.definition = e
-        w = float( e['width']  * BLOCKS_PER_M )
-        h = float( e['height'] * BLOCKS_PER_M )
+        w = float( e['width']  * scale )
+        h = float( e['height'] * scale )
         self.top = float(y)
         self.left = float(x)
-        self.width = w
-        self.height = h
+        self.width = float(w)
+        self.height = float(h)
         self.vel_x = 0
         self.vel_y = 0
 
