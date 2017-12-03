@@ -22,7 +22,7 @@ class MessageScene(MenuScene):
 'Escape from the asylum, or something...',
 ]
 
-        message_font = pygame.font.Font("assets/Courgette-Regular.ttf", 30)
+        message_font = pygame.font.Font("assets/GloriaHallelujah.ttf", 30)
         self.message_images = []
         for message in messages:
             self.message_images.append(message_font.render(message, True, (255, 255, 255)))

@@ -18,7 +18,7 @@ class StartMenuScene(MenuScene):
         self.add_option("New Game", new_game, 48)
         self.add_option("Quit", sys.exit, 48)
 
-        title_font = pygame.font.Font("assets/Courgette-Regular.ttf", 72)
+        title_font = pygame.font.Font("assets/Creepster-Regular.ttf", 72)
         self.title_image = title_font.render("Adventitious Asylum", True, (255, 255, 255))
 
         # self.backdrop = pygame.image.load("assets/hallway.jpg").convert()
