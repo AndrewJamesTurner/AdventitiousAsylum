@@ -1,629 +1,713 @@
 {
-  "width": 101,
-  "gravity": 1.0,
-  "jumpheight": 3.0,
-  "height": 26,
-  "spawners": [
-    {
-      "filter": "easydoctor",
-      "y": 23,
-      "entitytype": "orderly",
-      "rate": 0.05,
-      "x": 27,
-      "spawnertype": "goleft"
-    },
-    {
-      "filter": "",
-      "y": 22,
-      "entitytype": "player",
-      "rate": 0.3,
-      "x": 4,
-      "spawnertype": "oneshot"
-    },
-    {
-      "filter": "",
-      "y": 20,
-      "entitytype": "weapon",
-      "rate": 0.3,
-      "x": 12,
-      "spawnertype": "oneshot"
-    },
-    {
-      "filter": "",
-      "y": 22,
-      "entitytype": "weapon",
-      "rate": 0.3,
-      "x": 51,
-      "spawnertype": "oneshot"
-    },
-    {
-      "filter": "easydoctor",
-      "y": 21,
-      "entitytype": "orderly",
-      "rate": 0.01,
-      "x": 83,
-      "spawnertype": "goleft"
-    },
-    {
-      "filter": "easydoctor",
-      "y": 21,
-      "entitytype": "orderly",
-      "rate": 0.3,
-      "x": 72,
-      "spawnertype": "goright"
-    },
-    {
-      "filter": "",
-      "y": 23,
-      "entitytype": "health",
-      "rate": 0.3,
-      "x": 91,
-      "spawnertype": "oneshot"
-    },
-    {
-      "filter": "",
-      "y": 8,
-      "entitytype": "orderly",
-      "rate": 0.01,
-      "x": 90,
-      "spawnertype": "goleft"
-    },
-    {
-      "filter": "",
-      "y": 11,
-      "entitytype": "weapon",
-      "rate": 0.3,
-      "x": 70,
-      "spawnertype": "oneshot"
-    }
-  ],
-  "playerspeed": 2.5,
   "objects": [
     {
       "type": "floor",
-      "z": 0,
       "y": 25,
+      "z": 0,
       "x": 1
     },
     {
       "type": "floor",
-      "z": 0,
       "y": 25,
+      "z": 0,
       "x": 5
     },
     {
       "type": "floor",
-      "z": 0,
       "y": 25,
+      "z": 0,
       "x": 9
     },
     {
       "type": "floor",
-      "z": 0,
       "y": 25,
+      "z": 0,
       "x": 13
     },
     {
       "type": "floor",
-      "z": 0,
       "y": 25,
+      "z": 0,
       "x": 17
     },
     {
       "type": "floor",
-      "z": 0,
       "y": 25,
+      "z": 0,
       "x": 21
     },
     {
       "type": "floor",
-      "z": 0,
       "y": 25,
+      "z": 0,
       "x": 25
     },
     {
       "type": "floor",
-      "z": 0,
       "y": 25,
+      "z": 0,
       "x": 29
     },
     {
       "type": "noticeboard",
-      "z": 0,
       "y": 22,
+      "z": 0,
       "x": 14
     },
     {
       "type": "floor",
-      "z": 0,
       "y": 25,
+      "z": 0,
       "x": 33
     },
     {
       "type": "floor",
-      "z": 0,
       "y": 25,
+      "z": 0,
       "x": 37
     },
     {
       "type": "floor",
-      "z": 0,
       "y": 25,
+      "z": 0,
       "x": 45
     },
     {
       "type": "floor",
-      "z": 0,
       "y": 25,
+      "z": 0,
       "x": 49
     },
     {
       "type": "floor",
-      "z": 0,
       "y": 25,
+      "z": 0,
       "x": 53
     },
     {
       "type": "floor",
-      "z": 0,
       "y": 25,
+      "z": 0,
       "x": 57
     },
     {
       "type": "floor",
-      "z": 0,
       "y": 25,
+      "z": 0,
       "x": 61
     },
     {
       "type": "floor",
-      "z": 0,
       "y": 25,
+      "z": 0,
       "x": 65
     },
     {
       "type": "floor",
-      "z": 0,
       "y": 25,
+      "z": 0,
       "x": 69
     },
     {
       "type": "floor",
-      "z": 0,
       "y": 25,
+      "z": 0,
       "x": 73
     },
     {
       "type": "bed",
-      "z": 0,
       "y": 20,
-      "x": 2
+      "z": 0,
+      "x": 3
     },
     {
       "type": "wallend",
-      "z": 0,
       "y": 20,
+      "z": 0,
       "x": 23
     },
     {
       "type": "wallend",
-      "z": 0,
       "y": 15,
+      "z": 0,
       "x": 23
     },
     {
       "type": "ceiling",
-      "z": 0,
       "y": 14,
+      "z": 0,
       "x": 0
     },
     {
       "type": "ceiling",
-      "z": 0,
       "y": 14,
+      "z": 0,
       "x": 4
     },
     {
       "type": "ceiling",
-      "z": 0,
       "y": 14,
+      "z": 0,
       "x": 8
     },
     {
       "type": "ceiling",
-      "z": 0,
       "y": 14,
+      "z": 0,
       "x": 12
     },
     {
       "type": "ceiling",
-      "z": 0,
       "y": 14,
+      "z": 0,
       "x": 16
     },
     {
       "type": "ceiling",
-      "z": 0,
       "y": 14,
+      "z": 0,
       "x": 20
     },
     {
       "type": "clock",
-      "z": 0,
       "y": 21,
+      "z": 0,
       "x": 18
     },
     {
       "type": "light",
-      "z": 0,
       "y": 15,
+      "z": 0,
       "x": 16
     },
     {
       "type": "light",
-      "z": 0,
       "y": 15,
+      "z": 0,
       "x": 5
     },
     {
       "type": "ceiling",
-      "z": 0,
       "y": 13,
+      "z": 0,
       "x": 23
     },
     {
       "type": "ceiling",
-      "z": 0,
       "y": 13,
+      "z": 0,
       "x": 26
     },
     {
       "type": "ceiling",
-      "z": 0,
       "y": 13,
+      "z": 0,
       "x": 29
     },
     {
       "type": "bed",
-      "z": 0,
       "y": 20,
+      "z": 0,
       "x": 9
     },
     {
       "type": "ceiling",
-      "z": 0,
       "y": 13,
+      "z": 0,
       "x": 33
     },
     {
       "type": "ceiling",
-      "z": 0,
       "y": 13,
+      "z": 0,
       "x": 37
     },
     {
       "type": "filingcabinet",
-      "z": 0,
       "y": 23,
+      "z": 0,
       "x": 34
     },
     {
       "type": "ceiling",
-      "z": 0,
       "y": 13,
+      "z": 0,
       "x": 40
     },
     {
       "type": "ceiling",
-      "z": 0,
       "y": 13,
+      "z": 0,
       "x": 43
     },
     {
       "type": "light",
-      "z": 0,
       "y": 14,
+      "z": 0,
       "x": 29
     },
     {
       "type": "light",
-      "z": 0,
       "y": 14,
+      "z": 0,
       "x": 39
     },
     {
       "type": "door",
-      "z": 1,
       "y": 21,
+      "z": 1,
       "x": 65
     },
     {
       "type": "filingcabinet",
-      "z": 0,
       "y": 23,
+      "z": 0,
       "x": 35
     },
     {
       "type": "warning2",
-      "z": 0,
       "y": 21,
+      "z": 0,
       "x": 63
     },
     {
       "type": "blockingWall",
-      "z": 0,
       "y": 15,
+      "z": 0,
       "x": 0
     },
     {
       "type": "blockingWall",
-      "z": 0,
       "y": 18,
+      "z": 0,
       "x": 0
     },
     {
       "type": "blockingWall",
-      "z": 0,
       "y": 22,
+      "z": 0,
       "x": 0
     },
     {
       "type": "table",
-      "z": 0,
       "y": 23,
+      "z": 0,
       "x": 50
     },
     {
       "type": "ceiling",
-      "z": 0,
       "y": 13,
+      "z": 0,
       "x": 47
     },
     {
       "type": "ceiling",
-      "z": 0,
       "y": 13,
+      "z": 0,
       "x": 51
     },
     {
       "type": "ceiling",
-      "z": 0,
       "y": 13,
+      "z": 0,
       "x": 55
     },
     {
       "type": "computer",
-      "z": 0,
       "y": 21,
+      "z": 0,
       "x": 52
     },
     {
       "type": "ceiling",
-      "z": 0,
       "y": 13,
+      "z": 0,
       "x": 59
     },
     {
       "type": "ceiling",
-      "z": 0,
       "y": 13,
+      "z": 0,
       "x": 63
     },
     {
       "type": "crate",
-      "z": 0,
       "y": 24,
+      "z": 0,
       "x": 51
     },
     {
       "type": "wallend",
-      "z": 0,
       "y": 14,
+      "z": 0,
       "x": 66
     },
     {
       "type": "wallend",
-      "z": 0,
       "y": 20,
+      "z": 0,
       "x": 66
     },
     {
       "type": "wallend",
-      "z": 0,
       "y": 18,
+      "z": 0,
       "x": 66
     },
     {
       "type": "light",
-      "z": 0,
       "y": 14,
+      "z": 0,
       "x": 49
     },
     {
       "type": "light",
-      "z": 0,
       "y": 14,
+      "z": 0,
       "x": 58
     },
     {
       "type": "ceiling",
-      "z": 0,
       "y": 12,
+      "z": 0,
       "x": 66
     },
     {
       "type": "ceiling",
-      "z": 0,
       "y": 12,
+      "z": 0,
       "x": 70
     },
     {
       "type": "ceiling",
-      "z": 0,
       "y": 12,
+      "z": 0,
       "x": 74
     },
     {
       "type": "ceiling",
-      "z": 0,
       "y": 12,
+      "z": 0,
       "x": 78
     },
     {
       "type": "floor",
-      "z": 0,
       "y": 25,
+      "z": 0,
       "x": 77
     },
     {
       "type": "floor",
-      "z": 0,
       "y": 25,
+      "z": 0,
       "x": 81
     },
     {
       "type": "ceiling",
-      "z": 0,
       "y": 12,
+      "z": 0,
       "x": 81
     },
     {
       "type": "floor",
-      "z": 0,
       "y": 25,
+      "z": 0,
       "x": 85
     },
     {
       "type": "floor",
-      "z": 0,
       "y": 25,
+      "z": 0,
       "x": 89
     },
     {
       "type": "bearOnChair",
-      "z": 0,
       "y": 22,
+      "z": 0,
       "x": 90
     },
     {
       "type": "floor",
-      "z": 0,
       "y": 25,
+      "z": 0,
       "x": 93
     },
     {
       "type": "floor",
-      "z": 0,
       "y": 25,
+      "z": 0,
       "x": 97
     },
     {
       "type": "ceiling",
-      "z": 0,
       "y": 12,
+      "z": 0,
       "x": 85
     },
     {
       "type": "ceiling",
-      "z": 0,
       "y": 12,
+      "z": 0,
       "x": 89
     },
     {
       "type": "ceiling",
-      "z": 0,
       "y": 12,
+      "z": 0,
       "x": 93
     },
     {
       "type": "bookshelf",
-      "z": 0,
       "y": 21,
+      "z": 0,
       "x": 76
     },
     {
       "type": "light",
-      "z": 0,
       "y": 13,
+      "z": 0,
       "x": 71
     },
     {
       "type": "light",
-      "z": 0,
       "y": 13,
+      "z": 0,
       "x": 81
     },
     {
       "type": "quote3",
+      "y": 20,
       "z": 0,
-      "y": 19,
-      "x": 94
+      "x": 84
     },
     {
       "type": "blockingWall",
-      "z": 0,
       "y": 10,
+      "z": 0,
       "x": 0
     },
     {
       "type": "blockingWall",
-      "z": 0,
       "y": 7,
+      "z": 0,
       "x": 0
     },
     {
       "type": "blockingWall",
-      "z": 0,
       "y": 4,
+      "z": 0,
       "x": 0
     },
     {
       "type": "blockingWall",
-      "z": 0,
       "y": 0,
+      "z": 0,
       "x": 0
     },
     {
       "type": "ceiling",
-      "z": 0,
       "y": 0,
+      "z": 0,
       "x": 0
     },
     {
       "type": "ceiling",
-      "z": 0,
       "y": 0,
+      "z": 0,
       "x": 4
     },
     {
       "type": "ceiling",
-      "z": 0,
       "y": 0,
+      "z": 0,
       "x": 8
     },
     {
       "type": "ceiling",
-      "z": 0,
       "y": 0,
+      "z": 0,
       "x": 12
     },
     {
       "type": "crate",
-      "z": 0,
       "y": 12,
+      "z": 0,
       "x": 65
     },
     {
       "type": "quote5",
-      "z": 0,
       "y": 6,
+      "z": 0,
       "x": 78
     },
     {
       "type": "floor",
-      "z": 0,
       "y": 25,
+      "z": 0,
+      "x": 41
+    },
+    {
+      "type": "ladder",
+      "y": 17,
+      "z": 0,
+      "x": 97
+    },
+    {
+      "type": "ladder",
+      "y": 16,
+      "z": 0,
+      "x": 97
+    },
+    {
+      "type": "ladder",
+      "y": 15,
+      "z": -2,
+      "x": 97
+    },
+    {
+      "type": "ladder",
+      "y": 14,
+      "z": 0,
+      "x": 97
+    },
+    {
+      "type": "ladder",
+      "y": 13,
+      "z": 0,
+      "x": 97
+    },
+    {
+      "type": "ladder",
+      "y": 18,
+      "z": 0,
+      "x": 97
+    },
+    {
+      "type": "ladder",
+      "y": 19,
+      "z": 0,
+      "x": 97
+    },
+    {
+      "type": "ladder",
+      "y": 20,
+      "z": 0,
+      "x": 97
+    },
+    {
+      "type": "ladder",
+      "y": 21,
+      "z": 0,
+      "x": 97
+    },
+    {
+      "type": "ladder",
+      "y": 22,
+      "z": 0,
+      "x": 97
+    },
+    {
+      "type": "ladder",
+      "y": 23,
+      "z": 0,
+      "x": 97
+    },
+    {
+      "type": "ladder",
+      "y": 24,
+      "z": 0,
+      "x": 97
+    },
+    {
+      "type": "ladder",
+      "y": 12,
+      "z": 0,
+      "x": 97
+    },
+    {
+      "type": "quote2",
+      "y": 20,
+      "z": 0,
       "x": 41
     }
-  ]
+  ],
+  "height": 26,
+  "gravity": 1.0,
+  "spawners": [
+    {
+      "y": 23,
+      "x": 27,
+      "rate": 0.05,
+      "spawnertype": "goleft",
+      "filter": "easydoctor",
+      "entitytype": "orderly"
+    },
+    {
+      "y": 18,
+      "x": 3,
+      "rate": 0.3,
+      "spawnertype": "oneshot",
+      "filter": "",
+      "entitytype": "player"
+    },
+    {
+      "y": 19,
+      "x": 11,
+      "rate": 0.3,
+      "spawnertype": "oneshot",
+      "filter": "",
+      "entitytype": "weapon"
+    },
+    {
+      "y": 21,
+      "x": 51,
+      "rate": 0.3,
+      "spawnertype": "oneshot",
+      "filter": "",
+      "entitytype": "weapon"
+    },
+    {
+      "y": 22,
+      "x": 81,
+      "rate": 0.01,
+      "spawnertype": "goleft",
+      "filter": "easydoctor",
+      "entitytype": "orderly"
+    },
+    {
+      "y": 21,
+      "x": 72,
+      "rate": 0.3,
+      "spawnertype": "goright",
+      "filter": "easydoctor",
+      "entitytype": "orderly"
+    },
+    {
+      "y": 23,
+      "x": 91,
+      "rate": 0.3,
+      "spawnertype": "oneshot",
+      "filter": "",
+      "entitytype": "health"
+    },
+    {
+      "y": 8,
+      "x": 90,
+      "rate": 0.01,
+      "spawnertype": "goleft",
+      "filter": "",
+      "entitytype": "orderly"
+    },
+    {
+      "y": 10,
+      "x": 70,
+      "rate": 0.3,
+      "spawnertype": "oneshot",
+      "filter": "",
+      "entitytype": "weapon"
+    }
+  ],
+  "width": 101,
+  "jumpheight": 3.0,
+  "playerspeed": 2.5
 }
