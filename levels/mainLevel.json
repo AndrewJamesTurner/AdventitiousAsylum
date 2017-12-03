@@ -1,0 +1,859 @@
+{
+  "jumpheight": 3.0,
+  "spawners": [
+    {
+      "y": 3,
+      "x": 19,
+      "rate": 0.3,
+      "filter": "",
+      "spawnertype": "oneshot",
+      "entitytype": "player"
+    }
+  ],
+  "gravity": 1.1,
+  "height": 14,
+  "objects": [
+    {
+      "y": 13,
+      "x": 10,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 50,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 46,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 42,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 38,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 34,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 30,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 26,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 22,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 18,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 14,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 90,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 86,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 82,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 78,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 74,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 70,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 66,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 62,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 58,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 54,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 126,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 122,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 118,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 114,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 110,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 106,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 102,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 98,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 94,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 8,
+      "x": 49,
+      "type": "window",
+      "z": 0
+    },
+    {
+      "y": 11,
+      "x": 48,
+      "type": "table",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 115,
+      "type": "sign",
+      "z": 0
+    },
+    {
+      "y": 2,
+      "x": 130,
+      "type": "outside_background",
+      "z": 0
+    },
+    {
+      "y": 1,
+      "x": 130,
+      "type": "outside_background_extender",
+      "z": 0
+    },
+    {
+      "y": 2,
+      "x": 186,
+      "type": "outside_background",
+      "z": 0
+    },
+    {
+      "y": 2,
+      "x": 172,
+      "type": "outside_background",
+      "z": 0
+    },
+    {
+      "y": 2,
+      "x": 144,
+      "type": "outside_background",
+      "z": 0
+    },
+    {
+      "y": 2,
+      "x": 200,
+      "type": "outside_background",
+      "z": 0
+    },
+    {
+      "y": 2,
+      "x": 312,
+      "type": "outside_background",
+      "z": 0
+    },
+    {
+      "y": 2,
+      "x": 298,
+      "type": "outside_background",
+      "z": 0
+    },
+    {
+      "y": 2,
+      "x": 242,
+      "type": "outside_background",
+      "z": 0
+    },
+    {
+      "y": 2,
+      "x": 284,
+      "type": "outside_background",
+      "z": 0
+    },
+    {
+      "y": 2,
+      "x": 270,
+      "type": "outside_background",
+      "z": 0
+    },
+    {
+      "y": 2,
+      "x": 228,
+      "type": "outside_background",
+      "z": 0
+    },
+    {
+      "y": 2,
+      "x": 256,
+      "type": "outside_background",
+      "z": 0
+    },
+    {
+      "y": 2,
+      "x": 214,
+      "type": "outside_background",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 153,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 149,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 145,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 141,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 137,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 133,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 129,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 189,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 185,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 181,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 177,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 173,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 169,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 165,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 161,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 13,
+      "x": 157,
+      "type": "floor",
+      "z": 0
+    },
+    {
+      "y": 2,
+      "x": 158,
+      "type": "outside_background",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 217,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 214,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 211,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 208,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 205,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 202,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 199,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 196,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 193,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 253,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 250,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 247,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 244,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 241,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 238,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 235,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 232,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 229,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 226,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 223,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 220,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 277,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 274,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 271,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 268,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 265,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 262,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 259,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 256,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 304,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 301,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 298,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 295,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 292,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 289,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 286,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 283,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 280,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 318,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 315,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 312,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 310,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 307,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 322,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 321,
+      "type": "grass",
+      "z": 0
+    },
+    {
+      "y": 0,
+      "x": 110,
+      "type": "light",
+      "z": 0
+    },
+    {
+      "y": 0,
+      "x": 89,
+      "type": "light",
+      "z": 0
+    },
+    {
+      "y": 0,
+      "x": 26,
+      "type": "light",
+      "z": 0
+    },
+    {
+      "y": 0,
+      "x": 69,
+      "type": "light",
+      "z": 0
+    },
+    {
+      "y": 0,
+      "x": 48,
+      "type": "light",
+      "z": 0
+    },
+    {
+      "y": 11,
+      "x": 66,
+      "type": "filingcabinet",
+      "z": 0
+    },
+    {
+      "y": 11,
+      "x": 69,
+      "type": "filingcabinet",
+      "z": 0
+    },
+    {
+      "y": 11,
+      "x": 68,
+      "type": "filingcabinet",
+      "z": 0
+    },
+    {
+      "y": 11,
+      "x": 67,
+      "type": "filingcabinet",
+      "z": 0
+    },
+    {
+      "y": 9,
+      "x": 50,
+      "type": "computer",
+      "z": 0
+    },
+    {
+      "y": 9,
+      "x": 154,
+      "type": "door",
+      "z": 0
+    },
+    {
+      "y": 10,
+      "x": 109,
+      "type": "bench",
+      "z": 0
+    },
+    {
+      "y": 9,
+      "x": 131,
+      "type": "ambulance_background",
+      "z": 0
+    },
+    {
+      "y": 10,
+      "x": 82,
+      "type": "noticeboard",
+      "z": 0
+    },
+    {
+      "y": 8,
+      "x": 166,
+      "type": "quote4",
+      "z": 0
+    },
+    {
+      "y": 8,
+      "x": 59,
+      "type": "quote1",
+      "z": 0
+    },
+    {
+      "y": 11,
+      "x": 87,
+      "type": "table",
+      "z": 0
+    },
+    {
+      "y": 9,
+      "x": 88,
+      "type": "TV",
+      "z": 0
+    },
+    {
+      "y": 3,
+      "x": 115,
+      "type": "brickWavy",
+      "z": -1
+    },
+    {
+      "y": 3,
+      "x": 59,
+      "type": "brickWavy",
+      "z": -1
+    },
+    {
+      "y": 3,
+      "x": 74,
+      "type": "brickWavy",
+      "z": -1
+    },
+    {
+      "y": 3,
+      "x": 88,
+      "type": "brickWavy",
+      "z": -1
+    },
+    {
+      "y": 3,
+      "x": 103,
+      "type": "brickWavy",
+      "z": -1
+    },
+    {
+      "y": 3,
+      "x": 0,
+      "type": "brick",
+      "z": -1
+    },
+    {
+      "y": 3,
+      "x": 15,
+      "type": "brick",
+      "z": -7
+    },
+    {
+      "y": 3,
+      "x": 30,
+      "type": "brick",
+      "z": -2
+    },
+    {
+      "y": 3,
+      "x": 45,
+      "type": "brick",
+      "z": -1
+    },
+    {
+      "y": 9,
+      "x": 13,
+      "type": "door",
+      "z": 0
+    },
+    {
+      "y": 7,
+      "x": 34,
+      "type": "clock",
+      "z": 0
+    },
+    {
+      "y": 12,
+      "x": 107,
+      "type": "crate",
+      "z": 0
+    },
+    {
+      "y": 10,
+      "x": 204,
+      "type": "bearOnChair",
+      "z": 0
+    }
+  ],
+  "width": 326,
+  "playerspeed": 10.0
+}

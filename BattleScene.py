@@ -9,6 +9,7 @@ from items import physical_type, mental_type, chemical_type
 # from items import ItemGenerator
 from items import ItemEffectiveness, ItemDescriptor
 from random import randint
+from animation import Animation
 
 player_move_select_state = "player_move_select_state"
 player_attack_animation_state = "player_attack_animation_state"
@@ -111,6 +112,8 @@ class BattleScene(GameScene):
 
         self.render_queue = RenderQueue()
 
+        self.test_anim = Animation(True, pygame.image.load("assets/characters/spedec-2/spedec-man-walk-2-sheet.png"), 180)
+
         # remove this
         # enemy_items = [
         #     ItemGenerator().getItem(),
@@ -132,6 +135,9 @@ class BattleScene(GameScene):
 
     def update(self, dt):
 
+        self.test_anim.step()
+        self.render_queue.add((200, 200), self.test_anim.get_current_frame(), z_index=400)
+
         message_box_x = 54
         message_box_y = 420
 
@@ -141,7 +147,7 @@ class BattleScene(GameScene):
         player_pos_x = 95
         player_pos_y = 111
 
-        enemy_pos_x = 950 - self.enemy.image_width
+        enemy_pos_x = 900
         enemy_pos_y = 85
 
         health_bar_height = 25
@@ -292,7 +298,7 @@ class BattleScene(GameScene):
         elif self.state == enemy_attack_animation_state:
 
             if self.movement_path is None:
-                self.movement_path = MovementPath(enemy_pos_x, enemy_pos_y + 100, 1000, [(0, 0), (-SCREEN_WIDTH*0.27, -SCREEN_HEIGHT * 0.4), (-SCREEN_WIDTH*0.5, -SCREEN_HEIGHT * 0.1)])
+                self.movement_path = MovementPath(enemy_pos_x - 2*self.enemy.items[self.enemy_selected_item].image.get_width(), enemy_pos_y + 100, 1000, [(0, 0), (-SCREEN_WIDTH*0.27, -SCREEN_HEIGHT * 0.4), (-SCREEN_WIDTH*0.5, -SCREEN_HEIGHT * 0.1)])
 
             else:
                 if self.movement_path.is_done():

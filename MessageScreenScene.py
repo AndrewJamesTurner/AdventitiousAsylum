@@ -27,8 +27,8 @@ class MessageScene(MenuScene):
         for message in messages:
             self.message_images.append(message_font.render(message, True, (255, 255, 255)))
 
-        self.backdrop = pygame.image.load("assets/backdrop1.jpg").convert()
-        scale_down = 1
+        self.backdrop = pygame.image.load("assets/lostPlace.jpg").convert()
+        scale_down = 0.5211
         backdrop_rect = self.backdrop.get_rect()
         self.backdrop = pygame.transform.smoothscale(self.backdrop, (int(backdrop_rect.width * scale_down), int(backdrop_rect.height * scale_down)))
 

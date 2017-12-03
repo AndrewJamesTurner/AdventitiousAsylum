@@ -21,7 +21,7 @@ class PlatformerScene(GameScene):
 
         get_shared_values().player = Player("spedecWoman")
 
-        self.level = Level.load('test.json')
+        self.level = Level.load('mainLevel.json')
         self.spedec = SpedEcController(self.level.getSpedEcEntity())
         self.aimCamera(self.spedec.le.centre, self.spedec.le.middle)
 
