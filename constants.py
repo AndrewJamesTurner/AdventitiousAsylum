@@ -21,7 +21,6 @@ DT_SCALE = 0.001
 VELOCITY_ITERATIONS = 10
 POSITION_ITERATIONS = 10
 
-
 MAX_FUEL = 5000
 MAX_HEALTH = 100
 MAX_OXYGEN = 1000
@@ -43,6 +42,9 @@ PLAYER_ACCEL_AIR = 0.1
 
 # Number of blocks beyond something is "offscreen"
 SCREEN_MARGIN = 2.0
+
+# How big are item thumbnails?
+THUMB_SIZE = 64
 
 ASSETS_PATH = 'assets'
 LEVELS_PATH = 'levels'
